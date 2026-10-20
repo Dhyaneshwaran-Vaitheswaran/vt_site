@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Phone, Mail, MessageSquare, Clock, Building, Send, CheckCircle2, ShieldCheck, FileText } from 'lucide-react';
+import { MapPin, Phone, Mail, MessageSquare, Clock, Building, Send, CheckCircle2, ShieldCheck, FileText, Navigation, ExternalLink } from 'lucide-react';
 import { FABRICS } from '../data/fabrics';
 
 export const Contact = () => {
@@ -356,6 +356,105 @@ export const Contact = () => {
 
                 </form>
               )}
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Google Maps Facility Location & Regional Connectivity Section */}
+      <section style={{ backgroundColor: '#FFFFFF', padding: 'clamp(2.5rem, 5vw, 4.5rem) 0', borderTop: '1px solid #E2E8F0' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 2.5rem auto' }}>
+            <span className="section-kicker">LOCAL HUB & LOGISTICS GATEWAY</span>
+            <h2 className="section-title" style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.25rem)' }}>
+              Find Us in Erode Fort, Tamil Nadu
+            </h2>
+            <p className="section-desc" style={{ fontSize: '0.95rem' }}>
+              Positioned in the historic textile trading district of Erode Fort with direct transit access to Tirupur garment manufacturers, Coimbatore yarn mills, and Tuticorin port.
+            </p>
+          </div>
+
+          <div className="two-col-layout-responsive" style={{ gap: '2rem', alignItems: 'stretch' }}>
+            
+            {/* Interactive Google Maps Embed */}
+            <div className="b2b-card" style={{ padding: '0.75rem', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ width: '100%', height: '100%', minHeight: '380px', borderRadius: '10px', overflow: 'hidden' }}>
+                <iframe
+                  title="Vasanthaa Textiless Erode Fort Location"
+                  src="https://maps.google.com/maps?q=3,+Vasuki+St,+2nd+Street,+Erode+Fort,+Erode,+Tamil+Nadu+638001&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, minHeight: '380px', display: 'block' }}
+                  allowFullScreen=""
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+            </div>
+
+            {/* Local Transit & Buyer Directions Card */}
+            <div className="b2b-card" style={{ padding: 'clamp(1.25rem, 3vw, 2rem)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+              <div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
+                  <MapPin size={22} color="#C51E3A" />
+                  <h3 style={{ fontSize: '1.25rem', color: '#0F172A', margin: 0 }}>
+                    Central Facility Address
+                  </h3>
+                </div>
+
+                <div style={{ backgroundColor: '#F8FAFC', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #C51E3A', marginBottom: '1.5rem' }}>
+                  <strong style={{ color: '#0F172A', display: 'block', fontSize: '0.95rem' }}>Vasanthaa Textiless</strong>
+                  <div style={{ color: '#475569', fontSize: '0.9rem', lineHeight: '1.6', marginTop: '0.25rem' }}>
+                    3, Vasuki St, 2nd Street, Erode Fort,<br />
+                    Erode, Tamil Nadu 638001, India<br />
+                    <span style={{ fontSize: '0.8rem', color: '#64748B' }}>Landmark: Near Fort Clock Tower & Cauvery Trade Market</span>
+                  </div>
+                </div>
+
+                <h4 style={{ fontSize: '0.95rem', color: '#0F172A', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.75rem' }}>
+                  Transit Corridors & Travel Distances
+                </h4>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.875rem', color: '#475569', marginBottom: '1.5rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <Navigation size={16} color="#D4AF37" />
+                    <span><strong>Erode Junction (ED):</strong> 2.8 km (~8 min by car)</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <Navigation size={16} color="#D4AF37" />
+                    <span><strong>Tirupur Garment Hub:</strong> 50 km (Direct via NH 544 highway)</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <Navigation size={16} color="#D4AF37" />
+                    <span><strong>Coimbatore Int'l Airport (CJB):</strong> 95 km (~1 hr 45 min drive)</span>
+                  </div>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <Navigation size={16} color="#D4AF37" />
+                    <span><strong>Tuticorin Port (VOCPT):</strong> 340 km (Weekly container feeder dispatch)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                <a
+                  href="https://maps.google.com/?q=3,+Vasuki+St,+2nd+Street,+Erode+Fort,+Erode,+Tamil+Nadu+638001"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary"
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', textDecoration: 'none', fontSize: '0.875rem' }}
+                >
+                  <Navigation size={16} /> Get Driving Directions <ExternalLink size={14} />
+                </a>
+                <a
+                  href="tel:+919786222580"
+                  className="btn btn-outline"
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', textDecoration: 'none', fontSize: '0.875rem' }}
+                >
+                  <Phone size={16} /> Call Front Desk
+                </a>
+              </div>
 
             </div>
 

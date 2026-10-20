@@ -31,23 +31,31 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet" />
 
+    <!-- Google Search Console Verification Placeholder -->
+    <meta name="google-site-verification" content="GSC_VERIFICATION_TOKEN" />
+
     <!-- Structured Data Schema for Google B2B / Local Business Ranking -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "Organization",
+          "@type": ["Organization", "LocalBusiness", "Manufacturer"],
           "@id": "https://vasanthaatextiless.in/#organization",
           "name": "Vasanthaa Textiless",
+          "alternateName": "Vasanthaa Textiless Erode",
           "url": "https://vasanthaatextiless.in/",
           "logo": "https://vasanthaatextiless.in/images/vt-company-logo.jpg",
-          "description": "Established textile sourcing, production coordination, custom dyeing, printing, and finishing enterprise based in Erode, Tamil Nadu, India since 1998.",
+          "image": "https://vasanthaatextiless.in/images/hero-craft.jpg",
+          "description": "Established woven textile sourcing, production coordination, custom dyeing, printing, and finishing enterprise based in Erode, Tamil Nadu, India since 1998. Supplying export-grade fabrics for global apparel brands and garment manufacturers.",
           "founder": {
             "@type": "Person",
             "name": "Mr. Vaitheswaran"
           },
           "foundingDate": "1998",
+          "priceRange": "$$",
+          "currenciesAccepted": "INR, USD, EUR, GBP",
+          "paymentAccepted": "Bank Transfer, RTGS/NEFT, Letter of Credit (LC), Cheque, Cash",
           "address": {
             "@type": "PostalAddress",
             "streetAddress": "3, Vasuki St, 2nd Street, Erode Fort",
@@ -56,12 +64,26 @@
             "postalCode": "638001",
             "addressCountry": "IN"
           },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 11.3410,
+            "longitude": 77.7172
+          },
+          "hasMap": "https://maps.google.com/?q=3,+Vasuki+St,+2nd+Street,+Erode+Fort,+Erode,+Tamil+Nadu+638001",
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+              "opens": "09:00",
+              "closes": "19:30"
+            }
+          ],
           "contactPoint": [
             {
               "@type": "ContactPoint",
               "telephone": "+91-9786222580",
               "contactType": "sales",
-              "areaServed": ["IN", "Worldwide"],
+              "areaServed": ["IN", "US", "GB", "DE", "AE", "Worldwide"],
               "availableLanguage": ["English", "Tamil", "Hindi"]
             },
             {
@@ -69,6 +91,26 @@
               "telephone": "+91-9842222580",
               "contactType": "customer service"
             }
+          ],
+          "areaServed": [
+            { "@type": "City", "name": "Erode" },
+            { "@type": "City", "name": "Tirupur" },
+            { "@type": "City", "name": "Coimbatore" },
+            { "@type": "City", "name": "Karur" },
+            { "@type": "State", "name": "Tamil Nadu" },
+            { "@type": "Country", "name": "India" },
+            { "@type": "AdministrativeArea", "name": "Worldwide" }
+          ],
+          "knowsAbout": [
+            "Textile Sourcing Erode",
+            "Woven Fabric Manufacturing",
+            "Airjet & Rapier Weaving",
+            "Custom Fabric Dyeing & Finishing",
+            "Cotton Twill Fabric",
+            "Heavy Cotton Drill",
+            "Organic Cotton Fabric",
+            "Linen Dobby & Blends",
+            "Garment Export Sourcing"
           ]
         },
         {

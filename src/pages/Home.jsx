@@ -55,7 +55,7 @@ export const Home = ({ setActivePage, onSelectFabric, onAddSwatch, swatches, onO
                 marginBottom: '1.75rem',
                 maxWidth: '560px'
               }}>
-                We bring yarn sourcing, precision shuttleless weaving, Zero Liquid Discharge dyeing, and specialty finishing together under one trusted point of contact in Erode, Tamil Nadu. Fulfil bulk fabric requirements without managing fragmented vendors yourself.
+                Centralized textile sourcing and woven fabric production partner in Erode, Tamil Nadu. We coordinate specialized yarn procurement, high-speed airjet/rapier weaving, custom dyeing, printing, and specialty finishing for global apparel brands, buying houses, and garment exporters.
               </p>
 
               {/* Action Buttons */}
