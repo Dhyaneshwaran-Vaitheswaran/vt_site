@@ -44,7 +44,7 @@ export const QualityAssurance = ({ onOpenRFQ }) => {
       {/* Hero Testing Image Spotlight */}
       <section className="section-padding-sm" style={{ backgroundColor: '#FFFFFF', borderBottom: '1px solid #E2E8F0' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem', alignItems: 'center' }}>
+          <div className="two-col-layout-responsive">
             <div>
               <img
                 src="/images/fabric-inspection.jpg"
@@ -59,7 +59,7 @@ export const QualityAssurance = ({ onOpenRFQ }) => {
             </div>
             <div>
               <span className="section-kicker">IN-HOUSE CENTRAL INSPECTION</span>
-              <h2 style={{ fontSize: '2.25rem', color: '#0F172A', marginBottom: '1rem' }}>
+              <h2 style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.25rem)', color: '#0F172A', marginBottom: '1rem' }}>
                 Centrally Inspected in Erode Fort
               </h2>
               <p style={{ color: '#64748B', lineHeight: '1.8', marginBottom: '1.5rem' }}>

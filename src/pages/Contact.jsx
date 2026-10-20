@@ -74,16 +74,16 @@ export const Contact = () => {
       {/* Main Contact Grid */}
       <section className="section-padding">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3.5rem', alignItems: 'flex-start' }}>
+          <div className="two-col-layout-responsive" style={{ alignItems: 'flex-start' }}>
             
             {/* Left Column: Authentic Office Details */}
             <div>
               <span className="section-kicker">ERODE HEADQUARTERS</span>
-              <h2 style={{ fontSize: '2rem', color: '#0F172A', marginBottom: '1.5rem' }}>
+              <h2 style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2rem)', color: '#0F172A', marginBottom: '1.25rem' }}>
                 Visit or Contact Our Central Desk
               </h2>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '2.5rem' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', marginBottom: '2.5rem' }}>
                 
                 {/* Location */}
                 <div className="b2b-card" style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', padding: '1.5rem' }}>
@@ -199,14 +199,14 @@ export const Contact = () => {
             </div>
 
             {/* Right Column: Interactive B2B Contact Form */}
-            <div className="b2b-card" style={{ padding: '2.5rem', backgroundColor: '#FFFFFF' }}>
+            <div className="b2b-card" style={{ backgroundColor: '#FFFFFF' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
                 <FileText size={18} color="#C51E3A" />
                 <span style={{ fontSize: '0.8125rem', fontWeight: 700, color: '#C51E3A', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
                   DIRECT INQUIRY & QUOTE FORM
                 </span>
               </div>
-              <h3 style={{ fontSize: '1.75rem', color: '#0F172A', marginBottom: '1.5rem' }}>
+              <h3 style={{ fontSize: 'clamp(1.35rem, 3vw, 1.75rem)', color: '#0F172A', marginBottom: '1.25rem' }}>
                 Send Us Your Fabric Requirements
               </h3>
 
@@ -246,7 +246,7 @@ export const Contact = () => {
               ) : (
                 <form onSubmit={handleSubmit}>
                   
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
+                  <div className="form-row-responsive">
                     <div className="form-group">
                       <label className="form-label">Full Name *</label>
                       <input
@@ -272,7 +272,7 @@ export const Contact = () => {
                     </div>
                   </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
+                  <div className="form-row-responsive">
                     <div className="form-group">
                       <label className="form-label">Official Work Email *</label>
                       <input
@@ -298,7 +298,7 @@ export const Contact = () => {
                     </div>
                   </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
+                  <div className="form-row-responsive">
                     <div className="form-group">
                       <label className="form-label">Fabric Category of Interest</label>
                       <select

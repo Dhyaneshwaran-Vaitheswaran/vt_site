@@ -90,50 +90,18 @@ export const RFQModal = ({ isOpen, onClose, preselectedFabric }) => {
   };
 
   return (
-    <div style={{
-      position: 'fixed',
-      inset: 0,
-      backgroundColor: 'rgba(15, 23, 42, 0.75)',
-      backdropFilter: 'blur(6px)',
-      zIndex: 99999,
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: '1.5rem',
-      overflowY: 'auto'
-    }}>
-      <div style={{
-        backgroundColor: '#FFFFFF',
-        borderRadius: '16px',
-        width: '100%',
-        maxWidth: '720px',
-        maxHeight: '90vh',
-        overflowY: 'auto',
-        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
-        position: 'relative'
-      }}>
+    <div className="modal-overlay-responsive">
+      <div className="modal-dialog-responsive">
         
         {/* Modal Header */}
-        <div style={{
-          padding: '1.5rem 2rem',
-          backgroundColor: '#0F172A',
-          color: '#FFFFFF',
-          borderTopLeftRadius: '16px',
-          borderTopRightRadius: '16px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          position: 'sticky',
-          top: 0,
-          zIndex: 10
-        }}>
+        <div className="modal-header-responsive">
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.35rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.35rem', flexWrap: 'wrap' }}>
               <img src="/images/vt-monogram.svg" alt="VT" style={{ width: '18px', height: '18px' }} />
               <span className="badge badge-gold" style={{ fontSize: '0.6875rem' }}>VT SOURCING DESK</span>
               <span style={{ fontSize: '0.75rem', color: '#94A3B8' }}>• Response within 24h</span>
             </div>
-            <h3 style={{ color: '#FFFFFF', fontSize: '1.35rem', margin: 0 }}>
+            <h3 style={{ color: '#FFFFFF', fontSize: 'clamp(1.1rem, 2.5vw, 1.35rem)', margin: 0 }}>
               Request Fabric Specifications & Bulk Quote
             </h3>
           </div>
@@ -241,7 +209,7 @@ export const RFQModal = ({ isOpen, onClose, preselectedFabric }) => {
           </div>
         ) : (
           /* Input Form */
-          <form onSubmit={handleSubmit} style={{ padding: '2rem' }}>
+          <form onSubmit={handleSubmit} className="modal-body-responsive">
             
             {/* Step 1: Fabric Selection */}
             <div style={{ marginBottom: '1.75rem', paddingBottom: '1.5rem', borderBottom: '1px solid #E2E8F0' }}>
@@ -261,7 +229,7 @@ export const RFQModal = ({ isOpen, onClose, preselectedFabric }) => {
                 <h4 style={{ margin: 0, fontSize: '1.05rem', color: '#0F172A' }}>Fabric & Construction Specifications</h4>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
+              <div className="form-row-responsive">
                 <div className="form-group">
                   <label className="form-label">Select Fabric Type *</label>
                   <select 
@@ -294,7 +262,7 @@ export const RFQModal = ({ isOpen, onClose, preselectedFabric }) => {
                 </div>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))', gap: '1rem' }}>
                 <div className="form-group">
                   <label className="form-label">Target Weight (GSM)</label>
                   <input 
@@ -353,7 +321,7 @@ export const RFQModal = ({ isOpen, onClose, preselectedFabric }) => {
                 <h4 style={{ margin: 0, fontSize: '1.05rem', color: '#0F172A' }}>Company & Contact Information</h4>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1rem' }}>
+              <div className="form-row-responsive">
                 <div className="form-group">
                   <label className="form-label">Company / Brand Name *</label>
                   <input 
@@ -379,7 +347,7 @@ export const RFQModal = ({ isOpen, onClose, preselectedFabric }) => {
                 </div>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))', gap: '1rem' }}>
                 <div className="form-group">
                   <label className="form-label">WhatsApp / Phone Number *</label>
                   <input 

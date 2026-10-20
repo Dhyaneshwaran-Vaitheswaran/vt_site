@@ -83,12 +83,12 @@ export const VTLogo = ({
   const subColor = isDarkCanvas ? '#D4AF37' : '#C51E3A';
 
   return (
-    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.85rem', userSelect: 'none' }}>
+    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.65rem', userSelect: 'none' }}>
       <VTMonogram size={size} variant={variant} />
       <div>
-        <div style={{
+        <div className="vt-logo-title" style={{
           fontFamily: "'Playfair Display', Georgia, serif",
-          fontSize: '1.28rem',
+          fontSize: 'clamp(1.05rem, 3vw, 1.28rem)',
           fontWeight: 800,
           letterSpacing: '-0.015em',
           color: textColor,
@@ -98,11 +98,11 @@ export const VTLogo = ({
           Vasanthaa Textiless
         </div>
         {subtitle && (
-          <div style={{
+          <div className="vt-logo-subtitle" style={{
             fontFamily: "'Plus Jakarta Sans', sans-serif",
             fontSize: '0.625rem',
             fontWeight: 700,
-            letterSpacing: '0.14em',
+            letterSpacing: '0.12em',
             color: subColor,
             marginTop: '2px',
             textTransform: 'uppercase',

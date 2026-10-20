@@ -55,12 +55,7 @@ export const FabricDetail = ({ fabric, onBack, onAddSwatch, isSwatchAdded, onOpe
       <section style={{ paddingTop: '2.5rem' }}>
         <div className="container">
           
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))',
-            gap: '3.5rem',
-            marginBottom: '4rem'
-          }}>
+          <div className="detail-grid-responsive">
             
             {/* Left Column: Authentic Fabric Swatch Media */}
             <div>
@@ -76,14 +71,15 @@ export const FabricDetail = ({ fabric, onBack, onAddSwatch, isSwatchAdded, onOpe
                 <img
                   src={fabric.image}
                   alt={`${fabric.name} high-res woven fabric swatch`}
-                  style={{ width: '100%', height: '440px', objectFit: 'cover' }}
+                  className="detail-img-responsive"
                 />
                 <div style={{
                   position: 'absolute',
                   top: '16px',
                   left: '16px',
                   display: 'flex',
-                  gap: '0.5rem'
+                  gap: '0.5rem',
+                  flexWrap: 'wrap'
                 }}>
                   {fabric.badge && (
                     <span className="badge badge-gold">{fabric.badge}</span>
@@ -123,23 +119,27 @@ export const FabricDetail = ({ fabric, onBack, onAddSwatch, isSwatchAdded, onOpe
                   <ArrowUpRight size={18} /> Request Bulk Quotation (Factory-Direct)
                 </button>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
+                <div className="detail-sub-btn-grid">
                   <button
                     onClick={() => onAddSwatch(fabric)}
                     className="btn btn-outline-navy"
                     style={{
                       backgroundColor: isSwatchAdded ? '#DCFCE7' : 'transparent',
                       borderColor: isSwatchAdded ? '#15803D' : 'var(--color-primary-navy)',
-                      color: isSwatchAdded ? '#15803D' : 'var(--color-primary-navy)'
+                      color: isSwatchAdded ? '#15803D' : 'var(--color-primary-navy)',
+                      width: '100%',
+                      padding: '0.75rem 0.5rem',
+                      fontSize: '0.85rem'
                     }}
                   >
                     {isSwatchAdded ? <Check size={16} /> : <ShoppingBag size={16} />}
-                    <span>{isSwatchAdded ? 'Swatch Added' : 'Add to Swatch Cart'}</span>
+                    <span>{isSwatchAdded ? 'Swatch Added' : 'Add to Cart'}</span>
                   </button>
 
                   <button
                     onClick={handleWhatsAppInquiry}
                     className="btn btn-whatsapp"
+                    style={{ width: '100%', padding: '0.75rem 0.5rem', fontSize: '0.85rem' }}
                   >
                     <MessageSquare size={16} /> WhatsApp Inquiry
                   </button>
@@ -182,11 +182,11 @@ export const FabricDetail = ({ fabric, onBack, onAddSwatch, isSwatchAdded, onOpe
                 {fabric.category}
               </div>
 
-              <h1 style={{ fontSize: '2.5rem', marginBottom: '1rem', color: '#0F172A' }}>
+              <h1 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', marginBottom: '1rem', color: '#0F172A' }}>
                 {fabric.name}
               </h1>
 
-              <p style={{ fontSize: '1.0625rem', color: '#64748B', lineHeight: '1.7', marginBottom: '2rem' }}>
+              <p style={{ fontSize: 'clamp(0.95rem, 1.8vw, 1.0625rem)', color: '#64748B', lineHeight: '1.7', marginBottom: '2rem' }}>
                 {fabric.description}
               </p>
 
@@ -195,46 +195,48 @@ export const FabricDetail = ({ fabric, onBack, onAddSwatch, isSwatchAdded, onOpe
                 Technical Specifications & Weave Architecture
               </h3>
 
-              <table className="spec-table">
-                <tbody>
-                  <tr>
-                    <td>Fiber Composition</td>
-                    <td><strong>{fabric.fiber}</strong></td>
-                  </tr>
-                  <tr>
-                    <td>Weave Construction</td>
-                    <td>{fabric.weave}</td>
-                  </tr>
-                  <tr>
-                    <td>Weight (GSM)</td>
-                    <td><strong style={{ color: '#C51E3A' }}>{fabric.gsm}</strong></td>
-                  </tr>
-                  <tr>
-                    <td>Yarn Count / Construction</td>
-                    <td>{fabric.yarnCount}</td>
-                  </tr>
-                  <tr>
-                    <td>Finished Usable Width</td>
-                    <td>{fabric.width}</td>
-                  </tr>
-                  <tr>
-                    <td>Available Finish Treatments</td>
-                    <td>{fabric.finish}</td>
-                  </tr>
-                  <tr>
-                    <td>Sampling / Prototype MOQ</td>
-                    <td>{fabric.moqSample}</td>
-                  </tr>
-                  <tr>
-                    <td>Production Bulk MOQ</td>
-                    <td><strong>{fabric.moqBulk}</strong></td>
-                  </tr>
-                  <tr>
-                    <td>Estimated Lead Time</td>
-                    <td>{fabric.leadTime} (Lab-dips in 3-5 days)</td>
-                  </tr>
-                </tbody>
-              </table>
+              <div className="table-responsive">
+                <table className="spec-table">
+                  <tbody>
+                    <tr>
+                      <td>Fiber Composition</td>
+                      <td><strong>{fabric.fiber}</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Weave Construction</td>
+                      <td>{fabric.weave}</td>
+                    </tr>
+                    <tr>
+                      <td>Weight (GSM)</td>
+                      <td><strong style={{ color: '#C51E3A' }}>{fabric.gsm}</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Yarn Count / Construction</td>
+                      <td>{fabric.yarnCount}</td>
+                    </tr>
+                    <tr>
+                      <td>Finished Usable Width</td>
+                      <td>{fabric.width}</td>
+                    </tr>
+                    <tr>
+                      <td>Available Finish Treatments</td>
+                      <td>{fabric.finish}</td>
+                    </tr>
+                    <tr>
+                      <td>Sampling / Prototype MOQ</td>
+                      <td>{fabric.moqSample}</td>
+                    </tr>
+                    <tr>
+                      <td>Production Bulk MOQ</td>
+                      <td><strong>{fabric.moqBulk}</strong></td>
+                    </tr>
+                    <tr>
+                      <td>Estimated Lead Time</td>
+                      <td>{fabric.leadTime} (Lab-dips in 3-5 days)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
 
               {/* Key Features */}
               <div style={{ marginBottom: '2rem' }}>
@@ -282,13 +284,13 @@ export const FabricDetail = ({ fabric, onBack, onAddSwatch, isSwatchAdded, onOpe
                 backgroundColor: '#FFFFFF',
                 borderRadius: '12px',
                 border: '1px solid #E2E8F0',
-                padding: '1.5rem',
+                padding: '1.25rem',
                 boxShadow: '0 4px 12px rgba(0,0,0,0.03)'
               }}>
                 <h4 style={{ fontSize: '0.95rem', color: '#0F172A', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                   <Truck size={17} color="#C51E3A" /> Global Export Logistics & Mill Standards
                 </h4>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(190px, 1fr))', gap: '1rem', fontSize: '0.8125rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))', gap: '1rem', fontSize: '0.8125rem' }}>
                   <div>
                     <span style={{ color: '#64748B', display: 'block', marginBottom: '0.2rem' }}>Container Seaports</span>
                     <strong style={{ color: '#0F172A' }}>Tuticorin VOC (~340 km) / Chennai (~400 km)</strong>

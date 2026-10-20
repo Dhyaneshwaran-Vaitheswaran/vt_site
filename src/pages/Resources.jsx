@@ -69,8 +69,8 @@ export const Resources = ({ onOpenRFQ }) => {
 
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))',
-              gap: '1.25rem',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 140px), 1fr))',
+              gap: '1rem',
               alignItems: 'flex-end',
               marginBottom: '2rem'
             }}>
@@ -172,12 +172,7 @@ export const Resources = ({ onOpenRFQ }) => {
             </p>
           </div>
 
-          <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '3rem',
-            alignItems: 'flex-start'
-          }}>
+          <div className="two-col-layout-responsive" style={{ alignItems: 'flex-start' }}>
             
             {/* Article Selector List */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>

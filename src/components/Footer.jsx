@@ -20,32 +20,20 @@ export const Footer = ({ setActivePage, onOpenRFQ }) => {
       <div className="container">
         
         {/* Top Callout Banner */}
-        <div style={{
-          backgroundColor: '#1E293B',
-          borderRadius: '16px',
-          padding: '2.5rem',
-          border: '1px solid rgba(212, 175, 55, 0.25)',
-          display: 'flex',
-          flexWrap: 'wrap',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          gap: '2rem',
-          marginBottom: '4.5rem',
-          boxShadow: '0 20px 40px rgba(0,0,0,0.3)'
-        }}>
+        <div className="footer-banner-responsive">
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.5rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.5rem', flexWrap: 'wrap' }}>
               <span className="badge badge-gold" style={{ fontSize: '0.6875rem' }}>B2B SOURCING DESK</span>
               <span className="badge badge-live" style={{ fontSize: '0.6875rem' }}>Accepting Bulk Orders 2026 / 2027</span>
             </div>
-            <h3 style={{ color: '#FFFFFF', fontSize: '1.75rem', marginBottom: '0.5rem' }}>
+            <h3 style={{ color: '#FFFFFF', fontSize: 'clamp(1.35rem, 3vw, 1.75rem)', marginBottom: '0.5rem' }}>
               Planning Your Next Season's Fabric Sourcing Program?
             </h3>
-            <p style={{ color: '#94A3B8', fontSize: '1rem', maxWidth: '620px' }}>
+            <p style={{ color: '#94A3B8', fontSize: 'clamp(0.875rem, 1.6vw, 1rem)', maxWidth: '620px' }}>
               Skip multiple vendor friction. Submit your fabric target weight, pantone reference, or physical counter sample for immediate lab-dip turnaround and volume pricing.
             </p>
           </div>
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
             <button 
               onClick={() => onOpenRFQ(null)}
               className="btn btn-primary"
@@ -64,12 +52,7 @@ export const Footer = ({ setActivePage, onOpenRFQ }) => {
         </div>
 
         {/* Footer Navigation Columns */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-          gap: '3rem',
-          marginBottom: '4rem'
-        }}>
+        <div className="footer-cols-responsive">
           
           {/* Column 1: Brand & Legacy */}
           <div>

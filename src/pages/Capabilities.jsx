@@ -54,38 +54,31 @@ export const Capabilities = ({ onOpenRFQ }) => {
             </p>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '3.5rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'clamp(2rem, 4vw, 3.5rem)' }}>
             {CAPABILITIES.map((cap, idx) => (
               <div
                 key={cap.step}
-                className="b2b-card"
-                style={{
-                  padding: '3rem',
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                  gap: '3rem',
-                  alignItems: 'center'
-                }}
+                className="b2b-card two-col-layout-responsive"
               >
                 <div style={{ order: idx % 2 === 1 ? 2 : 1 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem', flexWrap: 'wrap' }}>
                     <span className="badge badge-terracotta">STAGE {cap.step}</span>
-                    <span style={{ fontSize: '0.875rem', color: '#64748B', fontWeight: 600 }}>{cap.subtitle}</span>
+                    <span style={{ fontSize: '0.8125rem', color: '#64748B', fontWeight: 600 }}>{cap.subtitle}</span>
                   </div>
 
-                  <h3 style={{ fontSize: '2rem', color: '#0F172A', marginBottom: '1rem' }}>
+                  <h3 style={{ fontSize: 'clamp(1.4rem, 3vw, 2rem)', color: '#0F172A', marginBottom: '0.875rem' }}>
                     {cap.title}
                   </h3>
 
-                  <p style={{ color: '#475569', fontSize: '1rem', lineHeight: '1.8', marginBottom: '1.75rem' }}>
+                  <p style={{ color: '#475569', fontSize: 'clamp(0.9rem, 1.8vw, 1rem)', lineHeight: '1.7', marginBottom: '1.5rem' }}>
                     {cap.description}
                   </p>
 
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginBottom: '2rem' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem', marginBottom: '1.75rem' }}>
                     {cap.highlights.map((h, i) => (
                       <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
                         <CheckCircle2 size={18} color="#15803D" style={{ flexShrink: 0, marginTop: '0.2rem' }} />
-                        <span style={{ color: '#1E293B', fontSize: '0.9375rem', fontWeight: 500 }}>{h}</span>
+                        <span style={{ color: '#1E293B', fontSize: '0.9rem', fontWeight: 500 }}>{h}</span>
                       </div>
                     ))}
                   </div>
@@ -104,7 +97,7 @@ export const Capabilities = ({ onOpenRFQ }) => {
                     alt={cap.title}
                     style={{
                       width: '100%',
-                      height: '340px',
+                      height: 'clamp(240px, 35vw, 340px)',
                       objectFit: 'cover',
                       borderRadius: '12px',
                       boxShadow: '0 12px 28px rgba(0,0,0,0.08)'

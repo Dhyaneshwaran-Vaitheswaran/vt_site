@@ -99,8 +99,8 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          padding: '1rem 1.5rem',
-          minHeight: '72px'
+          padding: '0.75rem 1rem',
+          minHeight: '66px'
         }}>
           
           {/* Official Simplistic & Unique VT Trademark Logo */}
@@ -110,10 +110,10 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
               cursor: 'pointer',
               userSelect: 'none',
               flexShrink: 0,
-              marginRight: '2rem'
+              marginRight: '1rem'
             }}
           >
-            <VTLogo size={42} variant="dark" />
+            <VTLogo size={38} variant="dark" />
           </div>
 
           {/* Desktop Navigation Links — Clean, Single-Line, Generous Spacing */}
@@ -174,7 +174,7 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
           <div style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '0.875rem',
+            gap: '0.5rem',
             flexShrink: 0
           }}>
             
@@ -184,11 +184,11 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '0.45rem',
+                gap: '0.35rem',
                 backgroundColor: swatchCount > 0 ? '#F1F5F9' : 'transparent',
                 border: '1px solid #CBD5E1',
                 borderRadius: '6px',
-                padding: '0.55rem 0.9rem',
+                padding: '0.5rem 0.75rem',
                 fontSize: '0.8125rem',
                 fontWeight: 600,
                 color: '#1E293B',
@@ -215,28 +215,29 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
                   fontWeight: 700,
                   padding: '0.1rem 0.45rem',
                   borderRadius: '9999px',
-                  marginLeft: '0.2rem'
+                  marginLeft: '0.15rem'
                 }}>
                   {swatchCount}
                 </span>
               ) : null}
             </button>
 
-            {/* Primary Action Button — Clean, Sharp, No Gimmicks */}
+            {/* Primary Action Button — Adaptive on Phone and Desktop */}
             <button 
               onClick={() => onOpenRFQ(null)}
-              className="btn btn-primary btn-sm"
+              className="btn btn-primary btn-sm header-quote-btn"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '0.35rem',
-                padding: '0.6rem 1.15rem',
+                padding: '0.55rem 1rem',
                 fontSize: '0.8125rem',
                 fontWeight: 600,
                 borderRadius: '6px'
               }}
             >
-              <span>Request Quote</span>
+              <span className="quote-text-full">Request Quote</span>
+              <span className="quote-text-short">Quote</span>
               <ArrowUpRight size={14} />
             </button>
 

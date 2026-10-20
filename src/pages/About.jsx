@@ -44,19 +44,19 @@ export const About = ({ onOpenRFQ }) => {
       {/* Story & Evolution Section */}
       <section className="section-padding" style={{ backgroundColor: '#FFFFFF', borderBottom: '1px solid #E2E8F0' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+          <div className="two-col-layout-responsive">
             
             <div>
               <span className="section-kicker">OUR ORIGINS</span>
-              <h2 style={{ fontSize: '2.25rem', color: '#0F172A', marginBottom: '1.25rem' }}>
+              <h2 style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.25rem)', color: '#0F172A', marginBottom: '1.25rem' }}>
                 From Erode Fort to Global Garment Supply Chains
               </h2>
               
-              <p style={{ color: '#64748B', lineHeight: '1.8', marginBottom: '1.25rem' }}>
+              <p style={{ color: '#64748B', lineHeight: '1.8', marginBottom: '1.25rem', fontSize: 'clamp(0.9rem, 1.8vw, 1rem)' }}>
                 In 1998, <strong>Mr. Vaitheswaran</strong> established Vasanthaa Textiless at <strong>3, Vasuki Street in historic Erode Fort</strong>. Located right at the heart of South India's bustling woven fabric markets, the business was built on a foundational philosophy: <em>unwavering integrity, absolute fabric specification compliance, and deep client relationships.</em>
               </p>
 
-              <p style={{ color: '#64748B', lineHeight: '1.8', marginBottom: '1.5rem' }}>
+              <p style={{ color: '#64748B', lineHeight: '1.8', marginBottom: '1.5rem', fontSize: 'clamp(0.9rem, 1.8vw, 1rem)' }}>
                 Over nearly three decades, as garment manufacturing scaled across India and international buyers sought reliable Indian textile sourcing, Vasanthaa Textiless recognized the growing complexity of the industry. Brands didn't just need fabric—they needed a reliable partner who could navigate the fragmented landscape of spinning mills, specialized air-jet and rapier weavers, and environmental dyehouses.
               </p>
 
@@ -85,7 +85,7 @@ export const About = ({ onOpenRFQ }) => {
                 border: '1px solid #E2E8F0',
                 backgroundColor: '#0F172A',
                 color: '#FFFFFF',
-                padding: '2.5rem'
+                padding: 'clamp(1.25rem, 3vw, 2.5rem)'
               }}>
                 <div style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.5rem', color: '#D4AF37', marginBottom: '1.5rem' }}>
                   The Vasanthaa Milestones
@@ -188,7 +188,7 @@ export const About = ({ onOpenRFQ }) => {
               </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem', fontSize: '0.875rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: '1.25rem', fontSize: '0.875rem' }}>
               <div style={{ borderBottom: '1px solid #F1F5F9', paddingBottom: '0.75rem' }}>
                 <span style={{ color: '#64748B', display: 'block', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Commercial Entity</span>
                 <strong style={{ color: '#0F172A', fontSize: '1rem' }}>Vasanthaa Textiless</strong>
@@ -231,26 +231,26 @@ export const About = ({ onOpenRFQ }) => {
             color: '#FFFFFF',
             borderRadius: '16px',
             border: '1px solid rgba(212, 175, 55, 0.3)',
-            padding: '2.5rem',
+            padding: 'clamp(1.25rem, 3vw, 2.5rem)',
             boxShadow: '0 12px 32px rgba(0,0,0,0.2)'
           }}>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2.5rem', alignItems: 'center' }}>
+            <div className="two-col-layout-responsive">
               <div>
                 <span className="badge badge-gold" style={{ marginBottom: '0.75rem' }}>PROPRIETARY BRAND IDENTITY</span>
-                <h3 style={{ fontSize: '1.75rem', color: '#FFFFFF', marginBottom: '0.875rem' }}>
+                <h3 style={{ fontSize: 'clamp(1.35rem, 3vw, 1.75rem)', color: '#FFFFFF', marginBottom: '0.875rem' }}>
                   The Official "VT" Trademark
                 </h3>
                 <p style={{ color: '#94A3B8', fontSize: '0.9375rem', lineHeight: '1.7', marginBottom: '1.25rem' }}>
                   Our brand emblem unites the letters <strong>'V'</strong> and <strong>'T'</strong> in an architectural, simplistic geometry that mimics the interlocking of warp and weft threads on a precision loom. Cast in our signature crimson red with fine gold accents, the mark represents our 28-year heritage of woven craftsmanship and commitment to quality.
                 </p>
-                <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', fontSize: '0.8125rem' }}>
-                  <span style={{ backgroundColor: 'rgba(255,255,255,0.08)', padding: '0.4rem 0.75rem', borderRadius: '4px', color: '#D4AF37' }}>
+                <div style={{ display: 'flex', gap: '0.65rem', flexWrap: 'wrap', fontSize: '0.8125rem' }}>
+                  <span style={{ backgroundColor: 'rgba(255,255,255,0.08)', padding: '0.35rem 0.65rem', borderRadius: '4px', color: '#D4AF37' }}>
                     ✓ Simplistic & Minimalist Monogram
                   </span>
-                  <span style={{ backgroundColor: 'rgba(255,255,255,0.08)', padding: '0.4rem 0.75rem', borderRadius: '4px', color: '#D4AF37' }}>
+                  <span style={{ backgroundColor: 'rgba(255,255,255,0.08)', padding: '0.35rem 0.65rem', borderRadius: '4px', color: '#D4AF37' }}>
                     ✓ Signature Crimson Red (#C51E3A)
                   </span>
-                  <span style={{ backgroundColor: 'rgba(255,255,255,0.08)', padding: '0.4rem 0.75rem', borderRadius: '4px', color: '#D4AF37' }}>
+                  <span style={{ backgroundColor: 'rgba(255,255,255,0.08)', padding: '0.35rem 0.65rem', borderRadius: '4px', color: '#D4AF37' }}>
                     ✓ Ready for Trademark Registration
                   </span>
                 </div>

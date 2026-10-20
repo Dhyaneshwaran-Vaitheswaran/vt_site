@@ -42,16 +42,16 @@ export const Catalog = ({ onSelectFabric, onAddSwatch, swatches, onOpenRFQ, onOp
       <section style={{
         backgroundColor: '#0F172A',
         color: '#FFFFFF',
-        padding: '4rem 0',
+        padding: 'clamp(2.5rem, 5vw, 4rem) 0',
         borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
       }}>
         <div className="container">
           <div style={{ maxWidth: '780px' }}>
             <span className="badge badge-gold" style={{ marginBottom: '0.75rem' }}>B2B WOVEN FABRIC PORTFOLIO</span>
-            <h1 style={{ color: '#FFFFFF', fontSize: '2.75rem', marginBottom: '1rem' }}>
+            <h1 style={{ color: '#FFFFFF', fontSize: 'clamp(1.75rem, 4.5vw, 2.75rem)', marginBottom: '0.875rem' }}>
               Specialty Woven Fabrics & Substrates
             </h1>
-            <p style={{ color: '#CBD5E1', fontSize: '1.125rem', lineHeight: '1.7', marginBottom: '1.5rem' }}>
+            <p style={{ color: '#CBD5E1', fontSize: 'clamp(0.95rem, 1.8vw, 1.125rem)', lineHeight: '1.7', marginBottom: '1.5rem' }}>
               All fabrics are coordinated directly from certified spinning and air-jet/rapier weaving mills in the Erode textile cluster. Complete technical spec sheets, lab dips, and physical swatch feelers available for each construction.
             </p>
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
