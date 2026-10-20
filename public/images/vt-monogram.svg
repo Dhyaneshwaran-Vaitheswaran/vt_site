@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <linearGradient id="monogramRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EF4444" />
+      <stop offset="45%" stop-color="#C51E3A" />
+      <stop offset="100%" stop-color="#991B1B" />
+    </linearGradient>
+    <linearGradient id="monogramGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCD34D" />
+      <stop offset="100%" stop-color="#D4AF37" />
+    </linearGradient>
+  </defs>
+
+  <!-- Clean Minimalist VT Interwoven Monogram -->
+  <g id="vt-monogram-symbol">
+    <!-- 'V' Left Diagonal Bar -->
+    <polygon points="35,40 60,40 100,145 80,145" fill="url(#monogramRed)" />
+    <!-- 'V' Right Diagonal Bar -->
+    <polygon points="165,40 140,40 100,145 120,145" fill="url(#monogramRed)" />
+
+    <!-- 'T' Horizontal Crossbar (Weave Beam) -->
+    <rect x="50" y="55" width="100" height="18" rx="3" fill="url(#monogramRed)" />
+    <!-- Fine Gold Thread through crossbar -->
+    <rect x="52" y="62" width="96" height="4" rx="2" fill="url(#monogramGold)" />
+
+    <!-- 'T' Central Vertical Stem (Weft Thread passing through V apex) -->
+    <rect x="91" y="65" width="18" height="110" rx="3" fill="url(#monogramRed)" />
+    <!-- Center Gold Warp Line -->
+    <line x1="100" y1="70" x2="100" y2="170" stroke="url(#monogramGold)" stroke-width="3" stroke-linecap="round" />
+    
+    <!-- Delicate Micro Interlace Accent -->
+    <circle cx="100" cy="64" r="3.5" fill="#FFFFFF" />
+    <circle cx="100" cy="145" r="3" fill="url(#monogramGold)" />
+  </g>
+</svg>

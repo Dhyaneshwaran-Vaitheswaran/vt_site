@@ -1,0 +1,368 @@
+import React, { useState } from 'react';
+import { MapPin, Phone, Mail, MessageSquare, Clock, Building, Send, CheckCircle2, ShieldCheck, FileText } from 'lucide-react';
+import { FABRICS } from '../data/fabrics';
+
+export const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    company: '',
+    email: '',
+    phone: '',
+    fabricInterest: 'General Sourcing Inquiry',
+    quantity: '1000 - 3000 Meters',
+    message: ''
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmitted(true);
+  };
+
+  const handleWhatsAppSend = () => {
+    const text = encodeURIComponent(
+      `*DIRECT INQUIRY — VASANTHAA TEXTILESS*\n\n` +
+      `*Name:* ${formData.name}\n` +
+      `*Company:* ${formData.company}\n` +
+      `*Phone:* ${formData.phone}\n` +
+      `*Email:* ${formData.email}\n` +
+      `*Fabric Program:* ${formData.fabricInterest}\n` +
+      `*Target Volume:* ${formData.quantity}\n` +
+      `*Message:* ${formData.message}`
+    );
+    window.open(`https://wa.me/919786222580?text=${text}`, '_blank');
+  };
+
+  const handleEmailSend = () => {
+    const subject = encodeURIComponent(`B2B Inquiry: ${formData.fabricInterest} - ${formData.company}`);
+    const body = encodeURIComponent(
+      `Vasanthaa Textiless Sourcing Team,\n\n` +
+      `Contact Name: ${formData.name}\n` +
+      `Company: ${formData.company}\n` +
+      `Phone: ${formData.phone}\n` +
+      `Email: ${formData.email}\n` +
+      `Target Fabric: ${formData.fabricInterest}\n` +
+      `Volume: ${formData.quantity}\n\n` +
+      `Message:\n${formData.message}`
+    );
+    window.location.href = `mailto:vasanthaatextiless@gmail.com?subject=${subject}&body=${body}`;
+  };
+
+  return (
+    <div style={{ backgroundColor: '#FBF9F5', paddingBottom: '6rem' }}>
+      
+      {/* Header Banner */}
+      <section style={{
+        backgroundColor: '#0F172A',
+        color: '#FFFFFF',
+        padding: '4.5rem 0',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
+      }}>
+        <div className="container">
+          <div style={{ maxWidth: '800px' }}>
+            <span className="badge badge-gold" style={{ marginBottom: '0.75rem' }}>DIRECT SOURCING DESK</span>
+            <h1 style={{ color: '#FFFFFF', fontSize: '2.75rem', marginBottom: '1.25rem' }}>
+              Connect with Vasanthaa Textiless
+            </h1>
+            <p style={{ color: '#CBD5E1', fontSize: '1.125rem', lineHeight: '1.8', marginBottom: '2rem' }}>
+              Located in the commercial heart of Erode Fort, Tamil Nadu. Reach our sourcing coordinators for fabric samples, lab dips, pricing, and manufacturing coordination.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Main Contact Grid */}
+      <section className="section-padding">
+        <div className="container">
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3.5rem', alignItems: 'flex-start' }}>
+            
+            {/* Left Column: Authentic Office Details */}
+            <div>
+              <span className="section-kicker">ERODE HEADQUARTERS</span>
+              <h2 style={{ fontSize: '2rem', color: '#0F172A', marginBottom: '1.5rem' }}>
+                Visit or Contact Our Central Desk
+              </h2>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '2.5rem' }}>
+                
+                {/* Location */}
+                <div className="b2b-card" style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', padding: '1.5rem' }}>
+                  <MapPin size={24} color="#C51E3A" style={{ flexShrink: 0, marginTop: '0.2rem' }} />
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '1.05rem', color: '#0F172A', marginBottom: '0.25rem' }}>
+                      Registered Office & Central Inspection
+                    </strong>
+                    <p style={{ fontSize: '0.9rem', color: '#475569', lineHeight: '1.6', margin: 0 }}>
+                      3, Vasuki St, 2nd Street,<br />
+                      Erode Fort, Erode,<br />
+                      Tamil Nadu 638001, India
+                    </p>
+                  </div>
+                </div>
+
+                {/* Telephone */}
+                <div className="b2b-card" style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', padding: '1.5rem' }}>
+                  <Phone size={24} color="#D4AF37" style={{ flexShrink: 0, marginTop: '0.2rem' }} />
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '1.05rem', color: '#0F172A', marginBottom: '0.25rem' }}>
+                      Direct Telephone Lines
+                    </strong>
+                    <div style={{ fontSize: '0.95rem', marginBottom: '0.25rem' }}>
+                      <a href="tel:+919786222580" style={{ color: '#0F172A', fontWeight: 700 }}>+91 97862 22580</a> (Primary Desk)
+                    </div>
+                    <div style={{ fontSize: '0.95rem' }}>
+                      <a href="tel:+919842222580" style={{ color: '#475569' }}>+91 98422 22580</a> (Executive Support)
+                    </div>
+                  </div>
+                </div>
+
+                {/* Email */}
+                <div className="b2b-card" style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', padding: '1.5rem' }}>
+                  <Mail size={24} color="#15803D" style={{ flexShrink: 0, marginTop: '0.2rem' }} />
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '1.05rem', color: '#0F172A', marginBottom: '0.25rem' }}>
+                      Official Email
+                    </strong>
+                    <a href="mailto:vasanthaatextiless@gmail.com" style={{ fontSize: '0.95rem', color: '#C51E3A', fontWeight: 600 }}>
+                      vasanthaatextiless@gmail.com
+                    </a>
+                    <div style={{ fontSize: '0.8125rem', color: '#64748B', marginTop: '0.25rem' }}>
+                      Formal RFQs, Purchase Orders & Lab-dip communications
+                    </div>
+                  </div>
+                </div>
+
+                {/* Hours */}
+                <div className="b2b-card" style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', padding: '1.5rem' }}>
+                  <Clock size={24} color="#0F172A" style={{ flexShrink: 0, marginTop: '0.2rem' }} />
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '1.05rem', color: '#0F172A', marginBottom: '0.25rem' }}>
+                      Business Hours
+                    </strong>
+                    <p style={{ fontSize: '0.9rem', color: '#475569', margin: 0 }}>
+                      Monday – Saturday: 9:00 AM – 7:30 PM IST<br />
+                      Sunday: Closed (WhatsApp emergency orders monitored)
+                    </p>
+                  </div>
+                </div>
+
+                {/* Logistics & Commercial Compliance */}
+                <div className="b2b-card" style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', padding: '1.5rem', borderLeft: '4px solid #D4AF37' }}>
+                  <Building size={24} color="#D4AF37" style={{ flexShrink: 0, marginTop: '0.2rem' }} />
+                  <div>
+                    <strong style={{ display: 'block', fontSize: '1.05rem', color: '#0F172A', marginBottom: '0.35rem' }}>
+                      Logistics Hubs & Commercial Terms
+                    </strong>
+                    <div style={{ fontSize: '0.85rem', color: '#475569', lineHeight: '1.6' }}>
+                      <div>• <strong>Transit Seaports:</strong> Tuticorin VOC (~340km) • Chennai (~400km) • Kochi (~260km)</div>
+                      <div>• <strong>Air Cargo:</strong> Coimbatore Int'l Airport CJB (95km)</div>
+                      <div>• <strong>Trade Terms:</strong> Ex-Mill Erode, FOR Domestic, FOB & CIF Worldwide</div>
+                      <div>• <strong>Payment Methods:</strong> Irrevocable LC at Sight, 30% Advance + 70% against BL/Inspection, Wire (RTGS/NEFT/SWIFT)</div>
+                      <div>• <strong>Compliance:</strong> GSTIN Active (Tamil Nadu Code 33) • Registered IEC Active</div>
+                      <div>• <strong>Response SLA:</strong> Formal specifications & pricing schedule within 4 business hours</div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* Fast WhatsApp Box */}
+              <div style={{
+                backgroundColor: '#DCFCE7',
+                border: '1px solid rgba(34, 197, 94, 0.4)',
+                borderRadius: '12px',
+                padding: '1.5rem',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                gap: '1rem',
+                flexWrap: 'wrap'
+              }}>
+                <div>
+                  <strong style={{ color: '#166534', fontSize: '1rem', display: 'block' }}>
+                    Need Immediate Fabric Assistance?
+                  </strong>
+                  <span style={{ fontSize: '0.85rem', color: '#14532D' }}>
+                    Chat directly with our Erode sourcing coordinator.
+                  </span>
+                </div>
+                <a
+                  href="https://wa.me/919786222580?text=Hello%20Vasanthaa%20Textiless,%20I%20have%20an%20inquiry%20regarding%20fabric%20orders."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-whatsapp btn-sm"
+                >
+                  <MessageSquare size={16} /> Open WhatsApp
+                </a>
+              </div>
+
+            </div>
+
+            {/* Right Column: Interactive B2B Contact Form */}
+            <div className="b2b-card" style={{ padding: '2.5rem', backgroundColor: '#FFFFFF' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
+                <FileText size={18} color="#C51E3A" />
+                <span style={{ fontSize: '0.8125rem', fontWeight: 700, color: '#C51E3A', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                  DIRECT INQUIRY & QUOTE FORM
+                </span>
+              </div>
+              <h3 style={{ fontSize: '1.75rem', color: '#0F172A', marginBottom: '1.5rem' }}>
+                Send Us Your Fabric Requirements
+              </h3>
+
+              {submitted ? (
+                <div style={{ textAlign: 'center', padding: '2rem 1rem' }}>
+                  <CheckCircle2 size={48} color="#15803D" style={{ margin: '0 auto 1rem auto' }} />
+                  <h4 style={{ fontSize: '1.35rem', color: '#0F172A', marginBottom: '0.5rem' }}>
+                    Inquiry Details Ready for Dispatch!
+                  </h4>
+                  <p style={{ color: '#64748B', fontSize: '0.9rem', marginBottom: '1.5rem', lineHeight: '1.6' }}>
+                    Thank you <strong>{formData.name}</strong>. Choose your preferred dispatch channel to submit your request directly to Vasanthaa Textiless in Erode Fort.
+                  </p>
+
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                    <button
+                      onClick={handleWhatsAppSend}
+                      className="btn btn-whatsapp"
+                      style={{ width: '100%' }}
+                    >
+                      <MessageSquare size={18} /> Submit Instantly on WhatsApp
+                    </button>
+                    <button
+                      onClick={handleEmailSend}
+                      className="btn btn-primary"
+                      style={{ width: '100%' }}
+                    >
+                      <Mail size={18} /> Submit via Official Email
+                    </button>
+                    <button
+                      onClick={() => setSubmitted(false)}
+                      style={{ background: 'none', border: 'none', color: '#64748B', textDecoration: 'underline', cursor: 'pointer', marginTop: '0.5rem' }}
+                    >
+                      Edit Submission
+                    </button>
+                  </div>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit}>
+                  
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
+                    <div className="form-group">
+                      <label className="form-label">Full Name *</label>
+                      <input
+                        type="text"
+                        className="form-input"
+                        placeholder="e.g. Anand Sharma"
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        required
+                      />
+                    </div>
+
+                    <div className="form-group">
+                      <label className="form-label">Company / Brand *</label>
+                      <input
+                        type="text"
+                        className="form-input"
+                        placeholder="e.g. Radiant Apparel Ltd."
+                        value={formData.company}
+                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
+                    <div className="form-group">
+                      <label className="form-label">Official Work Email *</label>
+                      <input
+                        type="email"
+                        className="form-input"
+                        placeholder="anand@radiant.com"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        required
+                      />
+                    </div>
+
+                    <div className="form-group">
+                      <label className="form-label">WhatsApp / Phone *</label>
+                      <input
+                        type="tel"
+                        className="form-input"
+                        placeholder="+91 98765 43210"
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1rem' }}>
+                    <div className="form-group">
+                      <label className="form-label">Fabric Category of Interest</label>
+                      <select
+                        className="form-select"
+                        value={formData.fabricInterest}
+                        onChange={(e) => setFormData({ ...formData, fabricInterest: e.target.value })}
+                      >
+                        <option value="Cotton Twills & Drills">Cotton Twills & Drills</option>
+                        <option value="Linen & Cotton Blends">Linen & Cotton Blends</option>
+                        <option value="Fluid Viscose & Rayon">Fluid Viscose & Rayon</option>
+                        <option value="Double Cloth & Dobby">Double Cloth & Dobby Weaves</option>
+                        <option value="GOTS Organic Cottons">GOTS Organic Cottons</option>
+                        <option value="Full Garmenting Coordination">Full Garmenting Coordination</option>
+                        <option value="Bespoke Weave Development">Bespoke Weave Development</option>
+                      </select>
+                    </div>
+
+                    <div className="form-group">
+                      <label className="form-label">Estimated Order Quantity</label>
+                      <select
+                        className="form-select"
+                        value={formData.quantity}
+                        onChange={(e) => setFormData({ ...formData, quantity: e.target.value })}
+                      >
+                        <option value="100 - 300 Meters (Sampling / Proto)">100 - 300 Meters (Sampling)</option>
+                        <option value="1000 - 3000 Meters (Trial Bulk)">1,000 - 3,000 Meters</option>
+                        <option value="5000 - 15000 Meters (Production Run)">5,000 - 15,000 Meters</option>
+                        <option value="20000+ Meters (Annual Contract)">20,000+ Meters</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div className="form-group">
+                    <label className="form-label">Specifications, Colors, or Target Delivery Dates *</label>
+                    <textarea
+                      className="form-textarea"
+                      placeholder="Please include target GSM, pantone shades, weave constructions, or specific performance finish requirements..."
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      required
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="btn btn-primary btn-lg"
+                    style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}
+                  >
+                    <Send size={18} /> Submit Sourcing Requirement
+                  </button>
+
+                  <div style={{ textAlign: 'center', marginTop: '1rem', fontSize: '0.75rem', color: '#64748B' }}>
+                    🔒 All buyer specifications and proprietary designs remain strictly confidential.
+                  </div>
+
+                </form>
+              )}
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+    </div>
+  );
+};
