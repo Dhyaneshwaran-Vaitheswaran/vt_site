@@ -12,6 +12,7 @@ export const VTMonogram = ({ size = 38, variant = 'dark' }) => {
 
   return (
     <div 
+      className="vt-monogram-emblem"
       style={{
         width: `${size}px`,
         height: `${size}px`,
@@ -83,12 +84,12 @@ export const VTLogo = ({
   const subColor = isDarkCanvas ? '#D4AF37' : '#C51E3A';
 
   return (
-    <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.65rem', userSelect: 'none' }}>
+    <div className="vt-logo-wrap" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.65rem', userSelect: 'none' }}>
       <VTMonogram size={size} variant={variant} />
-      <div>
+      <div className="vt-logo-text-block">
         <div className="vt-logo-title" style={{
           fontFamily: "'Playfair Display', Georgia, serif",
-          fontSize: 'clamp(1.05rem, 3vw, 1.28rem)',
+          fontSize: 'clamp(0.92rem, 3.5vw, 1.28rem)',
           fontWeight: 800,
           letterSpacing: '-0.015em',
           color: textColor,

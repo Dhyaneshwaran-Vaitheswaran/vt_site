@@ -86,29 +86,18 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
 
       {/* Main Clean Architectural Header */}
       <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
-        <div className="container" style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          padding: '0.95rem 1.5rem',
-          minHeight: '74px'
-        }}>
+        <div className="container header-container">
           
           {/* Official Simplistic & Unique VT Trademark Logo */}
           <div 
             onClick={() => handleNavClick('home')} 
-            style={{
-              cursor: 'pointer',
-              userSelect: 'none',
-              flexShrink: 0,
-              marginRight: '2rem'
-            }}
+            className="header-logo-wrap"
           >
             <VTLogo size={38} variant="dark" />
           </div>
 
           {/* Desktop Navigation Links — Clean, Single-Line, Generous Spacing */}
-          <nav className="desktop-nav" style={{ flex: 1, display: 'none' }}>
+          <nav className="desktop-nav">
             <ul style={{
               display: 'flex',
               alignItems: 'center',
@@ -162,53 +151,18 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
           </nav>
 
           {/* Right Action Controls */}
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.75rem',
-            marginLeft: '2.5rem',
-            flexShrink: 0
-          }}>
+          <div className="header-actions">
             
             {/* Swatch Requisition Tray */}
             <button
               onClick={onOpenSwatchDrawer}
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.35rem',
-                backgroundColor: swatchCount > 0 ? '#F1F5F9' : 'transparent',
-                border: '1px solid #CBD5E1',
-                borderRadius: '6px',
-                padding: '0.5rem 0.75rem',
-                fontSize: '0.8125rem',
-                fontWeight: 600,
-                color: '#1E293B',
-                cursor: 'pointer',
-                transition: 'all 150ms ease'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.borderColor = '#94A3B8';
-                e.currentTarget.style.backgroundColor = '#F8FAFC';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.borderColor = '#CBD5E1';
-                e.currentTarget.style.backgroundColor = swatchCount > 0 ? '#F1F5F9' : 'transparent';
-              }}
+              className="header-swatch-btn"
               title="View fabric swatch sample tray"
             >
-              <ShoppingBag size={15} color="#0F172A" />
+              <ShoppingBag size={16} color="#0F172A" />
               <span className="hide-on-tablet">Swatches</span>
               {swatchCount > 0 ? (
-                <span style={{
-                  backgroundColor: '#C51E3A',
-                  color: '#FFFFFF',
-                  fontSize: '0.6875rem',
-                  fontWeight: 700,
-                  padding: '0.1rem 0.45rem',
-                  borderRadius: '9999px',
-                  marginLeft: '0.15rem'
-                }}>
+                <span className="swatch-badge">
                   {swatchCount}
                 </span>
               ) : null}
@@ -218,15 +172,6 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
             <button 
               onClick={() => onOpenRFQ(null)}
               className="btn btn-primary btn-sm header-quote-btn"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '0.35rem',
-                padding: '0.55rem 1rem',
-                fontSize: '0.8125rem',
-                fontWeight: 600,
-                borderRadius: '6px'
-              }}
             >
               <span className="quote-text-full">Request Quote</span>
               <span className="quote-text-short">Quote</span>
@@ -237,16 +182,8 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="mobile-menu-btn"
-              style={{
-                background: 'none',
-                border: '1px solid #CBD5E1',
-                borderRadius: '6px',
-                padding: '0.45rem',
-                cursor: 'pointer',
-                display: 'none',
-                color: '#0F172A'
-              }}
               aria-label="Toggle Navigation Menu"
+              aria-expanded={mobileMenuOpen}
             >
               {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
             </button>
@@ -256,13 +193,8 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div style={{
-            backgroundColor: '#FFFFFF',
-            borderTop: '1px solid #E2E8F0',
-            padding: '1.25rem 1.5rem',
-            boxShadow: '0 12px 28px rgba(0,0,0,0.08)'
-          }}>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.5rem', margin: 0, padding: 0 }}>
+          <div className="mobile-nav-drawer">
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.4rem', margin: 0, padding: 0 }}>
               <li style={{ borderBottom: '1px solid #F1F5F9' }}>
                 <button
                   onClick={() => handleNavClick('home')}
@@ -277,11 +209,12 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
                     color: activePage === 'home' ? '#C51E3A' : '#0F172A',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'space-between'
+                    justifyContent: 'space-between',
+                    cursor: 'pointer'
                   }}
                 >
                   <span>Home</span>
-                  <ChevronRight size={16} color="#94A3B8" />
+                  <ChevronRight size={16} color={activePage === 'home' ? '#C51E3A' : '#94A3B8'} />
                 </button>
               </li>
               {navItems.map(item => (
@@ -299,7 +232,8 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
                       color: activePage === item.id ? '#C51E3A' : '#0F172A',
                       display: 'flex',
                       alignItems: 'center',
-                      justifyContent: 'space-between'
+                      justifyContent: 'space-between',
+                      cursor: 'pointer'
                     }}
                   >
                     <span>{item.label}</span>
@@ -307,15 +241,41 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
                   </button>
                 </li>
               ))}
-              <li style={{ paddingTop: '0.75rem' }}>
+              <li style={{ paddingTop: '0.85rem', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onOpenRFQ(null);
+                  }}
+                  className="btn btn-primary"
+                  style={{ width: '100%', justifyContent: 'center', padding: '0.75rem 1rem' }}
+                >
+                  <ArrowUpRight size={16} /> Request Bulk Quotation
+                </button>
                 <a
-                  href="https://wa.me/919786222580"
+                  href="https://wa.me/919786222580?text=Hello%20Vasanthaa%20Textiless,%20I%20have%20an%20inquiry%20regarding%20bulk%20fabric%20sourcing."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-whatsapp"
-                  style={{ width: '100%', justifyContent: 'center' }}
+                  style={{ width: '100%', justifyContent: 'center', padding: '0.75rem 1rem' }}
                 >
-                  <MessageSquare size={16} /> Chat on WhatsApp Desk
+                  <MessageSquare size={16} /> WhatsApp Desk
+                </a>
+                <a 
+                  href="tel:+919786222580"
+                  style={{ 
+                    display: 'flex', 
+                    alignItems: 'center', 
+                    justifyContent: 'center', 
+                    gap: '0.4rem', 
+                    color: '#475569', 
+                    fontSize: '0.85rem', 
+                    textDecoration: 'none', 
+                    fontWeight: 600,
+                    paddingTop: '0.25rem' 
+                  }}
+                >
+                  <Phone size={14} color="#C51E3A" /> Direct Hotline: +91 97862 22580
                 </a>
               </li>
             </ul>
@@ -324,20 +284,203 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
       </header>
 
       <style>{`
+        /* Header Container */
+        .header-container {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0.85rem 1.5rem;
+          min-height: 72px;
+          box-sizing: border-box;
+        }
+
+        /* Logo Wrapper */
+        .header-logo-wrap {
+          cursor: pointer;
+          user-select: none;
+          display: flex;
+          align-items: center;
+          flex-shrink: 1;
+          min-width: 0;
+          margin-right: 2rem;
+        }
+
+        /* Desktop Nav */
+        .desktop-nav {
+          flex: 1;
+          display: none;
+        }
+
+        /* Header Actions */
+        .header-actions {
+          display: flex;
+          align-items: center;
+          gap: 0.75rem;
+          margin-left: 2.5rem;
+          flex-shrink: 0;
+        }
+
+        /* Swatches Button */
+        .header-swatch-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.35rem;
+          background-color: transparent;
+          border: 1px solid #CBD5E1;
+          border-radius: 6px;
+          padding: 0.5rem 0.75rem;
+          font-size: 0.8125rem;
+          font-weight: 600;
+          color: #1E293B;
+          cursor: pointer;
+          transition: all 150ms ease;
+          flex-shrink: 0;
+        }
+        .header-swatch-btn:hover {
+          border-color: #94A3B8;
+          background-color: #F8FAFC;
+        }
+
+        .swatch-badge {
+          background-color: #C51E3A;
+          color: #FFFFFF;
+          font-size: 0.6875rem;
+          font-weight: 700;
+          padding: 0.1rem 0.45rem;
+          border-radius: 9999px;
+          margin-left: 0.15rem;
+        }
+
+        /* Quote Button */
+        .header-quote-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.35rem;
+          padding: 0.55rem 1rem;
+          font-size: 0.8125rem;
+          font-weight: 600;
+          border-radius: 6px;
+          flex-shrink: 0;
+        }
+
+        /* Mobile Hamburger Button */
+        .mobile-menu-btn {
+          display: none;
+          align-items: center;
+          justify-content: center;
+          width: 38px;
+          height: 38px;
+          min-width: 38px;
+          background-color: #FFFFFF;
+          border: 1px solid #CBD5E1;
+          border-radius: 6px;
+          color: #0F172A;
+          cursor: pointer;
+          padding: 0;
+          flex-shrink: 0;
+          transition: all 150ms ease;
+        }
+        .mobile-menu-btn:hover {
+          background-color: #F8FAFC;
+          border-color: #94A3B8;
+          color: #C51E3A;
+        }
+
+        /* Mobile Nav Drawer */
+        .mobile-nav-drawer {
+          background-color: #FFFFFF;
+          border-top: 1px solid #E2E8F0;
+          padding: 1.25rem 1.5rem;
+          box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+          animation: drawerSlide 200ms ease-out;
+        }
+
+        @keyframes drawerSlide {
+          from { opacity: 0; transform: translateY(-6px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Breakpoints */
         @media (min-width: 960px) {
           .desktop-nav { display: block !important; }
           .mobile-menu-btn { display: none !important; }
         }
+
         @media (max-width: 959px) {
           .desktop-nav { display: none !important; }
-          .mobile-menu-btn { display: block !important; }
-          .hide-on-mobile { display: none !important; }
+          .mobile-menu-btn { display: inline-flex !important; }
+          .header-container {
+            padding: 0.65rem 1rem;
+            min-height: 62px;
+          }
+          .header-logo-wrap {
+            margin-right: 0.5rem;
+          }
+          .header-actions {
+            margin-left: auto;
+            gap: 0.5rem;
+          }
+          .header-swatch-btn {
+            padding: 0.42rem 0.55rem;
+            font-size: 0.8rem;
+            min-height: 36px;
+          }
+          .header-quote-btn {
+            padding: 0.45rem 0.75rem;
+            font-size: 0.75rem;
+          }
         }
+
         @media (max-width: 767px) {
           .top-utility-bar { display: none !important; }
         }
+
         @media (max-width: 1100px) {
           .hide-on-tablet { display: none !important; }
+        }
+
+        @media (max-width: 480px) {
+          .header-container {
+            padding: 0.55rem 0.75rem;
+            min-height: 58px;
+          }
+          .header-actions {
+            gap: 0.4rem;
+          }
+          .header-quote-btn {
+            padding: 0.4rem 0.6rem;
+            font-size: 0.72rem;
+            gap: 0.2rem;
+          }
+        }
+
+        /* Foldables (Samsung Galaxy Z Fold, etc. 280px - 359px) */
+        @media (max-width: 359px) {
+          .header-container {
+            padding: 0.45rem 0.5rem;
+            min-height: 54px;
+          }
+          .header-logo-wrap {
+            margin-right: 0.25rem;
+          }
+          .header-actions {
+            gap: 0.3rem;
+          }
+          .header-swatch-btn {
+            padding: 0.35rem 0.45rem;
+            min-height: 34px;
+          }
+          .header-quote-btn {
+            display: none !important;
+          }
+          .mobile-menu-btn {
+            width: 34px;
+            height: 34px;
+            min-width: 34px;
+          }
+          .mobile-nav-drawer {
+            padding: 1rem 0.75rem;
+          }
         }
       `}</style>
     </>
