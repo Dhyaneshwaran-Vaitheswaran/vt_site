@@ -47,8 +47,12 @@ export const QualityAssurance = ({ onOpenRFQ }) => {
           <div className="two-col-layout-responsive">
             <div>
               <img
-                src="/images/fabric-inspection.jpg"
+                src="/images/fabric-inspection.webp"
                 alt="ASTM D5430 Fabric Inspection Station with Illuminated Light Table"
+                loading="lazy"
+                decoding="async"
+                width="800"
+                height="600"
                 style={{
                   width: '100%',
                   borderRadius: '16px',

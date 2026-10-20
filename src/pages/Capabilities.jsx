@@ -93,8 +93,12 @@ export const Capabilities = ({ onOpenRFQ }) => {
 
                 <div style={{ order: idx % 2 === 1 ? 1 : 2 }}>
                   <img
-                    src={idx === 0 ? "/images/yarn-cones.jpg" : idx === 4 ? "/images/fabric-inspection.jpg" : "/images/hero-craft.jpg"}
+                    src={idx === 0 ? "/images/yarn-cones.webp" : idx === 4 ? "/images/fabric-inspection.webp" : "/images/hero-craft.webp"}
                     alt={cap.title}
+                    loading="lazy"
+                    decoding="async"
+                    width="800"
+                    height="600"
                     style={{
                       width: '100%',
                       height: 'clamp(240px, 35vw, 340px)',

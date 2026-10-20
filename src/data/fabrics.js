@@ -22,7 +22,7 @@ export const FABRICS = [
       "High tensile and tear strength adhering to ISO standards",
       "Pantone / TCX color matching with lab dip approvals"
     ],
-    image: "/images/fabrics/cotton-twill.jpg",
+    image: "/images/fabrics/cotton-twill.webp",
     badge: "Core Specialty",
     description: "Our signature cotton twill is coordinated across state-of-the-art airjet weaving setups in the Erode textile cluster. Engineered with a balanced warp/weft density, it achieves exceptional dimensional stability and drape for casual and workwear brands."
   },
@@ -46,7 +46,7 @@ export const FABRICS = [
       "Vat dyed for superior wash & perspiration fastness",
       "Complies with institutional tender standards"
     ],
-    image: "/images/fabrics/cotton-drill.jpg",
+    image: "/images/fabrics/cotton-drill.webp",
     badge: "High Durability",
     description: "Engineered specifically for institutional uniforms and industrial apparel. Woven from durable ring-spun yarns with strict warp tension management, ensuring zero seam slippage and prolonged garment life."
   },
@@ -70,7 +70,7 @@ export const FABRICS = [
       "Enzyme-washed for immediate buttery drape without scratchiness",
       "Eco-friendly processing with certified non-toxic dyestuffs"
     ],
-    image: "/images/fabrics/linen-dobby.jpg",
+    image: "/images/fabrics/linen-dobby.webp",
     badge: "Export Favorite",
     description: "Combining the cool, moisture-wicking properties of natural European flax linen with the softness of combed South Indian cotton. The dobby loom creates a subtle, light-catching geometric relief that elevates high-fashion collections."
   },
@@ -94,7 +94,7 @@ export const FABRICS = [
       "High breathability and gentle skin contact",
       "Controlled shrinkage with chemical sanforization"
     ],
-    image: "/images/fabrics/viscose-rayon.jpg",
+    image: "/images/fabrics/viscose-rayon.webp",
     badge: "High Fashion",
     description: "A luxury cellulosic fabric coordinated with precision winding and tension-controlled rapier looms to prevent yarn distortion. Unsurpassed in drape, it takes brilliant reactive dyes and intricate digital prints effortlessly."
   },
@@ -118,7 +118,7 @@ export const FABRICS = [
       "Substantial body and structured drape",
       "Exquisite tailoring finish requiring no internal garment lining"
     ],
-    image: "/images/fabrics/double-cloth.jpg",
+    image: "/images/fabrics/double-cloth.webp",
     badge: "Specialty Weave",
     description: "An advanced double-beam weaving technique that binds two distinct cloths together during the loom cycle. Perfect for modern unlined overshirts, shackets, and reversible streetwear garments."
   },
@@ -142,7 +142,7 @@ export const FABRICS = [
       "Hypoallergenic and ultra-gentle on sensitive infant skin",
       "OEKO-TEX Class 1 compliant processing standard"
     ],
-    image: "/images/fabrics/cotton-double-gauze.jpg",
+    image: "/images/fabrics/cotton-double-gauze.webp",
     badge: "Eco & Baby Safe",
     description: "Two fine, breathable cotton gauzes tied together at regular intervals with invisible binding threads. Once washed, the fabric takes on a charming, puffy textured crinkle beloved by organic kidswear and resort brands."
   },
@@ -166,7 +166,7 @@ export const FABRICS = [
       "Treated with durable press finish for wrinkle resistance",
       "Superb dimensional stability through 50+ industrial washes"
     ],
-    image: "/images/fabrics/fine-poplin.jpg",
+    image: "/images/fabrics/fine-poplin.webp",
     badge: "Classic Essential",
     description: "The gold standard in executive shirting. Produced with high-speed air-jet looms for impeccable uniform density, followed by liquid ammonia and mercerization treatments for exceptional luster."
   },
@@ -190,7 +190,7 @@ export const FABRICS = [
       "Naturally non-iron and travel-ready",
       "Available in classic blue-white micro-stripes and bespoke custom checks"
     ],
-    image: "/images/fabrics/seersucker.jpg",
+    image: "/images/fabrics/seersucker.webp",
     badge: "Heritage Resort",
     description: "Authentic puckered seersucker crafted using dual-beam tension control. One beam is held slack while the other is kept taut, creating authentic, wash-permanent crinkled stripes that never flatten."
   },
@@ -214,7 +214,7 @@ export const FABRICS = [
       "Vat dye recipe ensures zero color bleeding in laundering",
       "Bespoke cad pattern generation from buyer swatch or digital artwork"
     ],
-    image: "/images/fabrics/yarn-dyed-checks.jpg",
+    image: "/images/fabrics/yarn-dyed-checks.webp",
     badge: "High Colorfastness",
     description: "Every yarn cone is precision package-dyed with high-washfast reactive or vat dyes before being warped into checks, tattersalls, buffalos, and tartans. Flawless pattern symmetry ready for garment cutting tables."
   },
@@ -238,7 +238,7 @@ export const FABRICS = [
       "Full supply chain traceability from farm lot to fabric roll",
       "Free of formaldehyde, heavy metals, and toxic sizing agents"
     ],
-    image: "/images/fabrics/organic-cotton.jpg",
+    image: "/images/fabrics/organic-cotton.webp",
     badge: "100% Sustainable",
     description: "Pure cotton grown without synthetic fertilizers or pesticides. We coordinate its spinning, weaving, and non-toxic processing across audited facilities, meeting the stringent environmental criteria of modern ethical labels."
   },
@@ -262,7 +262,7 @@ export const FABRICS = [
       "Exceptional washability and handfeel that softens with age",
       "Custom piece-dyeing in seasonal trend color palettes"
     ],
-    image: "/images/fabrics/cotton-linen-blend.jpg",
+    image: "/images/fabrics/cotton-linen-blend.webp",
     badge: "Summer Staple",
     description: "An intimate blend of natural European flax and combed cotton. It bridges the gap between pure linen's artisanal texture and cotton's approachable ease of maintenance."
   },
@@ -286,7 +286,7 @@ export const FABRICS = [
       "Flawless fabric flatness and zero bow/skew",
       "Excellent collar and cuff press-holding capacity"
     ],
-    image: "/images/fabrics/dobby-geometric.jpg",
+    image: "/images/fabrics/dobby-geometric.webp",
     badge: "Designer Choice",
     description: "Woven on electronic dobby looms that command multiple harness shafts to create intricate geometric micro-reliefs. Favored by apparel brands for standout shirting and structured formalwear."
   }

@@ -265,8 +265,12 @@ export const About = ({ onOpenRFQ }) => {
                   boxShadow: '0 8px 24px rgba(0,0,0,0.2)'
                 }}>
                   <img 
-                    src="/images/vt-monogram-icon.jpg" 
+                    src="/images/vt-monogram-icon.webp" 
                     alt="Official VT Trademark Monogram"
+                    loading="lazy"
+                    decoding="async"
+                    width="200"
+                    height="200"
                     style={{ width: '100%', height: 'auto', borderRadius: '8px', marginBottom: '0.75rem' }} 
                   />
                   <div style={{ fontFamily: 'Playfair Display, serif', fontWeight: 800, color: '#0F172A', fontSize: '1.1rem' }}>

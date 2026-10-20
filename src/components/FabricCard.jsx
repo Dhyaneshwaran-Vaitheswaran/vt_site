@@ -10,6 +10,10 @@ export const FabricCard = ({ fabric, onSelectFabric, onAddSwatch, isSwatchAdded,
         <img 
           src={fabric.image} 
           alt={`${fabric.name} woven fabric swatch`}
+          loading="lazy"
+          decoding="async"
+          width="600"
+          height="448"
           style={{
             width: '100%',
             height: '100%',

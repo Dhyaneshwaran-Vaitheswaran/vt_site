@@ -72,6 +72,11 @@ export const FabricDetail = ({ fabric, onBack, onAddSwatch, isSwatchAdded, onOpe
                   src={fabric.image}
                   alt={`${fabric.name} high-res woven fabric swatch`}
                   className="detail-img-responsive"
+                  width="1200"
+                  height="896"
+                  fetchPriority="high"
+                  loading="eager"
+                  decoding="async"
                 />
                 <div style={{
                   position: 'absolute',

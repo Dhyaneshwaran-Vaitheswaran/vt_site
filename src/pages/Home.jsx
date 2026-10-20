@@ -125,9 +125,14 @@ export const Home = ({ setActivePage, onSelectFabric, onAddSwatch, swatches, onO
                 position: 'relative'
               }}>
                 <img
-                  src="/images/hero-craft.jpg"
+                  src="/images/hero-craft.webp"
                   alt="Vasanthaa Textiless authentic twill and dobby woven fabric craftsmanship"
                   className="hero-img-responsive"
+                  width="1376"
+                  height="768"
+                  fetchPriority="high"
+                  loading="eager"
+                  decoding="async"
                 />
 
                 {/* Official VT Trademark Stamp */}
@@ -449,9 +454,13 @@ export const Home = ({ setActivePage, onSelectFabric, onAddSwatch, swatches, onO
 
             <div>
               <img
-                src={activeCapabilityStep === 0 ? "/images/yarn-cones.jpg" : activeCapabilityStep === 4 ? "/images/fabric-inspection.jpg" : "/images/hero-craft.jpg"}
+                src={activeCapabilityStep === 0 ? "/images/yarn-cones.webp" : activeCapabilityStep === 4 ? "/images/fabric-inspection.webp" : "/images/hero-craft.webp"}
                 alt={CAPABILITIES[activeCapabilityStep].title}
                 className="stage-img-responsive"
+                width="800"
+                height="600"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -553,8 +562,12 @@ export const Home = ({ setActivePage, onSelectFabric, onAddSwatch, swatches, onO
             
             <div>
               <img
-                src="/images/fabric-inspection.jpg"
+                src="/images/fabric-inspection.webp"
                 alt="ASTM D5430 4-point textile inspection station in Erode"
+                width="800"
+                height="600"
+                loading="lazy"
+                decoding="async"
                 style={{
                   width: '100%',
                   borderRadius: '16px',
