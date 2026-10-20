@@ -154,7 +154,7 @@ export const Footer = ({ setActivePage, onOpenRFQ }) => {
               </li>
               <li>
                 <button onClick={() => scrollTo('resources')} style={{ background: 'none', border: 'none', color: '#CBD5E1', cursor: 'pointer', textAlign: 'left', padding: 0 }}>
-                  B2B Fabric Sourcing Guides
+                  B2B Sourcing FAQs
                 </button>
               </li>
             </ul>

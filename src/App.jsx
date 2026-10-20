@@ -114,8 +114,8 @@ export function App() {
       desc = 'Founded in 1998 by Mr. Vaitheswaran in Erode Fort. Decades of mastery in woven textile sourcing, technical coordination, and trusted supply for garment manufacturers worldwide.';
       canonical = 'https://vasanthaatextiless.in/about';
     } else if (activePage === 'resources') {
-      title = 'Textile Sourcing Tools & Fabric Yield Calculators | Vasanthaa Textiless';
-      desc = 'B2B procurement tools: GSM to linear meter calculators, woven fabric inspection checklists, and technical buyer guides for garment exporters and sourcing heads.';
+      title = 'B2B Sourcing FAQs & Procurement Standards | Vasanthaa Textiless Erode';
+      desc = 'Answers to common commercial questions regarding MOQs, lab dips, payments, and our centralized weaving & dyeing coordination in Erode.';
       canonical = 'https://vasanthaatextiless.in/resources';
     } else if (activePage === 'contact') {
       title = 'Contact Vasanthaa Textiless | Erode Fort Facility & RFQ Desk';

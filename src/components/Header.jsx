@@ -19,7 +19,7 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
     { id: 'capabilities', label: 'Capabilities' },
     { id: 'quality', label: 'Quality Assurance' },
     { id: 'about', label: 'About Us' },
-    { id: 'resources', label: 'Sourcing Guides' },
+    { id: 'resources', label: 'Sourcing FAQs' },
     { id: 'contact', label: 'Contact & Quote' }
   ];
 
@@ -31,61 +31,52 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
 
   return (
     <>
-      {/* Refined Industrial Utility Strip */}
-      <div style={{
-        backgroundColor: '#0F172A',
+      {/* Sleek Minimal Utility Strip */}
+      <div className="top-utility-bar" style={{
+        backgroundColor: '#0B1120',
         color: '#94A3B8',
         fontSize: '0.75rem',
-        letterSpacing: '0.03em',
+        letterSpacing: '0.04em',
         borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
-        padding: '0.4rem 0'
+        padding: '0.45rem 0'
       }}>
         <div className="container" style={{
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          flexWrap: 'wrap',
-          gap: '0.75rem'
+          gap: '1rem'
         }}>
-          {/* Left: Origin, Hub & Commercial Status */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
+          {/* Left: Origin & Heritage */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
             <span style={{
               color: '#D4AF37',
               fontWeight: 700,
+              fontSize: '0.6875rem',
               letterSpacing: '0.08em',
-              textTransform: 'uppercase',
-              fontSize: '0.6875rem'
+              textTransform: 'uppercase'
             }}>
               ESTD. 1998
             </span>
-            <span style={{ color: 'rgba(255, 255, 255, 0.2)' }}>•</span>
-            <span style={{ color: '#CBD5E1' }}>Erode Fort, Tamil Nadu</span>
-            <span style={{ color: 'rgba(255, 255, 255, 0.2)' }}>•</span>
-            <span style={{ color: '#94A3B8' }} className="hide-on-mobile">Central Textile Sourcing & Production • GST & IEC Registered • Mon–Sat 9AM–7:30PM IST</span>
+            <span style={{ color: 'rgba(255, 255, 255, 0.25)' }}>•</span>
+            <span style={{ color: '#E2E8F0', fontWeight: 500 }}>Erode Fort, Tamil Nadu</span>
+            <span style={{ color: 'rgba(255, 255, 255, 0.25)' }} className="hide-on-tablet">•</span>
+            <span style={{ color: '#94A3B8' }} className="hide-on-tablet">Central Textile Sourcing & Production</span>
           </div>
 
-          {/* Right: Direct B2B Contact Links */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', fontSize: '0.75rem', flexWrap: 'wrap' }}>
-            <a 
-              href="mailto:vasanthaatextiless@gmail.com"
-              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', color: '#CBD5E1', fontWeight: 500 }}
-              className="hide-on-mobile"
-            >
-              <Mail size={12} color="#D4AF37" /> vasanthaatextiless@gmail.com
-            </a>
-            <span style={{ color: 'rgba(255, 255, 255, 0.2)' }} className="hide-on-mobile">|</span>
+          {/* Right: Direct Desk Hotlines */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', fontSize: '0.75rem' }}>
             <a 
               href="tel:+919786222580" 
-              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', color: '#E2E8F0', fontWeight: 500 }}
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', color: '#E2E8F0', textDecoration: 'none', fontWeight: 500 }}
             >
               <Phone size={12} color="#D4AF37" /> +91 97862 22580
             </a>
-            <span style={{ color: 'rgba(255, 255, 255, 0.2)' }}>|</span>
+            <span style={{ color: 'rgba(255, 255, 255, 0.2)' }}>•</span>
             <a 
               href="https://wa.me/919786222580?text=Hello%20Vasanthaa%20Textiless,%20I%20have%20an%20inquiry%20regarding%20bulk%20fabric%20sourcing." 
               target="_blank" 
               rel="noopener noreferrer" 
-              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', color: '#25D366', fontWeight: 600 }}
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', color: '#25D366', textDecoration: 'none', fontWeight: 600 }}
             >
               <MessageSquare size={12} /> WhatsApp Desk
             </a>
@@ -99,8 +90,8 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          padding: '0.75rem 1rem',
-          minHeight: '66px'
+          padding: '0.95rem 1.5rem',
+          minHeight: '74px'
         }}>
           
           {/* Official Simplistic & Unique VT Trademark Logo */}
@@ -110,7 +101,7 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
               cursor: 'pointer',
               userSelect: 'none',
               flexShrink: 0,
-              marginRight: '1rem'
+              marginRight: '2rem'
             }}
           >
             <VTLogo size={38} variant="dark" />
@@ -121,7 +112,7 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
             <ul style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '1.75rem',
+              gap: '2rem',
               listStyle: 'none',
               margin: 0,
               padding: 0
@@ -340,6 +331,9 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
           .desktop-nav { display: none !important; }
           .mobile-menu-btn { display: block !important; }
           .hide-on-mobile { display: none !important; }
+        }
+        @media (max-width: 767px) {
+          .top-utility-bar { display: none !important; }
         }
         @media (max-width: 1100px) {
           .hide-on-tablet { display: none !important; }
