@@ -454,11 +454,11 @@ export const Home = ({ setActivePage, onSelectFabric, onAddSwatch, swatches, onO
 
             <div>
               <img
-                src={activeCapabilityStep === 0 ? "/images/yarn-cones.webp" : activeCapabilityStep === 4 ? "/images/fabric-inspection.webp" : "/images/hero-craft.webp"}
-                alt={CAPABILITIES[activeCapabilityStep].title}
+                src={CAPABILITIES[activeCapabilityStep].image}
+                alt={CAPABILITIES[activeCapabilityStep].imageAlt || CAPABILITIES[activeCapabilityStep].title}
                 className="stage-img-responsive"
-                width="800"
-                height="600"
+                width="1376"
+                height="768"
                 loading="lazy"
                 decoding="async"
               />

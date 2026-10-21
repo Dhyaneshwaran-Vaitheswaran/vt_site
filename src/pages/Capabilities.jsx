@@ -93,12 +93,12 @@ export const Capabilities = ({ onOpenRFQ }) => {
 
                 <div style={{ order: idx % 2 === 1 ? 1 : 2 }}>
                   <img
-                    src={idx === 0 ? "/images/yarn-cones.webp" : idx === 4 ? "/images/fabric-inspection.webp" : "/images/hero-craft.webp"}
-                    alt={cap.title}
+                    src={cap.image}
+                    alt={cap.imageAlt || cap.title}
                     loading="lazy"
                     decoding="async"
-                    width="800"
-                    height="600"
+                    width="1376"
+                    height="768"
                     style={{
                       width: '100%',
                       height: 'clamp(240px, 35vw, 340px)',
@@ -124,6 +124,33 @@ export const Capabilities = ({ onOpenRFQ }) => {
             <p className="section-desc">
               {GARMENTING_COORDINATION.description}
             </p>
+          </div>
+
+          {/* Garmenting Coordination Facility Banner */}
+          <div style={{
+            position: 'relative',
+            borderRadius: '16px',
+            overflow: 'hidden',
+            marginBottom: '2.5rem',
+            boxShadow: '0 16px 36px rgba(0,0,0,0.08)',
+            border: '1px solid #E2E8F0',
+            maxHeight: '380px'
+          }}>
+            <img
+              src={GARMENTING_COORDINATION.image}
+              alt={GARMENTING_COORDINATION.imageAlt}
+              loading="lazy"
+              decoding="async"
+              width="1376"
+              height="768"
+              style={{
+                width: '100%',
+                height: '100%',
+                maxHeight: '380px',
+                objectFit: 'cover',
+                display: 'block'
+              }}
+            />
           </div>
 
           <div className="grid-4">
