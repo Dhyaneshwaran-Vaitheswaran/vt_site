@@ -252,6 +252,40 @@ export const GarmentDetail = ({ garment, onBack, onOpenRFQ, onSelectGarment, onS
 
           </div>
 
+          {/* Technical OEM Apparel FAQs */}
+          {garment.faqs && garment.faqs.length > 0 && (
+            <div style={{ marginTop: '4rem', paddingTop: '3rem', borderTop: '1px solid #E2E8F0' }}>
+              <div style={{ maxWidth: '840px' }}>
+                <span className="badge badge-red" style={{ marginBottom: '0.75rem', backgroundColor: '#FEF2F2', color: '#C51E3A' }}>
+                  OEM MANUFACTURING & SPECIFICATION FAQS
+                </span>
+                <h3 style={{ fontSize: 'clamp(1.4rem, 2.5vw, 1.85rem)', color: '#0A0A0A', marginBottom: '1.5rem', fontWeight: 800 }}>
+                  Frequently Asked Questions About {garment.name}
+                </h3>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  {garment.faqs.map((faq, fIdx) => (
+                    <div
+                      key={fIdx}
+                      style={{
+                        backgroundColor: '#FAFAFA',
+                        border: '1px solid #E4E4E7',
+                        borderRadius: '12px',
+                        padding: '1.25rem 1.5rem'
+                      }}
+                    >
+                      <h4 style={{ fontSize: '1rem', color: '#0A0A0A', fontWeight: 700, marginBottom: '0.5rem' }}>
+                        {faq.q}
+                      </h4>
+                      <p style={{ fontSize: '0.925rem', color: '#52525B', lineHeight: '1.7', margin: 0 }}>
+                        {faq.a}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* Related Garments Section */}
           <div style={{ marginTop: '5rem', paddingTop: '3rem', borderTop: '1px solid #E2E8F0' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '2rem', flexWrap: 'wrap', gap: '1rem' }}>

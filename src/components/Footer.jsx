@@ -81,85 +81,125 @@ export const Footer = ({ setActivePage, onOpenRFQ }) => {
             </div>
           </div>
 
-          {/* Column 2: Key Fabrics */}
+          {/* Column 2: Key Targeted Fabrics */}
           <div>
-            <h4 style={{ color: '#FFFFFF', fontSize: '0.95rem', fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '1.5rem', borderBottom: '2px solid #C51E3A', display: 'inline-block', paddingBottom: '0.35rem' }}>
+            <h4 style={{ color: '#FFFFFF', fontSize: '0.95rem', fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '1.25rem', borderBottom: '2px solid #C51E3A', display: 'inline-block', paddingBottom: '0.35rem' }}>
               Signature Fabrics
             </h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.9rem' }}>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem', fontSize: '0.875rem' }}>
               <li>
-                <button onClick={() => scrollTo('catalog')} style={{ background: 'none', border: 'none', color: '#D4D4D8', cursor: 'pointer', textAlign: 'left', padding: 0 }}>
-                  Cotton Twill (2/1 & 3/1 Weaves)
-                </button>
+                <a href="/fabric/gada-greige-fabric" style={{ color: '#D4D4D8', textDecoration: 'none' }}>
+                  Gada Fabric (Kora Cloth)
+                </a>
               </li>
               <li>
-                <button onClick={() => scrollTo('catalog')} style={{ background: 'none', border: 'none', color: '#D4D4D8', cursor: 'pointer', textAlign: 'left', padding: 0 }}>
-                  Heavy Cotton Drill (Uniform Grade)
-                </button>
+                <a href="/fabric/dyed-woven-fabric" style={{ color: '#D4D4D8', textDecoration: 'none' }}>
+                  Dyed Woven Fabric (Reactive & Vat)
+                </a>
               </li>
               <li>
-                <button onClick={() => scrollTo('catalog')} style={{ background: 'none', border: 'none', color: '#D4D4D8', cursor: 'pointer', textAlign: 'left', padding: 0 }}>
-                  Linen Dyed & Printed Fabrics
-                </button>
+                <a href="/fabric/printed-poplin-fabric" style={{ color: '#D4D4D8', textDecoration: 'none' }}>
+                  Print Poplin Fabric (Rotary & Digital)
+                </a>
               </li>
               <li>
-                <button onClick={() => scrollTo('catalog')} style={{ background: 'none', border: 'none', color: '#D4D4D8', cursor: 'pointer', textAlign: 'left', padding: 0 }}>
-                  Fluid Viscose & Rayon Twill
-                </button>
+                <a href="/fabric/double-gauze-fabric" style={{ color: '#D4D4D8', textDecoration: 'none' }}>
+                  Double Gauze Fabric (Organic Muslin)
+                </a>
               </li>
               <li>
-                <button onClick={() => scrollTo('catalog')} style={{ background: 'none', border: 'none', color: '#D4D4D8', cursor: 'pointer', textAlign: 'left', padding: 0 }}>
-                  Reversible Double Cloth
-                </button>
+                <a href="/fabric/cotton-voile-fabric" style={{ color: '#D4D4D8', textDecoration: 'none' }}>
+                  Voil Fabric (Cotton Voile)
+                </a>
               </li>
               <li>
-                <button onClick={() => scrollTo('catalog')} style={{ background: 'none', border: 'none', color: '#D4D4D8', cursor: 'pointer', textAlign: 'left', padding: 0 }}>
-                  Aerated Seersucker & Gauze
-                </button>
+                <a href="/fabric/cotton-duck-canvas" style={{ color: '#D4D4D8', textDecoration: 'none' }}>
+                  Cotton Canvas (8oz - 18oz Duck)
+                </a>
               </li>
               <li>
-                <button onClick={() => scrollTo('catalog')} style={{ background: 'none', border: 'none', color: '#D4D4D8', cursor: 'pointer', textAlign: 'left', padding: 0 }}>
-                  GOTS Certified Organic Cottons
-                </button>
+                <a href="/fabric/cotton-drill-fabric" style={{ color: '#D4D4D8', textDecoration: 'none' }}>
+                  Cotton Drill (3/1 Heavy Twill)
+                </a>
+              </li>
+              <li>
+                <a href="/fabric/cotton-twill-fabric" style={{ color: '#D4D4D8', textDecoration: 'none' }}>
+                  Cotton Twill (2/1 & 3/1 Chinos)
+                </a>
+              </li>
+              <li>
+                <a href="/fabric/dobby-woven-fabric" style={{ color: '#D4D4D8', textDecoration: 'none' }}>
+                  Dobby Woven Fabric (Shirting)
+                </a>
+              </li>
+              <li>
+                <a href="/fabric/woven-jacquard-fabric" style={{ color: '#D4D4D8', textDecoration: 'none' }}>
+                  Woven Jacquard Fabric (Motifs)
+                </a>
+              </li>
+              <li>
+                <a href="/fabric/pure-flax-linen" style={{ color: '#D4D4D8', textDecoration: 'none' }}>
+                  Flux Fabric (Pure Flax Linen)
+                </a>
+              </li>
+              <li>
+                <a href="/fabric/optical-white-pfd-fabric" style={{ color: '#D4D4D8', textDecoration: 'none' }}>
+                  White Fabric (Optical & PFD)
+                </a>
               </li>
             </ul>
           </div>
 
-          {/* Column 3: Capabilities & Quality */}
+          {/* Column 3: Finished Garments & Operations */}
           <div>
-            <h4 style={{ color: '#FFFFFF', fontSize: '0.95rem', fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '1.5rem', borderBottom: '2px solid #C51E3A', display: 'inline-block', paddingBottom: '0.35rem' }}>
-              Operations & QC
+            <h4 style={{ color: '#FFFFFF', fontSize: '0.95rem', fontWeight: 800, letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '1.25rem', borderBottom: '2px solid #C51E3A', display: 'inline-block', paddingBottom: '0.35rem' }}>
+              OEM Garments & QC
             </h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.9rem' }}>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem', fontSize: '0.875rem' }}>
               <li>
-                <button onClick={() => scrollTo('capabilities')} style={{ background: 'none', border: 'none', color: '#D4D4D8', cursor: 'pointer', textAlign: 'left', padding: 0 }}>
+                <a href="/garments/woven-shirts-manufacturer" style={{ color: '#D4D4D8', textDecoration: 'none' }}>
+                  All Woven Shirts Manufacturing
+                </a>
+              </li>
+              <li>
+                <a href="/garments/kurta-garment-manufacturer" style={{ color: '#D4D4D8', textDecoration: 'none' }}>
+                  Kurtha & Kurtha Pants Wholesale
+                </a>
+              </li>
+              <li>
+                <a href="/garments/traditional-dhoti-manufacturer" style={{ color: '#D4D4D8', textDecoration: 'none' }}>
+                  Dhoti Garments & Veshtis (Zari)
+                </a>
+              </li>
+              <li>
+                <a href="/garments/cotton-canvas-tote-bags" style={{ color: '#D4D4D8', textDecoration: 'none' }}>
+                  100% Cotton Bags & Canvas Totes
+                </a>
+              </li>
+              <li>
+                <a href="/garments/custom-woven-apparel-oem" style={{ color: '#D4D4D8', textDecoration: 'none' }}>
+                  All Garments OEM Coordination
+                </a>
+              </li>
+              <li style={{ borderTop: '1px solid #27272A', paddingTop: '0.6rem', marginTop: '0.3rem' }}>
+                <a href="/capabilities" style={{ color: '#A1A1AA', textDecoration: 'none' }}>
                   4-Stage Production Coordination
-                </button>
+                </a>
               </li>
               <li>
-                <button onClick={() => scrollTo('quality')} style={{ background: 'none', border: 'none', color: '#D4D4D8', cursor: 'pointer', textAlign: 'left', padding: 0 }}>
-                  ASTM 4-Point Fabric Inspection
-                </button>
+                <a href="/quality-assurance" style={{ color: '#A1A1AA', textDecoration: 'none' }}>
+                  ASTM 4-Point Inspection & Lab
+                </a>
               </li>
               <li>
-                <button onClick={() => scrollTo('quality')} style={{ background: 'none', border: 'none', color: '#D4D4D8', cursor: 'pointer', textAlign: 'left', padding: 0 }}>
-                  Lab Dip & Pantone TCX Matching
-                </button>
+                <a href="/about" style={{ color: '#A1A1AA', textDecoration: 'none' }}>
+                  Isha Partnership (10+ Years)
+                </a>
               </li>
               <li>
-                <button onClick={() => scrollTo('capabilities')} style={{ background: 'none', border: 'none', color: '#D4D4D8', cursor: 'pointer', textAlign: 'left', padding: 0 }}>
-                  Zero Liquid Discharge (ZLD) Dyeing
-                </button>
-              </li>
-              <li>
-                <button onClick={() => scrollTo('about')} style={{ background: 'none', border: 'none', color: '#D4D4D8', cursor: 'pointer', textAlign: 'left', padding: 0 }}>
-                  Founder Story: Mr. Vaitheswaran
-                </button>
-              </li>
-              <li>
-                <button onClick={() => scrollTo('resources')} style={{ background: 'none', border: 'none', color: '#D4D4D8', cursor: 'pointer', textAlign: 'left', padding: 0 }}>
-                  B2B Sourcing FAQs
-                </button>
+                <a href="/resources" style={{ color: '#A1A1AA', textDecoration: 'none' }}>
+                  B2B Sourcing Procurement FAQs
+                </a>
               </li>
             </ul>
           </div>

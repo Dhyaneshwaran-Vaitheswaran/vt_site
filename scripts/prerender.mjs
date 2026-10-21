@@ -21,42 +21,42 @@ const STATIC_ROUTES = [
   {
     path: '/',
     title: 'Vasanthaa Textiless | Woven Fabric Manufacturer & Apparel OEM | Erode, India',
-    desc: 'Established in 1998 in Erode, Tamil Nadu. Vasanthaa Textiless delivers end-to-end woven textile manufacturing, custom dyeing, printing, and downstream cut-and-sew apparel export.',
+    desc: 'Established in 1998 in Erode, Tamil Nadu. Direct manufacturer of Gada fabric, dyed woven fabrics, print poplin, double gauze, voil, canvas, drill, twill, dobby, jacquard, flux linen, and white fabrics. Full-package woven shirts, kurthas, dhotis, and cotton bags.',
     h1: 'End-to-End Woven Fabric Sourcing & Apparel Production Coordination',
     ogImage: '/images/hero-craft.jpg'
   },
   {
     path: '/catalog',
-    title: 'Woven Fabric Catalog | Cotton Twill, Drill, Poplin & Blends | Vasanthaa Textiless Erode',
-    desc: 'Explore export-grade woven fabric collections engineered in Erode: combed cotton twill, heavy drill, unbleached gada greige, double gauze, poplin, and pure linen.',
+    title: 'Woven Fabric Catalog | Gada, Twill, Drill, Poplin, Voil & Flux Linen | Vasanthaa Textiless Erode',
+    desc: 'Explore export-grade woven fabric collections engineered in Erode: Gada greige cloth, dyed woven fabric, print poplin, double gauze, voil, canvas, drill, twill, dobby, jacquard, flux linen, and optical white fabrics.',
     h1: 'Specialty Woven Fabrics & Substrates Catalog',
     ogImage: '/images/hero-craft.jpg'
   },
   {
     path: '/garments',
-    title: 'Custom Woven Garment Manufacturer India | Apparel OEM Coordination | Vasanthaa Textiless',
-    desc: 'Export-grade cut-and-sew apparel manufacturing in Tamil Nadu. Full-package woven shirts, cotton kurtas, traditional dhotis, and canvas tote bags with AQL 2.5 standards.',
+    title: 'Custom Woven Garment Manufacturer India | Shirts, Kurthas, Dhotis & Bags OEM | Vasanthaa Textiless',
+    desc: 'Export-grade cut-and-sew apparel manufacturing in Tamil Nadu. Full-package all woven shirts, cotton kurthas, traditional dhoti garments, and cotton canvas bags with AQL 2.5 standards.',
     h1: 'Cut-and-Sew Apparel Coordination & OEM Manufacturing',
     ogImage: '/images/garment-manufacturing.webp'
   },
   {
     path: '/capabilities',
-    title: 'Textile Manufacturing Capabilities | Weaving & Dyeing Coordination | Erode',
-    desc: 'End-to-end fabric execution across Erode textile cluster: high-speed airjet/rapier weaving, custom reactive dyeing, rotary printing, commercial finishing, and garmenting.',
+    title: 'Textile Manufacturing Capabilities | 4-Stage Weaving & Dyeing Coordination | Erode',
+    desc: 'End-to-end fabric execution across Erode textile cluster: high-speed airjet/rapier weaving, Zero Liquid Discharge (ZLD) reactive dyeing, rotary printing, commercial finishing, and garmenting.',
     h1: 'Centralized Weaving, Dyeing & Finishing Infrastructure',
     ogImage: '/images/weaving-looms.webp'
   },
   {
     path: '/quality-assurance',
-    title: 'Textile Quality Assurance & Lab Standards | Vasanthaa Textiless Erode',
-    desc: 'Four-tier QA protocol adhering to ASTM and ISO standards: 4-Point greige inspection, spectrophotometer lab dips, shrinkage control, and pre-dispatch testing in Erode.',
+    title: 'Textile Quality Assurance & Lab Standards | ASTM 4-Point Inspection | Vasanthaa Textiless Erode',
+    desc: 'Four-tier QA protocol adhering to ASTM and ISO standards: ASTM D5430 4-Point greige inspection, spectrophotometer lab dips, shrinkage control, and pre-dispatch testing in Erode.',
     h1: 'ASTM D5430 4-Point Fabric Inspection & QA Laboratory',
     ogImage: '/images/fabric-inspection.webp'
   },
   {
     path: '/about',
-    title: 'About Vasanthaa Textiless | 28+ Years Textile Heritage in Erode',
-    desc: 'Founded in 1998 by Mr. Vaitheswaran in Erode. Decades of mastery in woven textile sourcing, technical coordination, and trusted supply for garment manufacturers worldwide.',
+    title: 'About Vasanthaa Textiless | 28+ Years Textile Heritage | Main Supplier to Isha for a Decade',
+    desc: 'Founded in 1998 by Mr. Vaitheswaran in Erode. Decades of mastery in woven textile sourcing, technical coordination, and proud main supplier of Isha for over 10 consecutive years.',
     h1: '28+ Years of Woven Textile Mastery in Erode, Tamil Nadu',
     ogImage: '/images/hero-craft.jpg'
   },
@@ -69,8 +69,8 @@ const STATIC_ROUTES = [
   },
   {
     path: '/contact',
-    title: 'Contact Vasanthaa Textiless | Erode Facility & RFQ Desk',
-    desc: 'Connect with our commercial fabric desk at Erode, Tamil Nadu. Fast lab dip turnaround, sample swatch dispatch, and bulk order production coordination.',
+    title: 'Contact Vasanthaa Textiless | Erode Facility & RFQ Desk | Wholesale Inquiries',
+    desc: 'Connect with our commercial fabric desk at Erode, Tamil Nadu. Fast lab dip turnaround, sample swatch dispatch, and bulk order production coordination for fabrics and garments.',
     h1: 'Connect with Our Sourcing & Export Desk in Erode',
     ogImage: '/images/hero-craft.jpg'
   }
@@ -100,7 +100,7 @@ async function runPrerender() {
 
   const allRoutes = [...STATIC_ROUTES];
 
-  // Add all fabric routes
+  // Add all primary fabric routes and alias routes
   for (const f of FABRICS) {
     allRoutes.push({
       path: `/fabric/${f.id}`,
@@ -110,9 +110,24 @@ async function runPrerender() {
       fabric: f,
       ogImage: f.image
     });
+
+    // Alias routes for high-intent search variations
+    if (f.legacyIds && f.legacyIds.length > 0) {
+      for (const legacyId of f.legacyIds) {
+        allRoutes.push({
+          path: `/fabric/${legacyId}`,
+          title: f.seoTitle || `${f.name} Manufacturer India | Vasanthaa Textiless`,
+          desc: f.seoDesc || `Technical specifications for ${f.name} (${f.gsm}, ${f.fiber}). Direct manufacturer supply in Erode, India.`,
+          h1: `${f.name} Manufacturer & Export Supplier`,
+          fabric: f,
+          ogImage: f.image,
+          isAlias: true
+        });
+      }
+    }
   }
 
-  // Add all garment routes
+  // Add all primary garment routes and alias routes
   for (const g of GARMENTS) {
     allRoutes.push({
       path: `/garments/${g.id}`,
@@ -122,6 +137,20 @@ async function runPrerender() {
       garment: g,
       ogImage: g.image
     });
+
+    if (g.legacyIds && g.legacyIds.length > 0) {
+      for (const legacyId of g.legacyIds) {
+        allRoutes.push({
+          path: `/garments/${legacyId}`,
+          title: g.seoTitle || `${g.name} Manufacturer India | Vasanthaa Textiless`,
+          desc: g.seoDesc || `Custom ${g.name} manufacturing in Tamil Nadu. Export cut-and-sew apparel coordination.`,
+          h1: `${g.name} — Full-Package Apparel OEM Exporter`,
+          garment: g,
+          ogImage: g.image,
+          isAlias: true
+        });
+      }
+    }
   }
 
   let count = 0;
@@ -130,11 +159,37 @@ async function runPrerender() {
     const canonicalUrl = `${DOMAIN}${route.path === '/' ? '' : route.path}`;
 
     // Generate JSON-LD Schema
-    let routeSchema = null;
+    const schemas = [];
 
+    // BreadcrumbList Schema
     if (route.fabric) {
+      schemas.push({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": `${DOMAIN}/`
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Woven Fabric Catalog",
+            "item": `${DOMAIN}/catalog`
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": route.fabric.name,
+            "item": canonicalUrl
+          }
+        ]
+      });
+
       const f = route.fabric;
-      routeSchema = {
+      schemas.push({
         "@context": "https://schema.org",
         "@type": "Product",
         "@id": `${canonicalUrl}#product`,
@@ -154,10 +209,50 @@ async function runPrerender() {
             "value": f.moqBulk
           }
         }
-      };
+      });
+
+      if (f.faqs && f.faqs.length > 0) {
+        schemas.push({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": f.faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": faq.a
+            }
+          }))
+        });
+      }
     } else if (route.garment) {
+      schemas.push({
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": `${DOMAIN}/`
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "All Garments OEM Coordination",
+            "item": `${DOMAIN}/garments`
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": route.garment.name,
+            "item": canonicalUrl
+          }
+        ]
+      });
+
       const g = route.garment;
-      routeSchema = {
+      schemas.push({
         "@context": "https://schema.org",
         "@type": "Product",
         "@id": `${canonicalUrl}#product`,
@@ -175,9 +270,24 @@ async function runPrerender() {
             "value": g.moqBulk
           }
         }
-      };
+      });
+
+      if (g.faqs && g.faqs.length > 0) {
+        schemas.push({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": g.faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": faq.a
+            }
+          }))
+        });
+      }
     } else if (route.path === '/resources') {
-      routeSchema = {
+      schemas.push({
         "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [
@@ -206,7 +316,7 @@ async function runPrerender() {
             }
           }
         ]
-      };
+      });
     }
 
     // Generate Pre-rendered Semantic HTML for Googlebot / Non-JS Crawlers
@@ -215,73 +325,98 @@ async function runPrerender() {
     if (route.fabric) {
       const f = route.fabric;
       bodyHtml = `
-        <div class="prerendered-content" style="padding: 2rem 1rem; max-width: 1200px; margin: 0 auto; font-family: sans-serif;">
-          <nav aria-label="Breadcrumb" style="font-size: 0.875rem; margin-bottom: 1rem; color: #64748B;">
-            <a href="/">Home</a> / <a href="/catalog">Woven Fabric Catalog</a> / <span>${escapeHtml(f.name)}</span>
+        <div class="prerendered-content" style="padding: 2.5rem 1rem; max-width: 1200px; margin: 0 auto; font-family: 'Plus Jakarta Sans', sans-serif; color: #18181B;">
+          <nav aria-label="Breadcrumb" style="font-size: 0.875rem; margin-bottom: 1rem; color: #71717A;">
+            <a href="/" style="color: #0A0A0A; text-decoration: none;">Home</a> / <a href="/catalog" style="color: #0A0A0A; text-decoration: none;">Woven Fabric Catalog</a> / <span style="color: #C51E3A; font-weight: 600;">${escapeHtml(f.name)}</span>
           </nav>
-          <span style="color: #D4AF37; font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">${escapeHtml(f.category)} • ${escapeHtml(f.badge || 'B2B SPECIFICATION')}</span>
-          <h1 style="font-size: 2.2rem; color: #0F172A; margin: 0.5rem 0 1rem 0;">${escapeHtml(route.h1)}</h1>
-          <p style="font-size: 1.1rem; line-height: 1.7; color: #334155; margin-bottom: 2rem;">${escapeHtml(f.description)}</p>
+          <span style="color: #C51E3A; background: #FEF2F2; border: 1px solid rgba(197,30,58,0.2); padding: 0.25rem 0.6rem; border-radius: 4px; font-weight: 700; font-size: 0.75rem; text-transform: uppercase;">${escapeHtml(f.category)} • ${escapeHtml(f.badge || 'B2B SPECIFICATION')}</span>
+          <h1 style="font-size: 2.2rem; color: #0A0A0A; margin: 0.75rem 0 1rem 0; font-family: 'Outfit', sans-serif;">${escapeHtml(route.h1)}</h1>
+          <p style="font-size: 1.1rem; line-height: 1.75; color: #52525B; margin-bottom: 2rem;">${escapeHtml(f.description)}</p>
           
-          <h2 style="font-size: 1.4rem; color: #0F172A; border-bottom: 2px solid #E2E8F0; padding-bottom: 0.5rem;">Technical Sourcing Specifications</h2>
+          <h2 style="font-size: 1.4rem; color: #0A0A0A; border-bottom: 2px solid #E4E4E7; padding-bottom: 0.5rem; font-family: 'Outfit', sans-serif;">Technical Sourcing Specifications</h2>
           <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem;">
             <tbody>
-              <tr style="border-bottom: 1px solid #E2E8F0;"><td style="padding: 0.75rem; font-weight: 600; width: 30%;">Fiber Composition</td><td style="padding: 0.75rem;">${escapeHtml(f.fiber)}</td></tr>
-              <tr style="border-bottom: 1px solid #E2E8F0;"><td style="padding: 0.75rem; font-weight: 600;">Weave Construction</td><td style="padding: 0.75rem;">${escapeHtml(f.weave)}</td></tr>
-              <tr style="border-bottom: 1px solid #E2E8F0;"><td style="padding: 0.75rem; font-weight: 600;">Fabric Weight</td><td style="padding: 0.75rem; color: #C51E3A; font-weight: 700;">${escapeHtml(f.gsm)}</td></tr>
-              <tr style="border-bottom: 1px solid #E2E8F0;"><td style="padding: 0.75rem; font-weight: 600;">Yarn Count</td><td style="padding: 0.75rem;">${escapeHtml(f.yarnCount)}</td></tr>
-              <tr style="border-bottom: 1px solid #E2E8F0;"><td style="padding: 0.75rem; font-weight: 600;">Usable Finished Width</td><td style="padding: 0.75rem;">${escapeHtml(f.width)}</td></tr>
-              <tr style="border-bottom: 1px solid #E2E8F0;"><td style="padding: 0.75rem; font-weight: 600;">Finishes & Chemistry</td><td style="padding: 0.75rem;">${escapeHtml(f.finish)}</td></tr>
-              <tr style="border-bottom: 1px solid #E2E8F0;"><td style="padding: 0.75rem; font-weight: 600;">Sample Prototype MOQ</td><td style="padding: 0.75rem;">${escapeHtml(f.moqSample)}</td></tr>
-              <tr style="border-bottom: 1px solid #E2E8F0;"><td style="padding: 0.75rem; font-weight: 600;">Commercial Bulk MOQ</td><td style="padding: 0.75rem; font-weight: 700;">${escapeHtml(f.moqBulk)}</td></tr>
-              <tr style="border-bottom: 1px solid #E2E8F0;"><td style="padding: 0.75rem; font-weight: 600;">Lead Time</td><td style="padding: 0.75rem;">${escapeHtml(f.leadTime)}</td></tr>
+              <tr style="border-bottom: 1px solid #E4E4E7;"><td style="padding: 0.75rem; font-weight: 600; width: 30%;">Fiber Composition</td><td style="padding: 0.75rem;">${escapeHtml(f.fiber)}</td></tr>
+              <tr style="border-bottom: 1px solid #E4E4E7;"><td style="padding: 0.75rem; font-weight: 600;">Weave Construction</td><td style="padding: 0.75rem;">${escapeHtml(f.weave)}</td></tr>
+              <tr style="border-bottom: 1px solid #E4E4E7;"><td style="padding: 0.75rem; font-weight: 600;">Fabric Weight</td><td style="padding: 0.75rem; color: #C51E3A; font-weight: 700;">${escapeHtml(f.gsm)}</td></tr>
+              <tr style="border-bottom: 1px solid #E4E4E7;"><td style="padding: 0.75rem; font-weight: 600;">Yarn Count</td><td style="padding: 0.75rem;">${escapeHtml(f.yarnCount)}</td></tr>
+              <tr style="border-bottom: 1px solid #E4E4E7;"><td style="padding: 0.75rem; font-weight: 600;">Usable Finished Width</td><td style="padding: 0.75rem;">${escapeHtml(f.width)}</td></tr>
+              <tr style="border-bottom: 1px solid #E4E4E7;"><td style="padding: 0.75rem; font-weight: 600;">Finishes & Chemistry</td><td style="padding: 0.75rem;">${escapeHtml(f.finish)}</td></tr>
+              <tr style="border-bottom: 1px solid #E4E4E7;"><td style="padding: 0.75rem; font-weight: 600;">Sample Prototype MOQ</td><td style="padding: 0.75rem;">${escapeHtml(f.moqSample)}</td></tr>
+              <tr style="border-bottom: 1px solid #E4E4E7;"><td style="padding: 0.75rem; font-weight: 600;">Commercial Bulk MOQ</td><td style="padding: 0.75rem; font-weight: 700;">${escapeHtml(f.moqBulk)}</td></tr>
+              <tr style="border-bottom: 1px solid #E4E4E7;"><td style="padding: 0.75rem; font-weight: 600;">Lead Time</td><td style="padding: 0.75rem;">${escapeHtml(f.leadTime)}</td></tr>
             </tbody>
           </table>
 
-          <h2 style="font-size: 1.3rem; color: #0F172A; margin-top: 2rem;">Recommended Garment Applications</h2>
+          <h2 style="font-size: 1.3rem; color: #0A0A0A; margin-top: 2rem; font-family: 'Outfit', sans-serif;">Recommended Garment Applications</h2>
           <ul>
-            ${f.applications.map(app => `<li style="margin-bottom: 0.35rem;">${escapeHtml(app)}</li>`).join('')}
+            ${f.applications.map(app => `<li style="margin-bottom: 0.4rem; color: #27272A;">${escapeHtml(app)}</li>`).join('')}
           </ul>
 
-          <h2 style="font-size: 1.3rem; color: #0F172A; margin-top: 2rem;">ASTM Quality Certification & Export Logistics</h2>
-          <p>Every roll of ${escapeHtml(f.name)} undergoes mandatory inspection under ASTM D5430 4-Point System in our Erode QA facility. Pre-shrunk residual shrinkage governed under 2.5%, color fastness ISO Grade 4+. Global port export via FOB Tuticorin & FOB Chennai.</p>
-          <div style="margin-top: 2rem;">
+          <h2 style="font-size: 1.3rem; color: #0A0A0A; margin-top: 2rem; font-family: 'Outfit', sans-serif;">ASTM Quality Certification & Export Logistics</h2>
+          <p style="color: #52525B; line-height: 1.7;">Every roll of ${escapeHtml(f.name)} undergoes mandatory inspection under ASTM D5430 4-Point System in our Erode QA facility. Pre-shrunk residual shrinkage governed under 2.5%, color fastness ISO Grade 4+. Global port export via FOB Tuticorin & FOB Chennai.</p>
+          
+          ${f.faqs && f.faqs.length > 0 ? `
+            <div style="margin-top: 3rem; border-top: 2px solid #E4E4E7; padding-top: 2rem;">
+              <h2 style="font-size: 1.4rem; color: #0A0A0A; margin-bottom: 1.5rem; font-family: 'Outfit', sans-serif;">Frequently Asked Questions About ${escapeHtml(f.name)}</h2>
+              ${f.faqs.map(faq => `
+                <div style="margin-bottom: 1.5rem; background: #FAFAFA; border: 1px solid #E4E4E7; padding: 1.25rem; border-radius: 8px;">
+                  <h3 style="font-size: 1.05rem; color: #0A0A0A; margin: 0 0 0.5rem 0; font-weight: 700;">${escapeHtml(faq.q)}</h3>
+                  <p style="color: #52525B; margin: 0; line-height: 1.65; font-size: 0.95rem;">${escapeHtml(faq.a)}</p>
+                </div>
+              `).join('')}
+            </div>
+          ` : ''}
+
+          <div style="margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
             <a href="/contact" style="display: inline-block; background: #C51E3A; color: #FFFFFF; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 6px; font-weight: 700;">Request Bulk Quotation</a>
-            <a href="https://wa.me/919786222580?text=Inquiry%20for%20${encodeURIComponent(f.name)}" style="display: inline-block; margin-left: 1rem; color: #059669; font-weight: 700;">Chat on WhatsApp (+91 97862 22580)</a>
+            <a href="https://wa.me/919786222580?text=Inquiry%20for%20${encodeURIComponent(f.name)}" style="display: inline-block; background: #18181B; color: #FFFFFF; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 6px; font-weight: 700;">Chat on WhatsApp (+91 97862 22580)</a>
           </div>
         </div>
       `;
     } else if (route.garment) {
       const g = route.garment;
       bodyHtml = `
-        <div class="prerendered-content" style="padding: 2rem 1rem; max-width: 1200px; margin: 0 auto; font-family: sans-serif;">
-          <nav aria-label="Breadcrumb" style="font-size: 0.875rem; margin-bottom: 1rem; color: #64748B;">
-            <a href="/">Home</a> / <a href="/garments">Apparel OEM Coordination</a> / <span>${escapeHtml(g.name)}</span>
+        <div class="prerendered-content" style="padding: 2.5rem 1rem; max-width: 1200px; margin: 0 auto; font-family: 'Plus Jakarta Sans', sans-serif; color: #18181B;">
+          <nav aria-label="Breadcrumb" style="font-size: 0.875rem; margin-bottom: 1rem; color: #71717A;">
+            <a href="/" style="color: #0A0A0A; text-decoration: none;">Home</a> / <a href="/garments" style="color: #0A0A0A; text-decoration: none;">All Garments OEM Coordination</a> / <span style="color: #C51E3A; font-weight: 600;">${escapeHtml(g.name)}</span>
           </nav>
-          <span style="color: #D4AF37; font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">${escapeHtml(g.category)} • DOWNSTREAM APPAREL EXPORT</span>
-          <h1 style="font-size: 2.2rem; color: #0F172A; margin: 0.5rem 0 1rem 0;">${escapeHtml(route.h1)}</h1>
-          <p style="font-size: 1.1rem; line-height: 1.7; color: #334155; margin-bottom: 2rem;">${escapeHtml(g.description)}</p>
+          <span style="color: #C51E3A; background: #FEF2F2; border: 1px solid rgba(197,30,58,0.2); padding: 0.25rem 0.6rem; border-radius: 4px; font-weight: 700; font-size: 0.75rem; text-transform: uppercase;">${escapeHtml(g.category)} • DOWNSTREAM APPAREL EXPORT</span>
+          <h1 style="font-size: 2.2rem; color: #0A0A0A; margin: 0.75rem 0 1rem 0; font-family: 'Outfit', sans-serif;">${escapeHtml(route.h1)}</h1>
+          <p style="font-size: 1.1rem; line-height: 1.75; color: #52525B; margin-bottom: 2rem;">${escapeHtml(g.description)}</p>
 
-          <h2 style="font-size: 1.4rem; color: #0F172A; border-bottom: 2px solid #E2E8F0; padding-bottom: 0.5rem;">Garment Manufacturing Specifications</h2>
+          <h2 style="font-size: 1.4rem; color: #0A0A0A; border-bottom: 2px solid #E4E4E7; padding-bottom: 0.5rem; font-family: 'Outfit', sans-serif;">Garment Manufacturing Specifications</h2>
           <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem;">
             <tbody>
-              <tr style="border-bottom: 1px solid #E2E8F0;"><td style="padding: 0.75rem; font-weight: 600; width: 30%;">Monthly Capacity</td><td style="padding: 0.75rem;">${escapeHtml(g.productionCapacity)}</td></tr>
-              <tr style="border-bottom: 1px solid #E2E8F0;"><td style="padding: 0.75rem; font-weight: 600;">Stitching Standard</td><td style="padding: 0.75rem;">${escapeHtml(g.stitchingSpecs)}</td></tr>
-              <tr style="border-bottom: 1px solid #E2E8F0;"><td style="padding: 0.75rem; font-weight: 600;">Quality Audit Level</td><td style="padding: 0.75rem; color: #059669; font-weight: 700;">${escapeHtml(g.aqlStandard)}</td></tr>
-              <tr style="border-bottom: 1px solid #E2E8F0;"><td style="padding: 0.75rem; font-weight: 600;">Sample Prototype MOQ</td><td style="padding: 0.75rem;">${escapeHtml(g.moqSample)}</td></tr>
-              <tr style="border-bottom: 1px solid #E2E8F0;"><td style="padding: 0.75rem; font-weight: 600;">Bulk Order MOQ</td><td style="padding: 0.75rem; font-weight: 700;">${escapeHtml(g.moqBulk)}</td></tr>
-              <tr style="border-bottom: 1px solid #E2E8F0;"><td style="padding: 0.75rem; font-weight: 600;">Export Packaging</td><td style="padding: 0.75rem;">${escapeHtml(g.exportPackaging)}</td></tr>
+              <tr style="border-bottom: 1px solid #E4E4E7;"><td style="padding: 0.75rem; font-weight: 600; width: 30%;">Monthly Capacity</td><td style="padding: 0.75rem;">${escapeHtml(g.productionCapacity)}</td></tr>
+              <tr style="border-bottom: 1px solid #E4E4E7;"><td style="padding: 0.75rem; font-weight: 600;">Stitching Standard</td><td style="padding: 0.75rem;">${escapeHtml(g.stitchingSpecs)}</td></tr>
+              <tr style="border-bottom: 1px solid #E4E4E7;"><td style="padding: 0.75rem; font-weight: 600;">Quality Audit Level</td><td style="padding: 0.75rem; color: #15803D; font-weight: 700;">${escapeHtml(g.aqlStandard)}</td></tr>
+              <tr style="border-bottom: 1px solid #E4E4E7;"><td style="padding: 0.75rem; font-weight: 600;">Sample Prototype MOQ</td><td style="padding: 0.75rem;">${escapeHtml(g.moqSample)}</td></tr>
+              <tr style="border-bottom: 1px solid #E4E4E7;"><td style="padding: 0.75rem; font-weight: 600;">Bulk Order MOQ</td><td style="padding: 0.75rem; font-weight: 700;">${escapeHtml(g.moqBulk)}</td></tr>
+              <tr style="border-bottom: 1px solid #E4E4E7;"><td style="padding: 0.75rem; font-weight: 600;">Export Packaging</td><td style="padding: 0.75rem;">${escapeHtml(g.exportPackaging)}</td></tr>
             </tbody>
           </table>
 
-          <h2 style="font-size: 1.3rem; color: #0F172A; margin-top: 2rem;">Woven Fabric Substrates Used</h2>
+          <h2 style="font-size: 1.3rem; color: #0A0A0A; margin-top: 2rem; font-family: 'Outfit', sans-serif;">Woven Fabric Substrates Used</h2>
           <ul>
-            ${g.fabricPairings.map(p => `<li style="margin-bottom: 0.35rem;">${escapeHtml(p)}</li>`).join('')}
+            ${g.fabricPairings.map(p => `<li style="margin-bottom: 0.4rem; color: #27272A;">${escapeHtml(p)}</li>`).join('')}
           </ul>
 
-          <div style="margin-top: 2rem;">
+          ${g.faqs && g.faqs.length > 0 ? `
+            <div style="margin-top: 3rem; border-top: 2px solid #E4E4E7; padding-top: 2rem;">
+              <h2 style="font-size: 1.4rem; color: #0A0A0A; margin-bottom: 1.5rem; font-family: 'Outfit', sans-serif;">Frequently Asked Questions About ${escapeHtml(g.name)}</h2>
+              ${g.faqs.map(faq => `
+                <div style="margin-bottom: 1.5rem; background: #FAFAFA; border: 1px solid #E4E4E7; padding: 1.25rem; border-radius: 8px;">
+                  <h3 style="font-size: 1.05rem; color: #0A0A0A; margin: 0 0 0.5rem 0; font-weight: 700;">${escapeHtml(faq.q)}</h3>
+                  <p style="color: #52525B; margin: 0; line-height: 1.65; font-size: 0.95rem;">${escapeHtml(faq.a)}</p>
+                </div>
+              `).join('')}
+            </div>
+          ` : ''}
+
+          <div style="margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
             <a href="/contact" style="display: inline-block; background: #C51E3A; color: #FFFFFF; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 6px; font-weight: 700;">Request Garment OEM Quote</a>
-            <a href="https://wa.me/919786222580?text=Inquiry%20for%20${encodeURIComponent(g.name)}" style="display: inline-block; margin-left: 1rem; color: #059669; font-weight: 700;">WhatsApp Direct Desk (+91 97862 22580)</a>
+            <a href="https://wa.me/919786222580?text=Inquiry%20for%20${encodeURIComponent(g.name)}" style="display: inline-block; background: #18181B; color: #FFFFFF; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 6px; font-weight: 700;">WhatsApp Direct Desk (+91 97862 22580)</a>
           </div>
         </div>
       `;
@@ -360,9 +495,9 @@ async function runPrerender() {
       html = html.replace('</head>', `${hreflangTags}\n</head>`);
     }
 
-    // Inject Route-specific JSON-LD Schema
-    if (routeSchema) {
-      const schemaScript = `\n    <script type="application/ld+json" id="prerendered-route-schema">\n    ${JSON.stringify(routeSchema, null, 2)}\n    </script>\n  `;
+    // Inject Route-specific JSON-LD Schemas
+    if (schemas.length > 0) {
+      const schemaScript = `\n    <script type="application/ld+json" id="prerendered-route-schema">\n    ${JSON.stringify({ "@context": "https://schema.org", "@graph": schemas }, null, 2)}\n    </script>\n  `;
       html = html.replace('</head>', `${schemaScript}</head>`);
     }
 

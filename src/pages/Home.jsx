@@ -401,6 +401,126 @@ export const Home = ({ setActivePage, onSelectFabric, onAddSwatch, swatches, onO
         </div>
       </section>
 
+      {/* Comprehensive Core Woven Fabrics & Apparel OEM Directory (Primary SEO Authority Cluster) */}
+      <section className="section-padding" style={{ backgroundColor: '#FAFAFA', borderTop: '1px solid #E4E4E7', borderBottom: '1px solid #E4E4E7' }}>
+        <div className="container">
+
+          <div className="section-header" style={{ maxWidth: '860px' }}>
+            <span className="section-kicker">MANUFACTURING SPECIALIZATIONS • ERODE HUB</span>
+            <h2 className="section-title">Woven Fabrics & Finished Garments Production Directory</h2>
+            <p className="section-desc">
+              Direct from South India's industrial textile corridor. Access certified technical specifications, yarn count schedules, GSM weights, and wholesale production minimums for domestic buyers and global exporters.
+            </p>
+          </div>
+
+          {/* Fabrics Sub-Category Grid */}
+          <div style={{ marginBottom: '3.5rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
+              <span className="badge badge-red">CORE WOVEN FABRICS</span>
+              <span style={{ fontSize: '0.875rem', color: '#71717A', fontWeight: 600 }}>12 Specialty Weaves Engineered in Erode</span>
+            </div>
+
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))',
+              gap: '1.25rem'
+            }}>
+              {[
+                { title: "Gada Fabric", sub: "Unbleached Greige Cotton (Kora Cloth)", gsm: "100 - 350 GSM", path: "/fabric/gada-greige-fabric", desc: "100% virgin cotton loomstate greige. Ideal substrate for dyeing, rotary printing, garment pocketing, and eco canvas sacks." },
+                { title: "Dyed Woven Fabric", sub: "Reactive & Vat Piece Dyeing", gsm: "115 - 340 GSM", path: "/fabric/dyed-woven-fabric", desc: "Custom dyed cotton, linen, and viscose wovens processed in Zero Liquid Discharge (ZLD) plants with Delta E < 0.8 accuracy." },
+                { title: "Print Poplin Fabric", sub: "100% Long-Staple Combed Cotton", gsm: "105 - 145 GSM", path: "/fabric/printed-poplin-fabric", desc: "High-density 40s/50s/60s poplin with rotary screen up to 12 colors or reactive digital printing. Pre-shrunk sanforization." },
+                { title: "Double Gauze Fabric", sub: "Organic Crinkle Cotton Muslin", gsm: "120 - 155 GSM", path: "/fabric/double-gauze-fabric", desc: "Basted dual-layer gauze with breathable trapped air pockets. OEKO-TEX baby-safe for infant swaddles and resortwear." },
+                { title: "Voil Fabric", sub: "Fine Cotton Voile & Sheer Mulmul", gsm: "65 - 95 GSM", path: "/fabric/cotton-voile-fabric", desc: "Featherweight 60s, 80s, and 100s/2 high-twist sheer cotton voile for summer dresses, tunics, stoles, and luxury scarves." },
+                { title: "Cotton Canvas", sub: "Heavy Duck Canvas (8oz - 18oz)", gsm: "280 - 550 GSM", path: "/fabric/cotton-duck-canvas", desc: "Plied yarn heavy canvas basket weave. High puncture resistance with water-repellent finishes for tote bags, footwear, and jackets." },
+                { title: "Cotton Drill", sub: "3/1 Warp-Faced Heavy Twill", gsm: "240 - 380 GSM", path: "/fabric/cotton-drill-fabric", desc: "Heavy industrial uniform fabric with steep diagonal ridges. Engineered for corporate workwear, factory boilersuits, and tenders." },
+                { title: "Cotton Twill", sub: "2/1 & 3/1 Combed Chino Weaves", gsm: "180 - 320 GSM", path: "/fabric/cotton-twill-fabric", desc: "Signature combed cotton twills with velvety carbon peach finish. Ideal for casual chinos, trousers, overshirts, and blazers." },
+                { title: "Dobby Woven Fabric", sub: "Geometric Textures & Micro-Reliefs", gsm: "135 - 240 GSM", path: "/fabric/dobby-woven-fabric", desc: "Multi-shaft electronic dobby weaving diamonds, honeycombs, and birds-eye patterns for luxury shirting and ethnic kurtas." },
+                { title: "Woven Jacquard Fabric", sub: "Custom Engineered Motifs & Brocade", gsm: "160 - 360 GSM", path: "/fabric/woven-jacquard-fabric", desc: "Bespoke electronic jacquard weaving translating CAD artworks into floral, baroque, and geometric apparel brocades." },
+                { title: "Flux Fabric", sub: "Pure European Flax Linen & Blends", gsm: "140 - 240 GSM", path: "/fabric/pure-flax-linen", desc: "Pure European flax linen (25s - 60s lea). Enzyme bio-washed for immediate buttery drape, moisture-wicking, and breathability." },
+                { title: "White Fabric", sub: "Bleached Optical White & PFD / RFD", gsm: "105 - 300 GSM", path: "/fabric/optical-white-pfd-fabric", desc: "Pure optical white cottons and non-fluorescent PFD/RFD substrates engineered for garment dyehouses, shirting, and dhotis." }
+              ].map((item, i) => (
+                <a
+                  key={i}
+                  href={item.path}
+                  className="b2b-card"
+                  style={{
+                    backgroundColor: '#FFFFFF',
+                    border: '1px solid #E4E4E7',
+                    borderRadius: '12px',
+                    padding: '1.25rem',
+                    textDecoration: 'none',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    transition: 'all 200ms ease'
+                  }}
+                >
+                  <div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem' }}>
+                      <span style={{ fontSize: '0.72rem', fontWeight: 800, color: '#C51E3A', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{item.gsm}</span>
+                      <ArrowUpRight size={14} color="#71717A" />
+                    </div>
+                    <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0A0A0A', margin: '0 0 0.25rem 0' }}>{item.title}</h3>
+                    <div style={{ fontSize: '0.8rem', color: '#71717A', fontWeight: 600, marginBottom: '0.65rem' }}>{item.sub}</div>
+                    <p style={{ fontSize: '0.85rem', color: '#52525B', lineHeight: '1.55', margin: 0 }}>{item.desc}</p>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Garments Sub-Category Grid */}
+          <div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
+              <span className="badge badge-black">OEM GARMENTS & FINISHED GOODS</span>
+              <span style={{ fontSize: '0.875rem', color: '#71717A', fontWeight: 600 }}>5 Downstream Stitched Product Categories</span>
+            </div>
+
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))',
+              gap: '1.25rem'
+            }}>
+              {[
+                { title: "All Woven Shirts", sub: "Men's & Women's Tailored OEM", cap: "45,000 Pcs/Mo", path: "/garments/woven-shirts-manufacturer", desc: "Full-package formal dress shirts, casual camp collar resortwear, and corporate uniform shirts. Juki single-needle 14-16 SPI stitching." },
+                { title: "Kurtha & Kurtha Pants", sub: "Cotton & Linen Ethnic Apparel", cap: "35,000 Sets/Mo", path: "/garments/kurta-garment-manufacturer", desc: "Woven cotton, linen dobby, and slub kurtas with matching tailored bottoms. Precision mandarin collars and clean concealed plackets." },
+                { title: "Dhoti Garments & Veshtis", sub: "Zari Borders & Tailored Pants", cap: "60,000 Units/Mo", path: "/garments/traditional-dhoti-manufacturer", desc: "Pure cotton traditional single/double dhotis with gold and silver zari borders, alongside ready-to-wear tailored sadhana dhoti pants." },
+                { title: "Cotton Bags & Totes", sub: "100% Eco-Friendly Canvas OEM", cap: "100,000 Bags/Mo", path: "/garments/cotton-canvas-tote-bags", desc: "Heavy duck canvas and greige cotton tote bags, Save Soil merchandise, and promotional bags. Reinforced X-box stitching tested to 20kg+." },
+                { title: "All Garments Coordination", sub: "Full-Package Turnkey OEM", cap: "120,000 Units/Mo", path: "/garments/custom-woven-apparel-oem", desc: "Single-point apparel coordination across Tamil Nadu. We weave the fabric, dye lab-dips, manage cut-and-sew, and handle FOB export logistics." }
+              ].map((item, i) => (
+                <a
+                  key={i}
+                  href={item.path}
+                  className="b2b-card"
+                  style={{
+                    backgroundColor: '#FFFFFF',
+                    border: '1px solid #E4E4E7',
+                    borderRadius: '12px',
+                    padding: '1.25rem',
+                    textDecoration: 'none',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    transition: 'all 200ms ease'
+                  }}
+                >
+                  <div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem' }}>
+                      <span style={{ fontSize: '0.72rem', fontWeight: 800, color: '#0A0A0A', backgroundColor: '#F4F4F5', padding: '0.2rem 0.5rem', borderRadius: '4px', textTransform: 'uppercase' }}>{item.cap}</span>
+                      <ArrowUpRight size={14} color="#71717A" />
+                    </div>
+                    <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0A0A0A', margin: '0 0 0.25rem 0' }}>{item.title}</h3>
+                    <div style={{ fontSize: '0.8rem', color: '#71717A', fontWeight: 600, marginBottom: '0.65rem' }}>{item.sub}</div>
+                    <p style={{ fontSize: '0.85rem', color: '#52525B', lineHeight: '1.55', margin: 0 }}>{item.desc}</p>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       {/* The 4-Stage Production Orchestration (Stage 1 Yarn Removed) */}
       <section className="section-padding" style={{ backgroundColor: '#0A0A0A', color: '#FFFFFF' }}>
         <div className="container">

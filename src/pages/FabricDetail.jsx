@@ -319,6 +319,40 @@ export const FabricDetail = ({ fabric, onBack, onAddSwatch, isSwatchAdded, onOpe
 
           </div>
 
+          {/* Technical Sourcing & Procurement FAQs */}
+          {fabric.faqs && fabric.faqs.length > 0 && (
+            <div style={{ borderTop: '1px solid #E2E8F0', paddingTop: '3rem', marginTop: '3rem', marginBottom: '2.5rem' }}>
+              <div style={{ maxWidth: '840px' }}>
+                <span className="badge badge-red" style={{ marginBottom: '0.75rem', backgroundColor: '#FEF2F2', color: '#C51E3A' }}>
+                  TECHNICAL SPECIFICATION & BUYER FAQS
+                </span>
+                <h3 style={{ fontSize: 'clamp(1.4rem, 2.5vw, 1.85rem)', color: '#0A0A0A', marginBottom: '1.5rem', fontWeight: 800 }}>
+                  Frequently Asked Questions About {fabric.name}
+                </h3>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  {fabric.faqs.map((faq, fIdx) => (
+                    <div
+                      key={fIdx}
+                      style={{
+                        backgroundColor: '#FAFAFA',
+                        border: '1px solid #E4E4E7',
+                        borderRadius: '12px',
+                        padding: '1.25rem 1.5rem'
+                      }}
+                    >
+                      <h4 style={{ fontSize: '1rem', color: '#0A0A0A', fontWeight: 700, marginBottom: '0.5rem' }}>
+                        {faq.q}
+                      </h4>
+                      <p style={{ fontSize: '0.925rem', color: '#52525B', lineHeight: '1.7', margin: 0 }}>
+                        {faq.a}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* Related Fabrics Section */}
           <div style={{ borderTop: '1px solid #E2E8F0', paddingTop: '3.5rem' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
