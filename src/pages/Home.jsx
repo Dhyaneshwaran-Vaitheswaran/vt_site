@@ -45,7 +45,6 @@ export const Home = ({ setActivePage, onSelectFabric, onAddSwatch, swatches, onO
                 <span className="badge badge-red" style={{ backgroundColor: '#FEF2F2', color: '#C51E3A', border: '1px solid rgba(197, 30, 58, 0.3)' }}>
                   ESTABLISHED 1998 • ERODE
                 </span>
-                <span className="badge badge-live">Accepting 2026/2027 Bulk Orders</span>
               </div>
 
               <h1 style={{

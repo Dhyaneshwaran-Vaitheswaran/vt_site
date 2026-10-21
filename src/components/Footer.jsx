@@ -28,7 +28,6 @@ export const Footer = ({ setActivePage, onOpenRFQ }) => {
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.65rem', flexWrap: 'wrap' }}>
               <span className="badge badge-red" style={{ fontSize: '0.6875rem' }}>B2B PRODUCTION DESK</span>
-              <span className="badge badge-live" style={{ fontSize: '0.6875rem' }}>Accepting Bulk Orders 2026 / 2027</span>
             </div>
             <h3 style={{ color: '#FFFFFF', fontSize: 'clamp(1.4rem, 3vw, 1.85rem)', marginBottom: '0.5rem', fontWeight: 700 }}>
               Planning Your Next Season's Fabric Sourcing Program?
