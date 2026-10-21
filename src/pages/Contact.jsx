@@ -49,22 +49,24 @@ export const Contact = () => {
   };
 
   return (
-    <div style={{ backgroundColor: '#FBF9F5', paddingBottom: '6rem' }}>
-      
-      {/* Header Banner */}
+    <div style={{ backgroundColor: '#FFFFFF', paddingBottom: '6rem' }}>
+
+      {/* Header Banner — Pure Black & Red */}
       <section style={{
-        backgroundColor: '#0F172A',
+        backgroundColor: '#0A0A0A',
         color: '#FFFFFF',
-        padding: '4.5rem 0',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
+        padding: 'clamp(4.5rem, 7vw, 6.5rem) 0',
+        borderBottom: '1px solid #27272A'
       }}>
         <div className="container">
-          <div style={{ maxWidth: '800px' }}>
-            <span className="badge badge-gold" style={{ marginBottom: '0.75rem' }}>DIRECT SOURCING DESK</span>
-            <h1 style={{ color: '#FFFFFF', fontSize: '2.75rem', marginBottom: '1.25rem' }}>
+          <div style={{ maxWidth: '840px' }}>
+            <span className="badge badge-red" style={{ marginBottom: '1rem', backgroundColor: '#FEF2F2', color: '#C51E3A' }}>
+              DIRECT SOURCING DESK
+            </span>
+            <h1 style={{ color: '#FFFFFF', fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', marginBottom: '1.5rem', fontWeight: 800 }}>
               Connect with Vasanthaa Textiless
             </h1>
-            <p style={{ color: '#CBD5E1', fontSize: '1.125rem', lineHeight: '1.8', marginBottom: '2rem' }}>
+            <p style={{ color: '#D4D4D8', fontSize: 'clamp(1rem, 1.8vw, 1.15rem)', lineHeight: '1.8', marginBottom: '2rem' }}>
               Located in the commercial heart of Erode, Tamil Nadu. Reach our sourcing coordinators for fabric samples, lab dips, pricing, and manufacturing coordination.
             </p>
           </div>
@@ -72,27 +74,27 @@ export const Contact = () => {
       </section>
 
       {/* Main Contact Grid */}
-      <section className="section-padding">
+      <section className="section-padding" style={{ backgroundColor: '#FAFAFA' }}>
         <div className="container">
-          <div className="two-col-layout-responsive" style={{ alignItems: 'flex-start' }}>
-            
+          <div className="two-col-layout-responsive" style={{ alignItems: 'flex-start', gap: '3.5rem' }}>
+
             {/* Left Column: Authentic Office Details */}
             <div>
               <span className="section-kicker">ERODE HEADQUARTERS</span>
-              <h2 style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2rem)', color: '#0F172A', marginBottom: '1.25rem' }}>
+              <h2 style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.25rem)', color: '#0A0A0A', marginBottom: '1.5rem', fontWeight: 800 }}>
                 Visit or Contact Our Central Desk
               </h2>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', marginBottom: '2.5rem' }}>
-                
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '2.5rem' }}>
+
                 {/* Location */}
-                <div className="b2b-card" style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', padding: '1.5rem' }}>
-                  <MapPin size={24} color="#C51E3A" style={{ flexShrink: 0, marginTop: '0.2rem' }} />
+                <div className="b2b-card" style={{ display: 'flex', alignItems: 'flex-start', gap: '1.25rem', padding: '1.75rem', backgroundColor: '#FFFFFF', border: '1px solid #E4E4E7' }}>
+                  <MapPin size={26} color="#C51E3A" style={{ flexShrink: 0, marginTop: '0.2rem' }} />
                   <div>
-                    <strong style={{ display: 'block', fontSize: '1.05rem', color: '#0F172A', marginBottom: '0.25rem' }}>
+                    <strong style={{ display: 'block', fontSize: '1.1rem', color: '#0A0A0A', marginBottom: '0.35rem', fontWeight: 700 }}>
                       Registered Office & Central Inspection
                     </strong>
-                    <p style={{ fontSize: '0.9rem', color: '#475569', lineHeight: '1.6', margin: 0 }}>
+                    <p style={{ fontSize: '0.925rem', color: '#52525B', lineHeight: '1.6', margin: 0 }}>
                       3, Vasuki St, 2nd Street,<br />
                       Erode, Tamil Nadu 638001, India
                     </p>
@@ -100,65 +102,65 @@ export const Contact = () => {
                 </div>
 
                 {/* Telephone */}
-                <div className="b2b-card" style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', padding: '1.5rem' }}>
-                  <Phone size={24} color="#D4AF37" style={{ flexShrink: 0, marginTop: '0.2rem' }} />
+                <div className="b2b-card" style={{ display: 'flex', alignItems: 'flex-start', gap: '1.25rem', padding: '1.75rem', backgroundColor: '#FFFFFF', border: '1px solid #E4E4E7' }}>
+                  <Phone size={26} color="#C51E3A" style={{ flexShrink: 0, marginTop: '0.2rem' }} />
                   <div>
-                    <strong style={{ display: 'block', fontSize: '1.05rem', color: '#0F172A', marginBottom: '0.25rem' }}>
+                    <strong style={{ display: 'block', fontSize: '1.1rem', color: '#0A0A0A', marginBottom: '0.35rem', fontWeight: 700 }}>
                       Direct Telephone Lines
                     </strong>
                     <div style={{ fontSize: '0.95rem', marginBottom: '0.25rem' }}>
-                      <a href="tel:+919786222580" style={{ color: '#0F172A', fontWeight: 700 }}>+91 97862 22580</a> (Primary Desk)
+                      <a href="tel:+919786222580" style={{ color: '#0A0A0A', fontWeight: 700 }}>+91 97862 22580</a> (Primary Desk)
                     </div>
                     <div style={{ fontSize: '0.95rem' }}>
-                      <a href="tel:+919842222580" style={{ color: '#475569' }}>+91 98422 22580</a> (Executive Support)
+                      <a href="tel:+919842222580" style={{ color: '#52525B' }}>+91 98422 22580</a> (Executive Support)
                     </div>
                   </div>
                 </div>
 
                 {/* Email */}
-                <div className="b2b-card" style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', padding: '1.5rem' }}>
-                  <Mail size={24} color="#15803D" style={{ flexShrink: 0, marginTop: '0.2rem' }} />
+                <div className="b2b-card" style={{ display: 'flex', alignItems: 'flex-start', gap: '1.25rem', padding: '1.75rem', backgroundColor: '#FFFFFF', border: '1px solid #E4E4E7' }}>
+                  <Mail size={26} color="#C51E3A" style={{ flexShrink: 0, marginTop: '0.2rem' }} />
                   <div>
-                    <strong style={{ display: 'block', fontSize: '1.05rem', color: '#0F172A', marginBottom: '0.25rem' }}>
+                    <strong style={{ display: 'block', fontSize: '1.1rem', color: '#0A0A0A', marginBottom: '0.35rem', fontWeight: 700 }}>
                       Official Email
                     </strong>
-                    <a href="mailto:vasanthaatextiless@gmail.com" style={{ fontSize: '0.95rem', color: '#C51E3A', fontWeight: 600 }}>
+                    <a href="mailto:vasanthaatextiless@gmail.com" style={{ fontSize: '0.95rem', color: '#C51E3A', fontWeight: 700 }}>
                       vasanthaatextiless@gmail.com
                     </a>
-                    <div style={{ fontSize: '0.8125rem', color: '#64748B', marginTop: '0.25rem' }}>
+                    <div style={{ fontSize: '0.85rem', color: '#71717A', marginTop: '0.25rem' }}>
                       Formal RFQs, Purchase Orders & Lab-dip communications
                     </div>
                   </div>
                 </div>
 
                 {/* Hours */}
-                <div className="b2b-card" style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', padding: '1.5rem' }}>
-                  <Clock size={24} color="#0F172A" style={{ flexShrink: 0, marginTop: '0.2rem' }} />
+                <div className="b2b-card" style={{ display: 'flex', alignItems: 'flex-start', gap: '1.25rem', padding: '1.75rem', backgroundColor: '#FFFFFF', border: '1px solid #E4E4E7' }}>
+                  <Clock size={26} color="#0A0A0A" style={{ flexShrink: 0, marginTop: '0.2rem' }} />
                   <div>
-                    <strong style={{ display: 'block', fontSize: '1.05rem', color: '#0F172A', marginBottom: '0.25rem' }}>
+                    <strong style={{ display: 'block', fontSize: '1.1rem', color: '#0A0A0A', marginBottom: '0.35rem', fontWeight: 700 }}>
                       Business Hours
                     </strong>
-                    <p style={{ fontSize: '0.9rem', color: '#475569', margin: 0 }}>
+                    <p style={{ fontSize: '0.925rem', color: '#52525B', margin: 0, lineHeight: '1.6' }}>
                       Monday – Saturday: 9:00 AM – 7:30 PM IST<br />
                       Sunday: Closed (WhatsApp emergency orders monitored)
                     </p>
                   </div>
                 </div>
 
-                {/* Logistics & Commercial Compliance */}
-                <div className="b2b-card" style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem', padding: '1.5rem', borderLeft: '4px solid #D4AF37' }}>
-                  <Building size={24} color="#D4AF37" style={{ flexShrink: 0, marginTop: '0.2rem' }} />
+                {/* Logistics & Commercial Terms */}
+                <div className="b2b-card" style={{ display: 'flex', alignItems: 'flex-start', gap: '1.25rem', padding: '1.75rem', borderLeft: '4px solid #C51E3A', backgroundColor: '#FFFFFF' }}>
+                  <Building size={26} color="#C51E3A" style={{ flexShrink: 0, marginTop: '0.2rem' }} />
                   <div>
-                    <strong style={{ display: 'block', fontSize: '1.05rem', color: '#0F172A', marginBottom: '0.35rem' }}>
+                    <strong style={{ display: 'block', fontSize: '1.1rem', color: '#0A0A0A', marginBottom: '0.5rem', fontWeight: 700 }}>
                       Logistics Hubs & Commercial Terms
                     </strong>
-                    <div style={{ fontSize: '0.85rem', color: '#475569', lineHeight: '1.6' }}>
+                    <div style={{ fontSize: '0.875rem', color: '#52525B', lineHeight: '1.7' }}>
                       <div>• <strong>Transit Seaports:</strong> Tuticorin VOC (~340km) • Chennai (~400km) • Kochi (~260km)</div>
                       <div>• <strong>Air Cargo:</strong> Coimbatore Int'l Airport CJB (95km)</div>
                       <div>• <strong>Trade Terms:</strong> Ex-Mill Erode, FOR Domestic, FOB & CIF Worldwide</div>
                       <div>• <strong>Payment Methods:</strong> Irrevocable LC at Sight, 30% Advance + 70% against BL/Inspection, Wire (RTGS/NEFT/SWIFT)</div>
                       <div>• <strong>Compliance:</strong> GSTIN Active (Tamil Nadu Code 33) • Registered IEC Active</div>
-                      <div>• <strong>Response SLA:</strong> Formal specifications & pricing schedule within 4 business hours</div>
+                      <div>• <strong>Key Clientele:</strong> Main Supplier of Isha (10+ Years)</div>
                     </div>
                   </div>
                 </div>
@@ -169,8 +171,8 @@ export const Contact = () => {
               <div style={{
                 backgroundColor: '#DCFCE7',
                 border: '1px solid rgba(34, 197, 94, 0.4)',
-                borderRadius: '12px',
-                padding: '1.5rem',
+                borderRadius: '16px',
+                padding: '1.75rem',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'space-between',
@@ -178,10 +180,10 @@ export const Contact = () => {
                 flexWrap: 'wrap'
               }}>
                 <div>
-                  <strong style={{ color: '#166534', fontSize: '1rem', display: 'block' }}>
+                  <strong style={{ color: '#166534', fontSize: '1.05rem', display: 'block', fontWeight: 700 }}>
                     Need Immediate Fabric Assistance?
                   </strong>
-                  <span style={{ fontSize: '0.85rem', color: '#14532D' }}>
+                  <span style={{ fontSize: '0.875rem', color: '#14532D' }}>
                     Chat directly with our Erode sourcing coordinator.
                   </span>
                 </div>
@@ -198,45 +200,45 @@ export const Contact = () => {
             </div>
 
             {/* Right Column: Interactive B2B Contact Form */}
-            <div className="b2b-card" style={{ backgroundColor: '#FFFFFF' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
+            <div className="b2b-card" style={{ backgroundColor: '#FFFFFF', border: '1px solid #E4E4E7', padding: 'clamp(2rem, 4vw, 3rem)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.65rem' }}>
                 <FileText size={18} color="#C51E3A" />
-                <span style={{ fontSize: '0.8125rem', fontWeight: 700, color: '#C51E3A', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                <span style={{ fontSize: '0.8125rem', fontWeight: 800, color: '#C51E3A', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
                   DIRECT INQUIRY & QUOTE FORM
                 </span>
               </div>
-              <h3 style={{ fontSize: 'clamp(1.35rem, 3vw, 1.75rem)', color: '#0F172A', marginBottom: '1.25rem' }}>
+              <h3 style={{ fontSize: 'clamp(1.4rem, 3vw, 1.85rem)', color: '#0A0A0A', marginBottom: '1.5rem', fontWeight: 800 }}>
                 Send Us Your Fabric Requirements
               </h3>
 
               {submitted ? (
-                <div style={{ textAlign: 'center', padding: '2rem 1rem' }}>
-                  <CheckCircle2 size={48} color="#15803D" style={{ margin: '0 auto 1rem auto' }} />
-                  <h4 style={{ fontSize: '1.35rem', color: '#0F172A', marginBottom: '0.5rem' }}>
+                <div style={{ textAlign: 'center', padding: '2.5rem 1rem' }}>
+                  <CheckCircle2 size={48} color="#C51E3A" style={{ margin: '0 auto 1.25rem auto' }} />
+                  <h4 style={{ fontSize: '1.4rem', color: '#0A0A0A', marginBottom: '0.5rem', fontWeight: 700 }}>
                     Inquiry Details Ready for Dispatch!
                   </h4>
-                  <p style={{ color: '#64748B', fontSize: '0.9rem', marginBottom: '1.5rem', lineHeight: '1.6' }}>
+                  <p style={{ color: '#52525B', fontSize: '0.95rem', marginBottom: '2rem', lineHeight: '1.6' }}>
                     Thank you <strong>{formData.name}</strong>. Choose your preferred dispatch channel to submit your request directly to Vasanthaa Textiless in Erode.
                   </p>
 
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
                     <button
                       onClick={handleWhatsAppSend}
-                      className="btn btn-whatsapp"
+                      className="btn btn-whatsapp btn-lg"
                       style={{ width: '100%' }}
                     >
                       <MessageSquare size={18} /> Submit Instantly on WhatsApp
                     </button>
                     <button
                       onClick={handleEmailSend}
-                      className="btn btn-primary"
+                      className="btn btn-primary btn-lg"
                       style={{ width: '100%' }}
                     >
                       <Mail size={18} /> Submit via Official Email
                     </button>
                     <button
                       onClick={() => setSubmitted(false)}
-                      style={{ background: 'none', border: 'none', color: '#64748B', textDecoration: 'underline', cursor: 'pointer', marginTop: '0.5rem' }}
+                      style={{ background: 'none', border: 'none', color: '#71717A', textDecoration: 'underline', cursor: 'pointer', marginTop: '0.5rem' }}
                     >
                       Edit Submission
                     </button>
@@ -244,7 +246,7 @@ export const Contact = () => {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit}>
-                  
+
                   <div className="form-row-responsive">
                     <div className="form-group">
                       <label className="form-label">Full Name *</label>
@@ -299,19 +301,21 @@ export const Contact = () => {
 
                   <div className="form-row-responsive">
                     <div className="form-group">
-                      <label className="form-label">Fabric Category of Interest</label>
+                      <label className="form-label">Fabric / Apparel Category</label>
                       <select
                         className="form-select"
                         value={formData.fabricInterest}
                         onChange={(e) => setFormData({ ...formData, fabricInterest: e.target.value })}
                       >
                         <option value="Cotton Twills & Drills">Cotton Twills & Drills</option>
+                        <option value="Dhoti & Dhoti Pants">Traditional Dhotis & Dhoti Pants</option>
+                        <option value="Kurtas & Kurtha Pants">Organic Cotton & Linen Kurtas</option>
+                        <option value="Cotton Bags & Totes">100% Cotton & Save Soil Bags</option>
+                        <option value="Rudraksha Bags & Pouches">Consecrated Rudraksha Pouches</option>
+                        <option value="Meditation & Ceremonial Shawls">Meditation & Ceremonial Shawls</option>
                         <option value="Linen & Cotton Blends">Linen & Cotton Blends</option>
                         <option value="Fluid Viscose & Rayon">Fluid Viscose & Rayon</option>
-                        <option value="Double Cloth & Dobby">Double Cloth & Dobby Weaves</option>
-                        <option value="GOTS Organic Cottons">GOTS Organic Cottons</option>
                         <option value="Full Garmenting Coordination">Full Garmenting Coordination</option>
-                        <option value="Bespoke Weave Development">Bespoke Weave Development</option>
                       </select>
                     </div>
 
@@ -349,7 +353,7 @@ export const Contact = () => {
                     <Send size={18} /> Submit Sourcing Requirement
                   </button>
 
-                  <div style={{ textAlign: 'center', marginTop: '1rem', fontSize: '0.75rem', color: '#64748B' }}>
+                  <div style={{ textAlign: 'center', marginTop: '1.25rem', fontSize: '0.8rem', color: '#71717A' }}>
                     🔒 All buyer specifications and proprietary designs remain strictly confidential.
                   </div>
 
@@ -362,24 +366,24 @@ export const Contact = () => {
         </div>
       </section>
 
-      {/* Google Maps Facility Location & Regional Connectivity Section */}
-      <section style={{ backgroundColor: '#FFFFFF', padding: 'clamp(2.5rem, 5vw, 4.5rem) 0', borderTop: '1px solid #E2E8F0' }}>
+      {/* Google Maps Facility Location Section */}
+      <section style={{ backgroundColor: '#FFFFFF', padding: 'clamp(3rem, 6vw, 5rem) 0', borderTop: '1px solid #E4E4E7' }}>
         <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 2.5rem auto' }}>
+          <div style={{ textAlign: 'center', maxWidth: '760px', margin: '0 auto 3rem auto' }}>
             <span className="section-kicker">LOCAL HUB & LOGISTICS GATEWAY</span>
-            <h2 className="section-title" style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.25rem)' }}>
+            <h2 className="section-title" style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.35rem)' }}>
               Find Us in Erode, Tamil Nadu
             </h2>
-            <p className="section-desc" style={{ fontSize: '0.95rem' }}>
-              Positioned in the historic textile trading district of Erode with direct transit access to Tirupur garment manufacturers, Coimbatore yarn mills, and Tuticorin port.
+            <p className="section-desc" style={{ fontSize: '1rem' }}>
+              Positioned in the historic textile trading district of Erode with direct transit access to Tirupur garment manufacturers, Coimbatore industrial corridor, and Tuticorin port.
             </p>
           </div>
 
-          <div className="two-col-layout-responsive" style={{ gap: '2rem', alignItems: 'stretch' }}>
-            
+          <div className="two-col-layout-responsive" style={{ gap: '2.5rem', alignItems: 'stretch' }}>
+
             {/* Interactive Google Maps Embed */}
-            <div className="b2b-card" style={{ padding: '0.75rem', display: 'flex', flexDirection: 'column' }}>
-              <div style={{ width: '100%', height: '100%', minHeight: '380px', borderRadius: '10px', overflow: 'hidden' }}>
+            <div className="b2b-card" style={{ padding: '0.85rem', display: 'flex', flexDirection: 'column', border: '1px solid #E4E4E7' }}>
+              <div style={{ width: '100%', height: '100%', minHeight: '380px', borderRadius: '12px', overflow: 'hidden' }}>
                 <iframe
                   title="Vasanthaa Textiless Erode Location"
                   src="https://maps.google.com/maps?q=3,+Vasuki+St,+2nd+Street,+Erode,+Tamil+Nadu+638001&t=&z=16&ie=UTF8&iwloc=&output=embed"
@@ -394,62 +398,62 @@ export const Contact = () => {
             </div>
 
             {/* Local Transit & Buyer Directions Card */}
-            <div className="b2b-card" style={{ padding: 'clamp(1.25rem, 3vw, 2rem)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+            <div className="b2b-card" style={{ padding: 'clamp(1.75rem, 3vw, 2.5rem)', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', border: '1px solid #E4E4E7' }}>
               <div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
-                  <MapPin size={22} color="#C51E3A" />
-                  <h3 style={{ fontSize: '1.25rem', color: '#0F172A', margin: 0 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.25rem' }}>
+                  <MapPin size={24} color="#C51E3A" />
+                  <h3 style={{ fontSize: '1.35rem', color: '#0A0A0A', margin: 0, fontWeight: 700 }}>
                     Central Facility Address
                   </h3>
                 </div>
 
-                <div style={{ backgroundColor: '#F8FAFC', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #C51E3A', marginBottom: '1.5rem' }}>
-                  <strong style={{ color: '#0F172A', display: 'block', fontSize: '0.95rem' }}>Vasanthaa Textiless</strong>
-                  <div style={{ color: '#475569', fontSize: '0.9rem', lineHeight: '1.6', marginTop: '0.25rem' }}>
+                <div style={{ backgroundColor: '#FAFAFA', padding: '1.25rem', borderRadius: '12px', borderLeft: '4px solid #C51E3A', border: '1px solid #E4E4E7', borderLeftWidth: '4px', marginBottom: '1.75rem' }}>
+                  <strong style={{ color: '#0A0A0A', display: 'block', fontSize: '1rem', fontWeight: 800 }}>Vasanthaa Textiless</strong>
+                  <div style={{ color: '#52525B', fontSize: '0.925rem', lineHeight: '1.6', marginTop: '0.25rem' }}>
                     3, Vasuki St, 2nd Street, Erode,<br />
                     Tamil Nadu 638001, India<br />
-                    <span style={{ fontSize: '0.8rem', color: '#64748B' }}>Landmark: Near Clock Tower & Cauvery Trade Market</span>
+                    <span style={{ fontSize: '0.8rem', color: '#71717A' }}>Landmark: Near Clock Tower & Cauvery Trade Market</span>
                   </div>
                 </div>
 
-                <h4 style={{ fontSize: '0.95rem', color: '#0F172A', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.75rem' }}>
+                <h4 style={{ fontSize: '0.95rem', color: '#0A0A0A', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '1rem', fontWeight: 700 }}>
                   Transit Corridors & Travel Distances
                 </h4>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.875rem', color: '#475569', marginBottom: '1.5rem' }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem', fontSize: '0.9rem', color: '#52525B', marginBottom: '2rem' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <Navigation size={16} color="#D4AF37" />
+                    <Navigation size={16} color="#C51E3A" />
                     <span><strong>Erode Junction (ED):</strong> 2.8 km (~8 min by car)</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <Navigation size={16} color="#D4AF37" />
+                    <Navigation size={16} color="#C51E3A" />
                     <span><strong>Tirupur Garment Hub:</strong> 50 km (Direct via NH 544 highway)</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <Navigation size={16} color="#D4AF37" />
+                    <Navigation size={16} color="#C51E3A" />
                     <span><strong>Coimbatore Int'l Airport (CJB):</strong> 95 km (~1 hr 45 min drive)</span>
                   </div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                    <Navigation size={16} color="#D4AF37" />
+                    <Navigation size={16} color="#C51E3A" />
                     <span><strong>Tuticorin Port (VOCPT):</strong> 340 km (Weekly container feeder dispatch)</span>
                   </div>
                 </div>
               </div>
 
-              <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', gap: '0.85rem', flexWrap: 'wrap' }}>
                 <a
-                  href="https://maps.google.com/?q=3,+Vasuki+St,+2nd+Street,+Erode+Fort,+Erode,+Tamil+Nadu+638001"
+                  href="https://maps.google.com/?q=3,+Vasuki+St,+2nd+Street,+Erode,+Tamil+Nadu+638001"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-primary"
-                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', textDecoration: 'none', fontSize: '0.875rem' }}
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', textDecoration: 'none' }}
                 >
                   <Navigation size={16} /> Get Driving Directions <ExternalLink size={14} />
                 </a>
                 <a
                   href="tel:+919786222580"
-                  className="btn btn-outline"
-                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', textDecoration: 'none', fontSize: '0.875rem' }}
+                  className="btn btn-outline-dark"
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', textDecoration: 'none' }}
                 >
                   <Phone size={16} /> Call Front Desk
                 </a>

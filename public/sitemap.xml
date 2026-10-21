@@ -3,118 +3,174 @@
   <!-- Core Hub Pages -->
   <url>
     <loc>https://vasanthaatextiless.in/</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://vasanthaatextiless.in/catalog</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://vasanthaatextiless.in/garments</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>daily</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://vasanthaatextiless.in/capabilities</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://vasanthaatextiless.in/quality-assurance</loc>
-    <lastmod>2026-10-20</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://vasanthaatextiless.in/about</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://vasanthaatextiless.in/resources</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://vasanthaatextiless.in/contact</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
   </url>
 
-  <!-- Export-Grade Woven Fabric Detail Pages -->
+  <!-- Woven Fabrics Category (Primary Target SKUs) -->
   <url>
-    <loc>https://vasanthaatextiless.in/fabric/cotton-twill</loc>
-    <lastmod>2026-10-20</lastmod>
+    <loc>https://vasanthaatextiless.in/fabric/gada-greige-fabric</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://vasanthaatextiless.in/fabric/cotton-drill</loc>
-    <lastmod>2026-10-20</lastmod>
+    <loc>https://vasanthaatextiless.in/fabric/dyed-woven-fabric</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://vasanthaatextiless.in/fabric/linen-dobby</loc>
-    <lastmod>2026-10-20</lastmod>
+    <loc>https://vasanthaatextiless.in/fabric/printed-poplin-fabric</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://vasanthaatextiless.in/fabric/viscose-rayon</loc>
-    <lastmod>2026-10-20</lastmod>
+    <loc>https://vasanthaatextiless.in/fabric/double-gauze-fabric</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://vasanthaatextiless.in/fabric/double-cloth</loc>
-    <lastmod>2026-10-20</lastmod>
+    <loc>https://vasanthaatextiless.in/fabric/cotton-voile-fabric</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://vasanthaatextiless.in/fabric/cotton-double-gauze</loc>
-    <lastmod>2026-10-20</lastmod>
+    <loc>https://vasanthaatextiless.in/fabric/cotton-duck-canvas</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.90</priority>
   </url>
   <url>
-    <loc>https://vasanthaatextiless.in/fabric/fine-poplin</loc>
-    <lastmod>2026-10-20</lastmod>
+    <loc>https://vasanthaatextiless.in/fabric/cotton-drill-fabric</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://vasanthaatextiless.in/fabric/cotton-twill-fabric</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://vasanthaatextiless.in/fabric/dobby-woven-fabric</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://vasanthaatextiless.in/fabric/woven-jacquard-fabric</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://vasanthaatextiless.in/fabric/pure-flax-linen</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://vasanthaatextiless.in/fabric/optical-white-pfd-fabric</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
   </url>
   <url>
     <loc>https://vasanthaatextiless.in/fabric/seersucker</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://vasanthaatextiless.in/fabric/yarn-dyed-checks</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://vasanthaatextiless.in/fabric/organic-cotton</loc>
-    <lastmod>2026-10-20</lastmod>
+    <loc>https://vasanthaatextiless.in/fabric/viscose-rayon</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Downstream Finished Garments (Apparel OEM / Cut-and-Sew) -->
+  <url>
+    <loc>https://vasanthaatextiless.in/garments/woven-shirts-manufacturer</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
   </url>
   <url>
-    <loc>https://vasanthaatextiless.in/fabric/cotton-linen-blend</loc>
-    <lastmod>2026-10-20</lastmod>
+    <loc>https://vasanthaatextiless.in/garments/kurta-garment-manufacturer</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.92</priority>
   </url>
   <url>
-    <loc>https://vasanthaatextiless.in/fabric/dobby-geometric</loc>
-    <lastmod>2026-10-20</lastmod>
+    <loc>https://vasanthaatextiless.in/garments/traditional-dhoti-manufacturer</loc>
+    <lastmod>2026-10-21</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.92</priority>
+  </url>
+  <url>
+    <loc>https://vasanthaatextiless.in/garments/cotton-canvas-tote-bags</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+  </url>
+  <url>
+    <loc>https://vasanthaatextiless.in/garments/custom-woven-apparel-oem</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
   </url>
 </urlset>

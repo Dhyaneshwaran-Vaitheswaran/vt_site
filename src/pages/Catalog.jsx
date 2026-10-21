@@ -12,7 +12,7 @@ export const Catalog = ({ onSelectFabric, onAddSwatch, swatches, onOpenRFQ, onOp
   const filteredFabrics = useMemo(() => {
     return FABRICS.filter(fabric => {
       // Search
-      const matchesSearch = searchQuery === '' || 
+      const matchesSearch = searchQuery === '' ||
         fabric.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         fabric.weave.toLowerCase().includes(searchQuery.toLowerCase()) ||
         fabric.fiber.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -36,43 +36,45 @@ export const Catalog = ({ onSelectFabric, onAddSwatch, swatches, onOpenRFQ, onOp
   }, [searchQuery, selectedCategory, selectedWeight, sortBy]);
 
   return (
-    <div style={{ backgroundColor: '#FBF9F5', paddingBottom: '6rem' }}>
-      
-      {/* Catalog Header Banner */}
+    <div style={{ backgroundColor: '#FFFFFF', paddingBottom: '6rem' }}>
+
+      {/* Catalog Header Banner — Pure Black & Red */}
       <section style={{
-        backgroundColor: '#0F172A',
+        backgroundColor: '#0A0A0A',
         color: '#FFFFFF',
-        padding: 'clamp(2.5rem, 5vw, 4rem) 0',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
+        padding: 'clamp(4rem, 6vw, 5.5rem) 0',
+        borderBottom: '1px solid #27272A'
       }}>
         <div className="container">
-          <div style={{ maxWidth: '780px' }}>
-            <span className="badge badge-gold" style={{ marginBottom: '0.75rem' }}>B2B WOVEN FABRIC PORTFOLIO</span>
-            <h1 style={{ color: '#FFFFFF', fontSize: 'clamp(1.75rem, 4.5vw, 2.75rem)', marginBottom: '0.875rem' }}>
+          <div style={{ maxWidth: '820px' }}>
+            <span className="badge badge-red" style={{ marginBottom: '1rem', backgroundColor: '#FEF2F2', color: '#C51E3A' }}>
+              B2B WOVEN FABRIC PORTFOLIO
+            </span>
+            <h1 style={{ color: '#FFFFFF', fontSize: 'clamp(2rem, 4.5vw, 3.25rem)', marginBottom: '1rem', fontWeight: 800 }}>
               Specialty Woven Fabrics & Substrates
             </h1>
-            <p style={{ color: '#CBD5E1', fontSize: 'clamp(0.95rem, 1.8vw, 1.125rem)', lineHeight: '1.7', marginBottom: '1.5rem' }}>
-              All fabrics are coordinated directly from certified spinning and air-jet/rapier weaving mills in the Erode textile cluster. Complete technical spec sheets, lab dips, and physical swatch feelers available for each construction.
+            <p style={{ color: '#D4D4D8', fontSize: 'clamp(1rem, 1.8vw, 1.15rem)', lineHeight: '1.75', marginBottom: '2rem' }}>
+              All fabrics are coordinated directly through audited air-jet and rapier weaving facilities in the Erode textile cluster. Complete technical spec sheets, lab dips, and physical swatch feelers available for each construction.
             </p>
-            <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', gap: '0.85rem', flexWrap: 'wrap' }}>
               <button
                 onClick={() => onOpenRFQ(null)}
-                className="btn btn-primary"
+                className="btn btn-primary btn-lg"
               >
-                <ArrowUpRight size={16} /> Request Custom Spec Quote
+                <ArrowUpRight size={18} /> Request Custom Spec Quote
               </button>
               <button
                 onClick={onOpenSwatchDrawer}
-                className="btn btn-outline-light"
+                className="btn btn-outline-light btn-lg"
               >
-                <ShoppingBag size={16} /> View Selected Swatches ({swatches.length})
+                <ShoppingBag size={18} /> View Selected Swatches ({swatches.length})
               </button>
               <button
                 onClick={() => window.print()}
-                className="btn btn-outline-light"
+                className="btn btn-outline-light btn-lg"
                 title="Print or Save Fabric Catalog Specification Table"
               >
-                <Printer size={16} /> Print / Save Catalog Specs
+                <Printer size={18} /> Print / Save Catalog Specs
               </button>
             </div>
           </div>
@@ -82,7 +84,7 @@ export const Catalog = ({ onSelectFabric, onAddSwatch, swatches, onOpenRFQ, onOp
       {/* Filter & Search Bar */}
       <section style={{
         backgroundColor: '#FFFFFF',
-        borderBottom: '1px solid #E2E8F0',
+        borderBottom: '1px solid #E4E4E7',
         padding: '1.25rem 0',
         position: 'sticky',
         top: '64px',
@@ -97,26 +99,26 @@ export const Catalog = ({ onSelectFabric, onAddSwatch, swatches, onOpenRFQ, onOp
             justifyContent: 'space-between',
             gap: '1rem'
           }}>
-            
+
             {/* Search Input */}
-            <div style={{ position: 'relative', flex: '1 1 280px', maxWidth: '400px' }}>
-              <Search size={18} color="#94A3B8" style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)' }} />
+            <div style={{ position: 'relative', flex: '1 1 280px', maxWidth: '420px' }}>
+              <Search size={18} color="#71717A" style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)' }} />
               <input
                 type="text"
                 placeholder="Search twill, drill, linen, GSM, application..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="form-input"
-                style={{ paddingLeft: '2.5rem', margin: 0 }}
+                style={{ paddingLeft: '2.75rem', margin: 0 }}
               />
             </div>
 
             {/* Weight Filter Selector */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-              <span style={{ fontSize: '0.8125rem', fontWeight: 600, color: '#64748B' }}>Weight:</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
+              <span style={{ fontSize: '0.875rem', fontWeight: 600, color: '#52525B' }}>Weight:</span>
               <select
                 className="form-select"
-                style={{ width: 'auto', padding: '0.5rem 1rem', fontSize: '0.85rem' }}
+                style={{ width: 'auto', padding: '0.65rem 1rem', fontSize: '0.875rem' }}
                 value={selectedWeight}
                 onChange={(e) => setSelectedWeight(e.target.value)}
               >
@@ -129,7 +131,7 @@ export const Catalog = ({ onSelectFabric, onAddSwatch, swatches, onOpenRFQ, onOp
               {/* Sort By */}
               <select
                 className="form-select"
-                style={{ width: 'auto', padding: '0.5rem 1rem', fontSize: '0.85rem' }}
+                style={{ width: 'auto', padding: '0.65rem 1rem', fontSize: '0.875rem' }}
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
               >
@@ -145,7 +147,7 @@ export const Catalog = ({ onSelectFabric, onAddSwatch, swatches, onOpenRFQ, onOp
             display: 'flex',
             gap: '0.5rem',
             overflowX: 'auto',
-            paddingTop: '0.875rem',
+            paddingTop: '1rem',
             whiteSpace: 'nowrap',
             paddingBottom: '0.25rem'
           }}>
@@ -154,14 +156,14 @@ export const Catalog = ({ onSelectFabric, onAddSwatch, swatches, onOpenRFQ, onOp
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
                 style={{
-                  padding: '0.375rem 0.875rem',
+                  padding: '0.45rem 1rem',
                   fontSize: '0.8125rem',
-                  fontWeight: 600,
-                  borderRadius: '6px',
-                  border: '1px solid',
-                  borderColor: selectedCategory === cat ? '#C51E3A' : '#E2E8F0',
-                  backgroundColor: selectedCategory === cat ? '#C51E3A' : '#F8FAFC',
-                  color: selectedCategory === cat ? '#FFFFFF' : '#475569',
+                  fontWeight: 700,
+                  borderRadius: '9999px',
+                  border: '1.5px solid',
+                  borderColor: selectedCategory === cat ? '#C51E3A' : '#E4E4E7',
+                  backgroundColor: selectedCategory === cat ? '#C51E3A' : '#FAFAFA',
+                  color: selectedCategory === cat ? '#FFFFFF' : '#18181B',
                   cursor: 'pointer',
                   transition: 'all 150ms ease'
                 }}
@@ -175,12 +177,12 @@ export const Catalog = ({ onSelectFabric, onAddSwatch, swatches, onOpenRFQ, onOp
       </section>
 
       {/* Catalog Grid Section */}
-      <section style={{ paddingTop: '3rem' }}>
+      <section style={{ paddingTop: '3.5rem' }}>
         <div className="container">
-          
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
-            <div style={{ fontSize: '0.9375rem', color: '#64748B' }}>
-              Showing <strong style={{ color: '#0F172A' }}>{filteredFabrics.length}</strong> industrial fabric constructions
+
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2.5rem' }}>
+            <div style={{ fontSize: '0.95rem', color: '#52525B' }}>
+              Showing <strong style={{ color: '#0A0A0A' }}>{filteredFabrics.length}</strong> industrial fabric constructions
             </div>
             {(searchQuery || selectedCategory !== 'All Fabrics' || selectedWeight !== 'all') && (
               <button
@@ -189,7 +191,7 @@ export const Catalog = ({ onSelectFabric, onAddSwatch, swatches, onOpenRFQ, onOp
                   setSelectedCategory('All Fabrics');
                   setSelectedWeight('all');
                 }}
-                style={{ background: 'none', border: 'none', color: '#C51E3A', fontSize: '0.875rem', fontWeight: 600, cursor: 'pointer' }}
+                style={{ background: 'none', border: 'none', color: '#C51E3A', fontSize: '0.875rem', fontWeight: 700, cursor: 'pointer' }}
               >
                 Reset All Filters
               </button>
@@ -197,11 +199,11 @@ export const Catalog = ({ onSelectFabric, onAddSwatch, swatches, onOpenRFQ, onOp
           </div>
 
           {filteredFabrics.length === 0 ? (
-            <div style={{ textAlign: 'center', padding: '5rem 1rem', backgroundColor: '#FFFFFF', borderRadius: '12px', border: '1px solid #E2E8F0' }}>
-              <Filter size={48} color="#94A3B8" style={{ margin: '0 auto 1rem auto' }} />
-              <h3 style={{ color: '#0F172A', marginBottom: '0.5rem' }}>No Matching Fabrics Found</h3>
-              <p style={{ color: '#64748B', maxWidth: '480px', margin: '0 auto 1.5rem auto' }}>
-                We coordinate bespoke weaves and custom yarn blends beyond our standard catalog. Send us your fabric composition or target swatch for a custom production quote.
+            <div style={{ textAlign: 'center', padding: '5rem 1rem', backgroundColor: '#FAFAFA', borderRadius: '16px', border: '1px solid #E4E4E7' }}>
+              <Filter size={48} color="#A1A1AA" style={{ margin: '0 auto 1rem auto' }} />
+              <h3 style={{ color: '#0A0A0A', marginBottom: '0.5rem', fontWeight: 700 }}>No Matching Fabrics Found</h3>
+              <p style={{ color: '#52525B', maxWidth: '480px', margin: '0 auto 1.5rem auto' }}>
+                We coordinate bespoke weaves beyond our standard catalog. Send us your fabric composition or target swatch for a custom production quote.
               </p>
               <button
                 onClick={() => onOpenRFQ(null)}
@@ -211,7 +213,7 @@ export const Catalog = ({ onSelectFabric, onAddSwatch, swatches, onOpenRFQ, onOp
               </button>
             </div>
           ) : (
-            <div className="grid-3">
+            <div className="grid-3" style={{ gap: '2.5rem' }}>
               {filteredFabrics.map(fabric => (
                 <FabricCard
                   key={fabric.id}

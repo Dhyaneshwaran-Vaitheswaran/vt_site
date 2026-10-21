@@ -52,7 +52,7 @@ export const SwatchDrawer = ({ isOpen, onClose, swatches, onRemoveSwatch, onClea
         {/* Drawer Header */}
         <div style={{
           padding: '1.25rem 1.5rem',
-          backgroundColor: '#0F172A',
+          backgroundColor: '#0A0A0A',
           color: '#FFFFFF',
           display: 'flex',
           alignItems: 'center',
@@ -83,7 +83,7 @@ export const SwatchDrawer = ({ isOpen, onClose, swatches, onRemoveSwatch, onClea
           {ordered ? (
             <div style={{ textAlign: 'center', padding: '2rem 1rem' }}>
               <CheckCircle2 size={48} color="#15803D" style={{ margin: '0 auto 1rem auto' }} />
-              <h4 style={{ color: '#0F172A', fontSize: '1.25rem', marginBottom: '0.5rem' }}>
+              <h4 style={{ color: '#0A0A0A', fontSize: '1.25rem', marginBottom: '0.5rem' }}>
                 Swatch Request Dispatched!
               </h4>
               <p style={{ color: '#64748B', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
@@ -104,7 +104,7 @@ export const SwatchDrawer = ({ isOpen, onClose, swatches, onRemoveSwatch, onClea
           ) : swatches.length === 0 ? (
             <div style={{ textAlign: 'center', padding: '3rem 1rem', color: '#94A3B8' }}>
               <ShoppingBag size={48} style={{ margin: '0 auto 1rem auto', opacity: 0.4 }} />
-              <h4 style={{ color: '#0F172A', marginBottom: '0.5rem' }}>No Swatches Added Yet</h4>
+              <h4 style={{ color: '#0A0A0A', marginBottom: '0.5rem' }}>No Swatches Added Yet</h4>
               <p style={{ fontSize: '0.875rem', marginBottom: '1.5rem' }}>
                 Browse our fabric catalog and click "+ Request Swatch" to order physical quality feelers and lab-dip cards.
               </p>
@@ -150,7 +150,7 @@ export const SwatchDrawer = ({ isOpen, onClose, swatches, onRemoveSwatch, onClea
                         style={{ width: '44px', height: '44px', borderRadius: '6px', objectFit: 'cover', flexShrink: 0, border: '1px solid #E2E8F0' }} 
                       />
                       <div>
-                        <div style={{ fontWeight: 700, fontSize: '0.9rem', color: '#0F172A' }}>
+                        <div style={{ fontWeight: 700, fontSize: '0.9rem', color: '#0A0A0A' }}>
                           {item.name}
                         </div>
                         <div style={{ fontSize: '0.75rem', color: '#64748B' }}>
@@ -177,7 +177,7 @@ export const SwatchDrawer = ({ isOpen, onClose, swatches, onRemoveSwatch, onClea
 
               {/* Courier Request Form */}
               <form onSubmit={handleOrderSwatches} style={{ borderTop: '1px solid #E2E8F0', paddingTop: '1.5rem' }}>
-                <h4 style={{ fontSize: '0.95rem', color: '#0F172A', marginBottom: '1rem' }}>
+                <h4 style={{ fontSize: '0.95rem', color: '#0A0A0A', marginBottom: '1rem' }}>
                   Courier Delivery Details
                 </h4>
 

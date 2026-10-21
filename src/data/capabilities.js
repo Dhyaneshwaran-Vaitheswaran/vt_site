@@ -3,20 +3,6 @@
 export const CAPABILITIES = [
   {
     step: "01",
-    title: "Yarn & Fiber Sourcing",
-    subtitle: "Precision Material Foundation",
-    image: "/images/yarn-cones.webp",
-    imageAlt: "High-grade ring-spun, compact, and combed cotton yarn cones on textile mill inspection bench",
-    description: "Located at the epicenter of South India's spinning corridor, we source high-grade ring-spun, compact, combed, and slub yarns directly from audited spinning mills. From virgin long-staple cotton and European flax linen to certified organic and FSC viscose, we control the quality of the base yarn before a single warp thread is drawn.",
-    highlights: [
-      "Combed & carded cotton counts from 10s to 100s",
-      "Pure European flax linen from 25s to 60s Lea",
-      "GOTS-compliant organic & BCI cotton lots",
-      "Yarn testing: CSP, hairiness index, and twist per inch"
-    ]
-  },
-  {
-    step: "02",
     title: "Weaving & Loom Orchestration",
     subtitle: "High-Speed & Specialty Weaves",
     image: "/images/weaving-looms.webp",
@@ -30,7 +16,7 @@ export const CAPABILITIES = [
     ]
   },
   {
-    step: "03",
+    step: "02",
     title: "Wet Processing & Dyeing",
     subtitle: "Vivid Colors with Zero Liquid Discharge",
     image: "/images/textile-dyeing.webp",
@@ -44,7 +30,7 @@ export const CAPABILITIES = [
     ]
   },
   {
-    step: "04",
+    step: "03",
     title: "Printing & Specialty Finishing",
     subtitle: "Tactile Finishes & High-Definition Prints",
     image: "/images/fabric-finishing.webp",
@@ -58,7 +44,7 @@ export const CAPABILITIES = [
     ]
   },
   {
-    step: "05",
+    step: "04",
     title: "In-House 4-Point Inspection & Dispatch",
     subtitle: "Single-Point Accountability",
     image: "/images/fabric-inspection.webp",
@@ -74,15 +60,17 @@ export const CAPABILITIES = [
 ];
 
 export const GARMENTING_COORDINATION = {
-  title: "Downstream Garment Manufacturing Coordination",
-  subtitle: "From Fabric Roll to Retail-Ready Apparel",
+  title: "Downstream Garment Manufacturing & Apparel Coordination",
+  subtitle: "From Fabric Roll to Retail-Ready Apparel & Sacred Stitched Goods",
   image: "/images/garment-manufacturing.webp",
-  imageAlt: "Export-grade garment manufacturing cut-and-sew line with skilled stitching operators assembling woven shirts",
-  description: "For clients seeking fully finished apparel without managing garment factories directly, Vasanthaa Textiless coordinates cut-and-sew production through trusted stitching facilities in Tamil Nadu's renowned garment clusters.",
+  imageAlt: "Export-grade garment manufacturing cut-and-sew line with skilled stitching operators assembling woven garments",
+  description: "For clients seeking fully finished apparel and stitched goods without managing multiple factories, Vasanthaa Textiless coordinates cut-and-sew production through trusted stitching facilities in Tamil Nadu's renowned garment clusters.",
   categories: [
-    { title: "Men's & Women's Shirting", desc: "Formal executive shirts, casual linen shirts, resort shirts with pattern-matched checks." },
-    { title: "Trousers & Chinos", desc: "Structured chinos, cargo pants, and workwear trousers with reinforced seams." },
-    { title: "Corporate & School Uniforms", desc: "High-durability drill shirts, blazers, industrial overalls, and institutional apparel." },
-    { title: "Designer Kurtas & Ethnic Wear", desc: "Textured dobby and linen tunics crafted with fine placket and collar stitching." }
+    { title: "Traditional & Tailored Dhotis", desc: "Pure cotton single/double dhotis with zari borders and modern comfort-tailored dhoti pants." },
+    { title: "Organic Cotton & Linen Kurtas", desc: "Textured dobby, slub, and pure linen tunics and matching pants crafted with precision plackets." },
+    { title: "100% Cotton & Save Soil Bags", desc: "Heavy-duty canvas and organic cotton eco totes, grocery bags, and event merchandise." },
+    { title: "Consecrated Rudraksha Pouches", desc: "Sacred protective cotton bags and drawstring pouches made with revered stitch integrity." },
+    { title: "Meditation & Ceremonial Shawls", desc: "Finely woven soft stoles, meditation wraps, and angavastrams with traditional selvages." },
+    { title: "Executive Shirting & Chinos", desc: "Formal shirts, casual resort button-downs, and durable workwear trousers with reinforced seams." }
   ]
 };

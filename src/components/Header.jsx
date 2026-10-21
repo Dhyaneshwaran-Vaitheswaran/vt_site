@@ -33,12 +33,12 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
     <>
       {/* Sleek Minimal Utility Strip */}
       <div className="top-utility-bar" style={{
-        backgroundColor: '#0B1120',
-        color: '#94A3B8',
+        backgroundColor: '#0A0A0A',
+        color: '#A1A1AA',
         fontSize: '0.75rem',
         letterSpacing: '0.04em',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
-        padding: '0.45rem 0'
+        borderBottom: '1px solid #27272A',
+        padding: '0.5rem 0'
       }}>
         <div className="container" style={{
           display: 'flex',
@@ -49,8 +49,8 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
           {/* Left: Origin & Heritage */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
             <span style={{
-              color: '#D4AF37',
-              fontWeight: 700,
+              color: '#C51E3A',
+              fontWeight: 800,
               fontSize: '0.6875rem',
               letterSpacing: '0.08em',
               textTransform: 'uppercase'
@@ -58,25 +58,25 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
               ESTD. 1998
             </span>
             <span style={{ color: 'rgba(255, 255, 255, 0.25)' }}>•</span>
-            <span style={{ color: '#E2E8F0', fontWeight: 500 }}>Erode, Tamil Nadu</span>
+            <span style={{ color: '#FFFFFF', fontWeight: 600 }}>Erode, Tamil Nadu</span>
             <span style={{ color: 'rgba(255, 255, 255, 0.25)' }} className="hide-on-tablet">•</span>
-            <span style={{ color: '#94A3B8' }} className="hide-on-tablet">Central Textile Sourcing & Production</span>
+            <span style={{ color: '#A1A1AA' }} className="hide-on-tablet">Central Textile Sourcing & Production</span>
           </div>
 
           {/* Right: Direct Desk Hotlines */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', fontSize: '0.75rem' }}>
-            <a 
-              href="tel:+919786222580" 
-              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', color: '#E2E8F0', textDecoration: 'none', fontWeight: 500 }}
+            <a
+              href="tel:+919786222580"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', color: '#FFFFFF', textDecoration: 'none', fontWeight: 600 }}
             >
-              <Phone size={12} color="#D4AF37" /> +91 97862 22580
+              <Phone size={12} color="#C51E3A" /> +91 97862 22580
             </a>
             <span style={{ color: 'rgba(255, 255, 255, 0.2)' }}>•</span>
-            <a 
-              href="https://wa.me/919786222580?text=Hello%20Vasanthaa%20Textiless,%20I%20have%20an%20inquiry%20regarding%20bulk%20fabric%20sourcing." 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', color: '#25D366', textDecoration: 'none', fontWeight: 600 }}
+            <a
+              href="https://wa.me/919786222580?text=Hello%20Vasanthaa%20Textiless,%20I%20have%20an%20inquiry%20regarding%20bulk%20fabric%20sourcing."
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', color: '#25D366', textDecoration: 'none', fontWeight: 700 }}
             >
               <MessageSquare size={12} /> WhatsApp Desk
             </a>
@@ -87,10 +87,10 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
       {/* Main Clean Architectural Header */}
       <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
         <div className="container header-container">
-          
+
           {/* Official Simplistic & Unique VT Trademark Logo */}
-          <div 
-            onClick={() => handleNavClick('home')} 
+          <div
+            onClick={() => handleNavClick('home')}
             className="header-logo-wrap"
           >
             <VTLogo size={38} variant="dark" />
@@ -118,14 +118,14 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
                         padding: '0.5rem 0',
                         fontSize: '0.875rem',
                         fontWeight: isActive ? 700 : 500,
-                        color: isActive ? '#0F172A' : '#475569',
+                        color: isActive ? '#0A0A0A' : '#475569',
                         cursor: 'pointer',
                         whiteSpace: 'nowrap',
                         position: 'relative',
                         transition: 'color 150ms ease'
                       }}
                       onMouseEnter={(e) => {
-                        if (!isActive) e.currentTarget.style.color = '#0F172A';
+                        if (!isActive) e.currentTarget.style.color = '#0A0A0A';
                       }}
                       onMouseLeave={(e) => {
                         if (!isActive) e.currentTarget.style.color = '#475569';
@@ -152,14 +152,14 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
 
           {/* Right Action Controls */}
           <div className="header-actions">
-            
+
             {/* Swatch Requisition Tray */}
             <button
               onClick={onOpenSwatchDrawer}
               className="header-swatch-btn"
               title="View fabric swatch sample tray"
             >
-              <ShoppingBag size={16} color="#0F172A" />
+              <ShoppingBag size={16} color="#0A0A0A" />
               <span className="hide-on-tablet">Swatches</span>
               {swatchCount > 0 ? (
                 <span className="swatch-badge">
@@ -169,7 +169,7 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
             </button>
 
             {/* Primary Action Button — Adaptive on Phone and Desktop */}
-            <button 
+            <button
               onClick={() => onOpenRFQ(null)}
               className="btn btn-primary btn-sm header-quote-btn"
             >
@@ -206,7 +206,7 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
                     border: 'none',
                     fontSize: '0.95rem',
                     fontWeight: activePage === 'home' ? 700 : 500,
-                    color: activePage === 'home' ? '#C51E3A' : '#0F172A',
+                    color: activePage === 'home' ? '#C51E3A' : '#0A0A0A',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'space-between',
@@ -229,7 +229,7 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
                       border: 'none',
                       fontSize: '0.95rem',
                       fontWeight: activePage === item.id ? 700 : 500,
-                      color: activePage === item.id ? '#C51E3A' : '#0F172A',
+                      color: activePage === item.id ? '#C51E3A' : '#0A0A0A',
                       display: 'flex',
                       alignItems: 'center',
                       justifyContent: 'space-between',
@@ -261,18 +261,18 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
                 >
                   <MessageSquare size={16} /> WhatsApp Desk
                 </a>
-                <a 
+                <a
                   href="tel:+919786222580"
-                  style={{ 
-                    display: 'flex', 
-                    alignItems: 'center', 
-                    justifyContent: 'center', 
-                    gap: '0.4rem', 
-                    color: '#475569', 
-                    fontSize: '0.85rem', 
-                    textDecoration: 'none', 
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '0.4rem',
+                    color: '#475569',
+                    fontSize: '0.85rem',
+                    textDecoration: 'none',
                     fontWeight: 600,
-                    paddingTop: '0.25rem' 
+                    paddingTop: '0.25rem'
                   }}
                 >
                   <Phone size={14} color="#C51E3A" /> Direct Hotline: +91 97862 22580
@@ -331,7 +331,7 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
           padding: 0.5rem 0.75rem;
           font-size: 0.8125rem;
           font-weight: 600;
-          color: #1E293B;
+          color: #18181B;
           cursor: pointer;
           transition: all 150ms ease;
           flex-shrink: 0;
@@ -363,6 +363,13 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
           flex-shrink: 0;
         }
 
+        .quote-text-short {
+          display: none;
+        }
+        .quote-text-full {
+          display: inline;
+        }
+
         /* Mobile Hamburger Button */
         .mobile-menu-btn {
           display: none;
@@ -374,7 +381,7 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
           background-color: #FFFFFF;
           border: 1px solid #CBD5E1;
           border-radius: 6px;
-          color: #0F172A;
+          color: #0A0A0A;
           cursor: pointer;
           padding: 0;
           flex-shrink: 0;
@@ -437,6 +444,11 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
 
         @media (max-width: 1100px) {
           .hide-on-tablet { display: none !important; }
+        }
+
+        @media (max-width: 640px) {
+          .quote-text-full { display: none !important; }
+          .quote-text-short { display: inline !important; }
         }
 
         @media (max-width: 480px) {

@@ -3,12 +3,12 @@ import { ArrowRight, Check, Layers, Sliders, ExternalLink } from 'lucide-react';
 
 export const FabricCard = ({ fabric, onSelectFabric, onAddSwatch, isSwatchAdded, onOpenRFQ }) => {
   return (
-    <div className="b2b-card" style={{ display: 'flex', flexDirection: 'column', padding: 0, overflow: 'hidden' }}>
-      
+    <div className="b2b-card" style={{ display: 'flex', flexDirection: 'column', padding: 0, overflow: 'hidden', border: '1px solid #E4E4E7' }}>
+
       {/* Fabric Swatch Media */}
-      <div style={{ position: 'relative', height: '220px', overflow: 'hidden', backgroundColor: '#F1F5F9' }}>
-        <img 
-          src={fabric.image} 
+      <div style={{ position: 'relative', height: '230px', overflow: 'hidden', backgroundColor: '#F4F4F5' }}>
+        <img
+          src={fabric.image}
           alt={`${fabric.name} woven fabric swatch`}
           loading="lazy"
           decoding="async"
@@ -20,7 +20,7 @@ export const FabricCard = ({ fabric, onSelectFabric, onAddSwatch, isSwatchAdded,
             objectFit: 'cover',
             transition: 'transform 400ms cubic-bezier(0.16, 1, 0.3, 1)'
           }}
-          onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.06)'}
+          onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
           onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
         />
         <div style={{
@@ -32,62 +32,63 @@ export const FabricCard = ({ fabric, onSelectFabric, onAddSwatch, isSwatchAdded,
           flexWrap: 'wrap'
         }}>
           {fabric.badge && (
-            <span className="badge badge-gold" style={{ fontSize: '0.6875rem' }}>
+            <span className="badge badge-red" style={{ fontSize: '0.6875rem', backgroundColor: '#FEF2F2', color: '#C51E3A' }}>
               {fabric.badge}
             </span>
           )}
-          <span className="badge badge-navy" style={{ fontSize: '0.6875rem', backgroundColor: 'rgba(15, 23, 42, 0.75)', color: '#FFFFFF' }}>
+          <span className="badge" style={{ fontSize: '0.6875rem', backgroundColor: 'rgba(10, 10, 10, 0.85)', color: '#FFFFFF' }}>
             {fabric.weave}
           </span>
         </div>
       </div>
 
       {/* Card Content */}
-      <div style={{ padding: '1.5rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
-        
-        <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#C51E3A', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.25rem' }}>
+      <div style={{ padding: '1.75rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
+
+        <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#C51E3A', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.35rem' }}>
           {fabric.category}
         </div>
-        
-        <h3 
+
+        <h3
           onClick={() => onSelectFabric(fabric)}
-          style={{ fontSize: '1.25rem', marginBottom: '0.75rem', cursor: 'pointer', color: '#0F172A', transition: 'color 150ms ease' }}
+          style={{ fontSize: '1.25rem', marginBottom: '0.75rem', cursor: 'pointer', color: '#0A0A0A', fontWeight: 700, transition: 'color 150ms ease' }}
           onMouseEnter={(e) => e.currentTarget.style.color = '#C51E3A'}
-          onMouseLeave={(e) => e.currentTarget.style.color = '#0F172A'}
+          onMouseLeave={(e) => e.currentTarget.style.color = '#0A0A0A'}
         >
           {fabric.name}
         </h3>
 
-        <p style={{ fontSize: '0.875rem', color: '#64748B', lineHeight: '1.6', marginBottom: '1.25rem', flex: 1 }}>
-          {fabric.description.substring(0, 115)}...
+        <p style={{ fontSize: '0.875rem', color: '#52525B', lineHeight: '1.65', marginBottom: '1.5rem', flex: 1 }}>
+          {fabric.description.substring(0, 120)}...
         </p>
 
         {/* Technical Data Pill Grid */}
         <div style={{
-          backgroundColor: '#F8FAFC',
-          borderRadius: '8px',
-          padding: '0.75rem 1rem',
-          marginBottom: '1.25rem',
+          backgroundColor: '#FAFAFA',
+          border: '1px solid #E4E4E7',
+          borderRadius: '10px',
+          padding: '0.85rem 1rem',
+          marginBottom: '1.5rem',
           display: 'grid',
           gridTemplateColumns: 'repeat(2, 1fr)',
           gap: '0.5rem',
           fontSize: '0.8125rem'
         }}>
           <div>
-            <span style={{ color: '#94A3B8', display: 'block', fontSize: '0.6875rem', textTransform: 'uppercase' }}>Weight</span>
-            <strong style={{ color: '#0F172A' }}>{fabric.gsm}</strong>
+            <span style={{ color: '#71717A', display: 'block', fontSize: '0.6875rem', textTransform: 'uppercase', fontWeight: 600 }}>Weight</span>
+            <strong style={{ color: '#0A0A0A' }}>{fabric.gsm}</strong>
           </div>
           <div>
-            <span style={{ color: '#94A3B8', display: 'block', fontSize: '0.6875rem', textTransform: 'uppercase' }}>Yarn Count</span>
-            <strong style={{ color: '#0F172A' }}>{fabric.yarnCount.split(',')[0]}</strong>
+            <span style={{ color: '#71717A', display: 'block', fontSize: '0.6875rem', textTransform: 'uppercase', fontWeight: 600 }}>Yarn Count</span>
+            <strong style={{ color: '#0A0A0A' }}>{fabric.yarnCount.split(',')[0]}</strong>
           </div>
           <div>
-            <span style={{ color: '#94A3B8', display: 'block', fontSize: '0.6875rem', textTransform: 'uppercase' }}>Width</span>
-            <strong style={{ color: '#0F172A' }}>{fabric.width.split('(')[0]}</strong>
+            <span style={{ color: '#71717A', display: 'block', fontSize: '0.6875rem', textTransform: 'uppercase', fontWeight: 600 }}>Width</span>
+            <strong style={{ color: '#0A0A0A' }}>{fabric.width.split('(')[0]}</strong>
           </div>
           <div>
-            <span style={{ color: '#94A3B8', display: 'block', fontSize: '0.6875rem', textTransform: 'uppercase' }}>Bulk MOQ</span>
-            <strong style={{ color: '#C51E3A' }}>{fabric.moqBulk}</strong>
+            <span style={{ color: '#71717A', display: 'block', fontSize: '0.6875rem', textTransform: 'uppercase', fontWeight: 600 }}>Bulk MOQ</span>
+            <strong style={{ color: '#C51E3A', fontWeight: 700 }}>{fabric.moqBulk}</strong>
           </div>
         </div>
 
@@ -103,12 +104,12 @@ export const FabricCard = ({ fabric, onSelectFabric, onAddSwatch, isSwatchAdded,
 
           <button
             onClick={() => onAddSwatch(fabric)}
-            className={`btn btn-sm ${isSwatchAdded ? 'btn-outline-navy' : 'btn-outline-navy'}`}
+            className="btn btn-sm btn-outline-dark"
             style={{
-              padding: '0.5rem 0.75rem',
+              padding: '0.55rem 0.85rem',
               backgroundColor: isSwatchAdded ? '#DCFCE7' : 'transparent',
-              borderColor: isSwatchAdded ? '#15803D' : 'var(--color-primary-navy)',
-              color: isSwatchAdded ? '#15803D' : 'var(--color-primary-navy)'
+              borderColor: isSwatchAdded ? '#15803D' : '#0A0A0A',
+              color: isSwatchAdded ? '#15803D' : '#0A0A0A'
             }}
             title={isSwatchAdded ? "Swatch added to cart" : "Add to Swatch Cart"}
           >
@@ -118,7 +119,7 @@ export const FabricCard = ({ fabric, onSelectFabric, onAddSwatch, isSwatchAdded,
           <button
             onClick={() => onOpenRFQ(fabric)}
             className="btn btn-primary btn-sm"
-            style={{ padding: '0.5rem 0.75rem' }}
+            style={{ padding: '0.55rem 0.85rem' }}
             title="Request Bulk Quotation"
           >
             Quote

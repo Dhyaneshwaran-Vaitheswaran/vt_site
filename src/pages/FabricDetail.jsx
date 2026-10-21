@@ -19,8 +19,8 @@ export const FabricDetail = ({ fabric, onBack, onAddSwatch, isSwatchAdded, onOpe
   };
 
   return (
-    <div style={{ backgroundColor: '#FBF9F5', paddingBottom: '6rem' }}>
-      
+    <div style={{ backgroundColor: '#FFFFFF', paddingBottom: '6rem' }}>
+
       {/* Breadcrumb Bar */}
       <div style={{
         backgroundColor: '#FFFFFF',
@@ -33,7 +33,7 @@ export const FabricDetail = ({ fabric, onBack, onAddSwatch, isSwatchAdded, onOpe
             style={{
               background: 'none',
               border: 'none',
-              color: '#0F172A',
+              color: '#0A0A0A',
               fontWeight: 600,
               cursor: 'pointer',
               display: 'flex',
@@ -54,9 +54,9 @@ export const FabricDetail = ({ fabric, onBack, onAddSwatch, isSwatchAdded, onOpe
       {/* Main Fabric Spec Sheet */}
       <section style={{ paddingTop: '2.5rem' }}>
         <div className="container">
-          
+
           <div className="detail-grid-responsive">
-            
+
             {/* Left Column: Authentic Fabric Swatch Media */}
             <div>
               <div style={{
@@ -89,7 +89,7 @@ export const FabricDetail = ({ fabric, onBack, onAddSwatch, isSwatchAdded, onOpe
                   {fabric.badge && (
                     <span className="badge badge-gold">{fabric.badge}</span>
                   )}
-                  <span className="badge badge-navy" style={{ backgroundColor: '#0F172A', color: '#FFFFFF' }}>
+                  <span className="badge badge-navy" style={{ backgroundColor: '#0A0A0A', color: '#FFFFFF' }}>
                     {fabric.weave}
                   </span>
                 </div>
@@ -172,7 +172,7 @@ export const FabricDetail = ({ fabric, onBack, onAddSwatch, isSwatchAdded, onOpe
               }}>
                 <ShieldCheck size={22} color="#15803D" style={{ flexShrink: 0, marginTop: '0.15rem' }} />
                 <div style={{ fontSize: '0.8125rem', color: '#475569', lineHeight: '1.6' }}>
-                  <strong style={{ color: '#0F172A', display: 'block', marginBottom: '0.2rem' }}>
+                  <strong style={{ color: '#0A0A0A', display: 'block', marginBottom: '0.2rem' }}>
                     Certified ASTM D5430 4-Point Inspection
                   </strong>
                   Every roll of this fabric is verified on illuminated light tables in Erode. We guarantee &lt; 2.5% shrinkage, zero color bleeding, and roll-by-roll GSM consistency.
@@ -187,7 +187,7 @@ export const FabricDetail = ({ fabric, onBack, onAddSwatch, isSwatchAdded, onOpe
                 {fabric.category}
               </div>
 
-              <h1 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', marginBottom: '1rem', color: '#0F172A' }}>
+              <h1 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.5rem)', marginBottom: '1rem', color: '#0A0A0A' }}>
                 {fabric.name}
               </h1>
 
@@ -196,7 +196,7 @@ export const FabricDetail = ({ fabric, onBack, onAddSwatch, isSwatchAdded, onOpe
               </p>
 
               {/* Specification Table */}
-              <h3 style={{ fontSize: '1.15rem', color: '#0F172A', marginBottom: '0.5rem' }}>
+              <h3 style={{ fontSize: '1.15rem', color: '#0A0A0A', marginBottom: '0.5rem' }}>
                 Technical Specifications & Weave Architecture
               </h3>
 
@@ -245,7 +245,7 @@ export const FabricDetail = ({ fabric, onBack, onAddSwatch, isSwatchAdded, onOpe
 
               {/* Key Features */}
               <div style={{ marginBottom: '2rem' }}>
-                <h4 style={{ fontSize: '1rem', color: '#0F172A', marginBottom: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                <h4 style={{ fontSize: '1rem', color: '#0A0A0A', marginBottom: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                   Key Performance Characteristics
                 </h4>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
@@ -260,7 +260,7 @@ export const FabricDetail = ({ fabric, onBack, onAddSwatch, isSwatchAdded, onOpe
 
               {/* Target Garment Applications */}
               <div>
-                <h4 style={{ fontSize: '1rem', color: '#0F172A', marginBottom: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                <h4 style={{ fontSize: '1rem', color: '#0A0A0A', marginBottom: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                   Recommended Apparel Applications
                 </h4>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
@@ -273,7 +273,7 @@ export const FabricDetail = ({ fabric, onBack, onAddSwatch, isSwatchAdded, onOpe
                         borderRadius: '6px',
                         padding: '0.4rem 0.85rem',
                         fontSize: '0.8125rem',
-                        color: '#0F172A',
+                        color: '#0A0A0A',
                         fontWeight: 600
                       }}
                     >
@@ -292,21 +292,21 @@ export const FabricDetail = ({ fabric, onBack, onAddSwatch, isSwatchAdded, onOpe
                 padding: '1.25rem',
                 boxShadow: '0 4px 12px rgba(0,0,0,0.03)'
               }}>
-                <h4 style={{ fontSize: '0.95rem', color: '#0F172A', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                <h4 style={{ fontSize: '0.95rem', color: '#0A0A0A', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                   <Truck size={17} color="#C51E3A" /> Global Export Logistics & Mill Standards
                 </h4>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))', gap: '1rem', fontSize: '0.8125rem' }}>
                   <div>
                     <span style={{ color: '#64748B', display: 'block', marginBottom: '0.2rem' }}>Container Seaports</span>
-                    <strong style={{ color: '#0F172A' }}>Tuticorin VOC (~340 km) / Chennai (~400 km)</strong>
+                    <strong style={{ color: '#0A0A0A' }}>Tuticorin VOC (~340 km) / Chennai (~400 km)</strong>
                   </div>
                   <div>
                     <span style={{ color: '#64748B', display: 'block', marginBottom: '0.2rem' }}>Air Cargo Port</span>
-                    <strong style={{ color: '#0F172A' }}>Coimbatore CJB Airport (95 km)</strong>
+                    <strong style={{ color: '#0A0A0A' }}>Coimbatore CJB Airport (95 km)</strong>
                   </div>
                   <div>
                     <span style={{ color: '#64748B', display: 'block', marginBottom: '0.2rem' }}>Export Packaging</span>
-                    <strong style={{ color: '#0F172A' }}>Double Poly Roll + Moisture Barrier</strong>
+                    <strong style={{ color: '#0A0A0A' }}>Double Poly Roll + Moisture Barrier</strong>
                   </div>
                   <div>
                     <span style={{ color: '#64748B', display: 'block', marginBottom: '0.2rem' }}>Lab Fastness Rating</span>
@@ -322,7 +322,7 @@ export const FabricDetail = ({ fabric, onBack, onAddSwatch, isSwatchAdded, onOpe
           {/* Related Fabrics Section */}
           <div style={{ borderTop: '1px solid #E2E8F0', paddingTop: '3.5rem' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
-              <h3 style={{ fontSize: '1.75rem', color: '#0F172A' }}>
+              <h3 style={{ fontSize: '1.75rem', color: '#0A0A0A' }}>
                 Complementary Fabric Substrates
               </h3>
               <button
@@ -349,13 +349,13 @@ export const FabricDetail = ({ fabric, onBack, onAddSwatch, isSwatchAdded, onOpe
                   <div style={{ fontSize: '0.75rem', color: '#C51E3A', fontWeight: 700, textTransform: 'uppercase' }}>
                     {rel.category}
                   </div>
-                  <h4 style={{ fontSize: '1.1rem', color: '#0F172A', marginBottom: '0.35rem' }}>
+                  <h4 style={{ fontSize: '1.1rem', color: '#0A0A0A', marginBottom: '0.35rem' }}>
                     {rel.name}
                   </h4>
                   <p style={{ fontSize: '0.8125rem', color: '#64748B', marginBottom: '0.75rem' }}>
                     {rel.weave} • {rel.gsm}
                   </p>
-                  <div style={{ color: '#0F172A', fontSize: '0.8125rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
+                  <div style={{ color: '#0A0A0A', fontSize: '0.8125rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
                     Inspect Technical Sheet <ChevronRight size={14} />
                   </div>
                 </div>
@@ -369,3 +369,4 @@ export const FabricDetail = ({ fabric, onBack, onAddSwatch, isSwatchAdded, onOpe
     </div>
   );
 };
+

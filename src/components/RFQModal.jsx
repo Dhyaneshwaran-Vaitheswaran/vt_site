@@ -141,7 +141,7 @@ export const RFQModal = ({ isOpen, onClose, preselectedFabric }) => {
               <CheckCircle size={36} />
             </div>
             
-            <h3 style={{ fontSize: '1.75rem', marginBottom: '0.5rem', color: '#0F172A' }}>
+            <h3 style={{ fontSize: '1.75rem', marginBottom: '0.5rem', color: '#0A0A0A' }}>
               Quotation Request Formatted!
             </h3>
             <p style={{ color: '#64748B', marginBottom: '1.5rem' }}>
@@ -226,7 +226,7 @@ export const RFQModal = ({ isOpen, onClose, preselectedFabric }) => {
                   fontSize: '0.75rem',
                   fontWeight: 700
                 }}>1</span>
-                <h4 style={{ margin: 0, fontSize: '1.05rem', color: '#0F172A' }}>Fabric & Construction Specifications</h4>
+                <h4 style={{ margin: 0, fontSize: '1.05rem', color: '#0A0A0A' }}>Fabric & Construction Specifications</h4>
               </div>
 
               <div className="form-row-responsive">
@@ -318,7 +318,7 @@ export const RFQModal = ({ isOpen, onClose, preselectedFabric }) => {
                   fontSize: '0.75rem',
                   fontWeight: 700
                 }}>2</span>
-                <h4 style={{ margin: 0, fontSize: '1.05rem', color: '#0F172A' }}>Company & Contact Information</h4>
+                <h4 style={{ margin: 0, fontSize: '1.05rem', color: '#0A0A0A' }}>Company & Contact Information</h4>
               </div>
 
               <div className="form-row-responsive">

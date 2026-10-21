@@ -52,7 +52,7 @@ export const WhatsAppFloating = () => {
         }}>
           {/* Card Top */}
           <div style={{
-            backgroundColor: '#0F172A',
+            backgroundColor: '#0A0A0A',
             color: '#FFFFFF',
             padding: '1.25rem',
             display: 'flex',
@@ -101,7 +101,7 @@ export const WhatsAppFloating = () => {
                 onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
               >
                 <div>
-                  <div style={{ fontSize: '0.85rem', fontWeight: 600, color: '#0F172A' }}>{opt.title}</div>
+                  <div style={{ fontSize: '0.85rem', fontWeight: 600, color: '#0A0A0A' }}>{opt.title}</div>
                   <div style={{ fontSize: '0.72rem', color: '#64748B' }}>{opt.desc}</div>
                 </div>
                 <ChevronRight size={14} color="#94A3B8" />

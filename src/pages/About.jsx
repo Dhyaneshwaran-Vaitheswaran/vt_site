@@ -1,40 +1,42 @@
 import React from 'react';
-import { Award, ShieldCheck, MapPin, Building, Users, Clock, ArrowUpRight, MessageSquare, ArrowRight, HeartHandshake } from 'lucide-react';
+import { Award, ShieldCheck, MapPin, Building, Users, Clock, ArrowUpRight, MessageSquare, ArrowRight, HeartHandshake, Sparkles } from 'lucide-react';
 
 export const About = ({ onOpenRFQ }) => {
   return (
-    <div style={{ backgroundColor: '#FBF9F5', paddingBottom: '6rem' }}>
-      
-      {/* Header Banner */}
+    <div style={{ backgroundColor: '#FFFFFF', paddingBottom: '6rem' }}>
+
+      {/* Header Banner — Pure Black & Bold Red */}
       <section style={{
-        backgroundColor: '#0F172A',
+        backgroundColor: '#0A0A0A',
         color: '#FFFFFF',
-        padding: '4.5rem 0',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.1)'
+        padding: 'clamp(4.5rem, 7vw, 6.5rem) 0',
+        borderBottom: '1px solid #27272A'
       }}>
         <div className="container">
-          <div style={{ maxWidth: '800px' }}>
-            <span className="badge badge-gold" style={{ marginBottom: '0.75rem' }}>COMPANY PROFILE & HERITAGE</span>
-            <h1 style={{ color: '#FFFFFF', fontSize: '2.75rem', marginBottom: '1.25rem' }}>
+          <div style={{ maxWidth: '840px' }}>
+            <span className="badge badge-red" style={{ marginBottom: '1rem', backgroundColor: '#FEF2F2', color: '#C51E3A' }}>
+              COMPANY PROFILE & 28-YEAR HERITAGE
+            </span>
+            <h1 style={{ color: '#FFFFFF', fontSize: 'clamp(2.2rem, 4.5vw, 3.5rem)', marginBottom: '1.5rem', fontWeight: 800 }}>
               Weaving Trust & Operational Excellence Since 1998
             </h1>
-            <p style={{ color: '#CBD5E1', fontSize: '1.125rem', lineHeight: '1.8', marginBottom: '2rem' }}>
-              Founded in Erode by Mr. Vaitheswaran, Vasanthaa Textiless has evolved over 28 years from a local fabric house into an established end-to-end textile sourcing, production coordination, and supply partner for brands worldwide.
+            <p style={{ color: '#D4D4D8', fontSize: 'clamp(1rem, 1.8vw, 1.15rem)', lineHeight: '1.8', marginBottom: '2.5rem' }}>
+              Founded in Erode by Mr. Vaitheswaran, Vasanthaa Textiless has evolved over nearly three decades into a trusted woven textile sourcing, production coordination, and finished apparel supply partner. Proud main supplier to Isha for over 10 consecutive years.
             </p>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <button
                 onClick={() => onOpenRFQ(null)}
-                className="btn btn-primary"
+                className="btn btn-primary btn-lg"
               >
-                <ArrowUpRight size={16} /> Partner with Vasanthaa
+                <ArrowUpRight size={18} /> Partner with Vasanthaa
               </button>
               <a
                 href="https://wa.me/919786222580?text=Hello%20Mr.%20Vaitheswaran%20and%20Vasanthaa%20Textiless%20team,%20I%20would%20like%20to%20introduce%20our%20apparel%20brand."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-whatsapp"
+                className="btn btn-whatsapp btn-lg"
               >
-                <MessageSquare size={16} /> Connect with Founder Desk
+                <MessageSquare size={18} /> Connect with Founder Desk
               </a>
             </div>
           </div>
@@ -42,35 +44,37 @@ export const About = ({ onOpenRFQ }) => {
       </section>
 
       {/* Story & Evolution Section */}
-      <section className="section-padding" style={{ backgroundColor: '#FFFFFF', borderBottom: '1px solid #E2E8F0' }}>
+      <section className="section-padding" style={{ backgroundColor: '#FAFAFA', borderBottom: '1px solid #E4E4E7' }}>
         <div className="container">
           <div className="two-col-layout-responsive">
-            
+
             <div>
               <span className="section-kicker">OUR ORIGINS</span>
-              <h2 style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.25rem)', color: '#0F172A', marginBottom: '1.25rem' }}>
-                From Erode to Global Garment Supply Chains
+              <h2 style={{ fontSize: 'clamp(1.6rem, 3.5vw, 2.35rem)', color: '#0A0A0A', marginBottom: '1.25rem', fontWeight: 800 }}>
+                From Erode to Global & Spiritual Supply Chains
               </h2>
-              
-              <p style={{ color: '#64748B', lineHeight: '1.8', marginBottom: '1.25rem', fontSize: 'clamp(0.9rem, 1.8vw, 1rem)' }}>
+
+              <p style={{ color: '#52525B', lineHeight: '1.8', marginBottom: '1.25rem', fontSize: 'clamp(0.95rem, 1.8vw, 1.05rem)' }}>
                 In 1998, <strong>Mr. Vaitheswaran</strong> established Vasanthaa Textiless at <strong>3, Vasuki Street in Erode</strong>. Located right at the heart of South India's bustling woven fabric markets, the business was built on a foundational philosophy: <em>unwavering integrity, absolute fabric specification compliance, and deep client relationships.</em>
               </p>
 
-              <p style={{ color: '#64748B', lineHeight: '1.8', marginBottom: '1.5rem', fontSize: 'clamp(0.9rem, 1.8vw, 1rem)' }}>
-                Over nearly three decades, as garment manufacturing scaled across India and international buyers sought reliable Indian textile sourcing, Vasanthaa Textiless recognized the growing complexity of the industry. Brands didn't just need fabric—they needed a reliable partner who could navigate the fragmented landscape of spinning mills, specialized air-jet and rapier weavers, and environmental dyehouses.
+              <p style={{ color: '#52525B', lineHeight: '1.8', marginBottom: '1.5rem', fontSize: 'clamp(0.95rem, 1.8vw, 1.05rem)' }}>
+                Over nearly three decades, Vasanthaa Textiless has built deep, long-standing partnerships. Most notably, we have been the <strong>main supplier of Isha for the past decade</strong>, manufacturing millions of meters of pure cotton dhotis, kurtha pants, eco-friendly cotton bags, consecrated rudraksha pouches, and meditation shawls.
               </p>
 
               <div style={{
-                backgroundColor: '#F8FAFC',
+                backgroundColor: '#FFFFFF',
                 borderLeft: '4px solid #C51E3A',
-                padding: '1.25rem 1.5rem',
-                borderRadius: '0 8px 8px 0',
+                border: '1px solid #E4E4E7',
+                borderLeftWidth: '4px',
+                padding: '1.5rem 1.75rem',
+                borderRadius: '0 12px 12px 0',
                 marginBottom: '1.5rem'
               }}>
-                <p style={{ fontStyle: 'italic', color: '#1E293B', fontSize: '0.95rem', margin: 0 }}>
-                  "A single point of truth in textiles is rare. Our mission is to take full ownership of the technical complexity, so our clients can focus entirely on design and garment sales."
+                <p style={{ fontStyle: 'italic', color: '#18181B', fontSize: '1rem', margin: 0, lineHeight: 1.7 }}>
+                  "A single point of truth in textiles is rare. Our mission is to take full ownership of the technical complexity, so our clients can focus entirely on design, spirituality, and brand growth."
                 </p>
-                <div style={{ fontSize: '0.8125rem', fontWeight: 700, color: '#C51E3A', marginTop: '0.5rem' }}>
+                <div style={{ fontSize: '0.85rem', fontWeight: 800, color: '#C51E3A', marginTop: '0.65rem' }}>
                   — Mr. Vaitheswaran, Founder
                 </div>
               </div>
@@ -79,41 +83,41 @@ export const About = ({ onOpenRFQ }) => {
 
             <div>
               <div style={{
-                borderRadius: '16px',
+                borderRadius: '20px',
                 overflow: 'hidden',
                 boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
-                border: '1px solid #E2E8F0',
-                backgroundColor: '#0F172A',
+                border: '1px solid #27272A',
+                backgroundColor: '#0A0A0A',
                 color: '#FFFFFF',
-                padding: 'clamp(1.25rem, 3vw, 2.5rem)'
+                padding: 'clamp(1.75rem, 3.5vw, 3rem)'
               }}>
-                <div style={{ fontFamily: 'Playfair Display, serif', fontSize: '1.5rem', color: '#D4AF37', marginBottom: '1.5rem' }}>
+                <div style={{ fontSize: '1.5rem', fontWeight: 800, color: '#FFFFFF', marginBottom: '2rem' }}>
                   The Vasanthaa Milestones
                 </div>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                  <div style={{ borderLeft: '2px solid rgba(212, 175, 55, 0.4)', paddingLeft: '1.25rem' }}>
-                    <div style={{ fontSize: '0.8125rem', color: '#D4AF37', fontWeight: 700 }}>1998</div>
-                    <div style={{ fontWeight: 700, fontSize: '1.1rem', color: '#FFFFFF' }}>Founded in Erode</div>
-                    <p style={{ fontSize: '0.8125rem', color: '#94A3B8', margin: 0 }}>Commenced woven fabric trade and local coordination in Erode's traditional merchant quarter.</p>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem' }}>
+                  <div style={{ borderLeft: '2px solid #C51E3A', paddingLeft: '1.25rem' }}>
+                    <div style={{ fontSize: '0.8125rem', color: '#C51E3A', fontWeight: 800 }}>1998</div>
+                    <div style={{ fontWeight: 700, fontSize: '1.15rem', color: '#FFFFFF' }}>Founded in Erode</div>
+                    <p style={{ fontSize: '0.875rem', color: '#A1A1AA', margin: 0, marginTop: '0.25rem' }}>Commenced woven fabric trade and local coordination in Erode's traditional merchant quarter.</p>
                   </div>
 
-                  <div style={{ borderLeft: '2px solid rgba(212, 175, 55, 0.4)', paddingLeft: '1.25rem' }}>
-                    <div style={{ fontSize: '0.8125rem', color: '#D4AF37', fontWeight: 700 }}>2008</div>
-                    <div style={{ fontWeight: 700, fontSize: '1.1rem', color: '#FFFFFF' }}>Shuttleless Airjet & Rapier Network</div>
-                    <p style={{ fontSize: '0.8125rem', color: '#94A3B8', margin: 0 }}>Expanded coordination to high-speed electronic looms for uniform-grade drills and fine poplins.</p>
+                  <div style={{ borderLeft: '2px solid #C51E3A', paddingLeft: '1.25rem' }}>
+                    <div style={{ fontSize: '0.8125rem', color: '#C51E3A', fontWeight: 800 }}>2014 — PRESENT</div>
+                    <div style={{ fontWeight: 700, fontSize: '1.15rem', color: '#FFFFFF' }}>Main Supplier of Isha (10+ Years)</div>
+                    <p style={{ fontSize: '0.875rem', color: '#A1A1AA', margin: 0, marginTop: '0.25rem' }}>Manufactured extensive product lines: Dhotis, Kurtha pants, Cotton bags, Rudraksha bags, and Shawls.</p>
                   </div>
 
-                  <div style={{ borderLeft: '2px solid rgba(212, 175, 55, 0.4)', paddingLeft: '1.25rem' }}>
-                    <div style={{ fontSize: '0.8125rem', color: '#D4AF37', fontWeight: 700 }}>2018</div>
-                    <div style={{ fontWeight: 700, fontSize: '1.1rem', color: '#FFFFFF' }}>Zero Liquid Discharge Integration</div>
-                    <p style={{ fontSize: '0.8125rem', color: '#94A3B8', margin: 0 }}>Aligned processing exclusively with Tamil Nadu's certified ZLD dyehouses to offer sustainable eco-cottons.</p>
+                  <div style={{ borderLeft: '2px solid #C51E3A', paddingLeft: '1.25rem' }}>
+                    <div style={{ fontSize: '0.8125rem', color: '#C51E3A', fontWeight: 800 }}>2018</div>
+                    <div style={{ fontWeight: 700, fontSize: '1.15rem', color: '#FFFFFF' }}>Zero Liquid Discharge Integration</div>
+                    <p style={{ fontSize: '0.875rem', color: '#A1A1AA', margin: 0, marginTop: '0.25rem' }}>Aligned processing exclusively with Tamil Nadu's certified ZLD dyehouses to offer sustainable eco-cottons.</p>
                   </div>
 
-                  <div style={{ borderLeft: '2px solid rgba(212, 175, 55, 0.4)', paddingLeft: '1.25rem' }}>
-                    <div style={{ fontSize: '0.8125rem', color: '#D4AF37', fontWeight: 700 }}>TODAY</div>
-                    <div style={{ fontWeight: 700, fontSize: '1.1rem', color: '#FFFFFF' }}>2M+ Meters Annually & ₹20Cr Volume</div>
-                    <p style={{ fontSize: '0.8125rem', color: '#94A3B8', margin: 0 }}>Centralized point of contact serving premier garment exporters and international fashion brands.</p>
+                  <div style={{ borderLeft: '2px solid #C51E3A', paddingLeft: '1.25rem' }}>
+                    <div style={{ fontSize: '0.8125rem', color: '#C51E3A', fontWeight: 800 }}>TODAY</div>
+                    <div style={{ fontWeight: 700, fontSize: '1.15rem', color: '#FFFFFF' }}>2M+ Meters Annually & ₹20Cr Volume</div>
+                    <p style={{ fontSize: '0.875rem', color: '#A1A1AA', margin: 0, marginTop: '0.25rem' }}>Centralized point of contact serving premier garment exporters and international fashion brands.</p>
                   </div>
                 </div>
 
@@ -125,7 +129,7 @@ export const About = ({ onOpenRFQ }) => {
       </section>
 
       {/* Corporate Structure & Values */}
-      <section className="section-padding">
+      <section className="section-padding" style={{ backgroundColor: '#FFFFFF' }}>
         <div className="container">
           <div className="section-header">
             <span className="section-kicker">GOVERNANCE & INTEGRITY</span>
@@ -136,122 +140,128 @@ export const About = ({ onOpenRFQ }) => {
           </div>
 
           <div className="grid-3">
-            <div className="b2b-card">
-              <HeartHandshake size={28} color="#C51E3A" style={{ marginBottom: '1rem' }} />
-              <h3 style={{ fontSize: '1.25rem', color: '#0F172A', marginBottom: '0.5rem' }}>
+            <div className="b2b-card" style={{ borderTop: '3px solid #C51E3A' }}>
+              <div style={{ width: '48px', height: '48px', borderRadius: '10px', backgroundColor: '#FEF2F2', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.25rem' }}>
+                <HeartHandshake size={24} color="#C51E3A" />
+              </div>
+              <h3 style={{ fontSize: '1.25rem', color: '#0A0A0A', marginBottom: '0.65rem', fontWeight: 700 }}>
                 Direct Founder Access
               </h3>
-              <p style={{ fontSize: '0.875rem', color: '#64748B', lineHeight: '1.7' }}>
+              <p style={{ fontSize: '0.9rem', color: '#52525B', lineHeight: '1.7', margin: 0 }}>
                 No multi-layered corporate bureaucracy. Major production decisions, pricing commitments, and timeline agreements are verified directly by our leadership.
               </p>
             </div>
 
-            <div className="b2b-card">
-              <ShieldCheck size={28} color="#D4AF37" style={{ marginBottom: '1rem' }} />
-              <h3 style={{ fontSize: '1.25rem', color: '#0F172A', marginBottom: '0.5rem' }}>
+            <div className="b2b-card" style={{ borderTop: '3px solid #0A0A0A' }}>
+              <div style={{ width: '48px', height: '48px', borderRadius: '10px', backgroundColor: '#F4F4F5', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.25rem' }}>
+                <ShieldCheck size={24} color="#0A0A0A" />
+              </div>
+              <h3 style={{ fontSize: '1.25rem', color: '#0A0A0A', marginBottom: '0.65rem', fontWeight: 700 }}>
                 Strict Confidentiality
               </h3>
-              <p style={{ fontSize: '0.875rem', color: '#64748B', lineHeight: '1.7' }}>
+              <p style={{ fontSize: '0.9rem', color: '#52525B', lineHeight: '1.7', margin: 0 }}>
                 We fiercely protect our clients' proprietary artwork, custom dobby drafts, and brand specifications. Outsource and mill arrangements remain completely confidential.
               </p>
             </div>
 
-            <div className="b2b-card">
-              <Award size={28} color="#15803D" style={{ marginBottom: '1rem' }} />
-              <h3 style={{ fontSize: '1.25rem', color: '#0F172A', marginBottom: '0.5rem' }}>
+            <div className="b2b-card" style={{ borderTop: '3px solid #C51E3A' }}>
+              <div style={{ width: '48px', height: '48px', borderRadius: '10px', backgroundColor: '#FEF2F2', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.25rem' }}>
+                <Award size={24} color="#C51E3A" />
+              </div>
+              <h3 style={{ fontSize: '1.25rem', color: '#0A0A0A', marginBottom: '0.65rem', fontWeight: 700 }}>
                 Zero Compromise on Specs
               </h3>
-              <p style={{ fontSize: '0.875rem', color: '#64748B', lineHeight: '1.7' }}>
-                We do not cut corners on yarn count, GSM, or dyestuff quality. If a fabric roll does not meet the agreed master tolerance, it does not leave our central Erode desk.
+              <p style={{ fontSize: '0.9rem', color: '#52525B', lineHeight: '1.7', margin: 0 }}>
+                We do not cut corners on construction density, GSM, or dyestuff quality. If a fabric roll does not meet the agreed master tolerance, it does not leave our central Erode desk.
               </p>
             </div>
           </div>
 
-          {/* Official Commercial Registry & Credentials Table */}
+          {/* Official Commercial Registry Table */}
           <div style={{
-            marginTop: '4rem',
-            backgroundColor: '#FFFFFF',
-            borderRadius: '16px',
-            border: '1px solid #E2E8F0',
-            padding: '2.5rem',
-            boxShadow: '0 8px 24px rgba(0,0,0,0.04)'
+            marginTop: '4.5rem',
+            backgroundColor: '#FAFAFA',
+            borderRadius: '20px',
+            border: '1px solid #E4E4E7',
+            padding: 'clamp(2rem, 4vw, 3rem)',
+            boxShadow: '0 8px 24px rgba(0,0,0,0.03)'
           }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
-              <Building size={24} color="#C51E3A" />
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '2rem' }}>
+              <Building size={28} color="#C51E3A" />
               <div>
-                <h3 style={{ fontSize: '1.35rem', color: '#0F172A', margin: 0 }}>
+                <h3 style={{ fontSize: '1.4rem', color: '#0A0A0A', margin: 0, fontWeight: 800 }}>
                   Commercial Registry & Statutory Credentials
                 </h3>
-                <p style={{ fontSize: '0.8125rem', color: '#64748B', margin: 0 }}>
+                <p style={{ fontSize: '0.875rem', color: '#52525B', margin: 0, marginTop: '0.2rem' }}>
                   Official registration credentials for buyer vendor onboarding, credit evaluation, and compliance verification.
                 </p>
               </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: '1.25rem', fontSize: '0.875rem' }}>
-              <div style={{ borderBottom: '1px solid #F1F5F9', paddingBottom: '0.75rem' }}>
-                <span style={{ color: '#64748B', display: 'block', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Commercial Entity</span>
-                <strong style={{ color: '#0F172A', fontSize: '1rem' }}>Vasanthaa Textiless</strong>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: '1.5rem', fontSize: '0.9rem' }}>
+              <div style={{ borderBottom: '1px solid #E4E4E7', paddingBottom: '0.85rem' }}>
+                <span style={{ color: '#71717A', display: 'block', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>Commercial Entity</span>
+                <strong style={{ color: '#0A0A0A', fontSize: '1.05rem', fontWeight: 800 }}>Vasanthaa Textiless</strong>
               </div>
-              <div style={{ borderBottom: '1px solid #F1F5F9', paddingBottom: '0.75rem' }}>
-                <span style={{ color: '#64748B', display: 'block', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Constitution</span>
-                <strong style={{ color: '#0F172A' }}>Sole Proprietorship (Est. 1998)</strong>
+              <div style={{ borderBottom: '1px solid #E4E4E7', paddingBottom: '0.85rem' }}>
+                <span style={{ color: '#71717A', display: 'block', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>Constitution</span>
+                <strong style={{ color: '#0A0A0A', fontWeight: 700 }}>Sole Proprietorship (Est. 1998)</strong>
               </div>
-              <div style={{ borderBottom: '1px solid #F1F5F9', paddingBottom: '0.75rem' }}>
-                <span style={{ color: '#64748B', display: 'block', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Key Principal / Founder</span>
-                <strong style={{ color: '#0F172A' }}>Mr. Vaitheswaran</strong>
+              <div style={{ borderBottom: '1px solid #E4E4E7', paddingBottom: '0.85rem' }}>
+                <span style={{ color: '#71717A', display: 'block', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>Key Principal / Founder</span>
+                <strong style={{ color: '#0A0A0A', fontWeight: 700 }}>Mr. Vaitheswaran</strong>
               </div>
-              <div style={{ borderBottom: '1px solid #F1F5F9', paddingBottom: '0.75rem' }}>
-                <span style={{ color: '#64748B', display: 'block', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Registered Office Address</span>
-                <strong style={{ color: '#0F172A' }}>3, Vasuki St, 2nd St, Erode - 638001</strong>
+              <div style={{ borderBottom: '1px solid #E4E4E7', paddingBottom: '0.85rem' }}>
+                <span style={{ color: '#71717A', display: 'block', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>Registered Office Address</span>
+                <strong style={{ color: '#0A0A0A', fontWeight: 700 }}>3, Vasuki St, 2nd St, Erode - 638001</strong>
               </div>
-              <div style={{ borderBottom: '1px solid #F1F5F9', paddingBottom: '0.75rem' }}>
-                <span style={{ color: '#64748B', display: 'block', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Goods & Services Tax (GSTIN)</span>
-                <strong style={{ color: '#15803D' }}>Active (Tamil Nadu State Code 33)</strong>
+              <div style={{ borderBottom: '1px solid #E4E4E7', paddingBottom: '0.85rem' }}>
+                <span style={{ color: '#71717A', display: 'block', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>Goods & Services Tax (GSTIN)</span>
+                <strong style={{ color: '#15803D', fontWeight: 700 }}>Active (Tamil Nadu State Code 33)</strong>
               </div>
-              <div style={{ borderBottom: '1px solid #F1F5F9', paddingBottom: '0.75rem' }}>
-                <span style={{ color: '#64748B', display: 'block', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Import Export Code (IEC)</span>
-                <strong style={{ color: '#15803D' }}>Registered & Active for Global Shipments</strong>
+              <div style={{ borderBottom: '1px solid #E4E4E7', paddingBottom: '0.85rem' }}>
+                <span style={{ color: '#71717A', display: 'block', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>Import Export Code (IEC)</span>
+                <strong style={{ color: '#15803D', fontWeight: 700 }}>Registered & Active for Global Shipments</strong>
               </div>
-              <div style={{ borderBottom: '1px solid #F1F5F9', paddingBottom: '0.75rem' }}>
-                <span style={{ color: '#64748B', display: 'block', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Trade Cluster Hub</span>
-                <strong style={{ color: '#0F172A' }}>Erode Cotton & Woven Corridor (South India)</strong>
+              <div style={{ borderBottom: '1px solid #E4E4E7', paddingBottom: '0.85rem' }}>
+                <span style={{ color: '#71717A', display: 'block', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>Trade Cluster Hub</span>
+                <strong style={{ color: '#0A0A0A', fontWeight: 700 }}>Erode Cotton & Woven Corridor (South India)</strong>
               </div>
-              <div style={{ borderBottom: '1px solid #F1F5F9', paddingBottom: '0.75rem' }}>
-                <span style={{ color: '#64748B', display: 'block', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Banking & Remittance</span>
-                <strong style={{ color: '#0F172A' }}>SBI / HDFC Bank (RTGS / NEFT / Wire / LC)</strong>
+              <div style={{ borderBottom: '1px solid #E4E4E7', paddingBottom: '0.85rem' }}>
+                <span style={{ color: '#71717A', display: 'block', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>Key Clientele</span>
+                <strong style={{ color: '#C51E3A', fontWeight: 800 }}>Isha (Main Supplier 10+ Years)</strong>
               </div>
             </div>
           </div>
 
-          {/* Official Trademark & Brand Identity Section */}
+          {/* Official Trademark Section */}
           <div style={{
-            marginTop: '3.5rem',
-            backgroundColor: '#0F172A',
+            marginTop: '4rem',
+            backgroundColor: '#0A0A0A',
             color: '#FFFFFF',
-            borderRadius: '16px',
-            border: '1px solid rgba(212, 175, 55, 0.3)',
-            padding: 'clamp(1.25rem, 3vw, 2.5rem)',
+            borderRadius: '20px',
+            border: '1px solid #27272A',
+            padding: 'clamp(2rem, 4vw, 3rem)',
             boxShadow: '0 12px 32px rgba(0,0,0,0.2)'
           }}>
             <div className="two-col-layout-responsive">
               <div>
-                <span className="badge badge-gold" style={{ marginBottom: '0.75rem' }}>PROPRIETARY BRAND IDENTITY</span>
-                <h3 style={{ fontSize: 'clamp(1.35rem, 3vw, 1.75rem)', color: '#FFFFFF', marginBottom: '0.875rem' }}>
+                <span className="badge badge-red" style={{ marginBottom: '1rem', backgroundColor: '#FEF2F2', color: '#C51E3A' }}>PROPRIETARY BRAND IDENTITY</span>
+                <h3 style={{ fontSize: 'clamp(1.4rem, 3vw, 1.85rem)', color: '#FFFFFF', marginBottom: '1rem', fontWeight: 800 }}>
                   The Official "VT" Trademark
                 </h3>
-                <p style={{ color: '#94A3B8', fontSize: '0.9375rem', lineHeight: '1.7', marginBottom: '1.25rem' }}>
-                  Our brand emblem unites the letters <strong>'V'</strong> and <strong>'T'</strong> in an architectural, simplistic geometry that mimics the interlocking of warp and weft threads on a precision loom. Cast in our signature crimson red with fine gold accents, the mark represents our 28-year heritage of woven craftsmanship and commitment to quality.
+                <p style={{ color: '#D4D4D8', fontSize: '0.95rem', lineHeight: '1.75', marginBottom: '1.5rem' }}>
+                  Our brand emblem unites the letters <strong>'V'</strong> and <strong>'T'</strong> in an architectural, simplistic geometry that mimics the interlocking of warp and weft threads on a precision loom. Cast in our signature crimson red on pure black and white, the mark represents our 28-year heritage of woven craftsmanship and commitment to quality.
                 </p>
-                <div style={{ display: 'flex', gap: '0.65rem', flexWrap: 'wrap', fontSize: '0.8125rem' }}>
-                  <span style={{ backgroundColor: 'rgba(255,255,255,0.08)', padding: '0.35rem 0.65rem', borderRadius: '4px', color: '#D4AF37' }}>
+                <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', fontSize: '0.8125rem' }}>
+                  <span style={{ backgroundColor: '#18181B', border: '1px solid #27272A', padding: '0.45rem 0.85rem', borderRadius: '6px', color: '#FFFFFF', fontWeight: 600 }}>
                     ✓ Simplistic & Minimalist Monogram
                   </span>
-                  <span style={{ backgroundColor: 'rgba(255,255,255,0.08)', padding: '0.35rem 0.65rem', borderRadius: '4px', color: '#D4AF37' }}>
+                  <span style={{ backgroundColor: '#18181B', border: '1px solid #27272A', padding: '0.45rem 0.85rem', borderRadius: '6px', color: '#C51E3A', fontWeight: 700 }}>
                     ✓ Signature Crimson Red (#C51E3A)
                   </span>
-                  <span style={{ backgroundColor: 'rgba(255,255,255,0.08)', padding: '0.35rem 0.65rem', borderRadius: '4px', color: '#D4AF37' }}>
-                    ✓ Ready for Trademark Registration
+                  <span style={{ backgroundColor: '#18181B', border: '1px solid #27272A', padding: '0.45rem 0.85rem', borderRadius: '6px', color: '#FFFFFF', fontWeight: 600 }}>
+                    ✓ Modern Sans-Serif Wordmark
                   </span>
                 </div>
               </div>
@@ -259,24 +269,24 @@ export const About = ({ onOpenRFQ }) => {
                 <div style={{
                   backgroundColor: '#FFFFFF',
                   borderRadius: '16px',
-                  padding: '1.5rem',
-                  maxWidth: '240px',
+                  padding: '2rem',
+                  maxWidth: '260px',
                   textAlign: 'center',
                   boxShadow: '0 8px 24px rgba(0,0,0,0.2)'
                 }}>
-                  <img 
-                    src="/images/vt-monogram-icon.webp" 
+                  <img
+                    src="/images/vt-monogram-icon.webp"
                     alt="Official VT Trademark Monogram"
                     loading="lazy"
                     decoding="async"
                     width="200"
                     height="200"
-                    style={{ width: '100%', height: 'auto', borderRadius: '8px', marginBottom: '0.75rem' }} 
+                    style={{ width: '100%', height: 'auto', borderRadius: '8px', marginBottom: '1rem' }}
                   />
-                  <div style={{ fontFamily: 'Playfair Display, serif', fontWeight: 800, color: '#0F172A', fontSize: '1.1rem' }}>
+                  <div style={{ fontWeight: 800, color: '#0A0A0A', fontSize: '1.2rem' }}>
                     VT Trademark
                   </div>
-                  <div style={{ fontSize: '0.6875rem', color: '#C51E3A', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+                  <div style={{ fontSize: '0.75rem', color: '#C51E3A', fontWeight: 800, letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: '0.2rem' }}>
                     Vasanthaa Textiless
                   </div>
                 </div>
@@ -284,7 +294,7 @@ export const About = ({ onOpenRFQ }) => {
             </div>
           </div>
 
-          <div style={{ marginTop: '3.5rem', textAlign: 'center' }}>
+          <div style={{ marginTop: '4rem', textAlign: 'center' }}>
             <button
               onClick={() => onOpenRFQ(null)}
               className="btn btn-navy btn-lg"
