@@ -65,7 +65,7 @@ export const Contact = () => {
               Connect with Vasanthaa Textiless
             </h1>
             <p style={{ color: '#CBD5E1', fontSize: '1.125rem', lineHeight: '1.8', marginBottom: '2rem' }}>
-              Located in the commercial heart of Erode Fort, Tamil Nadu. Reach our sourcing coordinators for fabric samples, lab dips, pricing, and manufacturing coordination.
+              Located in the commercial heart of Erode, Tamil Nadu. Reach our sourcing coordinators for fabric samples, lab dips, pricing, and manufacturing coordination.
             </p>
           </div>
         </div>
@@ -94,8 +94,7 @@ export const Contact = () => {
                     </strong>
                     <p style={{ fontSize: '0.9rem', color: '#475569', lineHeight: '1.6', margin: 0 }}>
                       3, Vasuki St, 2nd Street,<br />
-                      Erode Fort, Erode,<br />
-                      Tamil Nadu 638001, India
+                      Erode, Tamil Nadu 638001, India
                     </p>
                   </div>
                 </div>
@@ -217,7 +216,7 @@ export const Contact = () => {
                     Inquiry Details Ready for Dispatch!
                   </h4>
                   <p style={{ color: '#64748B', fontSize: '0.9rem', marginBottom: '1.5rem', lineHeight: '1.6' }}>
-                    Thank you <strong>{formData.name}</strong>. Choose your preferred dispatch channel to submit your request directly to Vasanthaa Textiless in Erode Fort.
+                    Thank you <strong>{formData.name}</strong>. Choose your preferred dispatch channel to submit your request directly to Vasanthaa Textiless in Erode.
                   </p>
 
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
@@ -369,10 +368,10 @@ export const Contact = () => {
           <div style={{ textAlign: 'center', maxWidth: '720px', margin: '0 auto 2.5rem auto' }}>
             <span className="section-kicker">LOCAL HUB & LOGISTICS GATEWAY</span>
             <h2 className="section-title" style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.25rem)' }}>
-              Find Us in Erode Fort, Tamil Nadu
+              Find Us in Erode, Tamil Nadu
             </h2>
             <p className="section-desc" style={{ fontSize: '0.95rem' }}>
-              Positioned in the historic textile trading district of Erode Fort with direct transit access to Tirupur garment manufacturers, Coimbatore yarn mills, and Tuticorin port.
+              Positioned in the historic textile trading district of Erode with direct transit access to Tirupur garment manufacturers, Coimbatore yarn mills, and Tuticorin port.
             </p>
           </div>
 
@@ -382,8 +381,8 @@ export const Contact = () => {
             <div className="b2b-card" style={{ padding: '0.75rem', display: 'flex', flexDirection: 'column' }}>
               <div style={{ width: '100%', height: '100%', minHeight: '380px', borderRadius: '10px', overflow: 'hidden' }}>
                 <iframe
-                  title="Vasanthaa Textiless Erode Fort Location"
-                  src="https://maps.google.com/maps?q=3,+Vasuki+St,+2nd+Street,+Erode+Fort,+Erode,+Tamil+Nadu+638001&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                  title="Vasanthaa Textiless Erode Location"
+                  src="https://maps.google.com/maps?q=3,+Vasuki+St,+2nd+Street,+Erode,+Tamil+Nadu+638001&t=&z=16&ie=UTF8&iwloc=&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0, minHeight: '380px', display: 'block' }}
@@ -407,9 +406,9 @@ export const Contact = () => {
                 <div style={{ backgroundColor: '#F8FAFC', padding: '1rem', borderRadius: '8px', borderLeft: '4px solid #C51E3A', marginBottom: '1.5rem' }}>
                   <strong style={{ color: '#0F172A', display: 'block', fontSize: '0.95rem' }}>Vasanthaa Textiless</strong>
                   <div style={{ color: '#475569', fontSize: '0.9rem', lineHeight: '1.6', marginTop: '0.25rem' }}>
-                    3, Vasuki St, 2nd Street, Erode Fort,<br />
-                    Erode, Tamil Nadu 638001, India<br />
-                    <span style={{ fontSize: '0.8rem', color: '#64748B' }}>Landmark: Near Fort Clock Tower & Cauvery Trade Market</span>
+                    3, Vasuki St, 2nd Street, Erode,<br />
+                    Tamil Nadu 638001, India<br />
+                    <span style={{ fontSize: '0.8rem', color: '#64748B' }}>Landmark: Near Clock Tower & Cauvery Trade Market</span>
                   </div>
                 </div>
 

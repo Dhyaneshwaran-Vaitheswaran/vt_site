@@ -22,7 +22,7 @@ export const WhatsAppFloating = () => {
     },
     {
       title: "Direct Sourcing Coordination",
-      desc: "Speak with Erode Fort sourcing office",
+      desc: "Speak with Erode sourcing office",
       msg: "Hello, I want to discuss a full textile sourcing and production coordination program with Vasanthaa Textiless."
     }
   ];
@@ -62,7 +62,7 @@ export const WhatsAppFloating = () => {
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginBottom: '0.2rem' }}>
                 <span className="badge badge-live" style={{ fontSize: '0.625rem', padding: '0.15rem 0.45rem' }}>ONLINE</span>
-                <span style={{ fontSize: '0.75rem', color: '#94A3B8' }}>Erode Fort Desk</span>
+                <span style={{ fontSize: '0.75rem', color: '#94A3B8' }}>Erode Desk</span>
               </div>
               <h4 style={{ color: '#FFFFFF', fontSize: '1rem', margin: 0 }}>Vasanthaa Sourcing Desk</h4>
             </div>

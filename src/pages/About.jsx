@@ -19,7 +19,7 @@ export const About = ({ onOpenRFQ }) => {
               Weaving Trust & Operational Excellence Since 1998
             </h1>
             <p style={{ color: '#CBD5E1', fontSize: '1.125rem', lineHeight: '1.8', marginBottom: '2rem' }}>
-              Founded in Erode Fort by Mr. Vaitheswaran, Vasanthaa Textiless has evolved over 28 years from a local fabric house into an established end-to-end textile sourcing, production coordination, and supply partner for brands worldwide.
+              Founded in Erode by Mr. Vaitheswaran, Vasanthaa Textiless has evolved over 28 years from a local fabric house into an established end-to-end textile sourcing, production coordination, and supply partner for brands worldwide.
             </p>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <button
@@ -49,11 +49,11 @@ export const About = ({ onOpenRFQ }) => {
             <div>
               <span className="section-kicker">OUR ORIGINS</span>
               <h2 style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.25rem)', color: '#0F172A', marginBottom: '1.25rem' }}>
-                From Erode Fort to Global Garment Supply Chains
+                From Erode to Global Garment Supply Chains
               </h2>
               
               <p style={{ color: '#64748B', lineHeight: '1.8', marginBottom: '1.25rem', fontSize: 'clamp(0.9rem, 1.8vw, 1rem)' }}>
-                In 1998, <strong>Mr. Vaitheswaran</strong> established Vasanthaa Textiless at <strong>3, Vasuki Street in historic Erode Fort</strong>. Located right at the heart of South India's bustling woven fabric markets, the business was built on a foundational philosophy: <em>unwavering integrity, absolute fabric specification compliance, and deep client relationships.</em>
+                In 1998, <strong>Mr. Vaitheswaran</strong> established Vasanthaa Textiless at <strong>3, Vasuki Street in Erode</strong>. Located right at the heart of South India's bustling woven fabric markets, the business was built on a foundational philosophy: <em>unwavering integrity, absolute fabric specification compliance, and deep client relationships.</em>
               </p>
 
               <p style={{ color: '#64748B', lineHeight: '1.8', marginBottom: '1.5rem', fontSize: 'clamp(0.9rem, 1.8vw, 1rem)' }}>
@@ -94,7 +94,7 @@ export const About = ({ onOpenRFQ }) => {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                   <div style={{ borderLeft: '2px solid rgba(212, 175, 55, 0.4)', paddingLeft: '1.25rem' }}>
                     <div style={{ fontSize: '0.8125rem', color: '#D4AF37', fontWeight: 700 }}>1998</div>
-                    <div style={{ fontWeight: 700, fontSize: '1.1rem', color: '#FFFFFF' }}>Founded in Erode Fort</div>
+                    <div style={{ fontWeight: 700, fontSize: '1.1rem', color: '#FFFFFF' }}>Founded in Erode</div>
                     <p style={{ fontSize: '0.8125rem', color: '#94A3B8', margin: 0 }}>Commenced woven fabric trade and local coordination in Erode's traditional merchant quarter.</p>
                   </div>
 
@@ -203,7 +203,7 @@ export const About = ({ onOpenRFQ }) => {
               </div>
               <div style={{ borderBottom: '1px solid #F1F5F9', paddingBottom: '0.75rem' }}>
                 <span style={{ color: '#64748B', display: 'block', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Registered Office Address</span>
-                <strong style={{ color: '#0F172A' }}>3, Vasuki St, 2nd St, Erode Fort - 638001</strong>
+                <strong style={{ color: '#0F172A' }}>3, Vasuki St, 2nd St, Erode - 638001</strong>
               </div>
               <div style={{ borderBottom: '1px solid #F1F5F9', paddingBottom: '0.75rem' }}>
                 <span style={{ color: '#64748B', display: 'block', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Goods & Services Tax (GSTIN)</span>

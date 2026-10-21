@@ -101,7 +101,7 @@ Together with neighboring Coimbatore (spinning) and Tirupur (knitwear), Erode fo
 Tamil Nadu led India in enforcing mandatory Zero Liquid Discharge (ZLD) for textile processing units. Advanced effluent treatment plants (ETPs) recover and recycle more than 95% of process water and recover industrial salts, allowing global brands to source with complete environmental peace of mind.
 
 ### 3. Vasanthaa Textiless: Your Single Point of Contact in Erode
-Since 1998, Vasanthaa Textiless has operated from the historic commercial heart of **Erode Fort (3, Vasuki St)**. We decode the complex local mill landscape, coordinate with top-tier specialized processing partners, and deliver fully inspected, certified fabric under single-point corporate accountability.
+Since 1998, Vasanthaa Textiless has operated from the historic commercial heart of **Erode (3, Vasuki St)**. We decode the complex local mill landscape, coordinate with top-tier specialized processing partners, and deliver fully inspected, certified fabric under single-point corporate accountability.
 `
   }
 ];

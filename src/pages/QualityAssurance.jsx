@@ -19,7 +19,7 @@ export const QualityAssurance = ({ onOpenRFQ }) => {
               Rigorous 4-Point Quality Assurance on Every Yard
             </h1>
             <p style={{ color: '#CBD5E1', fontSize: '1.125rem', lineHeight: '1.8', marginBottom: '2rem' }}>
-              Our commitment to quality is governed by quantifiable international standards, not subjective opinions. Before any fabric leaves our central inspection facility in Erode Fort, it must pass strict dimensional, mechanical, and visual audits.
+              Our commitment to quality is governed by quantifiable international standards, not subjective opinions. Before any fabric leaves our central inspection facility in Erode, it must pass strict dimensional, mechanical, and visual audits.
             </p>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <button
@@ -64,7 +64,7 @@ export const QualityAssurance = ({ onOpenRFQ }) => {
             <div>
               <span className="section-kicker">IN-HOUSE CENTRAL INSPECTION</span>
               <h2 style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.25rem)', color: '#0F172A', marginBottom: '1rem' }}>
-                Centrally Inspected in Erode Fort
+                Centrally Inspected in Erode
               </h2>
               <p style={{ color: '#64748B', lineHeight: '1.8', marginBottom: '1.5rem' }}>
                 Because we coordinate weaving and processing across specialized regional partners, centralized inspection is the bedrock of our business model. No fabric is shipped directly from an outsource mill to a buyer; every roll is routed to our central Erode tables for certified inspection and repacking.

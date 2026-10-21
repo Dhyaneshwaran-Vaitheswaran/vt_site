@@ -103,7 +103,7 @@ export const Resources = ({ onOpenRFQ }) => {
               Have a Custom Fabric Specification or Tender Inquiry?
             </h3>
             <p style={{ color: '#64748B', fontSize: '0.9375rem', maxWidth: '580px', margin: '0 auto 1.5rem auto', lineHeight: '1.6' }}>
-              Our commercial fabric coordinators in Erode Fort review and respond to formal inquiries and tech packs within 4 business hours.
+              Our commercial fabric coordinators in Erode review and respond to formal inquiries and tech packs within 4 business hours.
             </p>
             <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
               <button

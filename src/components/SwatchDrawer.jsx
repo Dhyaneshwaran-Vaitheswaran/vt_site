@@ -87,7 +87,7 @@ export const SwatchDrawer = ({ isOpen, onClose, swatches, onRemoveSwatch, onClea
                 Swatch Request Dispatched!
               </h4>
               <p style={{ color: '#64748B', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
-                Our sampling team in Erode Fort has received your request. Feeler swatches and technical spec cards will be assembled for courier dispatch.
+                Our sampling team in Erode has received your request. Feeler swatches and technical spec cards will be assembled for courier dispatch.
               </p>
               <button
                 onClick={() => {
@@ -238,7 +238,7 @@ export const SwatchDrawer = ({ isOpen, onClose, swatches, onRemoveSwatch, onClea
                 </button>
 
                 <p style={{ fontSize: '0.75rem', color: '#94A3B8', textAlign: 'center' }}>
-                  Swatches dispatched from Erode Fort. Courier charges may apply for overseas air shipments.
+                  Swatches dispatched from Erode. Courier charges may apply for overseas air shipments.
                 </p>
               </form>
             </div>

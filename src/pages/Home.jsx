@@ -33,7 +33,7 @@ export const Home = ({ setActivePage, onSelectFabric, onAddSwatch, swatches, onO
             {/* Left Hero Content */}
             <div>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.25rem', flexWrap: 'wrap' }}>
-                <span className="badge badge-gold">ESTABLISHED 1998 • ERODE FORT</span>
+                <span className="badge badge-gold">ESTABLISHED 1998 • ERODE</span>
                 <span className="badge badge-live">Accepting 2026/2027 Bulk Orders</span>
               </div>
 
@@ -253,7 +253,7 @@ export const Home = ({ setActivePage, onSelectFabric, onAddSwatch, swatches, onO
                 ASTM 4-Point Inspection
               </h3>
               <p style={{ fontSize: '0.875rem', color: '#64748B', lineHeight: '1.6' }}>
-                Every roll is inspected on our central light tables in Erode Fort. We certify GSM, cuttable width, shrinkage tolerances, and shade continuity roll-by-roll.
+                Every roll is inspected on our central light tables in Erode. We certify GSM, cuttable width, shrinkage tolerances, and shade continuity roll-by-roll.
               </p>
             </div>
 

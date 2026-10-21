@@ -50,7 +50,7 @@ export const Capabilities = ({ onOpenRFQ }) => {
             <span className="section-kicker">STAGE-BY-STAGE EXECUTION</span>
             <h2 className="section-title">Coordinated Operations & Technical Scope</h2>
             <p className="section-desc">
-              Every production order is tracked through strict milestone gates from greige yarn allocation to final roll packaging in Erode Fort.
+              Every production order is tracked through strict milestone gates from greige yarn allocation to final roll packaging in Erode.
             </p>
           </div>
 

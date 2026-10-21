@@ -110,16 +110,16 @@ export function App() {
       desc = 'Four-tier QA protocol adhering to ASTM and ISO standards: 4-Point greige inspection, spectrophotometer lab dips, shrinkage control, and pre-dispatch testing in Erode.';
       canonical = 'https://vasanthaatextiless.in/quality-assurance';
     } else if (activePage === 'about') {
-      title = 'About Vasanthaa Textiless | 28+ Years Textile Heritage in Erode Fort';
-      desc = 'Founded in 1998 by Mr. Vaitheswaran in Erode Fort. Decades of mastery in woven textile sourcing, technical coordination, and trusted supply for garment manufacturers worldwide.';
+      title = 'About Vasanthaa Textiless | 28+ Years Textile Heritage in Erode';
+      desc = 'Founded in 1998 by Mr. Vaitheswaran in Erode. Decades of mastery in woven textile sourcing, technical coordination, and trusted supply for garment manufacturers worldwide.';
       canonical = 'https://vasanthaatextiless.in/about';
     } else if (activePage === 'resources') {
       title = 'B2B Sourcing FAQs & Procurement Standards | Vasanthaa Textiless Erode';
       desc = 'Answers to common commercial questions regarding MOQs, lab dips, payments, and our centralized weaving & dyeing coordination in Erode.';
       canonical = 'https://vasanthaatextiless.in/resources';
     } else if (activePage === 'contact') {
-      title = 'Contact Vasanthaa Textiless | Erode Fort Facility & RFQ Desk';
-      desc = 'Connect with our commercial fabric desk at Erode Fort, Tamil Nadu. Fast lab dip turnaround, sample swatch dispatch, and bulk order production coordination.';
+      title = 'Contact Vasanthaa Textiless | Erode Facility & RFQ Desk';
+      desc = 'Connect with our commercial fabric desk at Erode, Tamil Nadu. Fast lab dip turnaround, sample swatch dispatch, and bulk order production coordination.';
       canonical = 'https://vasanthaatextiless.in/contact';
     }
 

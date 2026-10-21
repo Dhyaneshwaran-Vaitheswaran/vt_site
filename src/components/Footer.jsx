@@ -170,8 +170,7 @@ export const Footer = ({ setActivePage, onOpenRFQ }) => {
                 <MapPin size={18} color="#C51E3A" style={{ flexShrink: 0, marginTop: '0.2rem' }} />
                 <span style={{ color: '#CBD5E1', lineHeight: '1.6' }}>
                   3, Vasuki St, 2nd Street,<br />
-                  Erode Fort, Erode,<br />
-                  Tamil Nadu 638001, India
+                  Erode, Tamil Nadu 638001, India
                 </span>
               </div>
 

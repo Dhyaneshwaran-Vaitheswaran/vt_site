@@ -58,7 +58,7 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
               ESTD. 1998
             </span>
             <span style={{ color: 'rgba(255, 255, 255, 0.25)' }}>•</span>
-            <span style={{ color: '#E2E8F0', fontWeight: 500 }}>Erode Fort, Tamil Nadu</span>
+            <span style={{ color: '#E2E8F0', fontWeight: 500 }}>Erode, Tamil Nadu</span>
             <span style={{ color: 'rgba(255, 255, 255, 0.25)' }} className="hide-on-tablet">•</span>
             <span style={{ color: '#94A3B8' }} className="hide-on-tablet">Central Textile Sourcing & Production</span>
           </div>

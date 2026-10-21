@@ -77,7 +77,7 @@ export const VTMonogram = ({ size = 38, variant = 'dark' }) => {
 export const VTLogo = ({ 
   size = 40, 
   variant = 'dark', 
-  subtitle = 'SOURCING & PRODUCTION • ERODE • ESTD. 1998' 
+  subtitle = 'ERODE • ESTD. 1998' 
 }) => {
   const isDarkCanvas = variant === 'light';
   const textColor = isDarkCanvas ? '#FFFFFF' : '#0F172A';

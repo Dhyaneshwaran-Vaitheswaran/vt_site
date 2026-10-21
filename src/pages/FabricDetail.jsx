@@ -175,7 +175,7 @@ export const FabricDetail = ({ fabric, onBack, onAddSwatch, isSwatchAdded, onOpe
                   <strong style={{ color: '#0F172A', display: 'block', marginBottom: '0.2rem' }}>
                     Certified ASTM D5430 4-Point Inspection
                   </strong>
-                  Every roll of this fabric is verified on illuminated light tables in Erode Fort. We guarantee &lt; 2.5% shrinkage, zero color bleeding, and roll-by-roll GSM consistency.
+                  Every roll of this fabric is verified on illuminated light tables in Erode. We guarantee &lt; 2.5% shrinkage, zero color bleeding, and roll-by-roll GSM consistency.
                 </div>
               </div>
 

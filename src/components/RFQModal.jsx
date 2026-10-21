@@ -167,7 +167,7 @@ export const RFQModal = ({ isOpen, onClose, preselectedFabric }) => {
                 <div><strong>Location:</strong> {location}</div>
               </div>
               <div style={{ borderTop: '1px solid #E2E8F0', paddingTop: '0.75rem', color: '#64748B' }}>
-                Dispatched directly to Vasanthaa Textiless Central Sourcing Desk in Erode Fort.
+                Dispatched directly to Vasanthaa Textiless Central Sourcing Desk in Erode.
               </div>
             </div>
 
@@ -399,7 +399,7 @@ export const RFQModal = ({ isOpen, onClose, preselectedFabric }) => {
             {/* Submission CTA */}
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', flexWrap: 'wrap' }}>
               <div style={{ fontSize: '0.75rem', color: '#64748B' }}>
-                🔒 Strict client confidentiality. Direct Erode Fort office coordination.
+                🔒 Strict client confidentiality. Direct Erode office coordination.
               </div>
               <div style={{ display: 'flex', gap: '0.75rem' }}>
                 <button
