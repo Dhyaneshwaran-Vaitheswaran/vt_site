@@ -15,7 +15,7 @@ export const FabricDetail = ({ fabric, onBack, onAddSwatch, isSwatchAdded, onOpe
       `• Standard Bulk MOQ: ${fabric.moqBulk}\n\n` +
       `Could you provide current mill pricing and sample lead times?`
     );
-    window.open(`https://wa.me/919786222580?text=${msg}`, '_blank');
+    window.open(`https://wa.me/919842222580?text=${msg}`, '_blank');
   };
 
   return (

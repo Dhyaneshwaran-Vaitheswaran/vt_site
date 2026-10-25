@@ -115,12 +115,12 @@ export const Resources = ({ onOpenRFQ }) => {
                 Submit Custom RFQ <ArrowRight size={18} />
               </button>
               <a
-                href="https://wa.me/919786222580?text=Hello%20Vasanthaa%20Textiless,%20I%20have%20a%20commercial%20question%20regarding%20fabric%20sourcing."
+                href="https://wa.me/919842222580?text=Hello%20Vasanthaa%20Textiless,%20I%20have%20a%20commercial%20question%20regarding%20fabric%20sourcing."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-whatsapp btn-lg"
               >
-                <MessageSquare size={18} /> Ask on WhatsApp Desk
+                <MessageSquare size={18} /> Ask on WhatsApp Desk (+91 98422 22580)
               </a>
             </div>
           </div>

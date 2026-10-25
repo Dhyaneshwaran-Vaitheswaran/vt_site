@@ -24,6 +24,25 @@ export const Capabilities = ({ onOpenRFQ }) => {
             <p style={{ color: '#D4D4D8', fontSize: 'clamp(1rem, 1.8vw, 1.15rem)', lineHeight: '1.8', marginBottom: '2.5rem' }}>
               We act as the single operational bridge between your apparel brand and South India's premier shuttleless weaving, dyeing, and finishing infrastructure. We engineer the weave structure, allocate specialized rapier/air-jet looms, supervise eco-compliant wet processing, and enforce strict ASTM 4-point quality inspection.
             </p>
+            {/* Isha Main Supplier Heritage Badge */}
+            <div style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.75rem',
+              backgroundColor: 'rgba(255, 255, 255, 0.08)',
+              border: '1px solid rgba(255, 255, 255, 0.16)',
+              padding: '0.45rem 0.9rem',
+              borderRadius: '10px',
+              marginBottom: '1.25rem'
+            }}>
+              <div style={{ backgroundColor: '#FFFFFF', padding: '2px 6px', borderRadius: '6px', display: 'flex', alignItems: 'center' }}>
+                <img src="/images/isha-logo.png" alt="Isha" style={{ height: '22px', width: 'auto' }} />
+              </div>
+              <span style={{ fontSize: '0.8125rem', color: '#E4E4E7' }}>
+                <strong style={{ color: '#FFFFFF' }}>Proven at Massive Scale:</strong> Main Supplier to Isha for 10+ Years
+              </span>
+            </div>
+
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <button
                 onClick={() => onOpenRFQ(null)}
@@ -32,12 +51,12 @@ export const Capabilities = ({ onOpenRFQ }) => {
                 <ArrowUpRight size={18} /> Request Sourcing Consultation
               </button>
               <a
-                href="https://wa.me/919786222580?text=Hello%20Vasanthaa%20Textiless,%20I%20would%20like%20to%20learn%20more%20about%20your%20sourcing%20coordination%20capabilities."
+                href="https://wa.me/919842222580?text=Hello%20Vasanthaa%20Textiless,%20I%20would%20like%20to%20learn%20more%20about%20your%20sourcing%20coordination%20capabilities."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-whatsapp btn-lg"
               >
-                <MessageSquare size={18} /> WhatsApp Desk
+                <MessageSquare size={18} /> WhatsApp Desk (+91 98422 22580)
               </a>
             </div>
           </div>

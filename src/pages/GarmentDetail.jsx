@@ -15,7 +15,7 @@ export const GarmentDetail = ({ garment, onBack, onOpenRFQ, onSelectGarment, onS
       `• Lead Time: ${garment.leadTime}\n\n` +
       `Could you provide tech pack evaluation, FOB pricing, and sample lead times?`
     );
-    window.open(`https://wa.me/919786222580?text=${msg}`, '_blank');
+    window.open(`https://wa.me/919842222580?text=${msg}`, '_blank');
   };
 
   return (

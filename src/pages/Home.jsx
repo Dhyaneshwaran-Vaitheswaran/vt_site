@@ -84,6 +84,34 @@ export const Home = ({ setActivePage, onSelectFabric, onAddSwatch, swatches, onO
                 </button>
               </div>
 
+              {/* Official Flagship Client Trust Badge */}
+              <div style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.85rem',
+                padding: '0.55rem 1.15rem',
+                backgroundColor: 'rgba(255, 255, 255, 0.06)',
+                border: '1px solid rgba(255, 255, 255, 0.14)',
+                borderRadius: '12px',
+                backdropFilter: 'blur(8px)',
+                marginBottom: '2rem',
+                width: 'fit-content'
+              }}>
+                <div style={{
+                  backgroundColor: '#FFFFFF',
+                  borderRadius: '8px',
+                  padding: '3px 8px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  boxShadow: '0 2px 6px rgba(0,0,0,0.25)'
+                }}>
+                  <img src="/images/isha-logo.png" alt="Isha" style={{ height: '24px', width: 'auto', display: 'block' }} />
+                </div>
+                <div style={{ fontSize: '0.8125rem', color: '#D4D4D8' }}>
+                  <strong style={{ color: '#FFFFFF' }}>Main Supplier to Isha</strong> for 10+ Years • Dhotis, Kurtas, Bags & Garments
+                </div>
+              </div>
+
               {/* Key Trust Stats Bar — Clean Sans-Serif Numbers */}
               <div className="stats-grid-responsive">
                 <div>
@@ -194,7 +222,7 @@ export const Home = ({ setActivePage, onSelectFabric, onAddSwatch, swatches, onO
                     </div>
                   </div>
                   <a
-                    href="https://wa.me/919786222580"
+                    href="https://wa.me/919842222580"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn btn-whatsapp btn-sm"
@@ -685,13 +713,13 @@ export const Home = ({ setActivePage, onSelectFabric, onAddSwatch, swatches, onO
               </ul>
 
               <a
-                href="https://wa.me/919786222580?text=Hello%20Vasanthaa%20Textiless,%20we%20are%20an%20international%20buyer%20interested%20in%20bulk%20fabric%20sourcing."
+                href="https://wa.me/919842222580?text=Hello%20Vasanthaa%20Textiless,%20we%20are%20an%20international%20buyer%20interested%20in%20bulk%20fabric%20sourcing."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-whatsapp"
                 style={{ width: '100%' }}
               >
-                <MessageSquare size={16} /> International Desk on WhatsApp
+                <MessageSquare size={16} /> International Desk on WhatsApp (+91 98422 22580)
               </a>
             </div>
 
@@ -783,12 +811,12 @@ export const Home = ({ setActivePage, onSelectFabric, onAddSwatch, swatches, onO
               Request Custom Quote
             </button>
             <a
-              href="https://wa.me/919786222580?text=Hello%20Vasanthaa%20Textiless,%20I%20would%20like%20to%20discuss%20a%20fabric%20requirement."
+              href="https://wa.me/919842222580?text=Hello%20Vasanthaa%20Textiless,%20I%20would%20like%20to%20discuss%20a%20fabric%20requirement."
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-whatsapp btn-lg"
             >
-              <MessageSquare size={18} /> Chat with Sourcing Desk
+              <MessageSquare size={18} /> Chat with Sourcing Desk (+91 98422 22580)
             </a>
           </div>
         </div>

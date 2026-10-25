@@ -44,7 +44,7 @@ export const Footer = ({ setActivePage, onOpenRFQ }) => {
               Request Custom Quote <ArrowUpRight size={16} />
             </button>
             <a
-              href="https://wa.me/919786222580?text=Hello%20Vasanthaa%20Textiless,%20I%20would%20like%20to%20discuss%20a%20bulk%20fabric%20order."
+              href="https://wa.me/919842222580?text=Hello%20Vasanthaa%20Textiless,%20I%20would%20like%20to%20discuss%20a%20bulk%20fabric%20order."
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-whatsapp btn-lg"
@@ -77,6 +77,41 @@ export const Footer = ({ setActivePage, onOpenRFQ }) => {
               <span style={{ backgroundColor: '#18181B', border: '1px solid #27272A', padding: '0.4rem 0.75rem', borderRadius: '6px', fontSize: '0.75rem', color: '#C51E3A', fontWeight: 700 }}>
                 ✓ 10+ Years Isha Supplier
               </span>
+            </div>
+
+            {/* Official Isha Flagship Supplier Trust Lockup */}
+            <div style={{
+              padding: '0.85rem 1rem',
+              backgroundColor: '#18181B',
+              border: '1px solid #27272A',
+              borderRadius: '12px',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.85rem'
+            }}>
+              <div style={{
+                backgroundColor: '#FFFFFF',
+                padding: '4px 8px',
+                borderRadius: '8px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexShrink: 0
+              }}>
+                <img
+                  src="/images/isha-logo.png"
+                  alt="Isha Official Logo"
+                  style={{ height: '30px', width: 'auto', display: 'block' }}
+                />
+              </div>
+              <div style={{ fontSize: '0.75rem', lineHeight: '1.4' }}>
+                <span style={{ color: '#C51E3A', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em', display: 'block', fontSize: '0.65rem' }}>
+                  FLAGSHIP PRODUCTION PARTNER
+                </span>
+                <span style={{ color: '#F4F4F5', fontWeight: 700 }}>
+                  Main Sourcing & Apparel Supplier to Isha for 10+ Years
+                </span>
+              </div>
             </div>
           </div>
 
@@ -220,8 +255,8 @@ export const Footer = ({ setActivePage, onOpenRFQ }) => {
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                 <Phone size={16} color="#C51E3A" style={{ flexShrink: 0 }} />
                 <div style={{ display: 'flex', flexDirection: 'column' }}>
-                  <a href="tel:+919786222580" style={{ color: '#FFFFFF', fontWeight: 600 }}>+91 97862 22580</a>
-                  <a href="tel:+919842222580" style={{ color: '#A1A1AA', fontSize: '0.8125rem' }}>+91 98422 22580 (Direct)</a>
+                  <a href="tel:+919842222580" style={{ color: '#FFFFFF', fontWeight: 700 }}>+91 98422 22580 (Primary Desk)</a>
+                  <a href="tel:+919786222580" style={{ color: '#A1A1AA', fontSize: '0.8125rem' }}>+91 97862 22580 (Secondary Hotline)</a>
                 </div>
               </div>
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Award, ShieldCheck, MapPin, Building, Users, Clock, ArrowUpRight, MessageSquare, ArrowRight, HeartHandshake, Sparkles } from 'lucide-react';
+import { Award, ShieldCheck, MapPin, Building, Users, Clock, ArrowUpRight, MessageSquare, ArrowRight, HeartHandshake, Sparkles, CheckCircle2 } from 'lucide-react';
 
 export const About = ({ onOpenRFQ }) => {
   return (
@@ -31,12 +31,12 @@ export const About = ({ onOpenRFQ }) => {
                 <ArrowUpRight size={18} /> Partner with Vasanthaa
               </button>
               <a
-                href="https://wa.me/919786222580?text=Hello%20Mr.%20Vaitheswaran%20and%20Vasanthaa%20Textiless%20team,%20I%20would%20like%20to%20introduce%20our%20apparel%20brand."
+                href="https://wa.me/919842222580?text=Hello%20Mr.%20Vaitheswaran%20and%20Vasanthaa%20Textiless%20team,%20I%20would%20like%20to%20introduce%20our%20apparel%20brand."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-whatsapp btn-lg"
               >
-                <MessageSquare size={18} /> Connect with Founder Desk
+                <MessageSquare size={18} /> Connect with Founder Desk (+91 98422 22580)
               </a>
             </div>
           </div>
@@ -230,6 +230,59 @@ export const About = ({ onOpenRFQ }) => {
               <div style={{ borderBottom: '1px solid #E4E4E7', paddingBottom: '0.85rem' }}>
                 <span style={{ color: '#71717A', display: 'block', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>Key Clientele</span>
                 <strong style={{ color: '#C51E3A', fontWeight: 800 }}>Isha (Main Supplier 10+ Years)</strong>
+              </div>
+            </div>
+          </div>
+
+          {/* Flagship Institutional Client Showcase: Isha */}
+          <div style={{
+            marginTop: '2.5rem',
+            backgroundColor: '#FFFFFF',
+            borderRadius: '20px',
+            border: '1px solid #E4E4E7',
+            padding: 'clamp(1.75rem, 3.5vw, 2.5rem)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '1.5rem',
+            boxShadow: '0 4px 20px rgba(0,0,0,0.03)'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
+              <div style={{
+                backgroundColor: '#F8FAFC',
+                border: '1px solid #E2E8F0',
+                borderRadius: '14px',
+                padding: '0.75rem 1.25rem',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.04)'
+              }}>
+                <img src="/images/isha-logo.png" alt="Isha Foundation Logo" style={{ height: '46px', width: 'auto', display: 'block' }} />
+              </div>
+              <div>
+                <span className="badge badge-red" style={{ backgroundColor: '#FEF2F2', color: '#C51E3A', marginBottom: '0.4rem', fontWeight: 800 }}>
+                  FLAGSHIP INSTITUTIONAL CLIENT • 10+ YEARS
+                </span>
+                <h4 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#0A0A0A', margin: 0 }}>
+                  Primary Textile & Apparel Manufacturer for Isha
+                </h4>
+                <p style={{ color: '#52525B', fontSize: '0.9rem', margin: '0.35rem 0 0 0', maxWidth: '600px', lineHeight: 1.6 }}>
+                  Direct manufacturer and primary coordinator of authentic sadhana dhotis, natural pure cotton kurtas, Save Soil canvas bags, consecrated pouches, and meditation shawls for more than a decade.
+                </p>
+              </div>
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', minWidth: '220px' }}>
+              <div style={{ fontSize: '0.8125rem', color: '#166534', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                <CheckCircle2 size={16} color="#166534" /> 10+ Consecutive Years
+              </div>
+              <div style={{ fontSize: '0.8125rem', color: '#166534', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                <CheckCircle2 size={16} color="#166534" /> Millions of Units & Meters
+              </div>
+              <div style={{ fontSize: '0.8125rem', color: '#166534', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                <CheckCircle2 size={16} color="#166534" /> 100% Zero-Defect Audit Passed
               </div>
             </div>
           </div>

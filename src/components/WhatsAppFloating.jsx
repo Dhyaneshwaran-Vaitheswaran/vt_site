@@ -27,8 +27,8 @@ export const WhatsAppFloating = () => {
     }
   ];
 
-  const handleLaunchChat = (text) => {
-    const url = `https://wa.me/919786222580?text=${encodeURIComponent(text)}`;
+  const handleLaunchChat = (text, phone = '919842222580') => {
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank');
     setIsOpen(false);
   };
@@ -42,7 +42,7 @@ export const WhatsAppFloating = () => {
           position: 'absolute',
           bottom: '70px',
           right: '0',
-          width: '320px',
+          width: '330px',
           backgroundColor: '#FFFFFF',
           borderRadius: '16px',
           boxShadow: '0 20px 40px rgba(15, 23, 42, 0.25)',
@@ -65,6 +65,9 @@ export const WhatsAppFloating = () => {
                 <span style={{ fontSize: '0.75rem', color: '#94A3B8' }}>Erode Desk</span>
               </div>
               <h4 style={{ color: '#FFFFFF', fontSize: '1rem', margin: 0 }}>Vasanthaa Sourcing Desk</h4>
+              <div style={{ fontSize: '0.75rem', color: '#CBD5E1', marginTop: '0.2rem' }}>
+                Primary: <strong style={{ color: '#22C55E' }}>+91 98422 22580</strong>
+              </div>
             </div>
             <button
               onClick={() => setIsOpen(false)}
@@ -109,20 +112,28 @@ export const WhatsAppFloating = () => {
             ))}
           </div>
 
-          {/* Footer Call Strip */}
+          {/* Footer Call Strip with Primary and Secondary numbers */}
           <div style={{
             padding: '0.75rem 1rem',
             backgroundColor: '#F8FAFC',
             borderTop: '1px solid #E2E8F0',
             fontSize: '0.75rem',
             display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between'
+            flexDirection: 'column',
+            gap: '0.4rem'
           }}>
-            <span style={{ color: '#64748B' }}>Prefer a quick phone call?</span>
-            <a href="tel:+919786222580" style={{ color: '#C51E3A', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
-              <PhoneCall size={12} /> Call Desk
-            </a>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <span style={{ color: '#64748B' }}>Primary Hotline:</span>
+              <a href="tel:+919842222580" style={{ color: '#C51E3A', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
+                <PhoneCall size={12} /> +91 98422 22580
+              </a>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <span style={{ color: '#94A3B8' }}>Secondary Desk:</span>
+              <a href="tel:+919786222580" style={{ color: '#64748B', fontWeight: 600 }}>
+                +91 97862 22580
+              </a>
+            </div>
           </div>
         </div>
       )}

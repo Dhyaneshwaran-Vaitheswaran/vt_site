@@ -66,14 +66,15 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
           {/* Right: Direct Desk Hotlines */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', fontSize: '0.75rem' }}>
             <a
-              href="tel:+919786222580"
+              href="tel:+919842222580"
               style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', color: '#FFFFFF', textDecoration: 'none', fontWeight: 600 }}
+              title="Primary Contact Desk"
             >
-              <Phone size={12} color="#C51E3A" /> +91 97862 22580
+              <Phone size={12} color="#C51E3A" /> +91 98422 22580
             </a>
             <span style={{ color: 'rgba(255, 255, 255, 0.2)' }}>•</span>
             <a
-              href="https://wa.me/919786222580?text=Hello%20Vasanthaa%20Textiless,%20I%20have%20an%20inquiry%20regarding%20bulk%20fabric%20sourcing."
+              href="https://wa.me/919842222580?text=Hello%20Vasanthaa%20Textiless,%20I%20have%20an%20inquiry%20regarding%20bulk%20fabric%20sourcing."
               target="_blank"
               rel="noopener noreferrer"
               style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', color: '#25D366', textDecoration: 'none', fontWeight: 700 }}
@@ -253,30 +254,46 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
                   <ArrowUpRight size={16} /> Request Bulk Quotation
                 </button>
                 <a
-                  href="https://wa.me/919786222580?text=Hello%20Vasanthaa%20Textiless,%20I%20have%20an%20inquiry%20regarding%20bulk%20fabric%20sourcing."
+                  href="https://wa.me/919842222580?text=Hello%20Vasanthaa%20Textiless,%20I%20have%20an%20inquiry%20regarding%20bulk%20fabric%20sourcing."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-whatsapp"
                   style={{ width: '100%', justifyContent: 'center', padding: '0.75rem 1rem' }}
                 >
-                  <MessageSquare size={16} /> WhatsApp Desk
+                  <MessageSquare size={16} /> WhatsApp Desk (+91 98422 22580)
                 </a>
-                <a
-                  href="tel:+919786222580"
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '0.4rem',
-                    color: '#475569',
-                    fontSize: '0.85rem',
-                    textDecoration: 'none',
-                    fontWeight: 600,
-                    paddingTop: '0.25rem'
-                  }}
-                >
-                  <Phone size={14} color="#C51E3A" /> Direct Hotline: +91 97862 22580
-                </a>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem', paddingTop: '0.35rem' }}>
+                  <a
+                    href="tel:+919842222580"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '0.4rem',
+                      color: '#0A0A0A',
+                      fontSize: '0.85rem',
+                      textDecoration: 'none',
+                      fontWeight: 700
+                    }}
+                  >
+                    <Phone size={14} color="#C51E3A" /> Primary: +91 98422 22580
+                  </a>
+                  <a
+                    href="tel:+919786222580"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '0.4rem',
+                      color: '#71717A',
+                      fontSize: '0.8rem',
+                      textDecoration: 'none',
+                      fontWeight: 500
+                    }}
+                  >
+                    Secondary: +91 97862 22580
+                  </a>
+                </div>
               </li>
             </ul>
           </div>

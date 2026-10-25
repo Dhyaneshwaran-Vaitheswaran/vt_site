@@ -24,7 +24,7 @@ export const SwatchDrawer = ({ isOpen, onClose, swatches, onRemoveSwatch, onClea
       `• Courier Address: ${courierAddress}\n\n` +
       `Please dispatch swatch hangers / feeler cuts.`
     );
-    window.open(`https://wa.me/919786222580?text=${msg}`, '_blank');
+    window.open(`https://wa.me/919842222580?text=${msg}`, '_blank');
     setOrdered(true);
   };
 

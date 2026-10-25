@@ -23,6 +23,25 @@ export const QualityAssurance = ({ onOpenRFQ }) => {
             <p style={{ color: '#D4D4D8', fontSize: 'clamp(1rem, 1.8vw, 1.15rem)', lineHeight: '1.8', marginBottom: '2.5rem' }}>
               Our commitment to quality is governed by quantifiable international standards, not subjective opinions. Before any fabric leaves our central inspection facility in Erode, it must pass strict dimensional, mechanical, and visual audits.
             </p>
+            {/* Isha Quality Heritage Badge */}
+            <div style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.75rem',
+              backgroundColor: 'rgba(255, 255, 255, 0.08)',
+              border: '1px solid rgba(255, 255, 255, 0.16)',
+              padding: '0.45rem 0.9rem',
+              borderRadius: '10px',
+              marginBottom: '1.25rem'
+            }}>
+              <div style={{ backgroundColor: '#FFFFFF', padding: '2px 6px', borderRadius: '6px', display: 'flex', alignItems: 'center' }}>
+                <img src="/images/isha-logo.png" alt="Isha" style={{ height: '22px', width: 'auto' }} />
+              </div>
+              <span style={{ fontSize: '0.8125rem', color: '#E4E4E7' }}>
+                <strong style={{ color: '#FFFFFF' }}>Institutional QA Benchmark:</strong> Main Supplier to Isha (10+ Years Zero-Failure Record)
+              </span>
+            </div>
+
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <button
                 onClick={() => onOpenRFQ(null)}
@@ -31,12 +50,12 @@ export const QualityAssurance = ({ onOpenRFQ }) => {
                 <ArrowUpRight size={18} /> Request Quality Spec & Sample
               </button>
               <a
-                href="https://wa.me/919786222580?text=Hello%20Vasanthaa%20Textiless,%20I%20would%20like%20to%20review%20your%20QA%20testing%20and%204-point%20inspection%20standards."
+                href="https://wa.me/919842222580?text=Hello%20Vasanthaa%20Textiless,%20I%20would%20like%20to%20review%20your%20QA%20testing%20and%204-point%20inspection%20standards."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-whatsapp btn-lg"
               >
-                <MessageSquare size={18} /> Ask QC Lead on WhatsApp
+                <MessageSquare size={18} /> Ask QC Lead on WhatsApp (+91 98422 22580)
               </a>
             </div>
           </div>

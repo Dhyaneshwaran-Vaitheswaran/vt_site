@@ -28,6 +28,25 @@ export const Garments = ({ onSelectGarment, onOpenRFQ, onSelectFabric }) => {
             <p style={{ color: '#CBD5E1', fontSize: 'clamp(0.95rem, 1.8vw, 1.125rem)', lineHeight: '1.7', marginBottom: '1.5rem' }}>
               Eliminating the classic conflict between fabric mills and garment factories. Vasanthaa Textiless coordinates full-package apparel manufacturing across South India's premier garment hubs—from weaving the fabric to cutting, stitching, and global container export.
             </p>
+            {/* Isha Main Supplier Trust Badge */}
+            <div style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.75rem',
+              backgroundColor: 'rgba(255, 255, 255, 0.08)',
+              border: '1px solid rgba(255, 255, 255, 0.16)',
+              padding: '0.45rem 0.9rem',
+              borderRadius: '10px',
+              marginBottom: '1.25rem'
+            }}>
+              <div style={{ backgroundColor: '#FFFFFF', padding: '2px 6px', borderRadius: '6px', display: 'flex', alignItems: 'center' }}>
+                <img src="/images/isha-logo.png" alt="Isha" style={{ height: '22px', width: 'auto' }} />
+              </div>
+              <span style={{ fontSize: '0.8125rem', color: '#E4E4E7' }}>
+                <strong style={{ color: '#FFFFFF' }}>Main Supplier to Isha</strong> for 10+ Years (Dhotis, Kurtas, Bags & Garments)
+              </span>
+            </div>
+
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
               <button
                 onClick={() => onOpenRFQ(null)}
@@ -36,12 +55,12 @@ export const Garments = ({ onSelectGarment, onOpenRFQ, onSelectFabric }) => {
                 <ArrowUpRight size={16} /> Request Garment OEM Quote
               </button>
               <a
-                href="https://wa.me/919786222580?text=Hello%20Vasanthaa%20Textiless,%20I%20have%20an%20inquiry%20regarding%20finished%20garment%20OEM%20manufacturing."
+                href="https://wa.me/919842222580?text=Hello%20Vasanthaa%20Textiless,%20I%20have%20an%20inquiry%20regarding%20finished%20garment%20OEM%20manufacturing."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-outline-light"
               >
-                <MessageSquare size={16} /> Direct Desk WhatsApp
+                <MessageSquare size={16} /> Direct Desk WhatsApp (+91 98422 22580)
               </a>
             </div>
           </div>

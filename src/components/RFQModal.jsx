@@ -61,7 +61,7 @@ export const RFQModal = ({ isOpen, onClose, preselectedFabric }) => {
   };
 
   const handleWhatsAppSend = () => {
-    const url = `https://wa.me/919786222580?text=${getWhatsAppMessage()}`;
+    const url = `https://wa.me/919842222580?text=${getWhatsAppMessage()}`;
     window.open(url, '_blank');
   };
 

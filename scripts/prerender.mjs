@@ -370,7 +370,7 @@ async function runPrerender() {
 
           <div style="margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
             <a href="/contact" style="display: inline-block; background: #C51E3A; color: #FFFFFF; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 6px; font-weight: 700;">Request Bulk Quotation</a>
-            <a href="https://wa.me/919786222580?text=Inquiry%20for%20${encodeURIComponent(f.name)}" style="display: inline-block; background: #18181B; color: #FFFFFF; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 6px; font-weight: 700;">Chat on WhatsApp (+91 97862 22580)</a>
+            <a href="https://wa.me/919842222580?text=Inquiry%20for%20${encodeURIComponent(f.name)}" style="display: inline-block; background: #18181B; color: #FFFFFF; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 6px; font-weight: 700;">Chat on WhatsApp (+91 98422 22580)</a>
           </div>
         </div>
       `;
@@ -416,7 +416,7 @@ async function runPrerender() {
 
           <div style="margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap;">
             <a href="/contact" style="display: inline-block; background: #C51E3A; color: #FFFFFF; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 6px; font-weight: 700;">Request Garment OEM Quote</a>
-            <a href="https://wa.me/919786222580?text=Inquiry%20for%20${encodeURIComponent(g.name)}" style="display: inline-block; background: #18181B; color: #FFFFFF; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 6px; font-weight: 700;">WhatsApp Direct Desk (+91 97862 22580)</a>
+            <a href="https://wa.me/919842222580?text=Inquiry%20for%20${encodeURIComponent(g.name)}" style="display: inline-block; background: #18181B; color: #FFFFFF; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 6px; font-weight: 700;">WhatsApp Direct Desk (+91 98422 22580)</a>
           </div>
         </div>
       `;

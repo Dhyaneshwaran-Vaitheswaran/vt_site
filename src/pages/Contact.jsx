@@ -30,7 +30,7 @@ export const Contact = () => {
       `*Target Volume:* ${formData.quantity}\n` +
       `*Message:* ${formData.message}`
     );
-    window.open(`https://wa.me/919786222580?text=${text}`, '_blank');
+    window.open(`https://wa.me/919842222580?text=${text}`, '_blank');
   };
 
   const handleEmailSend = () => {
@@ -108,11 +108,11 @@ export const Contact = () => {
                     <strong style={{ display: 'block', fontSize: '1.1rem', color: '#0A0A0A', marginBottom: '0.35rem', fontWeight: 700 }}>
                       Direct Telephone Lines
                     </strong>
-                    <div style={{ fontSize: '0.95rem', marginBottom: '0.25rem' }}>
-                      <a href="tel:+919786222580" style={{ color: '#0A0A0A', fontWeight: 700 }}>+91 97862 22580</a> (Primary Desk)
+                    <div style={{ fontSize: '0.95rem', marginBottom: '0.35rem' }}>
+                      <a href="tel:+919842222580" style={{ color: '#0A0A0A', fontWeight: 800 }}>+91 98422 22580</a> <span style={{ color: '#C51E3A', fontWeight: 700 }}>(Primary Desk & WhatsApp)</span>
                     </div>
-                    <div style={{ fontSize: '0.95rem' }}>
-                      <a href="tel:+919842222580" style={{ color: '#52525B' }}>+91 98422 22580</a> (Executive Support)
+                    <div style={{ fontSize: '0.925rem' }}>
+                      <a href="tel:+919786222580" style={{ color: '#52525B', fontWeight: 600 }}>+91 97862 22580</a> <span style={{ color: '#71717A' }}>(Secondary Desk / Hotline)</span>
                     </div>
                   </div>
                 </div>
@@ -188,12 +188,12 @@ export const Contact = () => {
                   </span>
                 </div>
                 <a
-                  href="https://wa.me/919786222580?text=Hello%20Vasanthaa%20Textiless,%20I%20have%20an%20inquiry%20regarding%20fabric%20orders."
+                  href="https://wa.me/919842222580?text=Hello%20Vasanthaa%20Textiless,%20I%20have%20an%20inquiry%20regarding%20fabric%20orders."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-whatsapp btn-sm"
                 >
-                  <MessageSquare size={16} /> Open WhatsApp
+                  <MessageSquare size={16} /> Open WhatsApp (+91 98422 22580)
                 </a>
               </div>
 
@@ -451,11 +451,11 @@ export const Contact = () => {
                   <Navigation size={16} /> Get Driving Directions <ExternalLink size={14} />
                 </a>
                 <a
-                  href="tel:+919786222580"
+                  href="tel:+919842222580"
                   className="btn btn-outline-dark"
                   style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', textDecoration: 'none' }}
                 >
-                  <Phone size={16} /> Call Front Desk
+                  <Phone size={16} /> Call Primary Desk (+91 98422 22580)
                 </a>
               </div>
 

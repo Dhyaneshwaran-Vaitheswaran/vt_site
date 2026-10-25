@@ -58,6 +58,45 @@ export const IshaShowcase = ({ onOpenRFQ }) => {
 
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
 
+        {/* Flagship Co-Branding Banner Lockup */}
+        <div style={{
+          display: 'flex',
+          alignItems: 'center',
+          gap: '1.25rem',
+          padding: '1rem 1.5rem',
+          backgroundColor: '#FAFAFA',
+          border: '1px solid #E4E4E7',
+          borderRadius: '16px',
+          width: 'fit-content',
+          marginBottom: '2rem',
+          flexWrap: 'wrap'
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+            <img src="/images/vt-monogram.svg" alt="VT Trademark Monogram" style={{ width: '28px', height: '28px' }} />
+            <span style={{ fontWeight: 800, fontSize: '0.95rem', color: '#0A0A0A', letterSpacing: '0.02em' }}>
+              VASANTHAA TEXTILESS
+            </span>
+          </div>
+
+          <span style={{ color: '#C51E3A', fontWeight: 800, fontSize: '1.1rem' }}>✕</span>
+
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            backgroundColor: '#FFFFFF',
+            padding: '0.35rem 0.85rem',
+            borderRadius: '10px',
+            border: '1px solid #E4E4E7',
+            boxShadow: '0 2px 6px rgba(0,0,0,0.04)'
+          }}>
+            <img src="/images/isha-logo.png" alt="Isha Official Logo" style={{ height: '36px', width: 'auto', display: 'block' }} />
+          </div>
+
+          <span className="badge badge-red" style={{ backgroundColor: '#FEF2F2', color: '#C51E3A', border: '1px solid rgba(197, 30, 58, 0.25)', fontWeight: 800 }}>
+            <Award size={14} style={{ marginRight: '0.25rem' }} /> EXCLUSIVE 10+ YEAR FLAGSHIP PARTNERSHIP
+          </span>
+        </div>
+
         {/* Header Block with Red/Black Aesthetic */}
         <div className="section-header" style={{ maxWidth: '840px', marginBottom: 'clamp(2.5rem, 5vw, 4rem)' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.85rem', flexWrap: 'wrap' }}>
@@ -83,8 +122,58 @@ export const IshaShowcase = ({ onOpenRFQ }) => {
           padding: 'clamp(1.75rem, 4vw, 3rem)',
           marginBottom: 'clamp(2.5rem, 5vw, 4rem)',
           border: '1px solid #27272A',
-          boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15)'
+          boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15)',
+          position: 'relative',
+          overflow: 'hidden'
         }}>
+          {/* Authenticated Partnership Banner */}
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            borderBottom: '1px solid #27272A',
+            paddingBottom: '1.5rem',
+            marginBottom: '2rem',
+            flexWrap: 'wrap',
+            gap: '1rem'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+              <div style={{
+                backgroundColor: '#FFFFFF',
+                padding: '6px 14px',
+                borderRadius: '10px',
+                display: 'flex',
+                alignItems: 'center',
+                boxShadow: '0 4px 12px rgba(0,0,0,0.3)'
+              }}>
+                <img src="/images/isha-logo.png" alt="Isha Logo" style={{ height: '36px', width: 'auto', display: 'block' }} />
+              </div>
+              <div>
+                <div style={{ fontSize: '0.6875rem', fontWeight: 800, color: '#C51E3A', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+                  OFFICIAL INSTITUTIONAL RECORD
+                </div>
+                <div style={{ fontSize: '1.15rem', fontWeight: 800, color: '#FFFFFF' }}>
+                  Main Textile & Apparel Manufacturing Partner
+                </div>
+              </div>
+            </div>
+
+            <div style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              backgroundColor: '#18181B',
+              border: '1px solid #3F3F46',
+              padding: '0.5rem 1rem',
+              borderRadius: '9999px',
+              fontSize: '0.8125rem',
+              color: '#E4E4E7',
+              fontWeight: 600
+            }}>
+              <ShieldCheck size={16} color="#22C55E" />
+              <span>Direct Manufacturing & Sourcing Contract</span>
+            </div>
+          </div>
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))',
@@ -240,7 +329,7 @@ export const IshaShowcase = ({ onOpenRFQ }) => {
               <ArrowUpRight size={18} /> Request Custom OEM Production Quote
             </button>
             <a
-              href="https://wa.me/919786222580?text=Hello%20Vasanthaa%20Textiless,%20I%20would%20like%20to%20discuss%20manufacturing%20dhotis,%20kurtas,%20bags%20or%20apparel."
+              href="https://wa.me/919842222580?text=Hello%20Vasanthaa%20Textiless,%20I%20would%20like%20to%20discuss%20manufacturing%20dhotis,%20kurtas,%20bags%20or%20apparel."
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-outline-dark btn-lg"
@@ -251,7 +340,7 @@ export const IshaShowcase = ({ onOpenRFQ }) => {
                 fontWeight: 700
               }}
             >
-              Direct WhatsApp Inquiry
+              Direct WhatsApp Inquiry (+91 98422 22580)
             </a>
           </div>
         </div>
