@@ -58,58 +58,61 @@ export const IshaShowcase = ({ onOpenRFQ }) => {
 
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
 
-        {/* Flagship Co-Branding Banner Lockup */}
-        <div style={{
+        {/* Section Header with Perfectly Center-Aligned Co-Branding Banner */}
+        <div className="section-header" style={{
+          maxWidth: '860px',
+          margin: '0 auto clamp(2.5rem, 5vw, 4rem) auto',
+          textAlign: 'center',
           display: 'flex',
-          alignItems: 'center',
-          gap: '1.25rem',
-          padding: '1rem 1.5rem',
-          backgroundColor: '#FAFAFA',
-          border: '1px solid #E4E4E7',
-          borderRadius: '16px',
-          width: 'fit-content',
-          marginBottom: '2rem',
-          flexWrap: 'wrap'
+          flexDirection: 'column',
+          alignItems: 'center'
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-            <img src="/images/vt-monogram.svg" alt="VT Trademark Monogram" style={{ width: '28px', height: '28px' }} />
-            <span style={{ fontWeight: 800, fontSize: '0.95rem', color: '#0A0A0A', letterSpacing: '0.02em' }}>
-              VASANTHAA TEXTILESS
-            </span>
-          </div>
-
-          <span style={{ color: '#C51E3A', fontWeight: 800, fontSize: '1.1rem' }}>✕</span>
-
+          
+          {/* Flagship Co-Branding Banner Lockup — Centered */}
           <div style={{
-            display: 'flex',
+            display: 'inline-flex',
             alignItems: 'center',
-            backgroundColor: '#FFFFFF',
-            padding: '0.35rem 0.85rem',
-            borderRadius: '10px',
+            justifyContent: 'center',
+            gap: '1rem',
+            padding: '0.75rem 1.35rem',
+            backgroundColor: '#FAFAFA',
             border: '1px solid #E4E4E7',
-            boxShadow: '0 2px 6px rgba(0,0,0,0.04)'
+            borderRadius: '16px',
+            marginBottom: '1.5rem',
+            flexWrap: 'wrap',
+            boxShadow: '0 2px 8px rgba(0,0,0,0.03)'
           }}>
-            <img src="/images/isha-logo.png" alt="Isha Official Logo" style={{ height: '36px', width: 'auto', display: 'block' }} />
-          </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.55rem' }}>
+              <img src="/images/vt-monogram.svg" alt="VT Trademark Monogram" style={{ width: '24px', height: '24px' }} />
+              <span style={{ fontWeight: 800, fontSize: '0.875rem', color: '#0A0A0A', letterSpacing: '0.04em' }}>
+                VASANTHAA TEXTILESS
+              </span>
+            </div>
 
-          <span className="badge badge-red" style={{ backgroundColor: '#FEF2F2', color: '#C51E3A', border: '1px solid rgba(197, 30, 58, 0.25)', fontWeight: 800 }}>
-            <Award size={14} style={{ marginRight: '0.25rem' }} /> EXCLUSIVE 10+ YEAR FLAGSHIP PARTNERSHIP
-          </span>
-        </div>
+            <span style={{ color: '#C51E3A', fontWeight: 800, fontSize: '0.95rem' }}>✕</span>
 
-        {/* Header Block with Red/Black Aesthetic */}
-        <div className="section-header" style={{ maxWidth: '840px', marginBottom: 'clamp(2.5rem, 5vw, 4rem)' }}>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.85rem', flexWrap: 'wrap' }}>
-            <span className="badge badge-red" style={{ backgroundColor: '#FEF2F2', color: '#C51E3A', border: '1px solid rgba(197, 30, 58, 0.25)', fontWeight: 800 }}>
-              <Award size={14} style={{ marginRight: '0.25rem' }} /> FLAGSHIP PARTNERSHIP • OVER A DECADE
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              backgroundColor: '#FFFFFF',
+              padding: '0.25rem 0.65rem',
+              borderRadius: '8px',
+              border: '1px solid #E4E4E7',
+              boxShadow: '0 1px 4px rgba(0,0,0,0.04)'
+            }}>
+              <img src="/images/isha-logo.png" alt="Isha Official Logo" style={{ height: '30px', width: 'auto', display: 'block' }} />
+            </div>
+
+            <span className="badge badge-red" style={{ backgroundColor: '#FEF2F2', color: '#C51E3A', border: '1px solid rgba(197, 30, 58, 0.25)', fontWeight: 800, fontSize: '0.75rem' }}>
+              <Award size={13} style={{ marginRight: '0.25rem' }} /> EXCLUSIVE 10+ YEAR FLAGSHIP PARTNERSHIP
             </span>
           </div>
 
-          <h2 className="section-title" style={{ fontSize: 'clamp(1.85rem, 4.2vw, 3rem)', color: '#0A0A0A', lineHeight: 1.18 }}>
+          <h2 className="section-title" style={{ fontSize: 'clamp(1.85rem, 4.2vw, 3rem)', color: '#0A0A0A', lineHeight: 1.18, textAlign: 'center' }}>
             Main Textile & Apparel Supplier to Isha for the Past Decade
           </h2>
 
-          <p className="section-desc" style={{ fontSize: 'clamp(1rem, 1.8vw, 1.15rem)', color: '#52525B', lineHeight: 1.75 }}>
+          <p className="section-desc" style={{ fontSize: 'clamp(1rem, 1.8vw, 1.15rem)', color: '#52525B', lineHeight: 1.75, textAlign: 'center', margin: '0 auto' }}>
             Our greatest testament to precision, purity, and manufacturing scale. For over 10 consecutive years, Vasanthaa Textiless has proudly served as the primary production engine for Isha’s sacred, program, and everyday clothing collections.
           </p>
         </div>

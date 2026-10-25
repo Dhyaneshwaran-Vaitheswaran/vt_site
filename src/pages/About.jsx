@@ -287,65 +287,6 @@ export const About = ({ onOpenRFQ }) => {
             </div>
           </div>
 
-          {/* Official Trademark Section */}
-          <div style={{
-            marginTop: '4rem',
-            backgroundColor: '#0A0A0A',
-            color: '#FFFFFF',
-            borderRadius: '20px',
-            border: '1px solid #27272A',
-            padding: 'clamp(2rem, 4vw, 3rem)',
-            boxShadow: '0 12px 32px rgba(0,0,0,0.2)'
-          }}>
-            <div className="two-col-layout-responsive">
-              <div>
-                <span className="badge badge-red" style={{ marginBottom: '1rem', backgroundColor: '#FEF2F2', color: '#C51E3A' }}>PROPRIETARY BRAND IDENTITY</span>
-                <h3 style={{ fontSize: 'clamp(1.4rem, 3vw, 1.85rem)', color: '#FFFFFF', marginBottom: '1rem', fontWeight: 800 }}>
-                  The Official "VT" Trademark
-                </h3>
-                <p style={{ color: '#D4D4D8', fontSize: '0.95rem', lineHeight: '1.75', marginBottom: '1.5rem' }}>
-                  Our brand emblem unites the letters <strong>'V'</strong> and <strong>'T'</strong> in an architectural, simplistic geometry that mimics the interlocking of warp and weft threads on a precision loom. Cast in our signature crimson red on pure black and white, the mark represents our 28-year heritage of woven craftsmanship and commitment to quality.
-                </p>
-                <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', fontSize: '0.8125rem' }}>
-                  <span style={{ backgroundColor: '#18181B', border: '1px solid #27272A', padding: '0.45rem 0.85rem', borderRadius: '6px', color: '#FFFFFF', fontWeight: 600 }}>
-                    ✓ Simplistic & Minimalist Monogram
-                  </span>
-                  <span style={{ backgroundColor: '#18181B', border: '1px solid #27272A', padding: '0.45rem 0.85rem', borderRadius: '6px', color: '#C51E3A', fontWeight: 700 }}>
-                    ✓ Signature Crimson Red (#C51E3A)
-                  </span>
-                  <span style={{ backgroundColor: '#18181B', border: '1px solid #27272A', padding: '0.45rem 0.85rem', borderRadius: '6px', color: '#FFFFFF', fontWeight: 600 }}>
-                    ✓ Modern Sans-Serif Wordmark
-                  </span>
-                </div>
-              </div>
-              <div style={{ display: 'flex', justifyContent: 'center' }}>
-                <div style={{
-                  backgroundColor: '#FFFFFF',
-                  borderRadius: '16px',
-                  padding: '2rem',
-                  maxWidth: '260px',
-                  textAlign: 'center',
-                  boxShadow: '0 8px 24px rgba(0,0,0,0.2)'
-                }}>
-                  <img
-                    src="/images/vt-monogram-icon.webp"
-                    alt="Official VT Trademark Monogram"
-                    loading="lazy"
-                    decoding="async"
-                    width="200"
-                    height="200"
-                    style={{ width: '100%', height: 'auto', borderRadius: '8px', marginBottom: '1rem' }}
-                  />
-                  <div style={{ fontWeight: 800, color: '#0A0A0A', fontSize: '1.2rem' }}>
-                    VT Trademark
-                  </div>
-                  <div style={{ fontSize: '0.75rem', color: '#C51E3A', fontWeight: 800, letterSpacing: '0.1em', textTransform: 'uppercase', marginTop: '0.2rem' }}>
-                    Vasanthaa Textiless
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
           <div style={{ marginTop: '4rem', textAlign: 'center' }}>
             <button
