@@ -146,8 +146,8 @@ export const Garments = ({ onSelectGarment, onOpenRFQ, onSelectFabric }) => {
           {/* Cards Grid */}
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
-            gap: '2rem'
+            gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))',
+            gap: 'clamp(1.5rem, 3vw, 2rem)'
           }}>
             {filteredGarments.map(garment => (
               <div
@@ -184,7 +184,7 @@ export const Garments = ({ onSelectGarment, onOpenRFQ, onSelectFabric }) => {
                   </div>
                 </div>
 
-                <div style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                <div style={{ padding: 'clamp(1.15rem, 2.5vw, 1.5rem)', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
                   <div style={{ fontSize: '0.75rem', color: '#C51E3A', fontWeight: 600, textTransform: 'uppercase', marginBottom: '0.25rem' }}>
                     {garment.category}
                   </div>
@@ -220,18 +220,18 @@ export const Garments = ({ onSelectGarment, onOpenRFQ, onSelectFabric }) => {
                     </div>
                   </div>
 
-                  <div style={{ display: 'flex', gap: '0.5rem' }}>
+                  <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
                     <button
                       onClick={() => onSelectGarment(garment)}
                       className="btn btn-outline-dark"
-                      style={{ flex: 1, fontSize: '0.8125rem' }}
+                      style={{ flex: '1 1 130px', fontSize: '0.8125rem' }}
                     >
                       Specifications <ChevronRight size={14} />
                     </button>
                     <button
                       onClick={() => onOpenRFQ(garment)}
                       className="btn btn-primary"
-                      style={{ fontSize: '0.8125rem' }}
+                      style={{ flex: '0 1 auto', fontSize: '0.8125rem' }}
                     >
                       Quote RFQ
                     </button>

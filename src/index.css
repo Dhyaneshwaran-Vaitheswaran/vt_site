@@ -290,11 +290,21 @@ header .container,
   transition: all var(--transition-smooth);
   text-align: center;
   white-space: nowrap;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .btn {
+    white-space: normal;
+    text-align: center;
+    line-height: 1.35;
+  }
 }
 
 @media (max-width: 480px) {
   .btn {
-    padding: 0.75rem 1.25rem;
+    padding: 0.75rem 1.15rem;
     font-size: 0.875rem;
   }
 }
@@ -376,10 +386,18 @@ header .container,
   font-size: 1.05rem;
 }
 
+@media (max-width: 1024px) {
+  .btn-lg {
+    padding: 0.95rem 1.75rem;
+    font-size: 0.975rem;
+  }
+}
+
 @media (max-width: 640px) {
   .btn-lg {
-    padding: 0.875rem 1.5rem;
-    font-size: 0.9375rem;
+    padding: 0.85rem 1.35rem;
+    font-size: 0.9125rem;
+    width: 100%;
   }
 }
 
@@ -580,6 +598,10 @@ header .container,
   .spec-table td {
     padding: 0.65rem 0.75rem !important;
   }
+
+  .spec-table td:first-child {
+    width: 40% !important;
+  }
 }
 
 .spec-table th,
@@ -661,6 +683,98 @@ header .container,
   resize: vertical;
 }
 
+/* Form Responsive Rows */
+.form-row-responsive {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 600px) {
+  .form-row-responsive {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+  }
+}
+
+/* Product Detail Responsive Grid & Components */
+.detail-grid-responsive {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (min-width: 960px) {
+  .detail-grid-responsive {
+    grid-template-columns: 1fr 1.25fr;
+    gap: clamp(2rem, 3.5vw, 3.5rem);
+  }
+}
+
+.detail-img-responsive {
+  width: 100%;
+  height: clamp(260px, 38vw, 480px);
+  object-fit: cover;
+  display: block;
+}
+
+.detail-sub-btn-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+@media (max-width: 480px) {
+  .detail-sub-btn-grid {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+}
+
+/* Sticky Catalog Filter Bar */
+.catalog-filter-sticky {
+  position: sticky;
+  top: 72px;
+  z-index: 900;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #E4E4E7;
+  padding: 1rem 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transition: top var(--transition-fast);
+}
+
+@media (max-width: 959px) {
+  .catalog-filter-sticky {
+    top: 62px;
+  }
+}
+
+@media (max-width: 480px) {
+  .catalog-filter-sticky {
+    top: 58px;
+    padding: 0.75rem 0;
+  }
+}
+
+/* Fabric Card Responsive Actions */
+.fabric-card-actions {
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.fabric-card-actions .btn-main {
+  flex: 1 1 100px;
+  min-width: 0;
+}
+
+.fabric-card-actions .btn-sub {
+  flex: 0 1 auto;
+  padding: 0.55rem 0.75rem;
+}
+
 /* ==========================================================================
    Responsive Grid System (Spacious Layouts)
    ========================================================================== */
@@ -674,7 +788,7 @@ header .container,
 @media (min-width: 640px) {
   .grid-2 {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
+    gap: clamp(1.75rem, 3vw, 2.5rem);
   }
 }
 
@@ -687,34 +801,34 @@ header .container,
 @media (min-width: 600px) and (max-width: 991px) {
   .grid-3 {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 1.75rem;
   }
 }
 
 @media (min-width: 992px) {
   .grid-3 {
     grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
+    gap: clamp(1.75rem, 2.5vw, 2.5rem);
   }
 }
 
 .grid-4 {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.75rem;
+  gap: 1.5rem;
 }
 
 @media (min-width: 520px) and (max-width: 991px) {
   .grid-4 {
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
+    gap: 1.75rem;
   }
 }
 
 @media (min-width: 992px) {
   .grid-4 {
     grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    gap: clamp(1.5rem, 2vw, 2rem);
   }
 }
 
@@ -732,21 +846,21 @@ header .container,
 
 @media (min-width: 768px) {
   .hero-section-responsive {
-    padding: 6rem 0 7.5rem 0;
+    padding: clamp(4.5rem, 6vw, 7.5rem) 0;
   }
 }
 
 .hero-grid-layout {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
+  gap: 2.5rem;
   align-items: center;
 }
 
 @media (min-width: 960px) {
   .hero-grid-layout {
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 4rem;
+    grid-template-columns: 1.12fr 0.88fr;
+    gap: clamp(2rem, 3.5vw, 3.75rem);
   }
 }
 
@@ -764,37 +878,37 @@ header .container,
 
 @media (min-width: 960px) {
   .hero-img-responsive {
-    height: 500px;
+    height: clamp(420px, 40vw, 500px);
   }
 }
 
 .stats-grid-responsive {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  gap: 1.25rem;
   border-top: 1px solid #27272A;
-  padding-top: 2rem;
+  padding-top: 1.75rem;
 }
 
 @media (min-width: 680px) {
   .stats-grid-responsive {
     grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-    padding-top: 2.5rem;
+    gap: clamp(1.25rem, 2.5vw, 2rem);
+    padding-top: 2.25rem;
   }
 }
 
 .two-col-layout-responsive {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2.75rem;
+  gap: 2.25rem;
   align-items: center;
 }
 
 @media (min-width: 880px) {
   .two-col-layout-responsive {
     grid-template-columns: repeat(2, 1fr);
-    gap: 4.5rem;
+    gap: clamp(2.25rem, 3.8vw, 4rem);
   }
 }
 

@@ -55,12 +55,7 @@ export const GarmentDetail = ({ garment, onBack, onOpenRFQ, onSelectGarment, onS
       <section style={{ paddingTop: '2.5rem' }}>
         <div className="container">
           
-          <div className="detail-grid-responsive" style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '2.5rem',
-            alignItems: 'start'
-          }}>
+          <div className="detail-grid-responsive">
             
             {/* Left Column: Media & Core Badges */}
             <div>
@@ -172,7 +167,7 @@ export const GarmentDetail = ({ garment, onBack, onOpenRFQ, onSelectGarment, onS
                 }}>
                   Commercial Sourcing Parameters
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', padding: '1.25rem', gap: '1.25rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))', padding: '1.25rem', gap: '1.25rem' }}>
                   <div>
                     <span style={{ fontSize: '0.75rem', color: '#64748B', fontWeight: 600, textTransform: 'uppercase' }}>Sample MOQ (Proto)</span>
                     <p style={{ fontWeight: 600, color: '#0A0A0A', margin: '0.2rem 0 0 0' }}>{garment.moqSample}</p>

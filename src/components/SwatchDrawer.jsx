@@ -51,7 +51,7 @@ export const SwatchDrawer = ({ isOpen, onClose, swatches, onRemoveSwatch, onClea
         
         {/* Drawer Header */}
         <div style={{
-          padding: '1.25rem 1.5rem',
+          padding: '1.15rem clamp(1rem, 3vw, 1.5rem)',
           backgroundColor: '#0A0A0A',
           color: '#FFFFFF',
           display: 'flex',
@@ -60,7 +60,7 @@ export const SwatchDrawer = ({ isOpen, onClose, swatches, onRemoveSwatch, onClea
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
             <ShoppingBag size={20} color="#D4AF37" />
-            <h3 style={{ margin: 0, color: '#FFFFFF', fontSize: '1.15rem' }}>
+            <h3 style={{ margin: 0, color: '#FFFFFF', fontSize: 'clamp(1rem, 2.5vw, 1.15rem)' }}>
               Fabric Swatch Requisition ({swatches.length})
             </h3>
           </div>
@@ -79,7 +79,7 @@ export const SwatchDrawer = ({ isOpen, onClose, swatches, onRemoveSwatch, onClea
         </div>
 
         {/* Content Body */}
-        <div style={{ flex: 1, overflowY: 'auto', padding: '1.5rem' }}>
+        <div style={{ flex: 1, overflowY: 'auto', padding: 'clamp(1rem, 3vw, 1.5rem)' }}>
           {ordered ? (
             <div style={{ textAlign: 'center', padding: '2rem 1rem' }}>
               <CheckCircle2 size={48} color="#15803D" style={{ margin: '0 auto 1rem auto' }} />

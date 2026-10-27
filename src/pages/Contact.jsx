@@ -200,7 +200,7 @@ export const Contact = () => {
             </div>
 
             {/* Right Column: Interactive B2B Contact Form */}
-            <div className="b2b-card" style={{ backgroundColor: '#FFFFFF', border: '1px solid #E4E4E7', padding: 'clamp(2rem, 4vw, 3rem)' }}>
+            <div className="b2b-card" style={{ backgroundColor: '#FFFFFF', border: '1px solid #E4E4E7', padding: 'clamp(1.25rem, 3.5vw, 2.5rem)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.65rem' }}>
                 <FileText size={18} color="#C51E3A" />
                 <span style={{ fontSize: '0.8125rem', fontWeight: 800, color: '#C51E3A', textTransform: 'uppercase', letterSpacing: '0.1em' }}>

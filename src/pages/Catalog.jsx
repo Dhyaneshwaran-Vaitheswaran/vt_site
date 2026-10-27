@@ -81,27 +81,19 @@ export const Catalog = ({ onSelectFabric, onAddSwatch, swatches, onOpenRFQ, onOp
         </div>
       </section>
 
-      {/* Filter & Search Bar */}
-      <section style={{
-        backgroundColor: '#FFFFFF',
-        borderBottom: '1px solid #E4E4E7',
-        padding: '1.25rem 0',
-        position: 'sticky',
-        top: '64px',
-        zIndex: 900,
-        boxShadow: '0 4px 12px rgba(0,0,0,0.03)'
-      }}>
+      {/* Filter & Search Bar — Responsive Sticky Bar */}
+      <section className="catalog-filter-sticky">
         <div className="container">
           <div style={{
             display: 'flex',
             flexWrap: 'wrap',
             alignItems: 'center',
             justifyContent: 'space-between',
-            gap: '1rem'
+            gap: '0.85rem'
           }}>
 
             {/* Search Input */}
-            <div style={{ position: 'relative', flex: '1 1 280px', maxWidth: '420px' }}>
+            <div style={{ position: 'relative', flex: '1 1 240px', minWidth: '0', maxWidth: '420px' }}>
               <Search size={18} color="#71717A" style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)' }} />
               <input
                 type="text"
@@ -113,12 +105,12 @@ export const Catalog = ({ onSelectFabric, onAddSwatch, swatches, onOpenRFQ, onOp
               />
             </div>
 
-            {/* Weight Filter Selector */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
-              <span style={{ fontSize: '0.875rem', fontWeight: 600, color: '#52525B' }}>Weight:</span>
+            {/* Weight & Sort Filter Selectors */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', flexWrap: 'wrap', flexShrink: 0 }}>
+              <span style={{ fontSize: '0.8125rem', fontWeight: 600, color: '#52525B' }}>Filter:</span>
               <select
                 className="form-select"
-                style={{ width: 'auto', padding: '0.65rem 1rem', fontSize: '0.875rem' }}
+                style={{ width: 'auto', padding: '0.6rem 0.85rem', fontSize: '0.8125rem' }}
                 value={selectedWeight}
                 onChange={(e) => setSelectedWeight(e.target.value)}
               >
@@ -131,7 +123,7 @@ export const Catalog = ({ onSelectFabric, onAddSwatch, swatches, onOpenRFQ, onOp
               {/* Sort By */}
               <select
                 className="form-select"
-                style={{ width: 'auto', padding: '0.65rem 1rem', fontSize: '0.875rem' }}
+                style={{ width: 'auto', padding: '0.6rem 0.85rem', fontSize: '0.8125rem' }}
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
               >

@@ -158,7 +158,7 @@ export const RFQModal = ({ isOpen, onClose, preselectedFabric }) => {
               marginBottom: '2rem',
               fontSize: '0.875rem'
             }}>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.75rem', marginBottom: '1rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))', gap: '0.75rem', marginBottom: '1rem' }}>
                 <div><strong>Fabric:</strong> {currentFabric?.name}</div>
                 <div><strong>Quantity:</strong> {volume} Meters</div>
                 <div><strong>Target Weight:</strong> {targetGsm || 'Standard'} GSM</div>

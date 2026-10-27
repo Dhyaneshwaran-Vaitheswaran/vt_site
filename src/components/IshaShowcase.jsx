@@ -73,13 +73,15 @@ export const IshaShowcase = ({ onOpenRFQ }) => {
             display: 'inline-flex',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: '1rem',
-            padding: '0.75rem 1.35rem',
+            gap: '0.85rem',
+            padding: '0.75rem 1.25rem',
             backgroundColor: '#FAFAFA',
             border: '1px solid #E4E4E7',
             borderRadius: '16px',
             marginBottom: '1.5rem',
             flexWrap: 'wrap',
+            maxWidth: '100%',
+            boxSizing: 'border-box',
             boxShadow: '0 2px 8px rgba(0,0,0,0.03)'
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.55rem' }}>

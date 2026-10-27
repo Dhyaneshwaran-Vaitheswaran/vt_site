@@ -97,33 +97,19 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
             <VTLogo size={38} variant="dark" />
           </div>
 
-          {/* Desktop Navigation Links — Clean, Single-Line, Generous Spacing */}
+          {/* Desktop Navigation Links — Responsive Spacing for Laptops & Desktops */}
           <nav className="desktop-nav">
-            <ul style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '2rem',
-              listStyle: 'none',
-              margin: 0,
-              padding: 0
-            }}>
+            <ul className="desktop-nav-list">
               {navItems.map(item => {
                 const isActive = activePage === item.id;
                 return (
                   <li key={item.id} style={{ flexShrink: 0 }}>
                     <button
                       onClick={() => handleNavClick(item.id)}
+                      className="desktop-nav-btn"
                       style={{
-                        background: 'none',
-                        border: 'none',
-                        padding: '0.5rem 0',
-                        fontSize: '0.875rem',
                         fontWeight: isActive ? 700 : 500,
-                        color: isActive ? '#0A0A0A' : '#475569',
-                        cursor: 'pointer',
-                        whiteSpace: 'nowrap',
-                        position: 'relative',
-                        transition: 'color 150ms ease'
+                        color: isActive ? '#0A0A0A' : '#475569'
                       }}
                       onMouseEnter={(e) => {
                         if (!isActive) e.currentTarget.style.color = '#0A0A0A';
@@ -333,8 +319,29 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
           display: flex;
           align-items: center;
           gap: 0.75rem;
-          margin-left: 2.5rem;
+          margin-left: 2rem;
           flex-shrink: 0;
+        }
+
+        /* Desktop Nav List & Buttons */
+        .desktop-nav-list {
+          display: flex;
+          align-items: center;
+          gap: 1.75rem;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+
+        .desktop-nav-btn {
+          background: none;
+          border: none;
+          padding: 0.5rem 0;
+          font-size: 0.875rem;
+          cursor: pointer;
+          white-space: nowrap;
+          position: relative;
+          transition: color 150ms ease;
         }
 
         /* Swatches Button */
@@ -425,16 +432,41 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
         }
 
         /* Responsive Breakpoints */
-        @media (min-width: 960px) {
+        /* Large Desktop (1240px+) */
+        @media (min-width: 1041px) {
           .desktop-nav { display: block !important; }
           .mobile-menu-btn { display: none !important; }
         }
 
-        @media (max-width: 959px) {
+        /* Smaller Laptops & Landscape Tablets with High Res (1041px - 1240px) */
+        @media (min-width: 1041px) and (max-width: 1240px) {
+          .desktop-nav-list {
+            gap: 0.95rem !important;
+          }
+          .desktop-nav-btn {
+            font-size: 0.8125rem !important;
+          }
+          .header-logo-wrap {
+            margin-right: 1rem !important;
+          }
+          .header-actions {
+            margin-left: 1rem !important;
+            gap: 0.5rem !important;
+          }
+          .header-swatch-btn {
+            padding: 0.42rem 0.6rem !important;
+            font-size: 0.775rem !important;
+          }
+          .quote-text-full { display: none !important; }
+          .quote-text-short { display: inline !important; }
+        }
+
+        /* Tablets & Mobile Menu (<= 1040px) */
+        @media (max-width: 1040px) {
           .desktop-nav { display: none !important; }
           .mobile-menu-btn { display: inline-flex !important; }
           .header-container {
-            padding: 0.65rem 1rem;
+            padding: 0.65rem 1.25rem;
             min-height: 62px;
           }
           .header-logo-wrap {
@@ -453,6 +485,8 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
             padding: 0.45rem 0.75rem;
             font-size: 0.75rem;
           }
+          .quote-text-full { display: none !important; }
+          .quote-text-short { display: inline !important; }
         }
 
         @media (max-width: 767px) {
@@ -463,21 +497,16 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
           .hide-on-tablet { display: none !important; }
         }
 
-        @media (max-width: 640px) {
-          .quote-text-full { display: none !important; }
-          .quote-text-short { display: inline !important; }
-        }
-
         @media (max-width: 480px) {
           .header-container {
             padding: 0.55rem 0.75rem;
             min-height: 58px;
           }
           .header-actions {
-            gap: 0.4rem;
+            gap: 0.35rem;
           }
           .header-quote-btn {
-            padding: 0.4rem 0.6rem;
+            padding: 0.4rem 0.55rem;
             font-size: 0.72rem;
             gap: 0.2rem;
           }

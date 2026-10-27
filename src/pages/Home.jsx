@@ -95,7 +95,10 @@ export const Home = ({ setActivePage, onSelectFabric, onAddSwatch, swatches, onO
                 borderRadius: '12px',
                 backdropFilter: 'blur(8px)',
                 marginBottom: '2rem',
-                width: 'fit-content'
+                width: 'fit-content',
+                maxWidth: '100%',
+                boxSizing: 'border-box',
+                flexWrap: 'wrap'
               }}>
                 <div style={{
                   backgroundColor: '#FFFFFF',
@@ -759,7 +762,7 @@ export const Home = ({ setActivePage, onSelectFabric, onAddSwatch, swatches, onO
                 We believe trust is built on verifiable measurements. When fabric arrives from weaving and dyeing partners, our central quality inspection team inspects each roll over continuous illumination tables.
               </p>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem', marginBottom: '2rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 140px), 1fr))', gap: '0.85rem', marginBottom: '2rem' }}>
                 <div style={{ backgroundColor: '#FFFFFF', padding: '1rem', borderRadius: '10px', border: '1px solid #E4E4E7' }}>
                   <strong style={{ display: 'block', color: '#C51E3A', fontSize: '1.15rem', fontWeight: 800 }}>&lt; 2.5%</strong>
                   <span style={{ fontSize: '0.8rem', color: '#52525B' }}>Residual Shrinkage</span>

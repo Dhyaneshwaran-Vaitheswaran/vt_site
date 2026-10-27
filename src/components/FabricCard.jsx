@@ -43,7 +43,7 @@ export const FabricCard = ({ fabric, onSelectFabric, onAddSwatch, isSwatchAdded,
       </div>
 
       {/* Card Content */}
-      <div style={{ padding: '1.75rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
+      <div style={{ padding: 'clamp(1.15rem, 2.5vw, 1.5rem)', flex: 1, display: 'flex', flexDirection: 'column' }}>
 
         <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#C51E3A', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.35rem' }}>
           {fabric.category}
@@ -93,20 +93,18 @@ export const FabricCard = ({ fabric, onSelectFabric, onAddSwatch, isSwatchAdded,
         </div>
 
         {/* Actions Button Row */}
-        <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+        <div className="fabric-card-actions">
           <button
             onClick={() => onSelectFabric(fabric)}
-            className="btn btn-navy btn-sm"
-            style={{ flex: 1 }}
+            className="btn btn-navy btn-sm btn-main"
           >
             Full Specs <ArrowRight size={14} />
           </button>
 
           <button
             onClick={() => onAddSwatch(fabric)}
-            className="btn btn-sm btn-outline-dark"
+            className="btn btn-sm btn-outline-dark btn-sub"
             style={{
-              padding: '0.55rem 0.85rem',
               backgroundColor: isSwatchAdded ? '#DCFCE7' : 'transparent',
               borderColor: isSwatchAdded ? '#15803D' : '#0A0A0A',
               color: isSwatchAdded ? '#15803D' : '#0A0A0A'
@@ -118,8 +116,7 @@ export const FabricCard = ({ fabric, onSelectFabric, onAddSwatch, isSwatchAdded,
 
           <button
             onClick={() => onOpenRFQ(fabric)}
-            className="btn btn-primary btn-sm"
-            style={{ padding: '0.55rem 0.85rem' }}
+            className="btn btn-primary btn-sm btn-sub"
             title="Request Bulk Quotation"
           >
             Quote

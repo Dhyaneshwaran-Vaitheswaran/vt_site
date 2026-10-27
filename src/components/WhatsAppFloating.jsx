@@ -34,7 +34,7 @@ export const WhatsAppFloating = () => {
   };
 
   return (
-    <div style={{ position: 'fixed', bottom: '24px', right: '24px', zIndex: 9999 }}>
+    <div className="whatsapp-floating-wrap" style={{ position: 'fixed', zIndex: 9999 }}>
       
       {/* Quick Option Popover */}
       {isOpen && (
@@ -42,7 +42,8 @@ export const WhatsAppFloating = () => {
           position: 'absolute',
           bottom: '70px',
           right: '0',
-          width: '330px',
+          width: 'clamp(280px, 86vw, 330px)',
+          maxWidth: 'calc(100vw - 32px)',
           backgroundColor: '#FFFFFF',
           borderRadius: '16px',
           boxShadow: '0 20px 40px rgba(15, 23, 42, 0.25)',
@@ -163,6 +164,18 @@ export const WhatsAppFloating = () => {
         {isOpen ? <X size={26} /> : <MessageSquare size={26} />}
       </button>
 
+      <style>{`
+        .whatsapp-floating-wrap {
+          bottom: 24px;
+          right: 24px;
+        }
+        @media (max-width: 480px) {
+          .whatsapp-floating-wrap {
+            bottom: 16px;
+            right: 16px;
+          }
+        }
+      `}</style>
     </div>
   );
 };
