@@ -16,6 +16,7 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
 
   const navItems = [
     { id: 'catalog', label: 'Fabric Catalog' },
+    { id: 'garments', label: 'Garments OEM' },
     { id: 'capabilities', label: 'Capabilities' },
     { id: 'quality', label: 'Quality Assurance' },
     { id: 'about', label: 'About Us' },
@@ -432,37 +433,37 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
         }
 
         /* Responsive Breakpoints */
-        /* Large Desktop (1240px+) */
-        @media (min-width: 1041px) {
+        /* Large Desktop (1281px+) */
+        @media (min-width: 1081px) {
           .desktop-nav { display: block !important; }
           .mobile-menu-btn { display: none !important; }
         }
 
-        /* Smaller Laptops & Landscape Tablets with High Res (1041px - 1240px) */
-        @media (min-width: 1041px) and (max-width: 1240px) {
+        /* Smaller Laptops & High-Res Tablets (1081px - 1280px) */
+        @media (min-width: 1081px) and (max-width: 1280px) {
           .desktop-nav-list {
-            gap: 0.95rem !important;
+            gap: 0.75rem !important;
           }
           .desktop-nav-btn {
-            font-size: 0.8125rem !important;
+            font-size: 0.8rem !important;
           }
           .header-logo-wrap {
-            margin-right: 1rem !important;
+            margin-right: 0.75rem !important;
           }
           .header-actions {
-            margin-left: 1rem !important;
-            gap: 0.5rem !important;
+            margin-left: 0.75rem !important;
+            gap: 0.45rem !important;
           }
           .header-swatch-btn {
-            padding: 0.42rem 0.6rem !important;
-            font-size: 0.775rem !important;
+            padding: 0.4rem 0.55rem !important;
+            font-size: 0.75rem !important;
           }
           .quote-text-full { display: none !important; }
           .quote-text-short { display: inline !important; }
         }
 
-        /* Tablets & Mobile Menu (<= 1040px) */
-        @media (max-width: 1040px) {
+        /* Tablets & Mobile Menu (<= 1080px) */
+        @media (max-width: 1080px) {
           .desktop-nav { display: none !important; }
           .mobile-menu-btn { display: inline-flex !important; }
           .header-container {

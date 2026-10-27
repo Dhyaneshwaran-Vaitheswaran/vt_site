@@ -15,9 +15,11 @@ import { QualityAssurance } from './pages/QualityAssurance';
 import { About } from './pages/About';
 import { Resources } from './pages/Resources';
 import { Contact } from './pages/Contact';
+import { NotFound } from './pages/NotFound';
 
 import { FABRICS } from './data/fabrics';
 import { GARMENTS } from './data/garments';
+import { FAQS } from './data/resources';
 
 // Route parser for SEO & Browser URL synchronization
 function parseRouteFromLocation() {
@@ -40,7 +42,7 @@ function parseRouteFromLocation() {
     if (found) {
       return { page: 'fabric-detail', fabric: found, garment: null };
     }
-    return { page: 'catalog', fabric: null, garment: null };
+    return { page: 'not-found', fabric: null, garment: null };
   }
 
   // Garment programmatic routes
@@ -50,10 +52,10 @@ function parseRouteFromLocation() {
     if (found) {
       return { page: 'garment-detail', fabric: null, garment: found };
     }
-    return { page: 'garments', fabric: null, garment: null };
+    return { page: 'not-found', fabric: null, garment: null };
   }
 
-  return { page: 'home', fabric: null, garment: null };
+  return { page: 'not-found', fabric: null, garment: null };
 }
 
 export function App() {
@@ -61,7 +63,30 @@ export function App() {
   const [activePage, setActivePage] = useState(initialRoute.page);
   const [selectedFabric, setSelectedFabric] = useState(initialRoute.fabric);
   const [selectedGarment, setSelectedGarment] = useState(initialRoute.garment);
-  const [swatches, setSwatches] = useState([]);
+  
+  // Persistent swatch storage
+  const [swatches, setSwatches] = useState(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        const saved = localStorage.getItem('vt_swatches');
+        return saved ? JSON.parse(saved) : [];
+      } catch (e) {
+        return [];
+      }
+    }
+    return [];
+  });
+
+  // Keep localStorage in sync with swatches
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        localStorage.setItem('vt_swatches', JSON.stringify(swatches));
+      } catch (e) {
+        // storage quota exceeded or disabled
+      }
+    }
+  }, [swatches]);
   
   const [isRFQModalOpen, setIsRFQModalOpen] = useState(false);
   const [rfqPreselectedFabric, setRfqPreselectedFabric] = useState(null);
@@ -135,10 +160,46 @@ export function App() {
       title = 'Woven Fabric Catalog | Cotton Twill, Drill, Poplin & Blends | Vasanthaa Textiless Erode';
       desc = 'Explore export-grade woven fabric collections engineered in Erode: combed cotton twill, heavy drill, unbleached gada greige, double gauze, poplin, and pure linen.';
       canonical = 'https://vasanthaatextiless.in/catalog';
+      schemaJson = {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "@id": "https://vasanthaatextiless.in/catalog#collection",
+        "name": "Woven Fabric Collections & Technical Substrates",
+        "description": desc,
+        "url": canonical,
+        "isPartOf": { "@id": "https://vasanthaatextiless.in/#website" },
+        "mainEntity": {
+          "@type": "ItemList",
+          "itemListElement": FABRICS.map((f, i) => ({
+            "@type": "ListItem",
+            "position": i + 1,
+            "url": `https://vasanthaatextiless.in/fabric/${f.id}`,
+            "name": f.name
+          }))
+        }
+      };
     } else if (activePage === 'garments') {
       title = 'Custom Woven Garment Manufacturer India | Apparel OEM Coordination | Vasanthaa Textiless';
       desc = 'Export-grade cut-and-sew apparel manufacturing in Tamil Nadu. Full-package woven shirts, cotton kurtas, traditional dhotis, and canvas tote bags with AQL 2.5 standards.';
       canonical = 'https://vasanthaatextiless.in/garments';
+      schemaJson = {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "@id": "https://vasanthaatextiless.in/garments#collection",
+        "name": "Woven Apparel Manufacturing & OEM Programs",
+        "description": desc,
+        "url": canonical,
+        "isPartOf": { "@id": "https://vasanthaatextiless.in/#website" },
+        "mainEntity": {
+          "@type": "ItemList",
+          "itemListElement": GARMENTS.map((g, i) => ({
+            "@type": "ListItem",
+            "position": i + 1,
+            "url": `https://vasanthaatextiless.in/garments/${g.id}`,
+            "name": g.name
+          }))
+        }
+      };
     } else if (activePage === 'fabric-detail' && selectedFabric) {
       title = selectedFabric.seoTitle || `${selectedFabric.name} Sourcing & Manufacturing | Vasanthaa Textiless Erode`;
       desc = selectedFabric.seoDesc || `Technical B2B specifications for ${selectedFabric.name} (${selectedFabric.gsm}, ${selectedFabric.fiber}, ${selectedFabric.weave}). Custom dyeing, lab dips, and bulk production in Erode textile hub.`;
@@ -150,7 +211,7 @@ export function App() {
         "@type": "Product",
         "@id": `${canonical}#product`,
         "name": selectedFabric.name,
-        "image": [`https://vasanthaatextiless.in${selectedFabric.image}`],
+        "image": [`https://vasanthaatextiless.in${selectedFabric.image.startsWith('/') ? '' : '/'}${selectedFabric.image}`],
         "description": selectedFabric.description,
         "brand": { "@type": "Brand", "name": "Vasanthaa Textiless" },
         "manufacturer": { "@id": "https://vasanthaatextiless.in/#organization" },
@@ -177,7 +238,7 @@ export function App() {
         "@type": "Product",
         "@id": `${canonical}#product`,
         "name": selectedGarment.name,
-        "image": [`https://vasanthaatextiless.in${selectedGarment.image}`],
+        "image": [`https://vasanthaatextiless.in${selectedGarment.image.startsWith('/') ? '' : '/'}${selectedGarment.image}`],
         "description": selectedGarment.description,
         "brand": { "@type": "Brand", "name": "Vasanthaa Textiless" },
         "manufacturer": { "@id": "https://vasanthaatextiless.in/#organization" },
@@ -195,22 +256,73 @@ export function App() {
       title = 'Textile Manufacturing Capabilities | Weaving & Dyeing Coordination | Erode';
       desc = 'End-to-end fabric execution across Erode textile cluster: high-speed airjet/rapier weaving, custom reactive dyeing, rotary printing, commercial finishing, and garmenting.';
       canonical = 'https://vasanthaatextiless.in/capabilities';
+      schemaJson = {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://vasanthaatextiless.in/capabilities#service",
+        "name": "Centralized Textile Manufacturing Coordination",
+        "provider": { "@id": "https://vasanthaatextiless.in/#organization" },
+        "description": desc,
+        "areaServed": { "@type": "Country", "name": "Worldwide" }
+      };
     } else if (activePage === 'quality') {
       title = 'Textile Quality Assurance & Lab Standards | Vasanthaa Textiless Erode';
       desc = 'Four-tier QA protocol adhering to ASTM and ISO standards: 4-Point greige inspection, spectrophotometer lab dips, shrinkage control, and pre-dispatch testing in Erode.';
       canonical = 'https://vasanthaatextiless.in/quality-assurance';
+      schemaJson = {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "https://vasanthaatextiless.in/quality-assurance#service",
+        "name": "ASTM D5430 4-Point Fabric Inspection Protocol",
+        "provider": { "@id": "https://vasanthaatextiless.in/#organization" },
+        "description": desc
+      };
     } else if (activePage === 'about') {
       title = 'About Vasanthaa Textiless | 28+ Years Textile Heritage in Erode';
       desc = 'Founded in 1998 by Mr. Vaitheswaran in Erode. Decades of mastery in woven textile sourcing, technical coordination, and trusted supply for garment manufacturers worldwide.';
       canonical = 'https://vasanthaatextiless.in/about';
+      schemaJson = {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "@id": "https://vasanthaatextiless.in/about#aboutpage",
+        "name": "About Vasanthaa Textiless Heritage",
+        "description": desc,
+        "url": canonical,
+        "mainEntity": { "@id": "https://vasanthaatextiless.in/#organization" }
+      };
     } else if (activePage === 'resources') {
       title = 'B2B Sourcing FAQs & Procurement Standards | Vasanthaa Textiless Erode';
       desc = 'Answers to common commercial questions regarding MOQs, lab dips, payments, and our centralized weaving & dyeing coordination in Erode.';
       canonical = 'https://vasanthaatextiless.in/resources';
+      schemaJson = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "@id": "https://vasanthaatextiless.in/resources#faq",
+        "mainEntity": FAQS.map(faq => ({
+          "@type": "Question",
+          "name": faq.question,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+          }
+        }))
+      };
     } else if (activePage === 'contact') {
       title = 'Contact Vasanthaa Textiless | Erode Facility & RFQ Desk';
       desc = 'Connect with our commercial fabric desk at Erode, Tamil Nadu. Fast lab dip turnaround, sample swatch dispatch, and bulk order production coordination.';
       canonical = 'https://vasanthaatextiless.in/contact';
+      schemaJson = {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "@id": "https://vasanthaatextiless.in/contact#contactpage",
+        "name": "Vasanthaa Textiless Central Sourcing Desk",
+        "url": canonical,
+        "mainEntity": { "@id": "https://vasanthaatextiless.in/#organization" }
+      };
+    } else if (activePage === 'not-found') {
+      title = '404 - Page Not Found | Vasanthaa Textiless Erode';
+      desc = 'The requested woven fabric specification or garment manufacturing page could not be located.';
+      canonical = 'https://vasanthaatextiless.in/';
     }
 
     document.title = title;
@@ -221,15 +333,20 @@ export function App() {
       if (el) el.setAttribute('content', val);
     };
 
+    const formattedOgImage = ogImage.startsWith('http')
+      ? ogImage
+      : `https://vasanthaatextiless.in${ogImage.startsWith('/') ? '' : '/'}${ogImage}`;
+
     setMeta('description', desc);
+    setMeta('robots', activePage === 'not-found' ? 'noindex, follow' : 'index, follow, max-image-preview:large');
     setMeta('og:title', title, true);
     setMeta('og:description', desc, true);
     setMeta('og:url', canonical, true);
-    setMeta('og:image', ogImage, true);
+    setMeta('og:image', formattedOgImage, true);
     setMeta('twitter:title', title);
     setMeta('twitter:description', desc);
     setMeta('twitter:url', canonical);
-    setMeta('twitter:image', ogImage);
+    setMeta('twitter:image', formattedOgImage);
 
     let linkCanonical = document.querySelector('link[rel="canonical"]');
     if (linkCanonical) linkCanonical.setAttribute('href', canonical);
@@ -386,6 +503,13 @@ export function App() {
 
         {activePage === 'contact' && (
           <Contact />
+        )}
+
+        {activePage === 'not-found' && (
+          <NotFound
+            setActivePage={(page) => navigateTo(page)}
+            onOpenRFQ={handleOpenRFQ}
+          />
         )}
       </main>
 

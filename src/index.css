@@ -1109,8 +1109,10 @@ header .container,
 
 @media print {
   .site-header,
+  .top-utility-bar,
   footer,
   .whatsapp-float,
+  .whatsapp-floating-wrap,
   .marquee-banner,
   .hide-on-print,
   button:not(.print-include) {
