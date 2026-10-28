@@ -533,6 +533,7 @@ export function App() {
         onRemoveSwatch={handleRemoveSwatch}
         onClearSwatches={handleClearSwatches}
         onOpenRFQ={handleOpenRFQ}
+        onBrowseFabrics={() => navigateTo('catalog')}
       />
 
       {/* Floating WhatsApp Concierge */}

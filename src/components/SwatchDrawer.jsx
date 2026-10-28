@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { X, Trash2, ShoppingBag, Send, MessageSquare, ArrowRight, CheckCircle2 } from 'lucide-react';
 
-export const SwatchDrawer = ({ isOpen, onClose, swatches, onRemoveSwatch, onClearSwatches, onOpenRFQ }) => {
+export const SwatchDrawer = ({ isOpen, onClose, swatches, onRemoveSwatch, onClearSwatches, onOpenRFQ, onBrowseFabrics }) => {
   const [buyerName, setBuyerName] = useState('');
   const [buyerCompany, setBuyerCompany] = useState('');
   const [buyerPhone, setBuyerPhone] = useState('');
@@ -94,6 +94,7 @@ export const SwatchDrawer = ({ isOpen, onClose, swatches, onRemoveSwatch, onClea
                   setOrdered(false);
                   onClearSwatches();
                   onClose();
+                  if (onBrowseFabrics) onBrowseFabrics();
                 }}
                 className="btn btn-navy"
                 style={{ width: '100%' }}
@@ -109,7 +110,10 @@ export const SwatchDrawer = ({ isOpen, onClose, swatches, onRemoveSwatch, onClea
                 Browse our fabric catalog and click "+ Request Swatch" to order physical quality feelers and lab-dip cards.
               </p>
               <button
-                onClick={onClose}
+                onClick={() => {
+                  onClose();
+                  if (onBrowseFabrics) onBrowseFabrics();
+                }}
                 className="btn btn-outline-navy btn-sm"
               >
                 Browse Fabrics
