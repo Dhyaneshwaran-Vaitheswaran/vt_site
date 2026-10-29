@@ -197,8 +197,9 @@ textarea {
 }
 
 header .container,
+.top-utility-bar .container,
 .top-notice-bar .container {
-  max-width: 1380px;
+  max-width: 1440px;
 }
 
 .container-narrow {

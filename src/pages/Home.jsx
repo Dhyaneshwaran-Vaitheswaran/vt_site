@@ -8,6 +8,7 @@ import { IshaShowcase } from '../components/IshaShowcase';
 export const Home = ({ setActivePage, onSelectFabric, onAddSwatch, swatches, onOpenRFQ }) => {
   const [activeCategory, setActiveCategory] = useState("All Fabrics");
   const [activeCapabilityStep, setActiveCapabilityStep] = useState(0);
+  const [portfolioTab, setPortfolioTab] = useState('fabrics'); // 'fabrics' | 'garments'
 
   const filteredFabrics = activeCategory === "All Fabrics"
     ? FABRICS.slice(0, 6)
@@ -25,60 +26,62 @@ export const Home = ({ setActivePage, onSelectFabric, onAddSwatch, swatches, onO
   return (
     <div>
 
-      {/* Hero Section — Pure Black & Red Aesthetic */}
-      <section className="hero-section-responsive">
+      {/* Hero Section — Grand Architectural Black & Red Aesthetic */}
+      <section className="hero-section-responsive" style={{ padding: 'clamp(5rem, 7.5vw, 8rem) 0 clamp(4rem, 6vw, 6.5rem) 0' }}>
         {/* Subtle grid pattern background */}
         <div style={{
           position: 'absolute',
           inset: 0,
-          opacity: 0.05,
+          opacity: 0.04,
           backgroundImage: 'linear-gradient(#FFFFFF 1px, transparent 1px), linear-gradient(90deg, #FFFFFF 1px, transparent 1px)',
-          backgroundSize: '40px 40px'
+          backgroundSize: '48px 48px'
         }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <div className="hero-grid-layout">
+          <div className="hero-grid-layout" style={{ alignItems: 'center' }}>
 
-            {/* Left Hero Content */}
+            {/* Left Hero Content — Spacious, Authoritative Typography */}
             <div>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.65rem', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
-                <span className="badge badge-red" style={{ backgroundColor: '#FEF2F2', color: '#C51E3A', border: '1px solid rgba(197, 30, 58, 0.3)' }}>
-                  ESTABLISHED 1998 • ERODE
+              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.65rem', marginBottom: '1.75rem', flexWrap: 'wrap' }}>
+                <span className="badge badge-red" style={{ backgroundColor: '#FEF2F2', color: '#C51E3A', border: '1px solid rgba(197, 30, 58, 0.3)', padding: '0.45rem 1rem', fontSize: '0.75rem', letterSpacing: '0.08em' }}>
+                  ERODE TEXTILE CLUSTER • ESTABLISHED 1998
                 </span>
               </div>
 
               <h1 style={{
                 color: '#FFFFFF',
-                fontSize: 'clamp(2.1rem, 4.8vw, 3.8rem)',
+                fontSize: 'clamp(2.35rem, 5vw, 4.1rem)',
                 fontWeight: 800,
-                lineHeight: 1.15,
+                lineHeight: 1.12,
                 letterSpacing: '-0.025em',
-                marginBottom: '1.5rem'
+                marginBottom: '1.75rem'
               }}>
-                End-to-End Woven Fabric Sourcing & Production Coordination.
+                End-to-End Woven Fabric Sourcing & Downstream Apparel Coordination.
               </h1>
 
               <p style={{
                 color: '#D4D4D8',
-                fontSize: 'clamp(1rem, 1.8vw, 1.15rem)',
-                lineHeight: 1.75,
-                marginBottom: '2rem',
-                maxWidth: '580px'
+                fontSize: 'clamp(1.05rem, 1.8vw, 1.2rem)',
+                lineHeight: 1.8,
+                marginBottom: '2.5rem',
+                maxWidth: '620px'
               }}>
-                Centralized textile sourcing and woven fabric production partner in Erode, Tamil Nadu. We coordinate high-speed airjet/rapier weaving, custom dyeing, printing, specialty finishing, and downstream garmenting for global apparel brands and domestic manufacturers.
+                Centralized textile sourcing and woven fabric production in Erode, South India. We coordinate high-speed airjet and rapier weaving, zero-liquid-discharge dyeing, and downstream apparel manufacturing for global labels and domestic brands.
               </p>
 
               {/* Action Buttons */}
-              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
+              <div style={{ display: 'flex', gap: '1.25rem', flexWrap: 'wrap', marginBottom: '2.75rem' }}>
                 <button
                   onClick={() => onOpenRFQ(null)}
                   className="btn btn-primary btn-lg"
+                  style={{ padding: '1rem 2rem' }}
                 >
-                  <ArrowUpRight size={18} /> Request Bulk Quotation
+                  <ArrowUpRight size={18} /> Request Custom Bulk Quote
                 </button>
                 <button
                   onClick={() => { setActivePage('catalog'); window.scrollTo(0, 0); }}
                   className="btn btn-outline-light btn-lg"
+                  style={{ padding: '1rem 2rem' }}
                 >
                   Explore Woven Catalog <ArrowRight size={18} />
                 </button>
@@ -88,13 +91,12 @@ export const Home = ({ setActivePage, onSelectFabric, onAddSwatch, swatches, onO
               <div style={{
                 display: 'inline-flex',
                 alignItems: 'center',
-                gap: '0.85rem',
-                padding: '0.55rem 1.15rem',
+                gap: '0.9rem',
+                padding: '0.65rem 1.25rem',
                 backgroundColor: 'rgba(255, 255, 255, 0.06)',
                 border: '1px solid rgba(255, 255, 255, 0.14)',
                 borderRadius: '12px',
                 backdropFilter: 'blur(8px)',
-                marginBottom: '2rem',
                 width: 'fit-content',
                 maxWidth: '100%',
                 boxSizing: 'border-box',
@@ -110,58 +112,19 @@ export const Home = ({ setActivePage, onSelectFabric, onAddSwatch, swatches, onO
                 }}>
                   <img src="/images/isha-logo.png" alt="Isha" style={{ height: '24px', width: 'auto', display: 'block' }} />
                 </div>
-                <div style={{ fontSize: '0.8125rem', color: '#D4D4D8' }}>
+                <div style={{ fontSize: '0.85rem', color: '#D4D4D8' }}>
                   <strong style={{ color: '#FFFFFF' }}>Main Supplier to Isha</strong> for 10+ Years • Dhotis, Kurtas, Bags & Garments
-                </div>
-              </div>
-
-              {/* Key Trust Stats Bar — Clean Sans-Serif Numbers */}
-              <div className="stats-grid-responsive">
-                <div>
-                  <div style={{ fontSize: 'clamp(1.75rem, 3.2vw, 2.25rem)', fontWeight: 800, color: '#C51E3A', lineHeight: 1.1 }}>
-                    1998
-                  </div>
-                  <div style={{ fontSize: '0.8125rem', color: '#A1A1AA', marginTop: '0.25rem' }}>
-                    Founded in Erode, TN
-                  </div>
-                </div>
-
-                <div>
-                  <div style={{ fontSize: 'clamp(1.75rem, 3.2vw, 2.25rem)', fontWeight: 800, color: '#FFFFFF', lineHeight: 1.1 }}>
-                    2M+ Meters
-                  </div>
-                  <div style={{ fontSize: '0.8125rem', color: '#A1A1AA', marginTop: '0.25rem' }}>
-                    Coordinated Annually
-                  </div>
-                </div>
-
-                <div>
-                  <div style={{ fontSize: 'clamp(1.75rem, 3.2vw, 2.25rem)', fontWeight: 800, color: '#C51E3A', lineHeight: 1.1 }}>
-                    10+ Years
-                  </div>
-                  <div style={{ fontSize: '0.8125rem', color: '#A1A1AA', marginTop: '0.25rem' }}>
-                    Main Supplier to Isha
-                  </div>
-                </div>
-
-                <div>
-                  <div style={{ fontSize: 'clamp(1.75rem, 3.2vw, 2.25rem)', fontWeight: 800, color: '#FFFFFF', lineHeight: 1.1 }}>
-                    100%
-                  </div>
-                  <div style={{ fontSize: '0.8125rem', color: '#A1A1AA', marginTop: '0.25rem' }}>
-                    ASTM 4-Point QC
-                  </div>
                 </div>
               </div>
 
             </div>
 
-            {/* Right Hero Image Card */}
+            {/* Right Hero Image Card — Clean, Spacious Showcase */}
             <div style={{ position: 'relative' }}>
               <div style={{
-                borderRadius: '20px',
+                borderRadius: '24px',
                 overflow: 'hidden',
-                boxShadow: '0 25px 60px rgba(0, 0, 0, 0.6)',
+                boxShadow: '0 25px 60px rgba(0, 0, 0, 0.7)',
                 border: '1px solid #27272A',
                 position: 'relative'
               }}>
@@ -174,6 +137,7 @@ export const Home = ({ setActivePage, onSelectFabric, onAddSwatch, swatches, onO
                   fetchPriority="high"
                   loading="eager"
                   decoding="async"
+                  style={{ width: '100%', display: 'block' }}
                 />
 
                 {/* Official VT Trademark Stamp */}
@@ -182,8 +146,8 @@ export const Home = ({ setActivePage, onSelectFabric, onAddSwatch, swatches, onO
                   top: '18px',
                   right: '18px',
                   backgroundColor: 'rgba(10, 10, 10, 0.92)',
-                  backdropFilter: 'blur(8px)',
-                  padding: '0.45rem 0.9rem',
+                  backdropFilter: 'blur(10px)',
+                  padding: '0.45rem 0.95rem',
                   borderRadius: '9999px',
                   border: '1px solid rgba(197, 30, 58, 0.4)',
                   display: 'flex',
@@ -196,46 +160,74 @@ export const Home = ({ setActivePage, onSelectFabric, onAddSwatch, swatches, onO
                     VT TRADEMARK
                   </span>
                 </div>
-
-                {/* Overlay Card Badge */}
-                <div style={{
-                  position: 'absolute',
-                  bottom: '20px',
-                  left: '20px',
-                  right: '20px',
-                  backgroundColor: 'rgba(10, 10, 10, 0.92)',
-                  backdropFilter: 'blur(10px)',
-                  padding: '1.25rem 1.5rem',
-                  borderRadius: '14px',
-                  border: '1px solid #27272A',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  gap: '1rem'
-                }}>
-                  <div>
-                    <div style={{ fontSize: '0.6875rem', fontWeight: 800, color: '#C51E3A', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
-                      CENTRALIZED SOURCING DESK
-                    </div>
-                    <div style={{ fontSize: '0.975rem', fontWeight: 700, color: '#FFFFFF' }}>
-                      Erode Textile Corridor Hub
-                    </div>
-                    <div style={{ fontSize: '0.8125rem', color: '#A1A1AA' }}>
-                      Airjet & Rapier Weaving • ZLD Eco-Dyeing
-                    </div>
-                  </div>
-                  <a
-                    href="https://wa.me/919842222580"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-whatsapp btn-sm"
-                  >
-                    <MessageSquare size={14} /> Quick Chat
-                  </a>
-                </div>
               </div>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* The Prestige Horizon Bar — Spacious Milestone Horizon */}
+      <section style={{
+        backgroundColor: '#111113',
+        borderTop: '1px solid #27272A',
+        borderBottom: '1px solid #27272A',
+        padding: 'clamp(2.75rem, 5vw, 4rem) 0'
+      }}>
+        <div className="container">
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))',
+            gap: 'clamp(2rem, 3.5vw, 3.5rem)',
+            alignItems: 'center'
+          }}>
+            <div>
+              <div style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', fontWeight: 800, color: '#C51E3A', lineHeight: 1.05 }}>
+                1998
+              </div>
+              <div style={{ fontSize: '0.925rem', fontWeight: 700, color: '#FFFFFF', marginTop: '0.45rem' }}>
+                Founded in Erode
+              </div>
+              <div style={{ fontSize: '0.8125rem', color: '#A1A1AA', marginTop: '0.2rem' }}>
+                28+ years centralized mill network
+              </div>
+            </div>
+
+            <div>
+              <div style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', fontWeight: 800, color: '#FFFFFF', lineHeight: 1.05 }}>
+                10+ Years
+              </div>
+              <div style={{ fontSize: '0.925rem', fontWeight: 700, color: '#FFFFFF', marginTop: '0.45rem' }}>
+                Main Supplier to Isha
+              </div>
+              <div style={{ fontSize: '0.8125rem', color: '#A1A1AA', marginTop: '0.2rem' }}>
+                Flagship sacred apparel partner
+              </div>
+            </div>
+
+            <div>
+              <div style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', fontWeight: 800, color: '#C51E3A', lineHeight: 1.05 }}>
+                2,000,000+
+              </div>
+              <div style={{ fontSize: '0.925rem', fontWeight: 700, color: '#FFFFFF', marginTop: '0.45rem' }}>
+                Meters Woven Annually
+              </div>
+              <div style={{ fontSize: '0.8125rem', color: '#A1A1AA', marginTop: '0.2rem' }}>
+                High-speed airjet & rapier looms
+              </div>
+            </div>
+
+            <div>
+              <div style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', fontWeight: 800, color: '#FFFFFF', lineHeight: 1.05 }}>
+                ASTM D5430
+              </div>
+              <div style={{ fontSize: '0.925rem', fontWeight: 700, color: '#FFFFFF', marginTop: '0.45rem' }}>
+                4-Point Roll Inspection
+              </div>
+              <div style={{ fontSize: '0.8125rem', color: '#A1A1AA', marginTop: '0.2rem' }}>
+                100% in-house verification tables
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -435,7 +427,7 @@ export const Home = ({ setActivePage, onSelectFabric, onAddSwatch, swatches, onO
       <section className="section-padding" style={{ backgroundColor: '#FAFAFA', borderTop: '1px solid #E4E4E7', borderBottom: '1px solid #E4E4E7' }}>
         <div className="container">
 
-          <div className="section-header" style={{ maxWidth: '860px' }}>
+          <div className="section-header" style={{ maxWidth: '860px', marginBottom: '2.5rem' }}>
             <span className="section-kicker">MANUFACTURING SPECIALIZATIONS • ERODE HUB</span>
             <h2 className="section-title">Woven Fabrics & Finished Garments Production Directory</h2>
             <p className="section-desc">
@@ -443,17 +435,61 @@ export const Home = ({ setActivePage, onSelectFabric, onAddSwatch, swatches, onO
             </p>
           </div>
 
-          {/* Fabrics Sub-Category Grid */}
-          <div style={{ marginBottom: '3.5rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
-              <span className="badge badge-red">CORE WOVEN FABRICS</span>
-              <span style={{ fontSize: '0.875rem', color: '#71717A', fontWeight: 600 }}>12 Specialty Weaves Engineered in Erode</span>
+          {/* Interactive Architectural Ledger Segment Switch — Clean & Spacious */}
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '3.5rem' }}>
+            <div style={{
+              display: 'inline-flex',
+              backgroundColor: '#FFFFFF',
+              padding: '6px',
+              borderRadius: '9999px',
+              border: '1.5px solid #E4E4E7',
+              boxShadow: '0 2px 10px rgba(0,0,0,0.04)',
+              gap: '0.4rem',
+              maxWidth: '100%',
+              flexWrap: 'wrap',
+              justifyContent: 'center'
+            }}>
+              <button
+                onClick={() => setPortfolioTab('fabrics')}
+                style={{
+                  padding: '0.75rem 1.75rem',
+                  borderRadius: '9999px',
+                  border: 'none',
+                  backgroundColor: portfolioTab === 'fabrics' ? '#0A0A0A' : 'transparent',
+                  color: portfolioTab === 'fabrics' ? '#FFFFFF' : '#52525B',
+                  fontWeight: 700,
+                  fontSize: '0.9rem',
+                  cursor: 'pointer',
+                  transition: 'all 200ms ease'
+                }}
+              >
+                Specialty Woven Substrates (12)
+              </button>
+              <button
+                onClick={() => setPortfolioTab('garments')}
+                style={{
+                  padding: '0.75rem 1.75rem',
+                  borderRadius: '9999px',
+                  border: 'none',
+                  backgroundColor: portfolioTab === 'garments' ? '#0A0A0A' : 'transparent',
+                  color: portfolioTab === 'garments' ? '#FFFFFF' : '#52525B',
+                  fontWeight: 700,
+                  fontSize: '0.9rem',
+                  cursor: 'pointer',
+                  transition: 'all 200ms ease'
+                }}
+              >
+                OEM Stitched Garments (5)
+              </button>
             </div>
+          </div>
 
+          {/* Fabrics Sub-Category Grid — Spacious & Clean */}
+          <div style={{ display: portfolioTab === 'fabrics' ? 'block' : 'none' }}>
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))',
-              gap: '1.25rem'
+              gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 340px), 1fr))',
+              gap: '1.75rem'
             }}>
               {[
                 { title: "Gada Fabric", sub: "Unbleached Greige Cotton (Kora Cloth)", gsm: "100 - 350 GSM", path: "/fabric/gada-greige-fabric", desc: "100% virgin cotton loomstate greige. Ideal substrate for dyeing, rotary printing, garment pocketing, and eco canvas sacks." },
@@ -476,8 +512,8 @@ export const Home = ({ setActivePage, onSelectFabric, onAddSwatch, swatches, onO
                   style={{
                     backgroundColor: '#FFFFFF',
                     border: '1px solid #E4E4E7',
-                    borderRadius: '12px',
-                    padding: '1.25rem',
+                    borderRadius: '16px',
+                    padding: '1.75rem',
                     textDecoration: 'none',
                     display: 'flex',
                     flexDirection: 'column',
@@ -486,30 +522,25 @@ export const Home = ({ setActivePage, onSelectFabric, onAddSwatch, swatches, onO
                   }}
                 >
                   <div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
                       <span style={{ fontSize: '0.72rem', fontWeight: 800, color: '#C51E3A', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{item.gsm}</span>
-                      <ArrowUpRight size={14} color="#71717A" />
+                      <ArrowUpRight size={15} color="#71717A" />
                     </div>
-                    <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0A0A0A', margin: '0 0 0.25rem 0' }}>{item.title}</h3>
-                    <div style={{ fontSize: '0.8rem', color: '#71717A', fontWeight: 600, marginBottom: '0.65rem' }}>{item.sub}</div>
-                    <p style={{ fontSize: '0.85rem', color: '#52525B', lineHeight: '1.55', margin: 0 }}>{item.desc}</p>
+                    <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#0A0A0A', margin: '0 0 0.35rem 0' }}>{item.title}</h3>
+                    <div style={{ fontSize: '0.8125rem', color: '#71717A', fontWeight: 600, marginBottom: '0.85rem' }}>{item.sub}</div>
+                    <p style={{ fontSize: '0.875rem', color: '#52525B', lineHeight: '1.65', margin: 0 }}>{item.desc}</p>
                   </div>
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Garments Sub-Category Grid */}
-          <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
-              <span className="badge badge-black">OEM GARMENTS & FINISHED GOODS</span>
-              <span style={{ fontSize: '0.875rem', color: '#71717A', fontWeight: 600 }}>5 Downstream Stitched Product Categories</span>
-            </div>
-
+          {/* Garments Sub-Category Grid — Spacious & Clean */}
+          <div style={{ display: portfolioTab === 'garments' ? 'block' : 'none' }}>
             <div style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))',
-              gap: '1.25rem'
+              gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 340px), 1fr))',
+              gap: '1.75rem'
             }}>
               {[
                 { title: "All Woven Shirts", sub: "Men's & Women's Tailored OEM", cap: "45,000 Pcs/Mo", path: "/garments/woven-shirts-manufacturer", desc: "Full-package formal dress shirts, casual camp collar resortwear, and corporate uniform shirts. Juki single-needle 14-16 SPI stitching." },
@@ -525,8 +556,8 @@ export const Home = ({ setActivePage, onSelectFabric, onAddSwatch, swatches, onO
                   style={{
                     backgroundColor: '#FFFFFF',
                     border: '1px solid #E4E4E7',
-                    borderRadius: '12px',
-                    padding: '1.25rem',
+                    borderRadius: '16px',
+                    padding: '1.75rem',
                     textDecoration: 'none',
                     display: 'flex',
                     flexDirection: 'column',
@@ -535,13 +566,13 @@ export const Home = ({ setActivePage, onSelectFabric, onAddSwatch, swatches, onO
                   }}
                 >
                   <div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem' }}>
-                      <span style={{ fontSize: '0.72rem', fontWeight: 800, color: '#0A0A0A', backgroundColor: '#F4F4F5', padding: '0.2rem 0.5rem', borderRadius: '4px', textTransform: 'uppercase' }}>{item.cap}</span>
-                      <ArrowUpRight size={14} color="#71717A" />
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+                      <span style={{ fontSize: '0.72rem', fontWeight: 800, color: '#0A0A0A', backgroundColor: '#F4F4F5', padding: '0.25rem 0.6rem', borderRadius: '4px', textTransform: 'uppercase' }}>{item.cap}</span>
+                      <ArrowUpRight size={15} color="#71717A" />
                     </div>
-                    <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: '#0A0A0A', margin: '0 0 0.25rem 0' }}>{item.title}</h3>
-                    <div style={{ fontSize: '0.8rem', color: '#71717A', fontWeight: 600, marginBottom: '0.65rem' }}>{item.sub}</div>
-                    <p style={{ fontSize: '0.85rem', color: '#52525B', lineHeight: '1.55', margin: 0 }}>{item.desc}</p>
+                    <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: '#0A0A0A', margin: '0 0 0.35rem 0' }}>{item.title}</h3>
+                    <div style={{ fontSize: '0.8125rem', color: '#71717A', fontWeight: 600, marginBottom: '0.85rem' }}>{item.sub}</div>
+                    <p style={{ fontSize: '0.875rem', color: '#52525B', lineHeight: '1.65', margin: 0 }}>{item.desc}</p>
                   </div>
                 </a>
               ))}

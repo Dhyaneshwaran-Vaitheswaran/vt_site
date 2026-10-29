@@ -14,14 +14,23 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
-    { id: 'catalog', label: 'Fabric Catalog' },
-    { id: 'garments', label: 'Garments OEM' },
+  const desktopNavItems = [
+    { id: 'catalog', label: 'Fabrics' },
+    { id: 'garments', label: 'Garments' },
     { id: 'capabilities', label: 'Capabilities' },
-    { id: 'quality', label: 'Quality Assurance' },
-    { id: 'about', label: 'About Us' },
-    { id: 'resources', label: 'Sourcing FAQs' },
-    { id: 'contact', label: 'Contact & Quote' }
+    { id: 'quality', label: 'Quality' },
+    { id: 'about', label: 'About' },
+    { id: 'resources', label: 'FAQs' }
+  ];
+
+  const mobileNavItems = [
+    { id: 'catalog', label: 'Fabric Catalog', desc: '12+ Specialty Woven Substrates & Specifications' },
+    { id: 'garments', label: 'Garments OEM', desc: 'Dhotis, Kurtas, Woven Shirts & Canvas Bags' },
+    { id: 'capabilities', label: 'Capabilities', desc: 'Weaving, Eco-Dyeing, Rotary & Digital Print' },
+    { id: 'quality', label: 'Quality Assurance', desc: 'ASTM D5430 4-Point Roll-by-Roll Inspection' },
+    { id: 'about', label: 'About Our Heritage', desc: 'Estd. 1998 in Erode • 10+ Years Isha Supplier' },
+    { id: 'resources', label: 'Sourcing FAQs', desc: 'MOQs, Lab-Dip Turnarounds & FOB/CIF Terms' },
+    { id: 'contact', label: 'Contact & Quote', desc: 'Direct Mill Headquarters & Production Desks' }
   ];
 
   const handleNavClick = (id) => {
@@ -98,10 +107,10 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
             <VTLogo size={38} variant="dark" />
           </div>
 
-          {/* Desktop Navigation Links — Responsive Spacing for Laptops & Desktops */}
+          {/* Desktop Navigation Links — Spacious, Refined Luxury Spacing */}
           <nav className="desktop-nav">
             <ul className="desktop-nav-list">
-              {navItems.map(item => {
+              {desktopNavItems.map(item => {
                 const isActive = activePage === item.id;
                 return (
                   <li key={item.id} style={{ flexShrink: 0 }}>
@@ -110,20 +119,20 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
                       className="desktop-nav-btn"
                       style={{
                         fontWeight: isActive ? 700 : 500,
-                        color: isActive ? '#0A0A0A' : '#475569'
+                        color: isActive ? '#0A0A0A' : '#52525B'
                       }}
                       onMouseEnter={(e) => {
                         if (!isActive) e.currentTarget.style.color = '#0A0A0A';
                       }}
                       onMouseLeave={(e) => {
-                        if (!isActive) e.currentTarget.style.color = '#475569';
+                        if (!isActive) e.currentTarget.style.color = '#52525B';
                       }}
                     >
                       {item.label}
                       {isActive && (
                         <span style={{
                           position: 'absolute',
-                          bottom: '0',
+                          bottom: '-2px',
                           left: '0',
                           right: '0',
                           height: '2px',
@@ -205,18 +214,18 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
                   <ChevronRight size={16} color={activePage === 'home' ? '#C51E3A' : '#94A3B8'} />
                 </button>
               </li>
-              {navItems.map(item => (
-                <li key={item.id} style={{ borderBottom: '1px solid #F1F5F9' }}>
+              {mobileNavItems.map(item => (
+                <li key={item.id} style={{ borderBottom: '1px solid #F1F5F9', padding: '0.4rem 0' }}>
                   <button
                     onClick={() => handleNavClick(item.id)}
                     style={{
                       width: '100%',
                       textAlign: 'left',
-                      padding: '0.75rem 0',
+                      padding: '0.45rem 0',
                       background: 'none',
                       border: 'none',
                       fontSize: '0.95rem',
-                      fontWeight: activePage === item.id ? 700 : 500,
+                      fontWeight: activePage === item.id ? 700 : 600,
                       color: activePage === item.id ? '#C51E3A' : '#0A0A0A',
                       display: 'flex',
                       alignItems: 'center',
@@ -224,7 +233,16 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
                       cursor: 'pointer'
                     }}
                   >
-                    <span>{item.label}</span>
+                    <div>
+                      <div style={{ color: activePage === item.id ? '#C51E3A' : '#0A0A0A', fontWeight: activePage === item.id ? 700 : 600 }}>
+                        {item.label}
+                      </div>
+                      {item.desc && (
+                        <div style={{ fontSize: '0.75rem', color: '#71717A', fontWeight: 400, marginTop: '0.15rem' }}>
+                          {item.desc}
+                        </div>
+                      )}
+                    </div>
                     <ChevronRight size={16} color={activePage === item.id ? '#C51E3A' : '#94A3B8'} />
                   </button>
                 </li>
@@ -288,17 +306,19 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
       </header>
 
       <style>{`
-        /* Header Container */
+        /* Header Container — Spacious Modern Luxury */
         .header-container {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          padding: 0.85rem 1.5rem;
-          min-height: 72px;
+          padding: 0.95rem clamp(1.25rem, 3vw, 3rem);
+          max-width: 1440px;
+          min-height: 76px;
           box-sizing: border-box;
+          gap: 1.5rem;
         }
 
-        /* Logo Wrapper */
+        /* Logo Wrapper — Unshrinkable Anchor */
         .header-logo-wrap {
           cursor: pointer;
           user-select: none;
@@ -306,13 +326,15 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
           align-items: center;
           flex-shrink: 0 !important;
           min-width: max-content !important;
-          margin-right: clamp(1rem, 2vw, 2.5rem);
+          margin-right: clamp(1.5rem, 2.5vw, 3.5rem);
         }
 
-        /* Desktop Nav */
+        /* Desktop Nav — Centered With Generous Breathing Room */
         .desktop-nav {
           flex: 1;
           display: none;
+          align-items: center;
+          justify-content: center;
           min-width: 0;
         }
 
@@ -320,17 +342,17 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
         .header-actions {
           display: flex;
           align-items: center;
-          gap: clamp(0.5rem, 1vw, 0.75rem);
-          margin-left: clamp(1rem, 2vw, 2rem);
+          gap: clamp(0.6rem, 1vw, 1rem);
+          margin-left: clamp(1.25rem, 2.5vw, 3.5rem);
           flex-shrink: 0;
         }
 
-        /* Desktop Nav List & Buttons */
+        /* Desktop Nav List & Buttons — Elegant Editorial Spacing */
         .desktop-nav-list {
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: clamp(0.75rem, 1.3vw, 1.75rem);
+          gap: clamp(1.15rem, 2vw, 2.5rem);
           list-style: none;
           margin: 0;
           padding: 0;
@@ -339,23 +361,29 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
         .desktop-nav-btn {
           background: none;
           border: none;
-          padding: 0.5rem 0.15rem;
-          font-size: clamp(0.8125rem, 0.9vw, 0.875rem);
+          padding: 0.5rem 0.25rem;
+          font-size: 0.875rem;
+          font-weight: 500;
+          letter-spacing: 0.02em;
+          color: #4B5563;
           cursor: pointer;
           white-space: nowrap;
           position: relative;
           transition: color 150ms ease;
+        }
+        .desktop-nav-btn:hover {
+          color: #0A0A0A;
         }
 
         /* Swatches Button */
         .header-swatch-btn {
           display: inline-flex;
           align-items: center;
-          gap: 0.35rem;
+          gap: 0.45rem;
           background-color: transparent;
-          border: 1px solid #CBD5E1;
-          border-radius: 6px;
-          padding: 0.5rem 0.75rem;
+          border: 1px solid #E2E8F0;
+          border-radius: 8px;
+          padding: 0.55rem 0.9rem;
           font-size: 0.8125rem;
           font-weight: 600;
           color: #18181B;
@@ -364,7 +392,7 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
           flex-shrink: 0;
         }
         .header-swatch-btn:hover {
-          border-color: #94A3B8;
+          border-color: #CBD5E1;
           background-color: #F8FAFC;
         }
 
@@ -373,20 +401,21 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
           color: #FFFFFF;
           font-size: 0.6875rem;
           font-weight: 700;
-          padding: 0.1rem 0.45rem;
+          padding: 0.15rem 0.5rem;
           border-radius: 9999px;
-          margin-left: 0.15rem;
+          margin-left: 0.2rem;
         }
 
         /* Quote Button */
         .header-quote-btn {
           display: inline-flex;
           align-items: center;
-          gap: 0.35rem;
-          padding: 0.55rem 1rem;
+          gap: 0.4rem;
+          padding: 0.6rem 1.15rem;
           font-size: 0.8125rem;
-          font-weight: 600;
-          border-radius: 6px;
+          font-weight: 700;
+          border-radius: 8px;
+          letter-spacing: 0.02em;
           flex-shrink: 0;
         }
 
@@ -402,12 +431,12 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
           display: none;
           align-items: center;
           justify-content: center;
-          width: 38px;
-          height: 38px;
-          min-width: 38px;
+          width: 40px;
+          height: 40px;
+          min-width: 40px;
           background-color: #FFFFFF;
           border: 1px solid #CBD5E1;
-          border-radius: 6px;
+          border-radius: 8px;
           color: #0A0A0A;
           cursor: pointer;
           padding: 0;
@@ -424,8 +453,8 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
         .mobile-nav-drawer {
           background-color: #FFFFFF;
           border-top: 1px solid #E2E8F0;
-          padding: 1.25rem 1.5rem;
-          box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+          padding: 1.5rem;
+          box-shadow: 0 16px 36px rgba(0,0,0,0.08);
           animation: drawerSlide 200ms ease-out;
         }
 
@@ -434,43 +463,17 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
           to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Responsive Breakpoints */
-        /* Desktop Screens (1200px+) */
-        @media (min-width: 1200px) {
-          .desktop-nav { display: flex !important; align-items: center; justify-content: center; }
+        /* Responsive Breakpoints — Completely Prevents Overlap */
+        @media (min-width: 1040px) {
+          .desktop-nav { display: flex !important; }
           .mobile-menu-btn { display: none !important; }
         }
 
-        /* Compact Desktop & Medium Laptops (1200px - 1320px) */
-        @media (min-width: 1200px) and (max-width: 1320px) {
-          .desktop-nav-list {
-            gap: 0.85rem !important;
-          }
-          .desktop-nav-btn {
-            font-size: 0.8125rem !important;
-            padding: 0.5rem 0.15rem !important;
-          }
-          .header-logo-wrap {
-            margin-right: 1.25rem !important;
-          }
-          .header-actions {
-            margin-left: 1.25rem !important;
-            gap: 0.5rem !important;
-          }
-          .header-swatch-btn {
-            padding: 0.42rem 0.6rem !important;
-            font-size: 0.78rem !important;
-          }
-          .quote-text-full { display: none !important; }
-          .quote-text-short { display: inline !important; }
-        }
-
-        /* Tablets, Small Laptops & Mobile Menu (<= 1199px) */
-        @media (max-width: 1199px) {
+        @media (max-width: 1039px) {
           .desktop-nav { display: none !important; }
           .mobile-menu-btn { display: inline-flex !important; }
           .header-container {
-            padding: 0.65rem 1.25rem;
+            padding: 0.75rem 1.25rem;
             min-height: 64px;
           }
           .header-logo-wrap {
@@ -481,13 +484,13 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
             gap: 0.5rem;
           }
           .header-swatch-btn {
-            padding: 0.42rem 0.6rem;
+            padding: 0.42rem 0.65rem;
             font-size: 0.8rem;
-            min-height: 36px;
+            min-height: 38px;
           }
           .header-quote-btn {
-            padding: 0.45rem 0.75rem;
-            font-size: 0.75rem;
+            padding: 0.45rem 0.85rem;
+            font-size: 0.78rem;
           }
           .quote-text-full { display: none !important; }
           .quote-text-short { display: inline !important; }
