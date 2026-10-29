@@ -304,23 +304,24 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
           user-select: none;
           display: flex;
           align-items: center;
-          flex-shrink: 1;
-          min-width: 0;
-          margin-right: 2rem;
+          flex-shrink: 0 !important;
+          min-width: max-content !important;
+          margin-right: clamp(1rem, 2vw, 2.5rem);
         }
 
         /* Desktop Nav */
         .desktop-nav {
           flex: 1;
           display: none;
+          min-width: 0;
         }
 
         /* Header Actions */
         .header-actions {
           display: flex;
           align-items: center;
-          gap: 0.75rem;
-          margin-left: 2rem;
+          gap: clamp(0.5rem, 1vw, 0.75rem);
+          margin-left: clamp(1rem, 2vw, 2rem);
           flex-shrink: 0;
         }
 
@@ -328,7 +329,8 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
         .desktop-nav-list {
           display: flex;
           align-items: center;
-          gap: 1.75rem;
+          justify-content: center;
+          gap: clamp(0.75rem, 1.3vw, 1.75rem);
           list-style: none;
           margin: 0;
           padding: 0;
@@ -337,8 +339,8 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
         .desktop-nav-btn {
           background: none;
           border: none;
-          padding: 0.5rem 0;
-          font-size: 0.875rem;
+          padding: 0.5rem 0.15rem;
+          font-size: clamp(0.8125rem, 0.9vw, 0.875rem);
           cursor: pointer;
           white-space: nowrap;
           position: relative;
@@ -433,52 +435,53 @@ export const Header = ({ activePage, setActivePage, swatchCount, onOpenRFQ, onOp
         }
 
         /* Responsive Breakpoints */
-        /* Large Desktop (1281px+) */
-        @media (min-width: 1081px) {
-          .desktop-nav { display: block !important; }
+        /* Desktop Screens (1200px+) */
+        @media (min-width: 1200px) {
+          .desktop-nav { display: flex !important; align-items: center; justify-content: center; }
           .mobile-menu-btn { display: none !important; }
         }
 
-        /* Smaller Laptops & High-Res Tablets (1081px - 1280px) */
-        @media (min-width: 1081px) and (max-width: 1280px) {
+        /* Compact Desktop & Medium Laptops (1200px - 1320px) */
+        @media (min-width: 1200px) and (max-width: 1320px) {
           .desktop-nav-list {
-            gap: 0.75rem !important;
+            gap: 0.85rem !important;
           }
           .desktop-nav-btn {
-            font-size: 0.8rem !important;
+            font-size: 0.8125rem !important;
+            padding: 0.5rem 0.15rem !important;
           }
           .header-logo-wrap {
-            margin-right: 0.75rem !important;
+            margin-right: 1.25rem !important;
           }
           .header-actions {
-            margin-left: 0.75rem !important;
-            gap: 0.45rem !important;
+            margin-left: 1.25rem !important;
+            gap: 0.5rem !important;
           }
           .header-swatch-btn {
-            padding: 0.4rem 0.55rem !important;
-            font-size: 0.75rem !important;
+            padding: 0.42rem 0.6rem !important;
+            font-size: 0.78rem !important;
           }
           .quote-text-full { display: none !important; }
           .quote-text-short { display: inline !important; }
         }
 
-        /* Tablets & Mobile Menu (<= 1080px) */
-        @media (max-width: 1080px) {
+        /* Tablets, Small Laptops & Mobile Menu (<= 1199px) */
+        @media (max-width: 1199px) {
           .desktop-nav { display: none !important; }
           .mobile-menu-btn { display: inline-flex !important; }
           .header-container {
             padding: 0.65rem 1.25rem;
-            min-height: 62px;
+            min-height: 64px;
           }
           .header-logo-wrap {
-            margin-right: 0.5rem;
+            margin-right: auto;
           }
           .header-actions {
             margin-left: auto;
             gap: 0.5rem;
           }
           .header-swatch-btn {
-            padding: 0.42rem 0.55rem;
+            padding: 0.42rem 0.6rem;
             font-size: 0.8rem;
             min-height: 36px;
           }

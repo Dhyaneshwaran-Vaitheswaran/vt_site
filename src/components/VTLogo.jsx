@@ -80,12 +80,18 @@ export const VTLogo = ({
   const subColor = '#C51E3A';
 
   return (
-    <div className="vt-logo-wrap" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.65rem', userSelect: 'none' }}>
+    <div className="vt-logo-wrap" style={{
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: '0.65rem',
+      userSelect: 'none',
+      flexShrink: 0
+    }}>
       <VTMonogram size={size} variant={variant} />
-      <div className="vt-logo-text-block">
+      <div className="vt-logo-text-block" style={{ flexShrink: 0 }}>
         <div className="vt-logo-title" style={{
           fontFamily: "'Outfit', -apple-system, BlinkMacSystemFont, sans-serif",
-          fontSize: 'clamp(0.95rem, 3.5vw, 1.3rem)',
+          fontSize: 'clamp(1rem, 2vw, 1.25rem)',
           fontWeight: 800,
           letterSpacing: '-0.02em',
           color: textColor,
