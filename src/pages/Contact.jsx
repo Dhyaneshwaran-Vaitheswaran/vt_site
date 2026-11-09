@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Phone, Mail, MessageSquare, Clock, Building, Send, CheckCircle2, ShieldCheck, FileText, Navigation, ExternalLink } from 'lucide-react';
+import { MapPin, Phone, Mail, MessageSquare, Clock, Building, Send, CheckCircle2, ShieldCheck, FileText, Navigation, ExternalLink, Copy, Check } from 'lucide-react';
 import { FABRICS } from '../data/fabrics';
 
 export const Contact = () => {
@@ -13,6 +13,8 @@ export const Contact = () => {
     message: ''
   });
   const [submitted, setSubmitted] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const [copiedEmail, setCopiedEmail] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -33,19 +35,58 @@ export const Contact = () => {
     window.open(`https://wa.me/919842222580?text=${text}`, '_blank');
   };
 
-  const handleEmailSend = () => {
-    const subject = encodeURIComponent(`B2B Inquiry: ${formData.fabricInterest} - ${formData.company}`);
-    const body = encodeURIComponent(
+  const getEmailContent = () => {
+    const subject = `B2B Sourcing Inquiry: ${formData.fabricInterest} - ${formData.company || formData.name}`;
+    const rawBody =
       `Vasanthaa Textiless Sourcing Team,\n\n` +
-      `Contact Name: ${formData.name}\n` +
-      `Company: ${formData.company}\n` +
-      `Phone: ${formData.phone}\n` +
-      `Email: ${formData.email}\n` +
-      `Target Fabric: ${formData.fabricInterest}\n` +
-      `Volume: ${formData.quantity}\n\n` +
-      `Message:\n${formData.message}`
-    );
-    window.location.href = `mailto:vasanthaatextiless@gmail.com?subject=${subject}&body=${body}`;
+      `Please find our sourcing inquiry details below:\n\n` +
+      `• Contact Person: ${formData.name}\n` +
+      `• Company / Brand: ${formData.company}\n` +
+      `• Contact Phone: ${formData.phone}\n` +
+      `• Work Email: ${formData.email}\n` +
+      `• Fabric of Interest: ${formData.fabricInterest}\n` +
+      `• Estimated Volume: ${formData.quantity}\n\n` +
+      `Specifications & Requirements:\n${formData.message}\n\n` +
+      `Looking forward to your factory pricing, lab dip schedules, and swatch availability.\n\n` +
+      `Regards,\n${formData.name}`;
+
+    return { subject, rawBody };
+  };
+
+  const handleGmailWebSend = () => {
+    const { subject, rawBody } = getEmailContent();
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=vasanthaatextiless@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(rawBody)}`;
+    window.open(gmailUrl, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleDefaultMailSend = () => {
+    const { subject, rawBody } = getEmailContent();
+    const mailtoUrl = `mailto:vasanthaatextiless@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(rawBody)}`;
+    const link = document.createElement('a');
+    link.href = mailtoUrl;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleCopyInquiry = () => {
+    const { subject, rawBody } = getEmailContent();
+    const fullText = `Subject: ${subject}\nTo: vasanthaatextiless@gmail.com\n\n${rawBody}`;
+    navigator.clipboard.writeText(fullText).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 3000);
+    }).catch(() => {
+      setCopied(true);
+    });
+  };
+
+  const handleCopyEmailOnly = () => {
+    navigator.clipboard.writeText('vasanthaatextiless@gmail.com').then(() => {
+      setCopiedEmail(true);
+      setTimeout(() => setCopiedEmail(false), 2500);
+    });
   };
 
   return (
@@ -212,35 +253,114 @@ export const Contact = () => {
               </h3>
 
               {submitted ? (
-                <div style={{ textAlign: 'center', padding: '2.5rem 1rem' }}>
-                  <CheckCircle2 size={48} color="#C51E3A" style={{ margin: '0 auto 1.25rem auto' }} />
-                  <h4 style={{ fontSize: '1.4rem', color: '#0A0A0A', marginBottom: '0.5rem', fontWeight: 700 }}>
+                <div style={{ textAlign: 'center', padding: '2rem 1rem' }}>
+                  <div style={{
+                    width: '60px',
+                    height: '60px',
+                    backgroundColor: '#DCFCE7',
+                    color: '#15803D',
+                    borderRadius: '50%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    margin: '0 auto 1.25rem auto'
+                  }}>
+                    <CheckCircle2 size={34} />
+                  </div>
+                  <h4 style={{ fontSize: '1.45rem', color: '#0A0A0A', marginBottom: '0.4rem', fontWeight: 800 }}>
                     Inquiry Details Ready for Dispatch!
                   </h4>
-                  <p style={{ color: '#52525B', fontSize: '0.95rem', marginBottom: '2rem', lineHeight: '1.6' }}>
-                    Thank you <strong>{formData.name}</strong>. Choose your preferred dispatch channel to submit your request directly to Vasanthaa Textiless in Erode.
+                  <p style={{ color: '#52525B', fontSize: '0.925rem', marginBottom: '1.75rem', lineHeight: '1.6' }}>
+                    Thank you <strong>{formData.name}</strong>. Choose your preferred channel to send your requirements directly to our Erode commercial desk:
                   </p>
 
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxWidth: '440px', margin: '0 auto' }}>
+                    
+                    {/* Primary Channel: WhatsApp */}
                     <button
                       onClick={handleWhatsAppSend}
                       className="btn btn-whatsapp btn-lg"
-                      style={{ width: '100%' }}
+                      style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}
                     >
-                      <MessageSquare size={18} /> Submit Instantly on WhatsApp
+                      <MessageSquare size={18} /> Submit on WhatsApp (+91 98422 22580)
                     </button>
-                    <button
-                      onClick={handleEmailSend}
-                      className="btn btn-primary btn-lg"
-                      style={{ width: '100%' }}
-                    >
-                      <Mail size={18} /> Submit via Official Email
-                    </button>
+
+                    {/* Email Hub Box */}
+                    <div style={{
+                      backgroundColor: '#FFFFFF',
+                      border: '1.5px solid #E4E4E7',
+                      borderRadius: '12px',
+                      padding: '1.25rem',
+                      textAlign: 'left'
+                    }}>
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem', flexWrap: 'wrap', gap: '0.4rem' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontWeight: 700, fontSize: '0.9rem', color: '#0A0A0A' }}>
+                          <Mail size={16} color="#C51E3A" /> Send via Official Email
+                        </div>
+                        <button
+                          onClick={handleCopyEmailOnly}
+                          style={{
+                            background: '#F4F4F5',
+                            border: '1px solid #E4E4E7',
+                            borderRadius: '6px',
+                            padding: '0.2rem 0.5rem',
+                            fontSize: '0.72rem',
+                            fontWeight: 600,
+                            color: '#0A0A0A',
+                            cursor: 'pointer',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '0.3rem'
+                          }}
+                        >
+                          {copiedEmail ? <Check size={12} color="#15803D" /> : <Copy size={12} />}
+                          {copiedEmail ? 'Email Copied!' : 'vasanthaatextiless@gmail.com'}
+                        </button>
+                      </div>
+
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 160px), 1fr))', gap: '0.5rem', marginTop: '0.75rem' }}>
+                        <button
+                          onClick={handleGmailWebSend}
+                          className="btn btn-primary"
+                          style={{ padding: '0.7rem 0.85rem', fontSize: '0.8125rem', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem' }}
+                        >
+                          <Mail size={15} /> Open in Gmail <ExternalLink size={13} />
+                        </button>
+                        <button
+                          onClick={handleDefaultMailSend}
+                          className="btn btn-outline-dark"
+                          style={{ padding: '0.7rem 0.85rem', fontSize: '0.8125rem', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem' }}
+                        >
+                          <Mail size={15} /> Mail App
+                        </button>
+                      </div>
+
+                      <div style={{ marginTop: '0.65rem', textAlign: 'center' }}>
+                        <button
+                          onClick={handleCopyInquiry}
+                          style={{
+                            background: 'none',
+                            border: 'none',
+                            color: copied ? '#15803D' : '#C51E3A',
+                            fontWeight: 700,
+                            fontSize: '0.78rem',
+                            cursor: 'pointer',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '0.35rem'
+                          }}
+                        >
+                          {copied ? <Check size={13} /> : <Copy size={13} />}
+                          {copied ? '✓ Inquiry Copied to Clipboard!' : 'Copy Full Inquiry Text to Clipboard'}
+                        </button>
+                      </div>
+                    </div>
+
                     <button
                       onClick={() => setSubmitted(false)}
-                      style={{ background: 'none', border: 'none', color: '#71717A', textDecoration: 'underline', cursor: 'pointer', marginTop: '0.5rem' }}
+                      style={{ background: 'none', border: 'none', color: '#71717A', fontSize: '0.85rem', textDecoration: 'underline', cursor: 'pointer', marginTop: '0.25rem' }}
                     >
-                      Edit Submission
+                      ← Edit Submission Details
                     </button>
                   </div>
                 </div>

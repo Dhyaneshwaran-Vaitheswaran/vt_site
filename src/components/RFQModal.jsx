@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, CheckCircle, MessageSquare, Mail, Building, MapPin, Layers, Send, FileText, Printer } from 'lucide-react';
+import { X, CheckCircle, MessageSquare, Mail, Building, MapPin, Layers, Send, FileText, Printer, Copy, Check, ExternalLink } from 'lucide-react';
 import { FABRICS } from '../data/fabrics';
 
 export const RFQModal = ({ isOpen, onClose, preselectedFabric }) => {
@@ -18,6 +18,8 @@ export const RFQModal = ({ isOpen, onClose, preselectedFabric }) => {
   
   const [submitted, setSubmitted] = useState(false);
   const [rfqRefNumber, setRfqRefNumber] = useState('');
+  const [copied, setCopied] = useState(false);
+  const [copiedEmail, setCopiedEmail] = useState(false);
 
   useEffect(() => {
     if (preselectedFabric) {
@@ -65,28 +67,68 @@ export const RFQModal = ({ isOpen, onClose, preselectedFabric }) => {
     window.open(url, '_blank');
   };
 
-  const handleEmailSend = () => {
-    const subject = encodeURIComponent(`B2B RFQ: ${currentFabric?.name} (${volume}m) - ${companyName}`);
-    const body = encodeURIComponent(
+  const getEmailContent = () => {
+    const subject = `B2B RFQ: ${currentFabric?.name || 'Woven Fabric'} (${volume}m) - ${companyName || 'Buyer Inquiry'}`;
+    const rawBody =
       `Vasanthaa Textiless Sourcing Team,\n\n` +
       `Please find our bulk fabric quotation request below:\n\n` +
       `Quotation Reference: ${rfqRefNumber || 'VT-RFQ'}\n` +
       `Fabric Required: ${currentFabric?.name}\n` +
       `Construction/Weave: ${currentFabric?.weave}\n` +
       `Target Quantity: ${volume} Meters\n` +
-      `Target Weight: ${targetGsm} GSM\n` +
-      `Color / Pantone: ${colorCode}\n` +
+      `Target Weight: ${targetGsm || 'Standard'} GSM\n` +
+      `Color / Pantone: ${colorCode || 'As per counter-sample'}\n` +
       `Finish: ${finish}\n` +
       `Sampling: ${needSampling}\n\n` +
-      `Company Name: ${companyName}\n` +
-      `Contact Name: ${contactName}\n` +
-      `Location: ${location}\n` +
-      `Phone: ${phone}\n` +
-      `Email: ${email}\n` +
-      `Notes: ${notes}\n\n` +
-      `Looking forward to your quotation.`
-    );
-    window.location.href = `mailto:vasanthaatextiless@gmail.com?subject=${subject}&body=${body}`;
+      `Buyer Details:\n` +
+      `• Company Name: ${companyName}\n` +
+      `• Contact Name: ${contactName}\n` +
+      `• Location / Port: ${location}\n` +
+      `• Phone / WhatsApp: ${phone}\n` +
+      `• Official Email: ${email}\n` +
+      (notes ? `• Specific Requirements / Notes: ${notes}\n` : '') +
+      `\nPlease provide your factory quotation (Ex-Works / FOB) and earliest delivery lead time.\n\n` +
+      `Best Regards,\n${contactName || companyName}`;
+
+    return { subject, rawBody };
+  };
+
+  const handleGmailWebSend = () => {
+    const { subject, rawBody } = getEmailContent();
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=vasanthaatextiless@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(rawBody)}`;
+    window.open(gmailUrl, '_blank', 'noopener,noreferrer');
+  };
+
+  const handleDefaultMailSend = () => {
+    const { subject, rawBody } = getEmailContent();
+    const mailtoUrl = `mailto:vasanthaatextiless@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(rawBody)}`;
+    // Trigger via hidden anchor to circumvent browser popup/navigation restrictions
+    const link = document.createElement('a');
+    link.href = mailtoUrl;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const handleCopyRFQ = () => {
+    const { subject, rawBody } = getEmailContent();
+    const fullText = `Subject: ${subject}\nTo: vasanthaatextiless@gmail.com\n\n${rawBody}`;
+    navigator.clipboard.writeText(fullText).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 3000);
+    }).catch(() => {
+      // Fallback if clipboard API is constrained
+      setCopied(true);
+    });
+  };
+
+  const handleCopyEmailOnly = () => {
+    navigator.clipboard.writeText('vasanthaatextiless@gmail.com').then(() => {
+      setCopiedEmail(true);
+      setTimeout(() => setCopiedEmail(false), 2500);
+    });
   };
 
   return (
@@ -171,31 +213,123 @@ export const RFQModal = ({ isOpen, onClose, preselectedFabric }) => {
               </div>
             </div>
 
-            {/* Fast-Action Dispatch Buttons */}
-            <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+            {/* Fast-Action Dispatch Hub */}
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', maxWidth: '520px', margin: '0 auto' }}>
+
+              {/* Primary Option 1: WhatsApp Instant Dispatch */}
               <button
                 onClick={handleWhatsAppSend}
                 className="btn btn-whatsapp"
-                style={{ padding: '0.875rem 1.75rem' }}
+                style={{ width: '100%', padding: '0.95rem 1.75rem', fontSize: '1rem', justifyContent: 'center' }}
               >
-                <MessageSquare size={18} /> Send via WhatsApp Instantly
-              </button>
-              
-              <button
-                onClick={handleEmailSend}
-                className="btn btn-primary"
-                style={{ padding: '0.875rem 1.75rem' }}
-              >
-                <Mail size={18} /> Send via Official Email
+                <MessageSquare size={20} /> Send via WhatsApp Instantly (+91 98422 22580)
               </button>
 
-              <button
-                onClick={() => window.print()}
-                className="btn btn-outline-navy"
-                style={{ padding: '0.875rem 1.5rem' }}
-              >
-                <Printer size={16} /> Print Copy
-              </button>
+              {/* Primary Option 2: Email Dispatch Hub */}
+              <div style={{
+                backgroundColor: '#FFFFFF',
+                border: '1.5px solid #E2E8F0',
+                borderRadius: '12px',
+                padding: '1.25rem',
+                textAlign: 'left',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.03)'
+              }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.75rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', fontWeight: 700, color: '#0A0A0A', fontSize: '0.95rem' }}>
+                    <Mail size={18} color="#C51E3A" /> Send to Official Sourcing Desk
+                  </div>
+                  <button
+                    onClick={handleCopyEmailOnly}
+                    style={{
+                      background: '#F1F5F9',
+                      border: '1px solid #CBD5E1',
+                      borderRadius: '6px',
+                      padding: '0.25rem 0.65rem',
+                      fontSize: '0.75rem',
+                      fontWeight: 600,
+                      color: '#0F172A',
+                      cursor: 'pointer',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.35rem'
+                    }}
+                    title="Click to copy official email address"
+                  >
+                    {copiedEmail ? <Check size={13} color="#15803D" /> : <Copy size={13} />}
+                    {copiedEmail ? 'Email Copied!' : 'vasanthaatextiless@gmail.com'}
+                  </button>
+                </div>
+
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: '0.65rem', marginTop: '0.85rem' }}>
+                  {/* Gmail Web Compose (Recommended for Chrome / Web users) */}
+                  <button
+                    onClick={handleGmailWebSend}
+                    className="btn btn-primary"
+                    style={{
+                      padding: '0.75rem 1rem',
+                      fontSize: '0.85rem',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '0.45rem',
+                      width: '100%'
+                    }}
+                  >
+                    <Mail size={16} /> Open in Gmail (Web) <ExternalLink size={14} />
+                  </button>
+
+                  {/* Native Mail App (Outlook, Apple Mail, Thunderbird) */}
+                  <button
+                    onClick={handleDefaultMailSend}
+                    className="btn btn-outline-navy"
+                    style={{
+                      padding: '0.75rem 1rem',
+                      fontSize: '0.85rem',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '0.45rem',
+                      width: '100%'
+                    }}
+                  >
+                    <Mail size={16} /> Default Mail App
+                  </button>
+                </div>
+
+                {/* Copy Formatted Quotation Button */}
+                <div style={{ marginTop: '0.75rem', textAlign: 'center' }}>
+                  <button
+                    onClick={handleCopyRFQ}
+                    style={{
+                      background: 'none',
+                      border: 'none',
+                      color: copied ? '#15803D' : '#C51E3A',
+                      fontWeight: 700,
+                      fontSize: '0.8125rem',
+                      cursor: 'pointer',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.4rem',
+                      padding: '0.35rem 0'
+                    }}
+                  >
+                    {copied ? <Check size={14} /> : <Copy size={14} />}
+                    {copied ? '✓ Full Quotation Text Copied to Clipboard!' : 'Copy Full Quotation Details to Clipboard'}
+                  </button>
+                </div>
+              </div>
+
+              {/* Utility Print / Save PDF */}
+              <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <button
+                  onClick={() => window.print()}
+                  className="btn btn-outline-dark"
+                  style={{ padding: '0.6rem 1.25rem', fontSize: '0.8125rem', display: 'inline-flex', alignItems: 'center', gap: '0.4rem' }}
+                >
+                  <Printer size={15} /> Print / Save as PDF
+                </button>
+              </div>
+
             </div>
 
             <div style={{ marginTop: '2rem' }}>
