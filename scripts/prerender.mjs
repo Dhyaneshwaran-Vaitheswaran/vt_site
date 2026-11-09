@@ -884,14 +884,17 @@ async function runPrerender() {
 
   console.log(`✅ Pre-rendered ${count} static HTML landing pages with complete metadata & semantic content!`);
 
-  // Generate dynamic, complete sitemap.xml with all 109 routes
-  console.log('🗺️ Generating comprehensive XML sitemap...');
+  // Generate dynamic XML sitemap strictly containing canonical, indexable 200 OK URLs (Google Best Practice)
+  console.log('🗺️ Generating clean canonical XML sitemap...');
   let sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
 
-  for (const r of allRoutes) {
+  // Exclude alias and redirect URLs from sitemap to prevent GSC redirect warnings & optimize crawl budget
+  const sitemapRoutes = allRoutes.filter(r => !r.isAlias);
+
+  for (const r of sitemapRoutes) {
     const loc = `${DOMAIN}${r.path === '/' ? '' : r.path}`;
-    const priority = r.priority || (r.isAlias ? '0.70' : '0.85');
-    const changefreq = r.changefreq || (r.isAlias ? 'monthly' : 'weekly');
+    const priority = r.priority || '0.85';
+    const changefreq = r.changefreq || 'weekly';
 
     sitemapXml += `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${TODAY}</lastmod>\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>\n  </url>\n`;
   }
@@ -900,7 +903,7 @@ async function runPrerender() {
 
   fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemapXml, 'utf8');
   fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), sitemapXml, 'utf8');
-  console.log(`✅ Sitemap generated with ${allRoutes.length} indexed URLs across dist/sitemap.xml & public/sitemap.xml!`);
+  console.log(`✅ Clean canonical sitemap generated with ${sitemapRoutes.length} primary URLs across dist/sitemap.xml & public/sitemap.xml!`);
 }
 
 runPrerender().catch(err => {
