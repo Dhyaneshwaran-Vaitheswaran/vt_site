@@ -42,6 +42,31 @@
       "source": "/fabric/organic-cotton",
       "destination": "/fabric/gada-greige-fabric",
       "permanent": true
+    },
+    {
+      "source": "/fabrics",
+      "destination": "/catalog",
+      "permanent": true
+    },
+    {
+      "source": "/fabric",
+      "destination": "/catalog",
+      "permanent": true
+    },
+    {
+      "source": "/garment",
+      "destination": "/garments",
+      "permanent": true
+    },
+    {
+      "source": "/garment-manufacturing",
+      "destination": "/garments",
+      "permanent": true
+    },
+    {
+      "source": "/quality",
+      "destination": "/quality-assurance",
+      "permanent": true
     }
   ],
   "rewrites": [
