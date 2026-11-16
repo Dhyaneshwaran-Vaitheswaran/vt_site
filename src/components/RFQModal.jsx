@@ -42,9 +42,11 @@ export const RFQModal = ({ isOpen, onClose, preselectedFabric }) => {
   };
 
   const getWhatsAppMessage = () => {
+    const leadSource = (typeof window !== 'undefined' && sessionStorage.getItem('vt_lead_source')) || 'Direct';
     return encodeURIComponent(
       `*NEW B2B RFQ — VASANTHAA TEXTILESS*\n` +
-      `*Ref:* ${rfqRefNumber || 'VT-RFQ-DIRECT'}\n\n` +
+      `*Ref:* ${rfqRefNumber || 'VT-RFQ-DIRECT'}\n` +
+      `*Discovery Source:* ${leadSource}\n\n` +
       `*Fabric:* ${currentFabric?.name} (${currentFabric?.weave})\n` +
       `*Target Quantity:* ${volume} Meters\n` +
       `*Target Weight/GSM:* ${targetGsm || 'Standard'}\n` +
@@ -68,11 +70,13 @@ export const RFQModal = ({ isOpen, onClose, preselectedFabric }) => {
   };
 
   const getEmailContent = () => {
-    const subject = `B2B RFQ: ${currentFabric?.name || 'Woven Fabric'} (${volume}m) - ${companyName || 'Buyer Inquiry'}`;
+    const leadSource = (typeof window !== 'undefined' && sessionStorage.getItem('vt_lead_source')) || 'Direct';
+    const subject = `B2B RFQ [${leadSource}]: ${currentFabric?.name || 'Woven Fabric'} (${volume}m) - ${companyName || 'Buyer Inquiry'}`;
     const rawBody =
       `Vasanthaa Textiless Sourcing Team,\n\n` +
       `Please find our bulk fabric quotation request below:\n\n` +
       `Quotation Reference: ${rfqRefNumber || 'VT-RFQ'}\n` +
+      `Inquiry Channel: ${leadSource}\n` +
       `Fabric Required: ${currentFabric?.name}\n` +
       `Construction/Weave: ${currentFabric?.weave}\n` +
       `Target Quantity: ${volume} Meters\n` +

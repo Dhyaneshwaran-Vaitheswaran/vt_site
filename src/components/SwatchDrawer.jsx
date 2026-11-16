@@ -12,9 +12,11 @@ export const SwatchDrawer = ({ isOpen, onClose, swatches, onRemoveSwatch, onClea
 
   const handleOrderSwatches = (e) => {
     e.preventDefault();
+    const leadSource = (typeof window !== 'undefined' && sessionStorage.getItem('vt_lead_source')) || 'Direct';
     const fabricList = swatches.map(s => `• ${s.name} (${s.weave}) - ${s.gsm}`).join('\n');
     const msg = encodeURIComponent(
-      `*SWATCH HANGER REQUEST — VASANTHAA TEXTILESS*\n\n` +
+      `*SWATCH HANGER REQUEST — VASANTHAA TEXTILESS*\n` +
+      `*Discovery Source:* ${leadSource}\n\n` +
       `*Requested Fabric Swatches (${swatches.length}):*\n` +
       `${fabricList}\n\n` +
       `*Delivery / Courier Details:*\n` +

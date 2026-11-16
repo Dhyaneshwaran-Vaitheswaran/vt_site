@@ -22,8 +22,10 @@ export const Contact = () => {
   };
 
   const handleWhatsAppSend = () => {
+    const leadSource = (typeof window !== 'undefined' && sessionStorage.getItem('vt_lead_source')) || 'Direct';
     const text = encodeURIComponent(
-      `*DIRECT INQUIRY — VASANTHAA TEXTILESS*\n\n` +
+      `*DIRECT INQUIRY — VASANTHAA TEXTILESS*\n` +
+      `*Discovery Channel:* ${leadSource}\n\n` +
       `*Name:* ${formData.name}\n` +
       `*Company:* ${formData.company}\n` +
       `*Phone:* ${formData.phone}\n` +
@@ -36,10 +38,12 @@ export const Contact = () => {
   };
 
   const getEmailContent = () => {
-    const subject = `B2B Sourcing Inquiry: ${formData.fabricInterest} - ${formData.company || formData.name}`;
+    const leadSource = (typeof window !== 'undefined' && sessionStorage.getItem('vt_lead_source')) || 'Direct';
+    const subject = `B2B Sourcing Inquiry [${leadSource}]: ${formData.fabricInterest} - ${formData.company || formData.name}`;
     const rawBody =
       `Vasanthaa Textiless Sourcing Team,\n\n` +
       `Please find our sourcing inquiry details below:\n\n` +
+      `• Lead Discovery Channel: ${leadSource}\n` +
       `• Contact Person: ${formData.name}\n` +
       `• Company / Brand: ${formData.company}\n` +
       `• Contact Phone: ${formData.phone}\n` +

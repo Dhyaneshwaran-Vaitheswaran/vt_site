@@ -87,6 +87,44 @@ export function App() {
       }
     }
   }, [swatches]);
+
+  // AI & Search Engine Attribution Tracking (ChatGPT, Perplexity, Claude, Bing, Google)
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        if (!sessionStorage.getItem('vt_lead_source')) {
+          const ref = (document.referrer || '').toLowerCase();
+          const urlParams = new URLSearchParams(window.location.search);
+          const utmSource = urlParams.get('utm_source');
+
+          let source = 'Direct / Organic Web';
+          if (utmSource) {
+            source = `Campaign: ${utmSource}`;
+          } else if (ref.includes('chatgpt.com') || ref.includes('openai.com') || ref.includes('android-app://com.openai.chatgpt')) {
+            source = 'ChatGPT Search';
+          } else if (ref.includes('perplexity.ai')) {
+            source = 'Perplexity AI';
+          } else if (ref.includes('claude.ai')) {
+            source = 'Claude AI';
+          } else if (ref.includes('copilot') || ref.includes('bing.com')) {
+            source = 'Bing / Copilot AI';
+          } else if (ref.includes('google.')) {
+            source = 'Google Organic';
+          } else if (ref) {
+            try {
+              const url = new URL(ref);
+              source = url.hostname.replace('www.', '');
+            } catch (e) {
+              source = ref.slice(0, 35);
+            }
+          }
+          sessionStorage.setItem('vt_lead_source', source);
+        }
+      } catch (e) {
+        // Storage disabled or private mode
+      }
+    }
+  }, []);
   
   const [isRFQModalOpen, setIsRFQModalOpen] = useState(false);
   const [rfqPreselectedFabric, setRfqPreselectedFabric] = useState(null);
